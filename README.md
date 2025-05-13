@@ -2,4 +2,4 @@
 XOBO WEBSITE
 
 
-Test - nuru
+Test - Nuru
