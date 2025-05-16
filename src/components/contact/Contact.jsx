@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { 
@@ -19,10 +19,88 @@ const Contact = () => {
   const [result, setResult] = useState("Send Message");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
+  const mapRef = useRef(null);
   
   // Exact coordinates for XOBO Delivery in Nairobi, Kenya
   // These coordinates match the location provided in the Google Maps link
   const companyLocation = { lat: -1.275245099073922, lng: 36.81672807475073 };
+
+  // Load Google Maps
+  useEffect(() => {
+    // Check if Google Maps script is already loaded
+    if (!window.google) {
+      const googleMapScript = document.createElement("script");
+      googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBykwGkHUHpG4bxmtQyVoZ2r6RJIc6Ohzs&libraries=places`;
+      googleMapScript.async = true;
+      googleMapScript.defer = true;
+      googleMapScript.onload = initMap;
+      document.head.appendChild(googleMapScript);
+    } else {
+      initMap();
+    }
+
+    // Cleanup
+    return () => {
+      const googleMapScript = document.querySelector('script[src*="maps.googleapis.com/maps/api"]');
+      if (googleMapScript) {
+        googleMapScript.remove();
+      }
+    };
+  }, []);
+
+  // Initialize the map
+  const initMap = () => {
+    if (window.google && mapRef.current) {
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: companyLocation,
+        zoom: 16,
+        mapTypeControl: false,
+        streetViewControl: true,
+        fullscreenControl: true,
+        zoomControl: true,
+        styles: [
+          {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [{ visibility: "off" }]
+          }
+        ]
+      });
+
+      // Add marker for company location
+      const marker = new window.google.maps.Marker({
+        position: companyLocation,
+        map: map,
+        title: "XOBO Delivery",
+        animation: window.google.maps.Animation.DROP,
+        icon: {
+          path: window.google.maps.SymbolPath.CIRCLE,
+          fillColor: "#E74C3C",
+          fillOpacity: 1,
+          strokeColor: "#E74C3C",
+          strokeWeight: 8,
+          scale: 5
+        }
+      });
+
+      // Add info window
+      const infoWindow = new window.google.maps.InfoWindow({
+        content: `
+          <div style="padding: 5px;">
+            <h3 style="margin-bottom: 5px;">XOBO Delivery</h3>
+            <p style="margin-top: 0;">Nairobi, Kenya</p>
+          </div>
+        `
+      });
+
+      marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+      });
+
+      // Open info window by default
+      infoWindow.open(map, marker);
+    }
+  };
 
   const validateForm = (formData) => {
     const errors = {};
@@ -408,7 +486,7 @@ const Contact = () => {
             {/* Using a more reliable iframe embed approach */}
             <div className="map-iframe-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.770956423882!2d36.814216374844606!3d-1.275239935708929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1d6e7f%3A0xb091c2b094902c57!2sXOBO%20Delivery!5e0!3m2!1sen!2ske!4v1704479462389!5m2!1sen!2ske"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8266893450614!2d36.81300297571516!3d-1.2774535356180687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17c6027f0003%3A0xe2f13d478848ccc1!2sXobo%20Delivery%20Limited!5e0!3m2!1sen!2ske!4v1747397275999!5m2!1sen!2ske"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: "var(--radius-lg)" }}
@@ -421,24 +499,14 @@ const Contact = () => {
           </div>
           <div className="map-link-container">
             <p className="map-instruction">Our office is located at the marker shown on the map</p>
-            <div className="map-buttons">
-              <a 
-                href="https://maps.app.goo.gl/RoBKakz62Lsy9fgU7" 
-                target="_blank" 
-                rel="noreferrer"
-                className="view-on-google-maps"
-              >
-                <FaMapMarkerAlt /> View on Google Maps
-              </a>
-              <a 
-                href={`https://www.google.com/maps/dir/?api=1&destination=${companyLocation.lat},${companyLocation.lng}&travelmode=driving`}
-                target="_blank" 
-                rel="noreferrer"
-                className="get-directions"
-              >
-                <FaMapMarkerAlt /> Get Directions
-              </a>
-            </div>
+            <a 
+              href="https://maps.app.goo.gl/RoBKakz62Lsy9fgU7" 
+              target="_blank" 
+              rel="noreferrer"
+              className="view-on-google-maps"
+            >
+              <FaMapMarkerAlt /> Open in Google Maps
+            </a>
           </div>
         </div>
       </section>
