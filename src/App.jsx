@@ -6,6 +6,9 @@ import './App.css';
 // Page Components
 import Home from './components/home/Home';
 import Services from './components/xdlservices/Services';
+import Express from './components/services/express/Express';
+import Scheduled from './components/services/scheduled/Scheduled';
+import Business from './components/services/business/Business';
 import Drivers from './components/drivers/Drivers';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
@@ -37,7 +40,7 @@ function App() {
           <meta name="description" content="XOBO Delivery provides fast and reliable delivery services across Kenya" />
           
           {/* Security Headers */}
-          <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://maps.googleapis.com https://api.web3forms.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com; connect-src 'self' https://api.web3forms.com; frame-src 'self' https://www.google.com/maps/; object-src 'none';" />
+          <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: ; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; media-src *; font-src *; connect-src *; frame-src *;" />
           <meta http-equiv="X-Content-Type-Options" content="nosniff" />
           <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
           <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
@@ -45,10 +48,8 @@ function App() {
           <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=()" />
         </Helmet>
         
-        {/* <h1>App</h1> */}
-        <Routes>
-          <Route 
-            path="/" 
+        {/* <h1>App</h1> */}        <Routes>
+          <Route path="/" 
             element={
               <MainLayout>
                 <Home />
@@ -60,6 +61,30 @@ function App() {
             element={
               <MainLayout>
                 <Services />
+              </MainLayout>
+            } 
+          />
+          <Route 
+            path="/services/express" 
+            element={
+              <MainLayout>
+                <Express />
+              </MainLayout>
+            } 
+          />
+          <Route 
+            path="/services/scheduled" 
+            element={
+              <MainLayout>
+                <Scheduled />
+              </MainLayout>
+            } 
+          />
+          <Route 
+            path="/services/business" 
+            element={
+              <MainLayout>
+                <Business />
               </MainLayout>
             } 
           />

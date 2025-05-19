@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   FaArrowRight, 
@@ -20,6 +20,15 @@ function Home() {
   const [weight, setWeight] = useState(1);
   const [distance, setDistance] = useState(5);
   const [estimatedCost, setEstimatedCost] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalCards = 4;
+
+  useEffect(() => {
+    const carousel = document.querySelector('.highlight-carousel');
+    if (carousel) {
+      carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
+    }
+  }, [activeIndex]);
 
   const handleTrackingSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +43,14 @@ function Home() {
     const distanceCost = distance * 20;
     const total = baseRate + weightCost + distanceCost;
     setEstimatedCost(total);
+  };
+
+  const handleSlide = (direction) => {
+    if (direction === 'next') {
+      setActiveIndex((prev) => (prev === totalCards - 1 ? 0 : prev + 1));
+    } else {
+      setActiveIndex((prev) => (prev === 0 ? totalCards - 1 : prev - 1));
+    }
   };
   
   return (
@@ -80,74 +97,96 @@ function Home() {
       </div>
       </section>
 
-      {/* Tracking Section */}
-      <section className="tracking-section">
+      {/* Service Highlights Section */}
+      <section className="service-highlights">
         <div className="container">
-          <div className="tracking-container">
-            <div className="tracking-form">
-              <h3>Track Your Package</h3>
-              <p>Enter your tracking number to see delivery status</p>
-              <form onSubmit={handleTrackingSubmit}>
-                <div className="input-group">
-                  <input 
-                    type="text" 
-                    placeholder="Enter tracking number" 
-                    value={trackingNumber}
-                    onChange={(e) => setTrackingNumber(e.target.value)}
-                    required
-                  />
-                  <button type="submit">
-                    <FaSearch /> Track
-                  </button>
+          <div className="section-header">
+            <span className="section-tag">Why Choose XOBO</span>
+            <h2 className="section-title">Redefining Delivery Excellence</h2>
+            <p className="section-subtitle">Experience seamless logistics solutions tailored to your needs</p>
+          </div>
+          
+          <div className="carousel-container">
+            <button className="nav-button prev" onClick={() => handleSlide('prev')}>
+              <FaArrowRight className="arrow-icon-left" />
+            </button>
+
+            <div className="highlight-carousel">
+              <div className="highlight-card">
+                <div className="card-icon-wrapper">
+                  <img src={`${process.env.PUBLIC_URL}/ICONS/Fast.png`} alt="Fast Delivery" className="highlight-icon" />
                 </div>
-              </form>
-            </div>
-            <div className="divider"></div>
-            <div className="estimate-calculator">
-              <h3>Estimate Delivery Cost</h3>
-              <p>Get an instant price estimate for your delivery</p>
-              <div className="calculator-form">
-                <div className="form-group">
-                  <label>Package Type</label>
-                  <select 
-                    value={packageType} 
-                    onChange={(e) => setPackageType(e.target.value)}
-                  >
-                    <option value="standard">Standard</option>
-                    <option value="express">Express</option>
-                    <option value="premium">Premium</option>
-                  </select>
+                <div className="card-content">
+                  <h3>Same Day Delivery</h3>
+                  <p>Swift and reliable deliveries across Nairobi, ensuring your packages reach their destination within hours</p>
+                  <ul className="feature-list">
+                    <li>Express pickup service</li>
+                    <li>Guaranteed delivery times</li>
+                    <li>Priority handling</li>
+                  </ul>
                 </div>
-                <div className="form-group">
-                  <label>Weight (kg)</label>
-                  <input 
-                    type="number" 
-                    min="1" 
-                    max="100" 
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}
-                  />
+              </div>
+              
+              <div className="highlight-card">
+                <div className="card-icon-wrapper">
+                  <img src={`${process.env.PUBLIC_URL}/ICONS/Track.png`} alt="Real-time Tracking" className="highlight-icon" />
                 </div>
-                <div className="form-group">
-                  <label>Distance (km)</label>
-                  <input 
-                    type="number" 
-                    min="1" 
-                    max="100" 
-                    value={distance}
-                    onChange={(e) => setDistance(e.target.value)}
-                  />
+                <div className="card-content">
+                  <h3>Live GPS Tracking</h3>
+                  <p>Stay informed with real-time updates on your delivery status and location</p>
+                  <ul className="feature-list">
+                    <li>Real-time location updates</li>
+                    <li>Delivery status notifications</li>
+                    <li>Accurate ETAs</li>
+                  </ul>
                 </div>
-                <button type="button" onClick={calculateEstimate}>Calculate</button>
-                {estimatedCost && (
-                  <div className="estimate-result">
-                    <p>Estimated Cost</p>
-                    <h4>KES {estimatedCost}</h4>
-                  </div>
-                )}
+              </div>
+
+              <div className="highlight-card">
+                <div className="card-icon-wrapper">
+                  <img src={`${process.env.PUBLIC_URL}/ICONS/Vehicles.png`} alt="Vehicle Options" className="highlight-icon" />
+                </div>
+                <div className="card-content">
+                  <h3>Multiple Vehicle Types</h3>
+                  <p>From small parcels to large cargo, we have the perfect vehicle for your delivery needs</p>
+                  <ul className="feature-list">
+                    <li>Motorcycles for quick deliveries</li>
+                    <li>Vans for medium cargo</li>
+                    <li>Trucks for bulk shipments</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="highlight-card">
+                <div className="card-icon-wrapper">
+                  <img src={`${process.env.PUBLIC_URL}/ICONS/Reduce.png`} alt="Cost Effective" className="highlight-icon" />
+                </div>
+                <div className="card-content">
+                  <h3>Competitive Rates</h3>
+                  <p>Transparent pricing with no hidden fees, optimized for cost-effectiveness</p>
+                  <ul className="feature-list">
+                    <li>Clear pricing structure</li>
+                    <li>Volume discounts</li>
+                    <li>Flexible payment options</li>
+                  </ul>
+                </div>
               </div>
             </div>
-        </div>
+
+            <button className="nav-button next" onClick={() => handleSlide('next')}>
+              <FaArrowRight className="arrow-icon" />
+            </button>
+          </div>
+
+          <div className="carousel-dots">
+            {[0, 1, 2, 3].map((dot) => (
+              <button
+                key={dot}
+                className={`dot ${activeIndex === dot ? 'active' : ''}`}
+                onClick={() => setActiveIndex(dot)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -291,8 +330,7 @@ function Home() {
                 <FaBoxOpen />
               </div>
               <h3>Express Delivery</h3>
-              <p>Same-day delivery service for urgent packages. We pick up and deliver within hours.</p>
-              <Link to="/services" className="service-link">
+              <p>Same-day delivery service for urgent packages. We pick up and deliver within hours.</p>              <Link to="/services/express" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
             </div>
@@ -303,18 +341,16 @@ function Home() {
               </div>
               <h3>Scheduled Delivery</h3>
               <p>Plan your deliveries in advance with our scheduled service. Perfect for regular shipments.</p>
-              <Link to="/services" className="service-link">
+              <Link to="/services/scheduled" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
-            </div>
-            
-            <div className="service-card">
+            </div>              <div className="service-card">
               <div className="service-icon">
                 <FaBuilding />
               </div>
               <h3>Business Solutions</h3>
               <p>Customized delivery solutions for businesses with high volume shipping needs.</p>
-              <Link to="/services" className="service-link">
+              <Link to="/services/business" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
             </div>

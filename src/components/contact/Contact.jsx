@@ -69,11 +69,9 @@ const Contact = () => {
 
     const formData = new FormData(event.target);
     const selectedOption = document.getElementById("form-selection").value;
-    formData.append("Form-Selection", selectedOption);
-
-    if (validateForm(formData)) {
+    formData.append("Form-Selection", selectedOption);    if (validateForm(formData)) {
       setResult("Sending....");
-      const accessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY || "";
+      const accessKey = "3b3b723b-5b0c-4168-9679-6acc5dfe3940";
       formData.append("access_key", accessKey);
       formData.append("phone", phone);
 

@@ -36,7 +36,7 @@ body {
   background-color: var(--white);
   overflow-x: hidden;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 0.75vw;
   font-weight: 400;
 }
 
@@ -55,32 +55,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
   font-size: 2rem;
 }
 
-h3 {
-  font-size: 1.5rem;
+h2 {
+  font-size: 1.75rem;
 }
 
-h4 {
+h3 {
   font-size: 1.25rem;
 }
 
-h5 {
+h4 {
   font-size: 1rem;
 }
 
-h6 {
+h5 {
   font-size: 0.875rem;
+}
+
+h6 {
+  font-size: 0.75rem;
 }
 
 p {
   margin-bottom: 1rem;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 a {
@@ -169,6 +169,131 @@ img {
   border-width: 0;
 }
 
-/* ::selection {
-  background-color: transparent;
-} */
+/* Responsive Base Styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    font-size: 0.9vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 13px;
+  }
+  
+  body {
+    font-size: 1.1vw;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  
+  body {
+    font-size: 1.3vw;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  
+  body {
+    font-size: 1.6vw;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 0 0.875rem;
+  }
+  
+  body {
+    font-size: 1.8vw;
+  }
+}
+
+/* Prevent font from becoming too small on very large screens */
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 0.65vw;
+  }
+}
+
+/* Handle larger devices and maintain readability */
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1480px;
+  }
+  
+  html {
+    font-size: 17px;
+  }
+}

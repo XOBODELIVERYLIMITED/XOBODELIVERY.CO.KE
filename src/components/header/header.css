@@ -251,12 +251,116 @@ header .nav-btn {
   }
 }
 
-@media screen and (min-width: 769px) {
+/* Enhanced Mobile Navigation */
+@media screen and (max-width: 992px) {
+  .nav-btn {
+    display: flex;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    visibility: visible;
+    opacity: 1;
+    font-size: 1.5rem;
+  }
+  
   nav {
-    display: flex !important;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--white);
+    transition: 0.3s;
+    transform: translateY(-100vh);
+    flex-direction: column;
+    padding: 2rem;
   }
 
-  .nav-btn {
-    display: none;
+  nav.responsive_nav {
+    transform: none;
+    box-shadow: var(--shadow-md);
   }
+
+  .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+  }
+
+  .login-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    height: 65px;
+  }
+
+  nav {
+    top: 65px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .login-btn {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .logo img {
+    width: 110px;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 992px) and (max-height: 768px) {
+  nav {
+    height: auto;
+  }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.nav-open {
+  overflow: hidden;
 }
