@@ -216,3 +216,47 @@ header .nav-btn {
     width: 120px;
   }
 }
+
+/* Navigation visibility classes */
+.nav-visible {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    height: calc(100vh - 75px);
+  }
+
+  nav.responsive_nav {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  nav {
+    display: flex !important;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}

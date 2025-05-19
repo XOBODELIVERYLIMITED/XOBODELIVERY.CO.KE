@@ -69,11 +69,11 @@ function Header() {
           </Link>
         </div>
 
-        <nav className={isNavVisible ? "responsive_nav" : "hidden"}>
+        <nav className={isNavVisible ? "responsive_nav" : ""}>
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.link}>
-                <Link to={link.link}>{link.name}</Link>
+                <Link to={link.link} onClick={() => setIsNavVisible(false)}>{link.name}</Link>
               </li>
             ))}
           </ul>

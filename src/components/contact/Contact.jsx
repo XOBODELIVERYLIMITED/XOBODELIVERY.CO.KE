@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { 
@@ -19,88 +19,10 @@ const Contact = () => {
   const [result, setResult] = useState("Send Message");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
-  const mapRef = useRef(null);
   
   // Exact coordinates for XOBO Delivery in Nairobi, Kenya
   // These coordinates match the location provided in the Google Maps link
   const companyLocation = { lat: -1.275245099073922, lng: 36.81672807475073 };
-
-  // Load Google Maps
-  useEffect(() => {
-    // Check if Google Maps script is already loaded
-    if (!window.google) {
-      const googleMapScript = document.createElement("script");
-      googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBykwGkHUHpG4bxmtQyVoZ2r6RJIc6Ohzs&libraries=places`;
-      googleMapScript.async = true;
-      googleMapScript.defer = true;
-      googleMapScript.onload = initMap;
-      document.head.appendChild(googleMapScript);
-    } else {
-      initMap();
-    }
-
-    // Cleanup
-    return () => {
-      const googleMapScript = document.querySelector('script[src*="maps.googleapis.com/maps/api"]');
-      if (googleMapScript) {
-        googleMapScript.remove();
-      }
-    };
-  }, []);
-
-  // Initialize the map
-  const initMap = () => {
-    if (window.google && mapRef.current) {
-      const map = new window.google.maps.Map(mapRef.current, {
-        center: companyLocation,
-        zoom: 16,
-        mapTypeControl: false,
-        streetViewControl: true,
-        fullscreenControl: true,
-        zoomControl: true,
-        styles: [
-          {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }]
-          }
-        ]
-      });
-
-      // Add marker for company location
-      const marker = new window.google.maps.Marker({
-        position: companyLocation,
-        map: map,
-        title: "XOBO Delivery",
-        animation: window.google.maps.Animation.DROP,
-        icon: {
-          path: window.google.maps.SymbolPath.CIRCLE,
-          fillColor: "#E74C3C",
-          fillOpacity: 1,
-          strokeColor: "#E74C3C",
-          strokeWeight: 8,
-          scale: 5
-        }
-      });
-
-      // Add info window
-      const infoWindow = new window.google.maps.InfoWindow({
-        content: `
-          <div style="padding: 5px;">
-            <h3 style="margin-bottom: 5px;">XOBO Delivery</h3>
-            <p style="margin-top: 0;">Nairobi, Kenya</p>
-          </div>
-        `
-      });
-
-      marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-      });
-
-      // Open info window by default
-      infoWindow.open(map, marker);
-    }
-  };
 
   const validateForm = (formData) => {
     const errors = {};
@@ -124,6 +46,13 @@ const Contact = () => {
     if (!formData.get("email")) {
       errors.email = "Email is required";
       formIsValid = false;
+    } else {
+      // Basic email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(formData.get("email"))) {
+        errors.email = "Please enter a valid email address";
+        formIsValid = false;
+      }
     }
 
     if (!formData.get("message")) {
@@ -144,26 +73,52 @@ const Contact = () => {
 
     if (validateForm(formData)) {
       setResult("Sending....");
-      formData.append("access_key", "3b3b723b-5b0c-4168-9679-6acc5dfe3940");
+      const accessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY || "";
+      formData.append("access_key", accessKey);
       formData.append("phone", phone);
 
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      }).then((res) => res.json());
+      // Add CSRF token if available
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+      if (csrfToken) {
+        formData.append("csrf_token", csrfToken);
+      }
 
-      if (res.success) {
-        console.log("Success", res);
-        setResult("Message Sent Successfully!");
+      // Add honeypot field to prevent spam
+      formData.append("botcheck", "");
 
-        setTimeout(() => {
-          event.target.reset();
-          setPhone("");
-          setResult("Send Message");
-        }, 3000);
-      } else {
-        console.log("Error", res);
-        setResult(res.message);
+      try {
+        // Adding rate limiting
+        const now = Date.now();
+        const lastSubmitTime = localStorage.getItem('lastFormSubmit');
+        
+        if (lastSubmitTime && now - parseInt(lastSubmitTime) < 10000) { // 10 seconds
+          setResult("Please wait before submitting again");
+          return;
+        }
+        
+        localStorage.setItem('lastFormSubmit', now.toString());
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        }).then((res) => res.json());
+
+        if (res.success) {
+          console.log("Success", res);
+          setResult("Message Sent Successfully!");
+
+          setTimeout(() => {
+            event.target.reset();
+            setPhone("");
+            setResult("Send Message");
+          }, 3000);
+        } else {
+          console.log("Error", res);
+          setResult(res.message || "An error occurred");
+        }
+      } catch (error) {
+        console.error("Submission error:", error);
+        setResult("Failed to send message");
       }
     } else {
       setResult("Please fill in all required fields");
@@ -392,7 +347,6 @@ const Contact = () => {
                       border: "none",
                       background: "transparent",
                     }}
-                    readOnly={true}
                     required
                   />
                   {errors.phone && (
