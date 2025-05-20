@@ -2,6 +2,7 @@
   "name": "xdl",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://xobodeliverylimited.github.io/XOBODELIVERY.CO.KE",
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
     "@fontsource/lexend": "^5.2.7",
