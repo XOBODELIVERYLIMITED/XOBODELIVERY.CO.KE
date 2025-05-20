@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
 
@@ -31,7 +31,8 @@ const MainLayout = ({ children }) => (
 );
 
 function App() {
-  return (    <BrowserRouter basename="/XOBODELIVERY.CO.KE">
+  return (
+    <HashRouter>
       <div className="App">
         <Helmet>
           <meta charSet="utf-8" />
@@ -145,7 +146,7 @@ function App() {
           />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

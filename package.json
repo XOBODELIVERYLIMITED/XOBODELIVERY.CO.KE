@@ -1,8 +1,6 @@
-{
-  "name": "xdl",
-  "version": "0.1.0",
+{  "name": "xdl",  "version": "0.1.0",
   "private": true,
-  "homepage": "https://XOBODELIVERY.github.io/XOBODELIVERY.CO.KE",
+  "homepage": ".",
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
     "@fontsource/lexend": "^5.2.7",
