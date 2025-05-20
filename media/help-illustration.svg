@@ -1,0 +1,34 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shapes -->
+  <circle cx="200" cy="200" r="180" fill="#F5F7FA" />
+  <circle cx="200" cy="200" r="150" fill="#E9EBEF" />
+  
+  <!-- Person silhouette -->
+  <circle cx="200" cy="130" r="45" fill="#16234D" />
+  <path d="M260 220C260 193.49 232.71 172 200 172C167.29 172 140 193.49 140 220V280H260V220Z" fill="#16234D" />
+  
+  <!-- Headset -->
+  <path d="M260 140C260 140 280 140 280 160V190C280 190 280 200 270 200H260" stroke="#FF3A3A" stroke-width="8" stroke-linecap="round" />
+  <path d="M140 140C140 140 120 140 120 160V190C120 190 120 200 130 200H140" stroke="#FF3A3A" stroke-width="8" stroke-linecap="round" />
+  <path d="M260 140C260 140 260 120 260 115C260 85 235 65 200 65C165 65 140 85 140 115C140 120 140 140 140 140" stroke="#FF3A3A" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Chat bubble -->
+  <rect x="280" y="100" width="80" height="60" rx="10" fill="white" stroke="#16234D" stroke-width="4" />
+  <path d="M280 130L270 140L270 120L280 130Z" fill="white" stroke="#16234D" stroke-width="4" stroke-linejoin="round" />
+  <line x1="290" y1="120" x2="350" y2="120" stroke="#16234D" stroke-width="4" stroke-linecap="round" />
+  <line x1="290" y1="140" x2="330" y2="140" stroke="#16234D" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Question mark decoration -->
+  <circle cx="70" cy="100" r="20" fill="#FF3A3A" />
+  <path d="M70 93C70 89.68 72.24 87 75 87C77.76 87 80 89.68 80 93C80 97 75 99 75 103" stroke="white" stroke-width="4" stroke-linecap="round" />
+  <circle cx="75" cy="110" r="2" fill="white" />
+  
+  <!-- Decorative elements -->
+  <circle cx="330" cy="300" r="15" fill="#FF3A3A" opacity="0.3" />
+  <circle cx="350" cy="270" r="10" fill="#FF3A3A" opacity="0.5" />
+  <circle cx="60" cy="250" r="20" fill="#16234D" opacity="0.2" />
+  <circle cx="40" cy="290" r="15" fill="#16234D" opacity="0.3" />
+  
+  <!-- Base -->
+  <ellipse cx="200" cy="340" rx="150" ry="20" fill="#16234D" opacity="0.1" />
+</svg> 
