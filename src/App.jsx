@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
 
@@ -32,7 +32,7 @@ const MainLayout = ({ children }) => (
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <Helmet>
           <meta charSet="utf-8" />
@@ -144,9 +144,8 @@ function App() {
               </MainLayout>
             } 
           />
-        </Routes>
-      </div>
-    </HashRouter>
+        </Routes>      </div>
+    </BrowserRouter>
   );
 }
 
