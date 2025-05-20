@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/XOBODELIVERY.CO.KE/static/css/main.ab0c0c66.css",
-    "main.js": "/XOBODELIVERY.CO.KE/static/js/main.62a138f3.js",
-    "static/js/453.c39119f7.chunk.js": "/XOBODELIVERY.CO.KE/static/js/453.c39119f7.chunk.js",
-    "service-worker.js": "/XOBODELIVERY.CO.KE/service-worker.js",
-    "index.html": "/XOBODELIVERY.CO.KE/index.html",
-    "main.ab0c0c66.css.map": "/XOBODELIVERY.CO.KE/static/css/main.ab0c0c66.css.map",
-    "main.62a138f3.js.map": "/XOBODELIVERY.CO.KE/static/js/main.62a138f3.js.map",
-    "453.c39119f7.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/453.c39119f7.chunk.js.map"
+    "main.css": "/xobodelivery.co.ke/static/css/main.ab0c0c66.css",
+    "main.js": "/xobodelivery.co.ke/static/js/main.3f582d48.js",
+    "static/js/453.c39119f7.chunk.js": "/xobodelivery.co.ke/static/js/453.c39119f7.chunk.js",
+    "service-worker.js": "/xobodelivery.co.ke/service-worker.js",
+    "index.html": "/xobodelivery.co.ke/index.html",
+    "main.ab0c0c66.css.map": "/xobodelivery.co.ke/static/css/main.ab0c0c66.css.map",
+    "main.3f582d48.js.map": "/xobodelivery.co.ke/static/js/main.3f582d48.js.map",
+    "453.c39119f7.chunk.js.map": "/xobodelivery.co.ke/static/js/453.c39119f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab0c0c66.css",
-    "static/js/main.62a138f3.js"
+    "static/js/main.3f582d48.js"
   ]
 }
