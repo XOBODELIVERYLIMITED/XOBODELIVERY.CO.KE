@@ -307,73 +307,60 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .services {
-    margin-top: 65px;
-  }
-
-  .service-hero {
-    height: auto;
-    padding: 4rem 0;
-  }
-
-  .service-intro {
-    padding: 3rem 0;
-  }
-
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-
+  
   .service-card {
-    padding: 1.5rem;
+    padding: 1.75rem;
   }
-
-  .service-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1rem;
+  
+  .service-hero-content h1 {
+    font-size: 2.5rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .service-hero {
+    height: auto;
     padding: 3rem 0;
   }
-
+  
+  .service-hero-content {
+    text-align: center;
+  }
+  
   .service-hero-content h1 {
     font-size: 2rem;
   }
-
+  
   .service-hero-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
   }
-
+  
   .services-grid {
     grid-template-columns: 1fr;
-    max-width: 450px;
-    margin: 0 auto;
+    gap: 1.25rem;
   }
-
+  
   .service-card {
-    text-align: center;
+    padding: 1.5rem;
   }
-
-  .service-features {
-    padding: 2rem 0;
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
   }
-
-  .cta-buttons {
-    flex-direction: column;
-    gap: 1rem;
+  
+  .service-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
   }
-
-  .cta-primary,
-  .cta-secondary {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+  
+  .service-description {
+    font-size: 0.95rem;
   }
 }
 
@@ -381,25 +368,23 @@
   .service-hero {
     padding: 2.5rem 0;
   }
-
+  
   .service-hero-content h1 {
     font-size: 1.75rem;
   }
-
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  
   .service-card {
     padding: 1.25rem;
-  }
-
-  .service-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
   }
 }

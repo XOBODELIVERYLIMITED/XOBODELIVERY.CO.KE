@@ -772,26 +772,23 @@
   background-color: var(--primary-color);
 }
 
-/* Enhanced Contact Form Responsiveness */
 @media only screen and (max-width: 992px) {
-  .contact-page {
-    margin-top: 65px;
-  }
-
-  .contact-hero {
-    height: auto;
-    padding: 4rem 0;
-  }
-
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .contact-info,
+  
+  .contact-info {
+    padding: 2rem;
+  }
+  
   .contact-form-container {
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
@@ -799,96 +796,66 @@
   .contact-hero {
     padding: 3rem 0;
   }
-
+  
   .contact-hero-content h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
-
+  
   .contact-hero-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
   }
-
-  .contact-info,
-  .contact-form-container {
+  
+  .contact-hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .hero-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 1.5rem;
   }
-
-  .contact-methods {
-    gap: 1rem;
-  }
-
-  .contact-method {
-    padding: 0.75rem;
-  }
-
+  
   .contact-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    margin-bottom: 1rem;
   }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  
+  .contact-details {
+    align-items: center;
   }
-
-  .form-group label {
-    font-size: 0.9rem;
-  }
-
+  
   .form-group input,
   .form-group textarea,
   .form-group select {
-    padding: 0.6rem 0.875rem;
-    font-size: 0.9rem;
-  }
-
-  .submit-button {
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem;
     font-size: 0.95rem;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .contact-hero {
-    padding: 2.5rem 0;
+  .contact-info,
+  .contact-form-container {
+    padding: 1.5rem;
   }
-
-  .contact-hero-content h1 {
-    font-size: 1.75rem;
-  }
-
+  
   .contact-info h2,
   .contact-form h2 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
-
-  .contact-method {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  
+  .form-group label {
+    font-size: 0.9rem;
   }
-
-  .contact-details {
-    text-align: center;
-  }
-
-  .contact-details h3 {
+  
+  .submit-button {
+    padding: 0.75rem;
     font-size: 0.95rem;
-  }
-
-  .contact-details p,
-  .contact-details a {
-    font-size: 0.875rem;
-  }
-
-  .operating-hours h3 {
-    font-size: 1.1rem;
-  }
-
-  .operating-hours li {
-    font-size: 0.875rem;
   }
 }
