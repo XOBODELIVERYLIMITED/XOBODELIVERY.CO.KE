@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/XOBODELIVERY.CO.KE/static/css/main.ab0c0c66.css",
-    "main.js": "/XOBODELIVERY.CO.KE/static/js/main.8df956d3.js",
+    "main.css": "/XOBODELIVERY.CO.KE/static/css/main.f0468f4e.css",
+    "main.js": "/XOBODELIVERY.CO.KE/static/js/main.7f5fe8b0.js",
     "static/js/453.c39119f7.chunk.js": "/XOBODELIVERY.CO.KE/static/js/453.c39119f7.chunk.js",
     "service-worker.js": "/XOBODELIVERY.CO.KE/service-worker.js",
     "index.html": "/XOBODELIVERY.CO.KE/index.html",
-    "main.ab0c0c66.css.map": "/XOBODELIVERY.CO.KE/static/css/main.ab0c0c66.css.map",
-    "main.8df956d3.js.map": "/XOBODELIVERY.CO.KE/static/js/main.8df956d3.js.map",
+    "main.f0468f4e.css.map": "/XOBODELIVERY.CO.KE/static/css/main.f0468f4e.css.map",
+    "main.7f5fe8b0.js.map": "/XOBODELIVERY.CO.KE/static/js/main.7f5fe8b0.js.map",
     "453.c39119f7.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/453.c39119f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab0c0c66.css",
-    "static/js/main.8df956d3.js"
+    "static/css/main.f0468f4e.css",
+    "static/js/main.7f5fe8b0.js"
   ]
 }
