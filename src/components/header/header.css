@@ -281,24 +281,19 @@ header .nav-btn {
     transform: translateY(-100vh);
     flex-direction: column;
     padding: 2rem;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
   }
 
   nav.responsive_nav {
     transform: none;
-    box-shadow: var(--shadow-md);
-  }
-
-  .nav-close-btn {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
   }
 
   .nav-links {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .nav-links li {
@@ -307,21 +302,22 @@ header .nav-btn {
   }
 
   .nav-links a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 100%;
     display: block;
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 
   .login-btn-container {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
   }
 
   .login-btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
   }
 }
 
@@ -335,32 +331,18 @@ header .nav-btn {
   }
 
   .logo img {
-    width: 120px;
+    width: 110px;
   }
 
   .nav-links a {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 
   .login-btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
   }
 }
 
-@media screen and (max-width: 375px) {
-  .logo img {
-    width: 110px;
-  }
-}
-
-/* Tablet Landscape */
-@media screen and (min-width: 992px) and (max-height: 768px) {
-  nav {
-    height: auto;
-  }
-}
-
-/* Prevent body scroll when mobile menu is open */
-body.nav-open {
-  overflow: hidden;
-}
+@media screen and

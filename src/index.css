@@ -131,6 +131,56 @@ code {
 .mt-4 { margin-top: 1.5rem !important; }
 .mt-5 { margin-top: 3rem !important; }
 
+/* Mobile-first Spacing Utilities */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Responsive Margins */
+  .m-md-0 { margin: 0 !important; }
+  .m-md-1 { margin: 0.25rem !important; }
+  .m-md-2 { margin: 0.5rem !important; }
+  .m-md-3 { margin: 1rem !important; }
+  .m-md-4 { margin: 1.5rem !important; }
+
+  /* Responsive Padding */
+  .p-md-0 { padding: 0 !important; }
+  .p-md-1 { padding: 0.25rem !important; }
+  .p-md-2 { padding: 0.5rem !important; }
+  .p-md-3 { padding: 1rem !important; }
+  .p-md-4 { padding: 1.5rem !important; }
+
+  /* Responsive Gaps */
+  .gap-md-1 { gap: 0.25rem !important; }
+  .gap-md-2 { gap: 0.5rem !important; }
+  .gap-md-3 { gap: 1rem !important; }
+  .gap-md-4 { gap: 1.5rem !important; }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 0.875rem;
+  }
+
+  /* Small Mobile Margins */
+  .m-sm-0 { margin: 0 !important; }
+  .m-sm-1 { margin: 0.25rem !important; }
+  .m-sm-2 { margin: 0.5rem !important; }
+  .m-sm-3 { margin: 0.75rem !important; }
+
+  /* Small Mobile Padding */
+  .p-sm-0 { padding: 0 !important; }
+  .p-sm-1 { padding: 0.25rem !important; }
+  .p-sm-2 { padding: 0.5rem !important; }
+  .p-sm-3 { padding: 0.75rem !important; }
+
+  /* Small Mobile Gaps */
+  .gap-sm-1 { gap: 0.25rem !important; }
+  .gap-sm-2 { gap: 0.5rem !important; }
+  .gap-sm-3 { gap: 0.75rem !important; }
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

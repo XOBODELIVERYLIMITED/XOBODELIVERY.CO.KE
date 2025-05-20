@@ -605,96 +605,110 @@
 
 /* Media Queries */
 @media only screen and (max-width: 992px) {
-  .faq-stats-grid,
-  .faq-features-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .faq-page {
+    margin-top: 65px;
   }
-  
-  .help-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .help-content {
-    text-align: center;
-    order: 2;
-  }
-  
-  .help-illustration {
-    order: 1;
-  }
-  
-  .cta-buttons {
-    justify-content: center;
-  }
-}
 
-@media only screen and (max-width: 768px) {
   .faq-hero {
+    height: auto;
     padding: 4rem 0;
   }
 
-  .faq-hero-content h1 {
-    font-size: 2.5rem;
+  .faq-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .faq-content-section {
     padding: 3rem 0;
   }
 
-  .faq-features-section,
-  .faq-stats-section {
-    padding: 3rem 0;
-  }
-
   .faq-questions {
-    padding: 1.5rem;
-  }
-  
-  .help-icon {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .faq-hero {
     padding: 3rem 0;
   }
 
   .faq-hero-content h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .faq-hero-content p {
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
-  
-  .faq-stats-grid,
-  .faq-features-grid {
+
+  .faq-stats-grid {
     grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
   }
 
-  .help-content h2 {
-    font-size: 1.8rem;
-  }
-  
-  .faq-stats-section {
-    padding: 2rem 0;
+  .faq-stat-card {
+    padding: 1.25rem;
   }
 
-  .category-tab {
-    padding: 1rem 0.75rem;
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .faq-questions {
+    padding: 1.25rem;
+  }
+
+  .question-item {
+    padding: 1rem;
+  }
+
+  .question-header h3 {
+    font-size: 1rem;
+  }
+
+  .answer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .faq-hero {
+    padding: 2.5rem 0;
+  }
+
+  .faq-hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .faq-stat-card {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
     font-size: 0.9rem;
   }
 
-  .faq-question h3 {
-    font-size: 1rem;
+  .question-item {
+    padding: 0.875rem;
+  }
+
+  .question-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .answer p {
+    font-size: 0.875rem;
+  }
+
+  .help-section {
+    padding: 2rem 0;
   }
 }

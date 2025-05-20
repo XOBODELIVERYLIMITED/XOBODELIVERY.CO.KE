@@ -182,43 +182,61 @@ html {
   padding: 0 1.5rem;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive Typography */
+/* Enhanced Responsive Typography */
 @media screen and (max-width: 1200px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
   
-  body {
-    font-size: 0.9vw;
+  .container {
+    max-width: 1140px;
   }
 }
 
 @media screen and (max-width: 992px) {
   html {
-    font-size: 13px;
-  }
-  
-  body {
-    font-size: 1.1vw;
+    font-size: 14px;
   }
   
   .container {
     max-width: 960px;
+    padding: 0 1.25rem;
+  }
+  
+  h1 {
+    font-size: 2.25rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: 13px;
+    font-size: 14px;
   }
   
-  body {
-    font-size: 1.3vw;
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 13px;
   }
   
   .container {
@@ -230,37 +248,15 @@ img {
   }
   
   h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.35rem !important;
   }
   
   h3 {
-    font-size: 1.25rem !important;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 12px;
+    font-size: 1.1rem !important;
   }
   
-  body {
-    font-size: 1.6vw;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
-  
-  h1 {
-    font-size: 1.5rem !important;
-  }
-  
-  h2 {
-    font-size: 1.25rem !important;
-  }
-  
-  h3 {
-    font-size: 1rem !important;
+  p {
+    font-size: 0.9rem;
   }
 }
 
@@ -269,8 +265,8 @@ img {
     padding: 0 0.875rem;
   }
   
-  body {
-    font-size: 1.8vw;
+  h1 {
+    font-size: 1.5rem !important;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
 
@@ -32,9 +32,10 @@ const MainLayout = ({ children }) => (
 
 function App() {
   return (
-    <BrowserRouter basename="/XOBODELIVERY.CO.KE">
+    <HashRouter>
       <div className="App">
         <Helmet>
+          <base href={process.env.PUBLIC_URL + '/'} />
           <meta charSet="utf-8" />
           <title>XOBO Delivery - Fast and Reliable Delivery Services in Kenya</title>
           <meta name="description" content="XOBO Delivery provides fast and reliable delivery services across Kenya" />
@@ -145,7 +146,7 @@ function App() {
             } 
           />
         </Routes>      </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -772,122 +772,123 @@
   background-color: var(--primary-color);
 }
 
+/* Enhanced Contact Form Responsiveness */
 @media only screen and (max-width: 992px) {
-  .contact-grid,
-  .testimonial-grid {
+  .contact-page {
+    margin-top: 65px;
+  }
+
+  .contact-hero {
+    height: auto;
+    padding: 4rem 0;
+  }
+
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
-  .benefits-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  
-  .contact-info {
-    padding: 2rem;
-  }
-  
+
+  .contact-info,
   .contact-form-container {
-    padding: 2rem;
-  }
-  
-  .map-container {
-    height: 400px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .contact-hero {
-    padding: 4rem 0;
-  }
-  
-  .contact-hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .contact-hero-content p {
-    font-size: 1.1rem;
-  }
-  
-  .contact-hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .hero-button {
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  .contact-section,
-  .benefits-section,
-  .testimonial-section,
-  .map-section {
     padding: 3rem 0;
   }
-  
+
+  .contact-hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info,
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+
+  .contact-methods {
+    gap: 1rem;
+  }
+
+  .contact-method {
+    padding: 0.75rem;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 1rem;
   }
-  
-  .map-container {
-    height: 350px;
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.6rem 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 
 @media only screen and (max-width: 576px) {
   .contact-hero {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
-  
+
   .contact-hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
-  
-  .contact-hero-content p {
-    font-size: 1rem;
-  }
-  
+
   .contact-info h2,
-  .form-header h2 {
-    font-size: 1.5rem;
+  .contact-form h2 {
+    font-size: 1.35rem;
   }
-  
-  .contact-info, 
-  .contact-form-container {
-    padding: 1.5rem;
-  }
-  
+
   .contact-method {
     flex-direction: column;
-    align-items: flex-start;
     text-align: center;
-    gap: 0.75rem;
+    align-items: center;
   }
-  
-  .contact-icon {
-    margin: 0 auto;
-  }
-  
+
   .contact-details {
-    width: 100%;
     text-align: center;
   }
-  
-  .map-container {
-    height: 300px;
+
+  .contact-details h3 {
+    font-size: 0.95rem;
   }
-  
-  .map-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 250px;
+
+  .contact-details p,
+  .contact-details a {
+    font-size: 0.875rem;
   }
-  
-  .map-link-container {
-    flex-direction: column;
-    gap: 1rem;
+
+  .operating-hours h3 {
+    font-size: 1.1rem;
+  }
+
+  .operating-hours li {
+    font-size: 0.875rem;
   }
 }
