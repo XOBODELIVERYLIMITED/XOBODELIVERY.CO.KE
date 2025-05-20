@@ -162,6 +162,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: white; /* Fallback */
 }
 
 .contact-hero-content p {
@@ -176,6 +177,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .hero-button {
@@ -189,6 +191,7 @@
   text-decoration: none;
   transition: var(--transition);
   gap: 0.75rem;
+  min-height: 44px;
 }
 
 .hero-button.primary {
@@ -250,18 +253,18 @@
 .benefit-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  bottom: 0;
+  left: 0;
   transform: scaleX(0);
+  transform-origin: left center;
   transition: transform 0.3s ease;
-  transform-origin: left;
 }
 
 .benefit-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
@@ -270,41 +273,46 @@
 }
 
 .benefit-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background-color: var(--primary-color);
   color: var(--white);
   border-radius: 50%;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
   transition: var(--transition);
 }
 
 .benefit-card:hover .benefit-icon {
   background-color: var(--accent-color);
-  transform: rotateY(360deg);
+  transform: scale(1.1);
 }
 
 .benefit-card h3 {
   font-size: 1.25rem;
+  margin-bottom: 1rem;
   color: var(--primary-color);
-  margin-bottom: 0.75rem;
-  font-weight: 700;
+  position: relative;
+  z-index: 2;
 }
 
 .benefit-card p {
-  font-size: 0.95rem;
   color: var(--text-light);
+  font-size: 0.95rem;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
 /* Contact Section */
 .contact-section {
-  padding: 5rem 0;
-  background-color: var(--light-bg);
+  padding: 6rem 0;
+  background-color: var(--white);
   position: relative;
 }
 
@@ -315,40 +323,43 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f5f7fa" fill-opacity="0.3" d="M0,192L48,186.7C96,181,192,171,288,176C384,181,480,203,576,197.3C672,192,768,160,864,154.7C960,149,1056,171,1152,186.7C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% auto;
+  opacity: 0.1;
+  z-index: 0;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
-  align-items: start;
   position: relative;
   z-index: 2;
 }
 
-/* Contact Information */
 .contact-info {
-  background-color: var(--white);
+  background-color: var(--light-bg);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
 }
 
 .contact-info h2 {
   font-size: 1.8rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
 .contact-info p {
-  font-size: 1rem;
   color: var(--text-light);
-  margin-bottom: 2rem;
+  font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .contact-methods {
@@ -362,28 +373,29 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  transition: var(--transition);
   padding: 1rem;
   border-radius: var(--radius-md);
+  background-color: var(--white);
+  transition: var(--transition);
 }
 
 .contact-method:hover {
-  background-color: var(--lighter-bg);
   transform: translateX(5px);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(22, 35, 77, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: var(--light-bg);
-  border-radius: 50%;
   color: var(--primary-color);
-  font-size: 1.2rem;
-  flex-shrink: 0;
+  font-size: 1.25rem;
   transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .contact-method:hover .contact-icon {
@@ -392,18 +404,17 @@
 }
 
 .contact-details h3 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
   color: var(--primary-color);
   margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 .contact-details a, 
-.contact-details p {
+.contact-details span {
+  font-size: 0.95rem;
   color: var(--text-light);
   text-decoration: none;
-  margin-bottom: 0;
-  font-size: 0.95rem;
   transition: var(--transition);
 }
 
@@ -411,19 +422,18 @@
   color: var(--accent-color);
 }
 
-/* Operating Hours */
 .operating-hours {
-  background-color: var(--lighter-bg);
+  background-color: var(--white);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  border-left: 4px solid var(--accent-color);
+  margin-top: 2rem;
 }
 
 .operating-hours h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-weight: 700;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
 }
 
 .operating-hours ul {
@@ -433,10 +443,10 @@
 .operating-hours li {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--border-light);
-  color: var(--text-light);
   font-size: 0.95rem;
+  color: var(--text-color);
 }
 
 .operating-hours li:last-child {
@@ -444,34 +454,35 @@
 }
 
 .operating-hours li span {
+  color: var(--text-light);
   font-weight: 600;
-  color: var(--primary-color);
 }
 
-/* Contact Form */
 .contact-form-container {
   background-color: var(--white);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
   position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .contact-form-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7px;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  opacity: 0.1;
+  z-index: 0;
 }
 
 .form-header {
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .form-header h2 {
@@ -484,14 +495,14 @@
 .form-header p {
   font-size: 1rem;
   color: var(--text-light);
-  max-width: 500px;
-  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group {
@@ -499,82 +510,84 @@
 }
 
 .form-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-color);
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  font-size: 0.95rem;
 }
 
 .input-icon {
-  color: var(--accent-color);
-  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-size: 1rem;
 }
 
 .form-group input,
-.form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background-color: var(--white);
-  color: var(--text-color);
+  border-radius: var(--radius-md);
   font-size: 0.95rem;
+  color: var(--text-color);
+  background-color: var(--white);
   transition: var(--transition);
-  outline: none;
+  height: 50px;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
 .form-group select:focus {
-  border-color: var(--primary-color);
+  border-color: var(--primary-light);
+  outline: none;
   box-shadow: 0 0 0 2px rgba(22, 35, 77, 0.1);
 }
 
 .form-group textarea {
+  height: 150px;
   resize: vertical;
-  min-height: 120px;
 }
 
 .error-message {
   color: var(--accent-color);
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
 }
 
 .phone-input {
-  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .phone-input .react-tel-input {
-  width: 100%;
+  font-family: 'Nunito', sans-serif;
 }
 
 .phone-input .react-tel-input .form-control {
   width: 100%;
-  height: 42px;
+  height: 50px;
   font-size: 0.95rem;
-  border-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md) !important;
 }
 
 .submit-button {
   background-color: var(--primary-color);
   color: var(--white);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: var(--radius-sm);
+  padding: 1rem 2rem;
   border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-  width: 100%;
-  margin-top: 1rem;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: inline-block;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
 }
 
 .submit-button::before {
@@ -584,61 +597,545 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  z-index: -1;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: scaleX(0);
+  transform-origin: right;
 }
 
 .submit-button:hover {
-  background-color: var(--primary-light);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+  color: var(--white);
 }
 
 .submit-button:hover::before {
-  transform: translateX(100%);
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* Testimonial Section */
-.testimonial-section {
-  padding: 5rem 0;
+/* Enhanced Mobile Responsiveness */
+@media only screen and (max-width: 992px) {
+  .contact-page {
+    margin-top: 70px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-info {
+    order: 2;
+  }
+
+  .contact-form-container {
+    order: 1;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-section {
+    padding: 4rem 0;
+  }
+  
+  .contact-hero {
+    padding: 4rem 0;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-page {
+    margin-top: 65px;
+  }
+
+  .contact-hero {
+    padding: 3rem 0;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  .hero-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-method {
+    padding: 0.85rem;
+  }
+
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .contact-details {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .phone-input .react-tel-input .form-control {
+    height: 45px;
+    padding: 0.75rem 0.9rem;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .benefit-card {
+    padding: 1.75rem;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .contact-grid {
+    gap: 2rem;
+  }
+  
+  /* Improve location map display */
+  .map-container {
+    height: 300px;
+    margin: 1.5rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  
+  /* Improve testimonials display */
+  .testimonial-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info h2,
+  .form-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-details h3 {
+    font-size: 1.1rem;
+  }
+  
+  .operating-hours {
+    padding: 1.25rem;
+  }
+  
+  .operating-hours h3 {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .contact-page {
+    margin-top: 60px;
+  }
+
+  .contact-info,
+  .contact-form-container {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-info h2,
+  .form-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .contact-hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .contact-form-container::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .contact-details a, 
+  .contact-details span {
+    font-size: 0.85rem;
+  }
+  
+  .benefits-section {
+    padding: 2.5rem 0;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .section-tag {
+    font-size: 0.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+  
+  /* Fix map container on mobile */
+  .map-container {
+    height: 250px;
+    margin: 1rem 0;
+  }
+  
+  .location-info {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .location-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .location-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Fix testimonials on mobile */
+  .testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .testimonial-card {
+    padding: 1.25rem;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  
+  .testimonial-author {
+    gap: 0.75rem;
+  }
+  
+  .testimonial-rating {
+    margin-bottom: 0.75rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contact-hero {
+    padding: 3rem 0 2.5rem;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .contact-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .hero-button {
+    width: 100%;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .benefits-section {
+    padding: 2rem 0;
+  }
+  
+  .benefit-card {
+    padding: 1.25rem;
+  }
+  
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .benefit-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Fix map container on small phones */
+  .map-container {
+    height: 200px;
+  }
+  
+  /* Further improve testimonials on small screens */
+  .testimonial-card {
+    padding: 1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.85rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .testimonial-avatar {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contact-hero {
+    padding: 2.5rem 0;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-hero-content p {
+    font-size: 0.85rem;
+  }
+  
+  .hero-button {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .contact-info, 
+  .contact-form-container {
+    padding: 1.25rem;
+  }
+  
+  .contact-info h2,
+  .form-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.4rem;
+  }
+  
+  .contact-details h3 {
+    font-size: 0.95rem;
+  }
+  
+  .operating-hours {
+    padding: 1rem;
+  }
+  
+  .operating-hours h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-card {
+    padding: 1.25rem;
+  }
+  
+  .benefit-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1rem;
+  }
+  
+  /* Ensure map is still usable */
+  .map-container {
+    height: 180px;
+  }
+}
+
+/* Add these new styles for the location and testimonial sections */
+
+/* Location Section */
+.location-section {
+  padding: 4rem 0;
   background-color: var(--white);
+  position: relative;
 }
 
-.testimonial-grid {
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 2rem 0;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.location-info p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.map-link:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 4rem 0;
+  background-color: var(--light-bg);
+  position: relative;
+}
+
+.testimonials-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .testimonial-card {
-  background-color: var(--lighter-bg);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  border: 1px solid var(--border-light);
 }
 
 .testimonial-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
 .testimonial-rating {
-  color: #FFD700;
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
   display: flex;
   gap: 0.25rem;
+  color: #FFD700;
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
 }
 
-.testimonial-quote {
-  font-size: 1.1rem;
+.testimonial-text {
+  font-size: 1rem;
   color: var(--text-color);
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  flex-grow: 1;
   font-style: italic;
 }
 
@@ -648,214 +1145,160 @@
   gap: 1rem;
 }
 
-.author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
+.testimonial-avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-light);
   color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 700;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
-.author-info h4 {
+.testimonial-info {
+  flex: 1;
+}
+
+.testimonial-info h4 {
   font-size: 1rem;
   color: var(--primary-color);
   margin-bottom: 0.25rem;
-  font-weight: 700;
 }
 
-.author-info p {
-  font-size: 0.9rem;
+.testimonial-info p {
+  font-size: 0.85rem;
   color: var(--text-light);
-}
-
-/* Map Section */
-.map-section {
-  padding: 4rem 0;
-  background-color: var(--light-bg);
-}
-
-.map-container {
-  width: 100%;
-  height: 450px;
-  margin-top: 2rem;
-  position: relative;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.map-iframe-container {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.map-iframe-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.map-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-}
-
-.map-link-container {
-  text-align: center;
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.map-instruction {
   margin-bottom: 0;
-  color: var(--text-light);
-  font-size: 0.95rem;
-  font-style: italic;
 }
 
-.map-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.view-on-google-maps,
-.get-directions {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-
-.view-on-google-maps {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-.get-directions {
-  background-color: var(--accent-color);
-  color: var(--white);
-}
-
-.view-on-google-maps:hover,
-.get-directions:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.view-on-google-maps:hover {
-  background-color: var(--accent-color);
-}
-
-.get-directions:hover {
-  background-color: var(--primary-color);
-}
-
-@media only screen and (max-width: 992px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* Add responsive styles */
+@media screen and (max-width: 992px) {
+  .testimonials-container {
+    gap: 1.5rem;
   }
   
-  .contact-info {
-    padding: 2rem;
-  }
-  
-  .contact-form-container {
-    padding: 2rem;
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .map-container {
+    height: 350px;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .contact-hero {
+@media screen and (max-width: 768px) {
+  .location-section,
+  .testimonials-section {
     padding: 3rem 0;
   }
   
-  .contact-hero-content h1 {
-    font-size: 2rem;
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 550px;
+    margin: 1.5rem auto 0;
   }
   
-  .contact-hero-content p {
-    font-size: 1rem;
+  .map-container {
+    height: 300px;
+    margin: 1.5rem 0;
   }
   
-  .contact-hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+  .testimonial-card {
+    padding: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .location-section,
+  .testimonials-section {
+    padding: 2.5rem 0;
   }
   
-  .hero-button {
-    width: 100%;
-    text-align: center;
+  .map-container {
+    height: 250px;
+    margin: 1.25rem 0;
   }
   
-  .contact-method {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .location-info {
+    margin-top: 1rem;
+  }
+  
+  .location-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .map-link {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .testimonials-container {
+    max-width: 100%;
+  }
+  
+  .testimonial-card {
     padding: 1.5rem;
   }
   
-  .contact-icon {
+  .testimonial-rating {
     margin-bottom: 1rem;
+    font-size: 1rem;
   }
   
-  .contact-details {
-    align-items: center;
+  .testimonial-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
   }
   
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    padding: 0.875rem;
+  .testimonial-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-info h4 {
     font-size: 0.95rem;
   }
 }
 
-@media only screen and (max-width: 576px) {
-  .contact-info,
-  .contact-form-container {
-    padding: 1.5rem;
+@media screen and (max-width: 480px) {
+  .map-container {
+    height: 200px;
   }
   
-  .contact-info h2,
-  .contact-form h2 {
-    font-size: 1.5rem;
+  .testimonial-card {
+    padding: 1.25rem;
   }
   
-  .form-group label {
+  .testimonial-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .testimonial-rating {
     font-size: 0.9rem;
   }
+}
+
+@media screen and (max-width: 375px) {
+  .map-container {
+    height: 180px;
+  }
   
-  .submit-button {
-    padding: 0.75rem;
-    font-size: 0.95rem;
+  .map-link {
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .testimonial-card {
+    padding: 1rem;
+  }
+  
+  .testimonial-avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.8rem;
   }
 }

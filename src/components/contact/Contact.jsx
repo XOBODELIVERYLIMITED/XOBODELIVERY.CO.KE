@@ -426,39 +426,77 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="map-section">
+      {/* Location Section */}
+      <section className="location-section">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Location</span>
+            <span className="section-tag">LOCATION</span>
             <h2 className="section-title">Find Us</h2>
-            <p className="section-subtitle">XOBO Delivery is conveniently located in Nairobi, Kenya</p>
+            <p className="section-subtitle">
+              XOBO Delivery is conveniently located in Nairobi, Kenya
+            </p>
           </div>
+          
           <div className="map-container">
-            {/* Using a more reliable iframe embed approach */}
-            <div className="map-iframe-container">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8266893450614!2d36.81300297571516!3d-1.2774535356180687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17c6027f0003%3A0xe2f13d478848ccc1!2sXobo%20Delivery%20Limited!5e0!3m2!1sen!2ske!4v1747397275999!5m2!1sen!2ske"
-                width="100%"
-                height="100%"
-                style={{ border: 0, borderRadius: "var(--radius-lg)" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="XOBO Delivery Location"
-              ></iframe>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8172470332807!2d36.81421937363526!3d-1.2752359357850815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170e44a13747%3A0xdc0b4b85b24f27b0!2sXobo%20Delivery%20Limited!5e0!3m2!1sen!2ske!4v1714158394906!5m2!1sen!2ske"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="XOBO Delivery Office Location"
+            ></iframe>
           </div>
-          <div className="map-link-container">
-            <p className="map-instruction">Our office is located at the marker shown on the map</p>
+          
+          <div className="location-info">
+            <p>Our office is located at the marker shown on the map</p>
             <a 
-              href="https://maps.app.goo.gl/RoBKakz62Lsy9fgU7" 
+              href="https://maps.google.com/maps?ll=-1.275245,36.816728&z=16&t=m&hl=en&gl=KE&mapclient=embed&cid=15865747215889747888" 
               target="_blank" 
-              rel="noreferrer"
-              className="view-on-google-maps"
+              rel="noopener noreferrer"
+              className="map-link"
             >
               <FaMapMarkerAlt /> Open in Google Maps
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">TESTIMONIALS</span>
+            <h2 className="section-title">What Our Clients Say</h2>
+            <p className="section-subtitle">
+              Hear from businesses and individuals who have experienced our services
+            </p>
+          </div>
+          
+          <div className="testimonials-container">
+            {testimonials.map((testimonial, index) => (
+              <div className="testimonial-card" key={index}>
+                <div className="testimonial-rating">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <div className="testimonial-text">
+                  "{testimonial.quote}"
+                </div>
+                <div className="testimonial-author">
+                  <div className="testimonial-avatar">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div className="testimonial-info">
+                    <h4>{testimonial.name}</h4>
+                    <p>{testimonial.position}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
-=======
-import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import "./App.css";
->>>>>>> 2f8e1f6c04ad81bbca6a0a24d5e6b2a2058d064e
 
 // Page Components
 import Home from "./components/home/Home";
@@ -39,11 +32,7 @@ const MainLayout = ({ children }) => (
 
 function App() {
   return (
-<<<<<<< HEAD
-    <HashRouter>
-=======
     <Router>
->>>>>>> 2f8e1f6c04ad81bbca6a0a24d5e6b2a2058d064e
       <div className="App">
         <Helmet>
           <base href={process.env.PUBLIC_URL + '/'} />
@@ -171,14 +160,9 @@ function App() {
               </MainLayout>
             }
           />
-<<<<<<< HEAD
-        </Routes>      </div>
-    </HashRouter>
-=======
-        </Routes>{" "}
+        </Routes>
       </div>
     </Router>
->>>>>>> 2f8e1f6c04ad81bbca6a0a24d5e6b2a2058d064e
   );
 }
 
