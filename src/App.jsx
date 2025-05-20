@@ -31,8 +31,7 @@ const MainLayout = ({ children }) => (
 );
 
 function App() {
-  return (
-    <BrowserRouter>
+  return (    <BrowserRouter basename="/XOBODELIVERY.CO.KE">
       <div className="App">
         <Helmet>
           <meta charSet="utf-8" />
