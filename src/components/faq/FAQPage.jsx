@@ -1,16 +1,18 @@
 // FAQPage.jsx
 import React, { useState } from 'react';
 import FAQList from './FAQList';
-import { FaShoppingCart, FaTruck, FaCreditCard } from 'react-icons/fa';
+import { FaShoppingCart, FaTruck, FaCreditCard, FaUser, FaHandshake } from 'react-icons/fa';
 
 const FAQPage = ({ faqs }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = [
     { id: 'All', label: 'All Questions', icon: null },
+    { id: 'account', label: 'Account & Setup', icon: <FaUser /> },
     { id: 'order', label: 'Order Process', icon: <FaShoppingCart /> },
     { id: 'delivery', label: 'Delivery', icon: <FaTruck /> },
-    { id: 'payments', label: 'Payments', icon: <FaCreditCard /> }
+    { id: 'payments', label: 'Payments', icon: <FaCreditCard /> },
+    { id: 'partners', label: 'Partners', icon: <FaHandshake /> }
   ];
 
   const handleCategoryChange = (category) => {

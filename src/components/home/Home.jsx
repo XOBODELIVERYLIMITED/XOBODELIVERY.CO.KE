@@ -74,7 +74,7 @@ function Home() {
           <div className="hero-cta">
             <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer">
               <button className="cta-button">
-                Ship Now
+                Transport Now
             </button>
           </a>
             <Link to="/services" className="secondary-link">

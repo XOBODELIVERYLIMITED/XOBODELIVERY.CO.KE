@@ -23,7 +23,9 @@ const FAQItem = ({ question, answer }) => {
         style={isOpen ? { maxHeight: contentRef.current?.scrollHeight + 'px' } : { maxHeight: 0 }}
       >
         <div ref={contentRef} className="faq-answer-content">
-          <p>{answer}</p>
+          {answer.split('\n').map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
         </div>
       </div>
     </div>
