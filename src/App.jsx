@@ -21,6 +21,9 @@ import Terms from "./components/terms/Terms";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
+// Utility Components
+import ScrollToTop from "./components/common/ScrollToTop";
+
 // Layout wrapper
 const MainLayout = ({ children }) => (
   <>
@@ -34,6 +37,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Helmet>
           <base href={process.env.PUBLIC_URL + '/'} />
           <meta charSet="utf-8" />

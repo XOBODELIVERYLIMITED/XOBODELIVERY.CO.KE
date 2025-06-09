@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
+import { scrollToTop } from '../common/ScrollToTop';
 import "./header.css";
 
 const navLinks = [
@@ -39,6 +40,15 @@ function Header() {
 
   const toggleNavbar = () => {
     setIsNavVisible(!isNavVisible);
+  };
+
+  // Enhanced navigation handler that closes menu and ensures scroll to top
+  const handleNavClick = () => {
+    setIsNavVisible(false);
+    // Small delay to ensure the navigation completes before scroll
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
   };
 
   useEffect(() => {
@@ -83,12 +93,12 @@ function Header() {
                     href={link.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    onClick={() => setIsNavVisible(false)}
+                    onClick={handleNavClick}
                   >
                     {link.name}
                   </a>
                 ) : (
-                  <Link to={link.link} onClick={() => setIsNavVisible(false)}>{link.name}</Link>
+                  <Link to={link.link} onClick={handleNavClick}>{link.name}</Link>
                 )}
               </li>
             ))}

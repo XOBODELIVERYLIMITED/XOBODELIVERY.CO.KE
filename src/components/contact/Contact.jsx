@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { 
@@ -13,6 +13,7 @@ import {
   FaShieldAlt, 
   FaStar 
 } from 'react-icons/fa';
+import { scrollToTop } from '../common/ScrollToTop';
 import "./contact.css";
 
 const Contact = () => {
@@ -23,6 +24,23 @@ const Contact = () => {
   // Exact coordinates for XOBO Delivery in Nairobi, Kenya
   // These coordinates match the location provided in the Google Maps link
   const companyLocation = { lat: -1.275245099073922, lng: 36.81672807475073 };
+
+  // Handle smooth scrolling for anchor links
+  const handleAnchorClick = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  // Scroll to top when component mounts (additional safety)
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   const validateForm = (formData) => {
     const errors = {};
@@ -105,6 +123,11 @@ const Contact = () => {
           console.log("Success", res);
           setResult("Message Sent Successfully!");
 
+          // Scroll to top to show success message
+          setTimeout(() => {
+            scrollToTop('smooth');
+          }, 500);
+
           setTimeout(() => {
             event.target.reset();
             setPhone("");
@@ -173,9 +196,12 @@ const Contact = () => {
               <a href="tel:+254799396000" className="hero-button primary">
                 <FaPhone className="button-icon" /> Call Us Now
               </a>
-              <a href="#contact-form" className="hero-button secondary">
+              <button 
+                onClick={(e) => handleAnchorClick(e, 'contact-form')} 
+                className="hero-button secondary"
+              >
                 <FaEnvelope className="button-icon" /> Send Message
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -208,7 +234,7 @@ const Contact = () => {
           </div>
           <div className="contact-grid">
             {/* Contact Information */}
-            <div className="contact-info">
+            <div className="contact-info" id="contact-info">
               <h2>Contact Information</h2>
               <p>Reach out to us through any of these channels for assistance or inquiries.</p>
               
@@ -223,7 +249,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="contact-method">
+                <div className="contact-method" id="email-contact">
                   <div className="contact-icon">
                     <FaEnvelope />
                   </div>

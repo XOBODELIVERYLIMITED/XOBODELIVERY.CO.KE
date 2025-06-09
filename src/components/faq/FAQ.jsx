@@ -1,7 +1,9 @@
 // FAQ.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FAQPage from './FAQPage';
 import { FaQuestionCircle, FaShippingFast, FaTruck, FaHeadset, FaRegLightbulb } from 'react-icons/fa';
+import { scrollToTop } from '../common/ScrollToTop';
 import './faq.css'; 
 
 const FAQ = () => {
@@ -374,8 +376,27 @@ const FAQ = () => {
               <h2>Still have questions?</h2>
               <p>Our customer support team is ready to help you with any questions you might have about our services.</p>
               <div className="cta-buttons">
-                <a href="tel:+254799396000" className="cta-primary">Call Us</a>
-                <a href="/contact" className="cta-secondary">Contact Us</a>
+                <Link 
+                  to="/contact#email-contact" 
+                  className="cta-primary"
+                  onClick={() => {
+                    setTimeout(() => {
+                      scrollToTop();
+                      // Additional scroll to email section after page loads
+                      setTimeout(() => {
+                        const emailSection = document.getElementById('email-contact');
+                        if (emailSection) {
+                          emailSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'center'
+                          });
+                        }
+                      }, 300);
+                    }, 100);
+                  }}
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
             <div className="help-illustration">

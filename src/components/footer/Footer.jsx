@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { scrollToTop } from '../common/ScrollToTop';
 import './footer.css';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+
+  // Handle navigation with scroll to top
+  const handleNavClick = () => {
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
+  };
 
   return (
     <footer>
@@ -13,27 +21,27 @@ function Footer() {
           <div className="footer-links">
             <div className="footer-column">
               <h4>Services</h4>
-              <Link to="/services">All Services</Link>
-              <Link to="/services/express">Express Delivery</Link>
-              <Link to="/services/scheduled">Scheduled Delivery</Link>
-              <Link to="/services/business">Business Solutions</Link>
+              <Link to="/services" onClick={handleNavClick}>All Services</Link>
+              <Link to="/services/express" onClick={handleNavClick}>Express Delivery</Link>
+              <Link to="/services/scheduled" onClick={handleNavClick}>Scheduled Delivery</Link>
+              <Link to="/services/business" onClick={handleNavClick}>Business Solutions</Link>
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer">Transport Platform</a>
             </div>
 
             <div className="footer-column">
               <h4>Company</h4>
-              <Link to="/about">About Us</Link>
-              <Link to="/drivers">Join as Driver</Link>
-              <Link to="/faq">FAQ</Link>
+              <Link to="/about" onClick={handleNavClick}>About Us</Link>
+              <Link to="/drivers" onClick={handleNavClick}>Join as Driver</Link>
+              <Link to="/faq" onClick={handleNavClick}>FAQ</Link>
               <a href="https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w" target="_blank" rel="noopener noreferrer">Help Guide</a>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
             </div>
 
             <div className="footer-column">
               <h4>Policies</h4>
-              <Link to="/terms">Terms of Service</Link>
-              <Link to="/privacy-policy">Privacy Policy</Link>
-              <Link to="/privacy-policy">Driver Privacy</Link>
+              <Link to="/terms" onClick={handleNavClick}>Terms of Service</Link>
+              <Link to="/privacy-policy" onClick={handleNavClick}>Privacy Policy</Link>
+              <Link to="/privacy-policy" onClick={handleNavClick}>Driver Privacy</Link>
             </div>
 
             <div className="footer-column">
