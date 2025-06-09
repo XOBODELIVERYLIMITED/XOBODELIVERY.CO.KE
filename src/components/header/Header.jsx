@@ -26,6 +26,11 @@ const navLinks = [
     name: 'FAQS',
     link: '/faq',
   },
+  {
+    name: 'Help',
+    link: 'https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w',
+    external: true,
+  },
 ];
 
 function Header() {
@@ -73,7 +78,18 @@ function Header() {
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.link}>
-                <Link to={link.link} onClick={() => setIsNavVisible(false)}>{link.name}</Link>
+                {link.external ? (
+                  <a 
+                    href={link.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={() => setIsNavVisible(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link to={link.link} onClick={() => setIsNavVisible(false)}>{link.name}</Link>
+                )}
               </li>
             ))}
           </ul>

@@ -21,7 +21,9 @@ function Home() {
   const [distance, setDistance] = useState(5);
   const [estimatedCost, setEstimatedCost] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [customerSlideIndex, setCustomerSlideIndex] = useState(0);
   const totalCards = 4;
+  const totalCustomerLogos = 12;
 
   useEffect(() => {
     const carousel = document.querySelector('.highlight-carousel');
@@ -29,6 +31,49 @@ function Home() {
       carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
     }
   }, [activeIndex]);
+
+  // Slide-based auto-scroll for customers with 2-second intervals
+  useEffect(() => {
+    const customerInterval = setInterval(() => {
+      setCustomerSlideIndex((prev) => prev + 1);
+    }, 2000); // 2 seconds per slide
+
+    return () => clearInterval(customerInterval);
+  }, []);
+
+  // Update customer carousel transform with seamless infinite scroll
+  useEffect(() => {
+    const customerCarousel = document.querySelector('.customers-carousel');
+    if (customerCarousel) {
+      const slideWidth = 220; // Logo width including gap
+      
+      // When we reach the first duplicate logo (position 12), show it normally
+      // But immediately after showing it, invisibly reset to position 0 (same logo)
+      if (customerSlideIndex === totalCustomerLogos) {
+        // Show the duplicate first logo normally
+        const translateX = customerSlideIndex * slideWidth;
+        customerCarousel.style.transition = 'transform 0.5s ease-in-out';
+        customerCarousel.style.transform = `translateX(-${translateX}px)`;
+        
+        // After the transition completes, invisibly reset to position 0
+        setTimeout(() => {
+          customerCarousel.style.transition = 'none';
+          setCustomerSlideIndex(0);
+          customerCarousel.style.transform = 'translateX(0px)';
+          
+          // Re-enable transitions for next movement
+          setTimeout(() => {
+            customerCarousel.style.transition = 'transform 0.5s ease-in-out';
+          }, 50);
+        }, 500);
+      } else {
+        // Normal movement for all other positions
+        const translateX = customerSlideIndex * slideWidth;
+        customerCarousel.style.transition = 'transform 0.5s ease-in-out';
+        customerCarousel.style.transform = `translateX(-${translateX}px)`;
+      }
+    }
+  }, [customerSlideIndex, totalCustomerLogos]);
 
   const handleTrackingSubmit = (e) => {
     e.preventDefault();
@@ -50,6 +95,20 @@ function Home() {
       setActiveIndex((prev) => (prev === totalCards - 1 ? 0 : prev + 1));
     } else {
       setActiveIndex((prev) => (prev === 0 ? totalCards - 1 : prev - 1));
+    }
+  };
+
+  const handleCustomerSlide = (direction) => {
+    if (direction === 'next') {
+      setCustomerSlideIndex((prev) => prev + 1);
+    } else {
+      setCustomerSlideIndex((prev) => {
+        if (prev <= 0) {
+          // Jump to the last logo in the original set
+          return totalCustomerLogos - 1;
+        }
+        return prev - 1;
+      });
     }
   };
   
@@ -77,9 +136,21 @@ function Home() {
                 Transport Now
             </button>
           </a>
-            <Link to="/services" className="secondary-link">
-              Explore Services <FaArrowRight className="arrow-icon-small" />
-            </Link>
+            <a 
+              href="https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="training-link"
+              style={{
+                fontSize: '0.9rem',
+                color: '#666',
+                textDecoration: 'underline',
+                marginTop: '10px',
+                display: 'block'
+              }}
+            >
+              📚 Need help getting started? View our step-by-step guide
+            </a>
           </div>
         </div>
 
@@ -354,6 +425,203 @@ function Home() {
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Customers Section */}
+      <section className="customers-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">Trusted By</span>
+            <h2 className="section-title">Our Customers</h2>
+            <p className="section-subtitle">We're proud to serve businesses across Kenya with reliable delivery solutions</p>
+          </div>
+
+          <div className="customers-carousel-container">
+            <button className="customer-nav-button prev" onClick={() => handleCustomerSlide('prev')}>
+              <FaArrowRight className="arrow-icon-left" />
+            </button>
+
+            <div className="customers-carousel-wrapper">
+              <div className="customers-carousel">
+                {/* First set of logos */}
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/AAR company.png`} 
+                    alt="AAR Healthcare" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/caraandgeneral.png`} 
+                    alt="Car and General" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/davis company.png`} 
+                    alt="Davis & Shirtliff" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/kenyascouts logo.png`} 
+                    alt="Kenya Scouts Association" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/lesaffre company.jpg`} 
+                    alt="Lesaffre" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/premierfoods comapny.png`} 
+                    alt="Premier Foods" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/safaricom-sacco-ltd-018641f4.PNG`} 
+                    alt="Safaricom Sacco" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/shopit company.png`} 
+                    alt="Shopit" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/storymohja company.webp`} 
+                    alt="Storymoja" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/twiga company.png`} 
+                    alt="Twiga Foods" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/urhome company.jpeg`} 
+                    alt="UrHome" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/visionplus company.webp`} 
+                    alt="Vision Plus" 
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Duplicate set for seamless infinite loop */}
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/AAR company.png`} 
+                    alt="AAR Healthcare" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/caraandgeneral.png`} 
+                    alt="Car and General" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/davis company.png`} 
+                    alt="Davis & Shirtliff" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/kenyascouts logo.png`} 
+                    alt="Kenya Scouts Association" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/lesaffre company.jpg`} 
+                    alt="Lesaffre" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/premierfoods comapny.png`} 
+                    alt="Premier Foods" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/safaricom-sacco-ltd-018641f4.PNG`} 
+                    alt="Safaricom Sacco" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/shopit company.png`} 
+                    alt="Shopit" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/storymohja company.webp`} 
+                    alt="Storymoja" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/twiga company.png`} 
+                    alt="Twiga Foods" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/urhome company.jpeg`} 
+                    alt="UrHome" 
+                    loading="lazy"
+                  />
+                </div>
+                <div className="customer-logo">
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/media/visionplus company.webp`} 
+                    alt="Vision Plus" 
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button className="customer-nav-button next" onClick={() => handleCustomerSlide('next')}>
+              <FaArrowRight className="arrow-icon" />
+            </button>
           </div>
         </div>
       </section>
