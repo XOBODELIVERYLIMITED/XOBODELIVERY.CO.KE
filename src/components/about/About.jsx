@@ -74,8 +74,8 @@ function About() {
             </div>
             <div className="mission-stats">
               <div className="stat-item">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Daily Deliveries</div>
+                <div className="stat-number">20+</div>
+                <div className="stat-label">Business Clients</div>
               </div>
               <div className="stat-item">
                 <div className="stat-number">98%</div>

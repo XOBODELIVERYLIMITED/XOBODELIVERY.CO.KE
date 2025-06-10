@@ -270,11 +270,11 @@ function Home() {
               <p>Active Riders</p>
             </div>
             <div className="stat-item">
-              <h3>50,000+</h3>
+              <h3>15,000+</h3>
               <p>Deliveries</p>
             </div>
             <div className="stat-item">
-              <h3>500+</h3>
+              <h3>20+</h3>
               <p>Business Clients</p>
             </div>
             <div className="stat-item">
