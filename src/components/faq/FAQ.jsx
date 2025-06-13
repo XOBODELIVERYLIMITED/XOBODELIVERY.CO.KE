@@ -284,13 +284,8 @@ const FAQ = () => {
 
   return (
     <div className="faq-page">
-      {/* Hero Section with Animation */}
+      {/* Hero Section */}
       <section className="faq-hero">
-        <div className="animated-bg">
-          <div className="circle circle-1"></div>
-          <div className="circle circle-2"></div>
-          <div className="circle circle-3"></div>
-        </div>
         <div className="container">
           <div className="faq-hero-content">
             <div className="faq-icon-wrapper">
@@ -298,6 +293,20 @@ const FAQ = () => {
             </div>
             <h1>Frequently Asked Questions</h1>
             <p>Find answers to common questions about our delivery services, order process, and more</p>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>500+</strong>
+                <span>Questions Answered</span>
+              </div>
+              <div className="stat">
+                <strong>98%</strong>
+                <span>Issues Resolved</span>
+              </div>
+              <div className="stat">
+                <strong>&lt;24h</strong>
+                <span>Response Time</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

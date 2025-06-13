@@ -46,12 +46,32 @@
 
 /* Hero Section */
 .express-hero {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
   padding: 6rem 0;
   color: var(--white);
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.express-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+  z-index: 1;
+}
+
+.express-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .animated-bg {
@@ -60,12 +80,14 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 .shape {
   position: absolute;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.3;
 }
 
 .shape-1 {
@@ -90,7 +112,7 @@
   bottom: 20%;
   right: 20%;
   animation: morph 18s linear infinite alternate;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 @keyframes morph {
@@ -111,15 +133,23 @@
   }
 }
 
-.express-hero h1 {
+.express-hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
-.express-hero p {
+.express-hero-content p {
   font-size: 1.2rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Features Section */
@@ -141,17 +171,51 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: var(--shadow-md);
 }
 
+.feature-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+}
+
 .feature-icon {
-  font-size: 2.5rem;
-  color: var(--accent-color);
-  margin-bottom: 1.5rem;
+  width: 70px;
+  height: 70px;
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.75rem;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+  background-color: var(--accent-color);
+  color: var(--white);
+  transform: rotateY(360deg);
 }
 
 .feature-card h3 {
@@ -214,7 +278,21 @@
 /* CTA Section */
 .express-cta {
   padding: 5rem 0;
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.express-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+  z-index: 1;
 }
 
 .cta-container {
@@ -222,17 +300,24 @@
   color: var(--white);
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-container h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
 }
 
 .cta-container p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
 }
 
 .cta-buttons {
@@ -270,7 +355,7 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .express-hero h1 {
+  .express-hero-content h1 {
     font-size: 2.5rem;
   }
 
@@ -280,11 +365,15 @@
 }
 
 @media (max-width: 768px) {
-  .express-hero h1 {
+  .express-hero {
+    padding: 4rem 0;
+  }
+
+  .express-hero-content h1 {
     font-size: 2rem;
   }
 
-  .express-hero p {
+  .express-hero-content p {
     font-size: 1rem;
   }
 
@@ -299,8 +388,16 @@
 }
 
 @media (max-width: 576px) {
-  .express-hero h1 {
+  .express-hero {
+    padding: 3rem 0;
+  }
+
+  .express-hero-content h1 {
     font-size: 1.8rem;
+  }
+
+  .express-hero-content p {
+    font-size: 0.95rem;
   }
 
   .cta-container h2 {

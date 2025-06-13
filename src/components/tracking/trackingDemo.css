@@ -1,0 +1,311 @@
+/* Tracking Page Styles */
+
+.tracking-page {
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 75px;
+}
+
+/* Hero Section */
+.tracking-hero {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.tracking-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+}
+
+.tracking-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.tracking-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tracking-hero p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+}
+
+/* Tracking Section */
+.tracking-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.tracking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tracking Form */
+.tracking-form {
+  margin-bottom: 40px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: #f9fafc;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #16234d;
+  background-color: white;
+}
+
+.input-group button {
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.input-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(22, 35, 77, 0.3);
+}
+
+/* Tracking Result */
+.tracking-result {
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 15px;
+  border: 2px solid #e5e7eb;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.result-header h3 {
+  font-size: 1.5rem;
+  color: #16234d;
+  margin: 0;
+}
+
+.status-badge {
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Tracking Info Cards */
+.tracking-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #16234d;
+}
+
+.info-card .icon {
+  font-size: 1.5rem;
+  color: #16234d;
+  margin-top: 5px;
+}
+
+.info-card h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: #16234d;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Progress Section */
+.progress-section h4 {
+  font-size: 1.2rem;
+  color: #16234d;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.step svg {
+  font-size: 2rem;
+  color: #d1d5db;
+  transition: color 0.3s;
+}
+
+.step.completed svg {
+  color: #16234d;
+}
+
+.step span {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.step.completed span {
+  color: #16234d;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tracking-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .tracking-container {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-group button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .result-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .tracking-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-steps {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .step {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .tracking-hero {
+    height: 250px;
+  }
+  
+  .tracking-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .info-card .icon {
+    margin-top: 0;
+  }
+}

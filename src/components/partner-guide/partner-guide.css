@@ -1,0 +1,723 @@
+/* Partner Guide Styles */
+.partner-guide {
+  padding-top: 0;
+}
+
+/* Hero Section */
+.partner-hero {
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  padding: 6rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-stats .stat {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.hero-stats .stat strong {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ff3a3a;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.hero-stats .stat span {
+  font-size: 0.85rem;
+  opacity: 1;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.cta-primary {
+  background: #ff3a3a;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-primary:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+/* Partner Types Section */
+.partner-types {
+  padding: 6rem 0;
+  background: #f5f7fa;
+}
+
+.partner-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.tab:hover {
+  border-color: #16234d;
+  color: #16234d;
+}
+
+.tab.active {
+  background: #16234d;
+  border-color: #16234d;
+  color: white;
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-content {
+  margin-top: 3rem;
+}
+
+.requirements-section h3 {
+  font-size: 2rem;
+  color: #16234d;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.requirements-section p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.requirement-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #16234d;
+}
+
+.requirement-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.requirement-icon {
+  font-size: 2rem;
+  color: #16234d;
+  background: #f5f7fa;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.requirement-header h4 {
+  font-size: 1.3rem;
+  color: #16234d;
+  margin: 0;
+}
+
+.requirement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirement-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.check-icon {
+  color: #ff3a3a;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Application Process Section */
+.application-process {
+  padding: 6rem 0;
+  background: white;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-step {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  color: #16234d;
+  margin-bottom: 0.75rem;
+}
+
+.step-content p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.step-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-content ul li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.step-content ul li::before {
+  content: '•';
+  color: #16234d;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Vehicle Earnings Section */
+.vehicle-earnings {
+  padding: 6rem 0;
+  background: #f5f7fa;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.vehicle-earning-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.vehicle-earning-card:hover {
+  transform: translateY(-4px);
+  border-color: #16234d;
+  box-shadow: 0 8px 30px rgba(22, 35, 77, 0.15);
+}
+
+.vehicle-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vehicle-icon {
+  font-size: 2.5rem;
+  color: #16234d;
+}
+
+.vehicle-header h3 {
+  font-size: 1.4rem;
+  color: #16234d;
+  margin: 0;
+}
+
+.capacity {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.earnings-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f5f7fa;
+  border-radius: 12px;
+}
+
+.earnings-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff3a3a;
+  margin-bottom: 0.25rem;
+}
+
+.earnings-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.vehicle-requirements h4 {
+  color: #16234d;
+  margin-bottom: 1rem;
+}
+
+.vehicle-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vehicle-requirements ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+/* Partner Benefits Section */
+.partner-benefits {
+  padding: 6rem 0;
+  background: white;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 2rem;
+  background: #f5f7fa;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  color: #16234d;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  color: #16234d;
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Partner Support Section */
+.partner-support {
+  padding: 6rem 0;
+  background: #f5f7fa;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.support-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.support-icon {
+  font-size: 2.5rem;
+  color: #16234d;
+  margin-bottom: 1rem;
+}
+
+.support-card h3 {
+  font-size: 1.3rem;
+  color: #16234d;
+  margin-bottom: 0.75rem;
+}
+
+.support-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.support-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.support-details a {
+  color: #16234d;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.support-details a:hover {
+  text-decoration: underline;
+}
+
+.support-details span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Partner FAQ Section */
+.partner-faq {
+  padding: 6rem 0;
+  background: white;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faq-item {
+  padding: 2rem;
+  background: #f5f7fa;
+  border-radius: 12px;
+  border-left: 4px solid #16234d;
+}
+
+.faq-item h4 {
+  color: #16234d;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Partner CTA Section */
+.partner-cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: white;
+  color: #16234d;
+  transform: translateY(-2px);
+}
+
+/* Section Intro Styles */
+.section-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  background: #f5f7fa;
+  color: #16234d;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #16234d;
+  margin: 1rem 0;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vehicle-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-stats .stat strong {
+    font-size: 1.8rem;
+  }
+  
+  .hero-stats .stat span {
+    font-size: 0.75rem;
+  }
+  
+  .partner-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tab {
+    min-width: 200px;
+    justify-content: center;
+  }
+  
+  .process-step {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .step-number {
+    align-self: center;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    min-width: 200px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .requirement-card {
+    padding: 1.5rem;
+  }
+  
+  .vehicle-earning-card {
+    padding: 1.5rem;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+  }
+  
+  .support-card {
+    padding: 1.5rem;
+  }
+} 

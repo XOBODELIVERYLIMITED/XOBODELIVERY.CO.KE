@@ -1,53 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+/* XOBO Delivery - Main Styles */
 
+/* Import design system */
+@import './styles/globals.css';
+@import './components/ui/Button.css';
+@import './components/ui/Card.css';
+
+/* Import Tailwind CSS */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #16234d;
-  --primary-light: #293f78;
-  --accent-color: #ff3a3a;
-  --accent-light: #ff6b6b;
-  --text-color: #333;
-  --text-light: #666;
-  --text-lighter: #888;
-  --light-bg: #f5f7fa;
-  --lighter-bg: #f9fafc;
-  --medium-bg: #e9ebef;
-  --white: #ffffff;
-  --border-color: #eaeaea;
-  --border-light: #f0f0f0;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-}
-
-html, body {
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
+/* Override Tailwind with design system where needed */
 body {
-  color: var(--text-color);
-  background-color: var(--white);
-  line-height: 1.6;
   overflow-x: hidden;
-  font-size: 15px;
-  font-weight: 400;
 }
 
 code {
@@ -259,4 +224,54 @@ code {
 .btn-outline:hover {
   background-color: var(--primary-color);
   color: var(--white);
+}
+
+/* Fix hero section text styling with correct individual colors */
+.hero-title {
+  color: #16234d !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-text-fill-color: #16234d !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+.hero-subtitle {
+  color: #1a365d !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-text-fill-color: #1a365d !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+.hero-description {
+  color: #333 !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-text-fill-color: #333 !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* More specific selector to override global p styling */
+p.hero-description,
+.hero-section p.hero-description,
+.hero-content p.hero-description,
+.home .hero-description,
+.home .hero-section .hero-description,
+.home .hero-content .hero-description {
+  color: #333 !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-text-fill-color: #333 !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+.accent-dot {
+  color: #ff3a3a !important;
+  -webkit-text-fill-color: #ff3a3a !important;
 }

@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
 
-// Page Components
-import Home from "./components/home/Home";
-import Services from "./components/xdlservices/Services";
-import Express from "./components/services/express/Express";
-import Scheduled from "./components/services/scheduled/Scheduled";
-import Business from "./components/services/business/Business";
-import Drivers from "./components/drivers/Drivers";
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
-import FAQ from "./components/faq/FAQ";
-import Privacy from "./components/privacy/Privacy";
-import Mistake from "./components/mistake/Mistake";
-import Terms from "./components/terms/Terms";
-
-// Layout Components
+// Critical components loaded immediately
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-
-// Utility Components
 import ScrollToTop from "./components/common/ScrollToTop";
+import LoadingSpinner from "./components/common/LoadingSpinner";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+
+// Lazy-loaded components for better performance
+const Home = lazy(() => import("./components/home/Home"));
+const Services = lazy(() => import("./components/xdlservices/Services"));
+const Express = lazy(() => import("./components/services/express/Express"));
+const Scheduled = lazy(() => import("./components/services/scheduled/Scheduled"));
+const Business = lazy(() => import("./components/services/business/Business"));
+const Drivers = lazy(() => import("./components/drivers/Drivers"));
+const About = lazy(() => import("./components/about/About"));
+const Contact = lazy(() => import("./components/contact/Contact"));
+const FAQ = lazy(() => import("./components/faq/FAQ"));
+const Privacy = lazy(() => import("./components/privacy/Privacy"));
+const Terms = lazy(() => import("./components/terms/Terms"));
+const ClientGuide = lazy(() => import("./components/client-guide/ClientGuide"));
+const PartnerGuide = lazy(() => import("./components/partner-guide/PartnerGuide"));
+const CompanyInfo = lazy(() => import("./components/company-info/CompanyInfo"));
+const Account = lazy(() => import("./components/account/Account"));
+const TrackingDemo = lazy(() => import("./components/tracking/TrackingDemo"));
+const Partners = lazy(() => import("./components/partners/Partners"));
+const Help = lazy(() => import("./components/help/Help"));
+const DriverPrivacy = lazy(() => import("./components/driver-privacy/DriverPrivacy"));
+const Mistake = lazy(() => import("./components/mistake/Mistake"));
 
 // Layout wrapper
 const MainLayout = ({ children }) => (
@@ -36,8 +44,9 @@ const MainLayout = ({ children }) => (
 function App() {
   return (
     <Router>
-      <div className="App">
-        <ScrollToTop />
+      <ErrorBoundary>
+        <div className="App">
+          <ScrollToTop />
         <Helmet>
           <base href={process.env.PUBLIC_URL + '/'} />
           <meta charSet="utf-8" />
@@ -52,7 +61,7 @@ function App() {
           {/* Security Headers */}
           <meta
             http-equiv="Content-Security-Policy"
-            content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: ; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; media-src *; font-src *; connect-src *; frame-src *;"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://api.web3forms.com https://www.google.com https://www.youtube.com https://youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.web3forms.com https://maps.googleapis.com; frame-src 'self' https://www.google.com https://www.youtube.com https://youtube.com; media-src 'self' https://www.youtube.com https://youtube.com https://*.googlevideo.com;"
           />
           <meta http-equiv="X-Content-Type-Options" content="nosniff" />
           <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -66,16 +75,16 @@ function App() {
             content="geolocation=(self), camera=(), microphone=()"
           />
         </Helmet>
-        {/* <h1>App</h1> */}{" "}
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <MainLayout>
-                <Home />
-              </MainLayout>
-            }
-          />
+        <Suspense fallback={<LoadingSpinner message="Loading page..." />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <MainLayout>
+                  <Home />
+                </MainLayout>
+              }
+            />
           <Route
             path="/services"
             element={
@@ -149,10 +158,122 @@ function App() {
             }
           />
           <Route
+            path="/driver-privacy"
+            element={
+              <MainLayout>
+                <DriverPrivacy />
+              </MainLayout>
+            }
+          />
+          <Route
             path="/terms"
             element={
               <MainLayout>
                 <Terms />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/client-guide"
+            element={
+              <MainLayout>
+                <ClientGuide />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/partner-guide"
+            element={
+              <MainLayout>
+                <PartnerGuide />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/company-info"
+            element={
+              <MainLayout>
+                <CompanyInfo />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/tracking"
+            element={
+              <MainLayout>
+                <TrackingDemo />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/tracking-demo"
+            element={
+              <MainLayout>
+                <TrackingDemo />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <MainLayout>
+                <Account />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/partners"
+            element={
+              <MainLayout>
+                <Partners />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/help"
+            element={
+              <MainLayout>
+                <Help />
               </MainLayout>
             }
           />
@@ -165,7 +286,9 @@ function App() {
             }
           />
         </Routes>
-      </div>
+        </Suspense>
+        </div>
+      </ErrorBoundary>
     </Router>
   );
 }

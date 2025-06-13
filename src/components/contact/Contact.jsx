@@ -14,6 +14,8 @@ import {
   FaStar 
 } from 'react-icons/fa';
 import { scrollToTop } from '../common/ScrollToTop';
+import SecurityUtils from '../../utils/security';
+import { API_CONFIG, CONTACT_INFO } from '../../config/constants';
 import "./contact.css";
 
 const Contact = () => {
@@ -43,80 +45,62 @@ const Contact = () => {
   }, []);
 
   const validateForm = (formData) => {
-    const errors = {};
-    let formIsValid = true;
+    const formObject = {
+      firstName: formData.get("First Name"),
+      lastName: formData.get("Last Name"),
+      email: formData.get("email"),
+      phone: phone,
+      message: formData.get("message")
+    };
 
-    if (!formData.get("First Name")) {
-      errors.firstName = "First name is required";
-      formIsValid = false;
+    // Check for security threats in inputs
+    const inputs = Object.values(formObject);
+    const hasThreats = inputs.some(input => SecurityUtils.containsSecurityThreats(input));
+    
+    if (hasThreats) {
+      SecurityUtils.logSecurityEvent('Potential XSS attempt in contact form', formObject);
+      setErrors({ general: 'Invalid input detected. Please check your data.' });
+      return false;
     }
 
-    if (!formData.get("Last Name")) {
-      errors.lastName = "Last name is required";
-      formIsValid = false;
-    }
-
-    if (!phone || !phone.match(/^\d{10,12}$/)) {
-      errors.phone = "Phone number should be between 10 and 12 digits!";
-      formIsValid = false;
-    }
-
-    if (!formData.get("email")) {
-      errors.email = "Email is required";
-      formIsValid = false;
-    } else {
-      // Basic email validation
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(formData.get("email"))) {
-        errors.email = "Please enter a valid email address";
-        formIsValid = false;
-      }
-    }
-
-    if (!formData.get("message")) {
-      errors.message = "Message is required";
-      formIsValid = false;
-    }
-
-    setErrors(errors);
-    return formIsValid;
+    // Use security utility for validation
+    const validation = SecurityUtils.validateFormData(formObject);
+    setErrors(validation.errors);
+    return validation.isValid;
   };
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    // Check rate limiting first
+    if (SecurityUtils.isRateLimited('formSubmission')) {
+      setResult("Please wait before submitting again");
+      return;
+    }
+
     const formData = new FormData(event.target);
     const selectedOption = document.getElementById("form-selection").value;
-    formData.append("Form-Selection", selectedOption);    if (validateForm(formData)) {
+    formData.append("Form-Selection", selectedOption);
+
+    if (validateForm(formData)) {
       setResult("Sending....");
-      const accessKey = "3b3b723b-5b0c-4168-9679-6acc5dfe3940";
-      formData.append("access_key", accessKey);
+      
+      // Use configuration constants
+      formData.append("access_key", API_CONFIG.web3FormsAccessKey);
       formData.append("phone", phone);
 
-      // Add CSRF token if available
-      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
-      if (csrfToken) {
-        formData.append("csrf_token", csrfToken);
-      }
-
-      // Add honeypot field to prevent spam
-      formData.append("botcheck", "");
+      // Add security measures
+      formData.append("csrf_token", SecurityUtils.generateCSRFToken());
+      formData.append("botcheck", ""); // Honeypot field
+      formData.append("timestamp", Date.now().toString());
 
       try {
-        // Adding rate limiting
-        const now = Date.now();
-        const lastSubmitTime = localStorage.getItem('lastFormSubmit');
-        
-        if (lastSubmitTime && now - parseInt(lastSubmitTime) < 10000) { // 10 seconds
-          setResult("Please wait before submitting again");
-          return;
-        }
-        
-        localStorage.setItem('lastFormSubmit', now.toString());
-
-        const res = await fetch("https://api.web3forms.com/submit", {
+        const res = await fetch(API_CONFIG.web3FormsEndpoint, {
           method: "POST",
           body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          }
         }).then((res) => res.json());
 
         if (res.success) {
@@ -132,6 +116,7 @@ const Contact = () => {
             event.target.reset();
             setPhone("");
             setResult("Send Message");
+            setErrors({});
           }, 3000);
         } else {
           console.log("Error", res);
@@ -139,10 +124,11 @@ const Contact = () => {
         }
       } catch (error) {
         console.error("Submission error:", error);
-        setResult("Failed to send message");
+        setResult("Failed to send message. Please try again.");
+        SecurityUtils.logSecurityEvent('Form submission error', { error: error.message });
       }
     } else {
-      setResult("Please fill in all required fields");
+      setResult("Please correct the errors below");
     }
   };
 
@@ -181,13 +167,8 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      {/* Hero Section with Animated Elements */}
+      {/* Hero Section */}
       <section className="contact-hero">
-        <div className="animated-bg">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-        </div>
         <div className="container">
           <div className="contact-hero-content">
             <h1>Get in Touch</h1>
@@ -202,6 +183,20 @@ const Contact = () => {
               >
                 <FaEnvelope className="button-icon" /> Send Message
               </button>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>24h</strong>
+                <span>Response Time</span>
+              </div>
+              <div className="stat">
+                <strong>24/7</strong>
+                <span>Customer Support</span>
+              </div>
+              <div className="stat">
+                <strong>99%</strong>
+                <span>Customer Satisfaction</span>
+              </div>
             </div>
           </div>
         </div>
@@ -307,6 +302,12 @@ const Contact = () => {
               <form onSubmit={onSubmit}>
                 <input type="hidden" name="subject" value="New Message from XOBO Website" />
 
+                {errors.general && (
+                  <div className="error-message general-error">
+                    {errors.general}
+                  </div>
+                )}
+
                 <div className="form-group">
                   <label htmlFor="form-selection">How can we help?</label>
                   <select name="Form-Selection" id="form-selection">
@@ -394,7 +395,7 @@ const Contact = () => {
                   )}
                 </div>
 
-                <div className="form-group">
+                <div className="form-group message-group">
                   <label htmlFor="message">
                     <FaComments className="input-icon" /> Message
                   </label>

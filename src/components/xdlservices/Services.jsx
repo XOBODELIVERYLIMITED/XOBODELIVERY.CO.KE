@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShippingFast, FaTruckMoving, FaWarehouse, FaUsers, FaChartLine, FaMobile } from 'react-icons/fa';
+import { FaShippingFast, FaTruckMoving, FaWarehouse, FaUsers, FaChartLine, FaMobile, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './services.css';
 
@@ -42,18 +42,36 @@ function Services() {
 
   return (
     <div className="services">
-      {/* Hero Banner */}
+      {/* Hero Section */}
       <section className="service-hero">
-        <div className="service-hero-content">
-          <h1>Our Delivery Services</h1>
-          <p>Fast, reliable, and secure delivery solutions for businesses and individuals across Kenya</p>
-        </div>
-        <div className="service-hero-image">
-          <img 
-            loading='lazy'
-            src={`${process.env.PUBLIC_URL}/SERVICES/XDL-SERVICES-2.png`} 
-            alt="XOBO SERVICES" 
-          />
+        <div className="service-hero-overlay"></div>
+        <div className="container">
+          <div className="service-hero-content">
+            <h1>Our Delivery Services</h1>
+            <p>Fast, reliable, and secure delivery solutions for businesses and individuals across Kenya</p>
+            <div className="hero-buttons">
+              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="hero-button primary">
+                <FaShippingFast className="button-icon" /> Start Delivering
+              </a>
+              <Link to="/contact" className="hero-button secondary">
+                <FaEnvelope className="button-icon" /> Get Quote
+              </Link>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>3</strong>
+                <span>Service Types</span>
+              </div>
+              <div className="stat">
+                <strong>47</strong>
+                <span>Counties Served</span>
+              </div>
+              <div className="stat">
+                <strong>24/7</strong>
+                <span>Service Available</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

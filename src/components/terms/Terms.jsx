@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShieldAlt, FaFileAlt, FaUserLock, FaHandshake } from 'react-icons/fa';
+import { FaShieldAlt, FaFileAlt, FaUserLock, FaHandshake, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './terms.css';
 
@@ -104,11 +104,33 @@ function Terms() {
     <div className="terms-page">
       {/* Hero Section */}
       <section className="terms-hero">
-        <div className="terms-hero-overlay"></div>
         <div className="container">
           <div className="terms-hero-content">
             <h1>Terms of Service</h1>
-            <p>Last updated: June 1, 2023</p>
+            <p>Our comprehensive terms and conditions for using XOBO Delivery services</p>
+            <div className="hero-buttons">
+              <Link to="/contact" className="hero-button primary">
+                <FaEnvelope className="button-icon" /> Contact Legal Team
+              </Link>
+              <a href="tel:+254799396000" className="hero-button secondary">
+                <FaPhone className="button-icon" /> Call Us
+              </a>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>Legal</strong>
+                <span>Compliance</span>
+              </div>
+              <div className="stat">
+                <strong>Fair</strong>
+                <span>Terms</span>
+              </div>
+              <div className="stat">
+                <strong>Clear</strong>
+                <span>Language</span>
+              </div>
+            </div>
+            <p className="last-updated">Last updated: June 1, 2023</p>
           </div>
         </div>
       </section>
@@ -118,6 +140,7 @@ function Terms() {
         <div className="container">
           <div className="toc-container">
             <h2>Contents</h2>
+            <p className="toc-description">Click on any section below to quickly jump to it on this page:</p>
             <ul className="toc-list">
               {sections.map((section) => (
                 <li key={section.id}>

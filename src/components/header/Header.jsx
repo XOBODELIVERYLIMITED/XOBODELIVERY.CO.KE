@@ -11,14 +11,6 @@ const navLinks = [
     name: 'Services',
     link: '/services',
   },
-  // {
-  //   name: 'Drivers',
-  //   link: '/drivers',
-  // },
-  // {
-  //   name: 'About',
-  //   link: '/about',
-  // },
   {
     name: 'Contact',
     link: '/contact',
@@ -29,8 +21,7 @@ const navLinks = [
   },
   {
     name: 'Help',
-    link: 'https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w',
-    external: true,
+    link: '/help',
   },
 ];
 

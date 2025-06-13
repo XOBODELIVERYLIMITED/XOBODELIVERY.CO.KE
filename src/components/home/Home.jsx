@@ -119,7 +119,7 @@ function Home() {
         <div className="hero-content">
           <h1 className="hero-title">
             Simple <span className="accent-dot">·</span> Fast <span className="accent-dot">·</span> Reliable
-            </h1>
+          </h1>
 
           <h2 className="hero-subtitle">
             On-demand delivery platform
@@ -130,42 +130,25 @@ function Home() {
             We connect businesses with reliable couriers for fast, secure deliveries.
           </p>
 
-          <div className="hero-cta">
-            <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer">
-              <button className="cta-button">
-                Transport Now
-            </button>
-          </a>
-            <a 
-              href="https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="training-link"
-              style={{
-                fontSize: '0.9rem',
-                color: '#666',
-                textDecoration: 'underline',
-                marginTop: '10px',
-                display: 'block'
-              }}
-            >
-              📚 Need help getting started? View our step-by-step guide
+          <div className="transport-button">
+            <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="login-btn">
+              Transport Now
             </a>
           </div>
         </div>
 
         <div className="hero-media">
           <div className="video-container">
-        <iframe
+            <iframe
               loading="lazy"
-            src="https://www.youtube.com/embed/Oe0Tme-yRBU?si=1Y6TpTYw71Lano8J"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+              src="https://www.youtube.com/embed/Oe0Tme-yRBU?si=1Y6TpTYw71Lano8J"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
-      </div>
       </section>
 
       {/* Service Highlights Section */}
@@ -249,15 +232,7 @@ function Home() {
             </button>
           </div>
 
-          <div className="carousel-dots">
-            {[0, 1, 2, 3].map((dot) => (
-              <button
-                key={dot}
-                className={`dot ${activeIndex === dot ? 'active' : ''}`}
-                onClick={() => setActiveIndex(dot)}
-              />
-            ))}
-          </div>
+
         </div>
       </section>
 
@@ -308,10 +283,10 @@ function Home() {
               </p>
               
               <ul className="feature-list">
-                <li><span className="check-icon">✓</span> Automated dispatch system</li>
-                <li><span className="check-icon">✓</span> Real-time delivery updates</li>
-                <li><span className="check-icon">✓</span> Customer notification system</li>
-                <li><span className="check-icon">✓</span> Proof of delivery confirmations</li>
+                <li>Automated dispatch system</li>
+                <li>Real-time delivery updates</li>
+                <li>Customer notification system</li>
+                <li>Proof of delivery confirmations</li>
               </ul>
               
               <Link to="/services" className="feature-link">

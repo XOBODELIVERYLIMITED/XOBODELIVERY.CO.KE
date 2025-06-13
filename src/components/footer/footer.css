@@ -170,17 +170,7 @@ footer {
   font-size: 0.9rem;
 }
 
-.developer-credit {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 400;
-  display: inline-block;
-  margin-top: 0.25rem;
-}
 
-.developer-credit:hover {
-  color: var(--primary-color);
-}
 
 /* Enhanced Footer Responsiveness for Large Screens */
 @media screen and (min-width: 1024px) {

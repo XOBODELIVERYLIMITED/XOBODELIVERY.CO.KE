@@ -1,0 +1,267 @@
+/* Button Component Styles */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  white-space: nowrap;
+  outline: none;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #16234d;
+  outline-offset: 2px;
+}
+
+.btn:disabled,
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Button Variants */
+.btn--primary {
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(22, 35, 77, 0.25);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0f1a3a 0%, #16234d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(22, 35, 77, 0.35);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(22, 35, 77, 0.25);
+}
+
+.btn--secondary {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn--accent {
+  background: linear-gradient(135deg, #ff3a3a 0%, #ff6b6b 100%);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(255, 58, 58, 0.25);
+}
+
+.btn--accent:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ed1515 0%, #ff3a3a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(255, 58, 58, 0.35);
+}
+
+.btn--outline {
+  background: transparent;
+  color: #16234d;
+  border: 2px solid #16234d;
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: #16234d;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(22, 35, 77, 0.25);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #16234d;
+  border: none;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: rgba(22, 35, 77, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Button Sizes */
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: 2.25rem;
+}
+
+.btn--md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  min-height: 2.75rem;
+}
+
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-height: 3.25rem;
+}
+
+.btn--xl {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  min-height: 3.75rem;
+}
+
+/* Button Content */
+.btn__text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+.btn__icon--left {
+  margin-right: 0.25rem;
+}
+
+.btn__icon--right {
+  margin-left: 0.25rem;
+}
+
+/* Loading State */
+.btn--loading {
+  pointer-events: none;
+}
+
+.btn__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn--loading .btn__text,
+.btn--loading .btn__icon {
+  opacity: 0;
+}
+
+/* Ripple Effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent 1%, rgba(255, 255, 255, 0.2) 1%);
+  background-size: 15000%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, background-size 0.5s;
+}
+
+.btn:active::before {
+  background-size: 100%;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Focus Ring for Accessibility */
+.btn:focus-visible::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #16234d;
+  border-radius: 0.625rem;
+  opacity: 0.6;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+  
+  .btn--sm {
+    min-height: 2.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn--lg {
+    min-height: 3.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .btn--xl {
+    min-height: 4rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .btn--primary {
+    background: #000000;
+    border: 2px solid #ffffff;
+  }
+  
+  .btn--secondary {
+    border: 2px solid #000000;
+  }
+  
+  .btn--outline {
+    border-width: 3px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  
+  .btn::before {
+    display: none;
+  }
+  
+  .spinner {
+    animation: none;
+    border: 2px solid currentColor;
+    border-radius: 0;
+  }
+} 

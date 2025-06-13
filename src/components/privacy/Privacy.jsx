@@ -1,143 +1,297 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { ShieldCheckIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import { FaShieldAlt, FaUserShield, FaLock, FaEye, FaFileContract, FaClock, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import './privacy.css';
 
 function Privacy() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
+  const privacySections = [
+    {
+      id: 'information-collection',
+      title: 'Information We Collect',
+      content: `
+        At XOBO Delivery, we collect information to provide you with reliable delivery services and improve your experience:
+        
+        • Personal Information: Name, phone number, email address, and delivery addresses
+        • Account Information: Username, password, preferences, and delivery history
+        • Location Data: Pickup and delivery addresses, and real-time location for tracking (with your consent)
+        • Payment Information: Payment method details and transaction history
+        • Communication Data: Messages, support tickets, and feedback you provide
+        • Device Information: Device type, operating system, and app usage data
+        • Cookies and Similar Technologies: To enhance website functionality and user experience
+      `
+    },
+    {
+      id: 'data-usage',
+      title: 'How We Use Your Information',
+      content: `
+        We use your personal information for legitimate business purposes:
+        
+        • Processing and fulfilling your delivery requests
+        • Communicating about your deliveries and account
+        • Processing payments and maintaining financial records
+        • Providing customer support and resolving issues
+        • Improving our services and developing new features
+        • Ensuring security and preventing fraud
+        • Complying with legal obligations and regulations
+        • Sending important updates about our services (with your consent for marketing)
+      `
+    },
+    {
+      id: 'information-sharing',
+      title: 'Information Sharing',
+      content: `
+        We share your information only when necessary and with your consent:
+        
+        • Delivery Partners: Limited information necessary to complete your delivery
+        • Payment Processors: Secure payment processing through trusted partners
+        • Service Providers: Third-party services that help us operate our platform
+        • Legal Requirements: When required by law or to protect our rights and safety
+        • Business Transfers: In case of merger, acquisition, or sale of our business
+        • With Your Consent: Other purposes you specifically agree to
+        
+        We never sell your personal information to third parties for marketing purposes.
+      `
+    },
+    {
+      id: 'data-security',
+      title: 'Data Security',
+      content: `
+        We implement comprehensive security measures to protect your information:
+        
+        • Encryption: All sensitive data is encrypted in transit and at rest
+        • Access Controls: Strict employee access controls and authentication systems
+        • Regular Audits: Security assessments and vulnerability testing
+        • Secure Infrastructure: Protected servers and secure cloud storage
+        • Incident Response: Procedures for handling potential security breaches
+        • Third-Party Security: Rigorous vetting of all service providers
+        • Data Minimization: We only collect and retain necessary information
+      `
+    },
+    {
+      id: 'your-rights',
+      title: 'Your Privacy Rights',
+      content: `
+        You have important rights regarding your personal information:
+        
+        • Right to Access: Request copies of your personal data
+        • Right to Rectification: Correct inaccurate or incomplete information
+        • Right to Erasure: Request deletion of your personal data
+        • Right to Restrict Processing: Limit how we use your data
+        • Right to Data Portability: Receive your data in a portable format
+        • Right to Object: Opt-out of certain data processing activities
+        • Right to Withdraw Consent: Cancel consent for optional data processing
+        • Right to Complain: File complaints with data protection authorities
+      `
+    },
+    {
+      id: 'cookies-tracking',
+      title: 'Cookies and Tracking',
+      content: `
+        We use cookies and similar technologies to enhance your experience:
+        
+        • Essential Cookies: Required for basic website functionality
+        • Analytics Cookies: Help us understand how you use our services
+        • Functional Cookies: Remember your preferences and settings
+        • Marketing Cookies: Deliver relevant content and advertisements (with consent)
+        • Third-Party Cookies: From trusted partners for analytics and advertising
+        
+        You can control cookie settings through your browser preferences.
+      `
+    }
+  ];
 
+  const privacyPrinciples = [
+    {
+      icon: <FaShieldAlt />,
+      title: "Security First",
+      description: "We implement industry-leading security measures to protect your personal information."
+    },
+    {
+      icon: <FaUserShield />,
+      title: "Your Control",
+      description: "You have full control over your data and can access, modify, or delete it anytime."
+    },
+    {
+      icon: <FaLock />,
+      title: "Data Protection",
+      description: "We comply with international data protection standards and regulations."
+    },
+    {
+      icon: <FaEye />,
+      title: "Transparency",
+      description: "We're transparent about what data we collect and how we use it."
+    }
+  ];
+
+  return (
+    <div className="privacy-page">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 bg-primary-600">
-        <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <ShieldCheckIcon className="mx-auto h-16 w-16 text-white" />
-              <h1 className="mt-6 heading text-4xl sm:text-5xl text-white">
-                Privacy Policy
-              </h1>
-              <p className="mt-4 text-xl text-primary-100">
-                Last updated June 2nd, 2023
-              </p>
-            </motion.div>
+      <section className="privacy-hero">
+        <div className="container">
+          <div className="privacy-hero-content">
+            <FaShieldAlt className="hero-icon" />
+            <h1>Privacy Policy</h1>
+            <p>How we collect, use, and protect your personal information</p>
+            <div className="hero-buttons">
+              <Link to="/contact" className="hero-button primary">
+                <FaEnvelope className="button-icon" /> Contact Privacy Team
+              </Link>
+              <a href="mailto:privacy@xobo.co.ke" className="hero-button secondary">
+                <FaShieldAlt className="button-icon" /> Privacy Officer
+              </a>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>GDPR</strong>
+                <span>Compliant</span>
+              </div>
+              <div className="stat">
+                <strong>24/7</strong>
+                <span>Data Protection</span>
+              </div>
+              <div className="stat">
+                <strong>100%</strong>
+                <span>Secure Processing</span>
+              </div>
+            </div>
+            <small>Last updated: December 20, 2024</small>
           </div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="section bg-white">
+      {/* Introduction */}
+      <section className="privacy-intro-section">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <motion.div
-              className="prose prose-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="mt-8 space-y-6">
-                <p>
-                  Here, you can find out what kind of information we use to provide you with our bundle of
-                  transportation services, how we use your information to keep you safe,
-                  and the choices and controls available to you. In this notice, it is
-                  also stated that all the possible rights you have regarding to the
-                  privacy of your data. The data protection rules are set up in order to
-                  protect everyone who participates in the work. The term "us" or "we"
-                  refers to <strong>XOBO</strong> company incorporated and registered under the laws of the
-                  Kenyan government.
-                </p>
+          <div className="intro-content">
+            <div className="section-intro">
+              <span className="section-tag">Your Privacy</span>
+              <h2 className="section-title">We Respect Your Privacy</h2>
+              <p className="section-description">
+                At XOBO Delivery Limited, we are committed to protecting your privacy and personal information. 
+                This privacy policy explains how we collect, use, share, and protect your information when you use our delivery services.
+                We believe in transparency and want you to understand your rights and how we handle your data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                  <p>
-                    In compliance with data protection regulations, we are licensed Data Controllers responsible for overseeing inquiries related to this privacy notice and ensuring the security of your personal data. For additional information about our licensed Data Controllers, please consult our{' '}
-                    <a
-                      href="/xdl-docs/XDL - DATA CONTROLLER DOC.pdf"
-                      target="_blank"
-                      download="XOBO DELIVERY LIMITED - DATA CONTROLLER CERTIFICATE.pdf"
-                      className="text-primary-600 hover:text-primary-500"
-                    >
-                      Data Controller Document
-                    </a>.
-                  </p>
-                </div>
+      {/* Privacy Principles */}
+      <section className="privacy-principles-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">Our Commitment</span>
+            <h2 className="section-title">Privacy Principles</h2>
+            <p className="section-subtitle">The core principles that guide how we handle your personal information</p>
+          </div>
+          <div className="principles-grid">
+            {privacyPrinciples.map((principle, index) => (
+              <div className="principle-card" key={index}>
+                <div className="principle-icon">{principle.icon}</div>
+                <h3>{principle.title}</h3>
+                <p>{principle.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <p>
-                  The term "you" or "your" refers to people who go to
-                  our app service that is requesting, hiring, and/or receiving a
-                  transportation service.
-                </p>
+      {/* Table of Contents */}
+      <section className="privacy-toc">
+        <div className="container">
+          <div className="toc-container">
+            <h2>Policy Contents</h2>
+            <p className="toc-description">Navigate to any section for detailed information:</p>
+            <ul className="toc-list">
+              {privacySections.map((section) => (
+                <li key={section.id}>
+                  <a href={`#${section.id}`}>{section.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">
-                    1. Personal data we process
-                  </h2>
-                  <p className="mb-6">
-                    We only process the information that is necessary for your needs on our marketplace. This
-                    ensures that we give you the best possible service for what you are
-                    looking to achieve.
-                  </p>
-                  <ul className="space-y-4 list-none pl-0">
-                    <motion.li
-                      className="flex items-start p-4 bg-white rounded-lg border border-gray-200"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <DocumentTextIcon className="h-6 w-6 text-primary-600 mt-1 mr-4" />
-                      <div>
-                        <h3 className="font-medium text-gray-900">Contact Details</h3>
-                        <p className="mt-1 text-gray-500">
-                          We will ask for your personal details like name, phone number, and e-mail address so that we can best help you.
-                        </p>
+      {/* Privacy Content */}
+      <section className="privacy-content">
+        <div className="container">
+          <div className="privacy-container">
+            {privacySections.map((section, index) => (
+              <div className="privacy-section" key={section.id} id={section.id}>
+                <div className="section-number">{String(index + 1).padStart(2, '0')}</div>
+                <div className="section-content">
+                  <h2>{section.title}</h2>
+                  <div className="privacy-text">
+                    {section.content.split('\n\n').map((paragraph, idx) => (
+                      <div key={idx}>
+                        {paragraph.includes('•') ? (
+                          <ul>
+                            {paragraph.split('•').filter(item => item.trim()).map((item, listIdx) => (
+                              <li key={listIdx}>{item.trim()}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p>{paragraph}</p>
+                        )}
                       </div>
-                    </motion.li>
-                    <motion.li
-                      className="flex items-start p-4 bg-white rounded-lg border border-gray-200"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                      <DocumentTextIcon className="h-6 w-6 text-primary-600 mt-1 mr-4" />
-                      <div>
-                        <h3 className="font-medium text-gray-900">Profile Information</h3>
-                        <p className="mt-1 text-gray-500">
-                          We collect some data to help you build your profile, such as your saved addresses and language preferences.
-                          Some of our services require some additional details like your driver's license number.
-                        </p>
-                      </div>
-                    </motion.li>
-                    <motion.li
-                      className="flex items-start p-4 bg-white rounded-lg border border-gray-200"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                      <DocumentTextIcon className="h-6 w-6 text-primary-600 mt-1 mr-4" />
-                      <div>
-                        <h3 className="font-medium text-gray-900">Geolocation</h3>
-                        <p className="mt-1 text-gray-500">
-                          By accessing your location we are able to offer a list of services on your location, such as local ride options.
-                          It will tell you how long the journey would take, with different expenditure options. There are also hints about your destination.
-                        </p>
-                      </div>
-                    </motion.li>
-                  </ul>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Contact Information */}
+      <section className="privacy-contact-section">
+        <div className="container">
+          <div className="contact-container">
+            <div className="contact-info">
+              <h2>Questions About Your Privacy?</h2>
+              <p>
+                If you have any questions about this Privacy Policy or how we handle your personal data, 
+                please contact our Privacy Team.
+              </p>
+              <div className="contact-methods">
+                <div className="contact-method">
+                  <FaClock className="contact-icon" />
+                  <div>
+                    <h4>Privacy Office Hours</h4>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                  </div>
+                </div>
+                <div className="contact-method">
+                  <FaFileContract className="contact-icon" />
+                  <div>
+                    <h4>Privacy Officer</h4>
+                    <p>Email: privacy@xobo.co.ke</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="privacy-cta-section">
+        <div className="container">
+          <div className="cta-container">
+            <h2>Ready to Use Our Services?</h2>
+            <p>Start using XOBO Delivery with confidence in your privacy protection</p>
+            <div className="cta-buttons">
+              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
+                Start Delivery
+              </a>
+              <Link to="/contact" className="cta-secondary">
+                Contact Privacy Team
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

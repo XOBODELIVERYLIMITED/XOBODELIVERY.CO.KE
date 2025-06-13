@@ -31,7 +31,9 @@ function Footer() {
             <div className="footer-column">
               <h4>Company</h4>
               <Link to="/about" onClick={handleNavClick}>About Us</Link>
-              <Link to="/drivers" onClick={handleNavClick}>Join as Driver</Link>
+              <Link to="/client-guide" onClick={handleNavClick}>Client Guide</Link>
+              <Link to="/partner-guide" onClick={handleNavClick}>Partner Guide</Link>
+              <Link to="/company-info" onClick={handleNavClick}>Company Info</Link>
               <Link to="/faq" onClick={handleNavClick}>FAQ</Link>
               <a href="https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w" target="_blank" rel="noopener noreferrer">Help Guide</a>
               <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
@@ -41,7 +43,7 @@ function Footer() {
               <h4>Policies</h4>
               <Link to="/terms" onClick={handleNavClick}>Terms of Service</Link>
               <Link to="/privacy-policy" onClick={handleNavClick}>Privacy Policy</Link>
-              <Link to="/privacy-policy" onClick={handleNavClick}>Driver Privacy</Link>
+              <Link to="/driver-privacy" onClick={handleNavClick}>Driver Privacy</Link>
             </div>
 
             <div className="footer-column">
@@ -71,16 +73,6 @@ function Footer() {
         
         <div className="footer-bottom">
           <p>&copy; XOBO {currentYear}. All rights reserved.</p>
-          <p>
-            <a 
-              href="http://www.linkedin.com/in/victor-shammah-8949211b2" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="developer-credit"
-            >
-              Developer: Victor Shammah
-            </a>
-          </p>
         </div>
       </div>
     </footer>

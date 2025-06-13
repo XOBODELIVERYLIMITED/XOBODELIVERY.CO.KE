@@ -79,9 +79,9 @@
   margin-bottom: 3rem;
 }
 
-/* Hero Section with Animation */
+/* Hero Section */
 .contact-hero {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
   padding: 5rem 0;
   color: var(--white);
   text-align: center;
@@ -89,88 +89,43 @@
   overflow: hidden;
 }
 
-.animated-bg {
+.contact-hero::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  bottom: -150px;
-  left: -100px;
-  animation: morph 15s linear infinite alternate;
-}
-
-.shape-2 {
-  width: 200px;
-  height: 200px;
-  top: -50px;
-  right: 10%;
-  animation: morph 20s linear infinite alternate-reverse;
-}
-
-.shape-3 {
-  width: 150px;
-  height: 150px;
-  bottom: 20%;
-  right: 20%;
-  animation: morph 18s linear infinite alternate;
-  opacity: 0.5;
-}
-
-@keyframes morph {
-  0% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  25% {
-    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-  }
-  50% {
-    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-  }
-  75% {
-    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-  }
-  100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
 }
 
 .contact-hero-content {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
+  z-index: 2;
+  padding: 0 1rem;
 }
 
 .contact-hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.25rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: white; /* Fallback */
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  letter-spacing: -0.5px;
 }
 
 .contact-hero-content p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .contact-hero-buttons {
@@ -178,6 +133,48 @@
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-stats .stat {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.hero-stats .stat strong {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ff3a3a;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.hero-stats .stat span {
+  font-size: 0.85rem;
+  opacity: 1;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
 }
 
 .hero-button {
@@ -253,14 +250,14 @@
 .benefit-card::before {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
   transform: scaleX(0);
-  transform-origin: left center;
   transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .benefit-card:hover {
@@ -270,6 +267,7 @@
 
 .benefit-card:hover::before {
   transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
 }
 
 .benefit-icon {
@@ -531,23 +529,93 @@
   padding: 0.85rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  color: var(--text-color);
+  font-size: 1rem;
+  color: #0f172a;
   background-color: var(--white);
   transition: var(--transition);
   height: 50px;
+  font-weight: 600;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.form-group select option {
+  color: #0f172a;
+  background-color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+  color: #64748b;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.form-group input:not(:placeholder-shown),
+.form-group select:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown) {
+  color: #0f172a;
+  font-weight: 600;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: var(--primary-light);
+  border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(22, 35, 77, 0.1);
+  box-shadow: 0 0 0 3px rgba(22, 35, 77, 0.1);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.form-group select:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316234d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
 }
 
 .form-group textarea {
-  height: 150px;
+  height: 200px;
   resize: vertical;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.form-group.message-group {
+  grid-column: 1 / -1;
+}
+
+.form-group.message-group textarea {
+  width: 100%;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+.form-group textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  background-color: #f8fafc;
+  color: #64748b;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .error-message {
@@ -666,12 +734,12 @@
   }
 
   .contact-hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
   .contact-hero-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
   }
 
@@ -679,8 +747,23 @@
     flex-direction: column;
     align-items: center;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     gap: 1rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-stats .stat strong {
+    font-size: 1.8rem;
+  }
+  
+  .hero-stats .stat span {
+    font-size: 0.75rem;
   }
 
   .hero-button {
@@ -708,6 +791,22 @@
   .phone-input .react-tel-input .form-control {
     height: 45px;
     padding: 0.75rem 0.9rem;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .form-group select {
+    padding-right: 2.5rem;
+    background-size: 0.9rem;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .form-group textarea {
+    height: 180px;
+    color: #0f172a;
+    font-weight: 600;
   }
   
   .benefits-grid {

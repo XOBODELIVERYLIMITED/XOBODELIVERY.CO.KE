@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHistory, FaTrophy, FaUsers, FaHandshake, FaMapMarkerAlt, FaBullseye } from 'react-icons/fa';
+import { FaHistory, FaTrophy, FaUsers, FaHandshake, FaMapMarkerAlt, FaBullseye, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './about.css';
 
@@ -49,11 +49,32 @@ function About() {
     <div className="about-page">
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="about-hero-overlay"></div>
         <div className="container">
           <div className="about-hero-content">
             <h1>Our Story</h1>
             <p>The journey of building Kenya's most reliable delivery service</p>
+            <div className="hero-buttons">
+              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="hero-button primary">
+                <FaTrophy className="button-icon" /> Start Delivering
+              </a>
+              <Link to="/contact" className="hero-button secondary">
+                <FaEnvelope className="button-icon" /> Contact Us
+              </Link>
+            </div>
+            <div className="hero-stats">
+              <div className="stat">
+                <strong>2020</strong>
+                <span>Founded</span>
+              </div>
+              <div className="stat">
+                <strong>47</strong>
+                <span>Counties Covered</span>
+              </div>
+              <div className="stat">
+                <strong>98%</strong>
+                <span>On-Time Delivery</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

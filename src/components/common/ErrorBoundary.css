@@ -1,0 +1,158 @@
+.error-boundary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.error-boundary-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.error-boundary-content h2 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.error-boundary-content p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retry-button,
+.refresh-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.retry-button {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #0284c7;
+  transform: translateY(-1px);
+}
+
+.refresh-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.refresh-button:hover {
+  background-color: #495057;
+  transform: translateY(-1px);
+}
+
+.error-details {
+  margin-top: 2rem;
+  text-align: left;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.error-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.error-stack {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #dc3545;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-boundary {
+    padding: 1rem;
+    min-height: 50vh;
+  }
+  
+  .error-boundary-content {
+    padding: 1.5rem;
+  }
+  
+  .error-icon {
+    font-size: 3rem;
+  }
+  
+  .error-boundary-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+  }
+  
+  .retry-button,
+  .refresh-button {
+    width: 100%;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .error-boundary {
+    background-color: #1a1a1a;
+  }
+  
+  .error-boundary-content {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .error-boundary-content p {
+    color: #a0aec0;
+  }
+  
+  .error-details {
+    border-color: #4a5568;
+  }
+  
+  .error-details summary {
+    color: #e2e8f0;
+  }
+  
+  .error-stack {
+    background-color: #1a202c;
+    color: #fc8181;
+  }
+} 
