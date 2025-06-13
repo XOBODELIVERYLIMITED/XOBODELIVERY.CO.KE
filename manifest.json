@@ -1,0 +1,39 @@
+{
+  "short_name": "XOBO Delivery",
+  "name": "XOBO Delivery - Fast & Reliable Delivery Services in Kenya",
+  "description": "XOBO Delivery provides fast and reliable delivery services across Kenya. Express, scheduled, and business delivery solutions.",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "media/XDL-ICON-2.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "media/XDL-ICON-2.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["business", "logistics", "transportation"],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "media/XDL-CLIENT.png",
+      "type": "image/png",
+      "sizes": "1280x720"
+    }
+  ]
+} 
