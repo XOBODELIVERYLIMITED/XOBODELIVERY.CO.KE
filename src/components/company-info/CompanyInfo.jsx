@@ -94,7 +94,7 @@ function CompanyInfo() {
       <section className="company-hero">
         <div className="container">
           <div className="hero-content">
-            <h1>XOBO Delivery Limited</h1>
+            <h1>About Us</h1>
             <p>Kenya's Most Trusted & Compliant Delivery Service</p>
             <div className="company-location">
               <FaMapMarkerAlt className="location-icon" />
@@ -140,6 +140,30 @@ function CompanyInfo() {
               <div className="section-intro">
                 <h2>About XOBO Delivery Limited</h2>
                 <p>Established in 2020, XOBO Delivery Limited has emerged as Kenya's fastest-growing logistics platform, connecting businesses with reliable delivery solutions across 47 counties.</p>
+                
+                <div className="name-origin-section">
+                  <h3>The Story Behind Our Name</h3>
+                  <p>The name XOBO carries a special meaning that reflects our core values and mission:</p>
+                  <div className="name-breakdown">
+                    <div className="letter-meaning">
+                      <strong>X</strong>
+                      <span>eXcellence in service delivery</span>
+                    </div>
+                    <div className="letter-meaning">
+                      <strong>O</strong>
+                      <span>Outstanding customer experience</span>
+                    </div>
+                    <div className="letter-meaning">
+                      <strong>B</strong>
+                      <span>Building lasting partnerships</span>
+                    </div>
+                    <div className="letter-meaning">
+                      <strong>O</strong>
+                      <span>Optimized logistics solutions</span>
+                    </div>
+                  </div>
+                  <p>Each letter represents our commitment to providing exceptional delivery services that connect businesses and customers across Kenya.</p>
+                </div>
               </div>
 
               <div className="company-values-grid">

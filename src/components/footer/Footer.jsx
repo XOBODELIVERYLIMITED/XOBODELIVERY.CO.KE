@@ -31,11 +31,10 @@ function Footer() {
             <div className="footer-column">
               <h4>Company</h4>
               <Link to="/about" onClick={handleNavClick}>About Us</Link>
-              <Link to="/client-guide" onClick={handleNavClick}>Client Guide</Link>
+              <Link to="/client-guide" onClick={handleNavClick}>Customer Guide</Link>
               <Link to="/partner-guide" onClick={handleNavClick}>Partner Guide</Link>
               <Link to="/company-info" onClick={handleNavClick}>Company Info</Link>
               <Link to="/faq" onClick={handleNavClick}>FAQ</Link>
-              <a href="https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w" target="_blank" rel="noopener noreferrer">Help Guide</a>
               <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
             </div>
 

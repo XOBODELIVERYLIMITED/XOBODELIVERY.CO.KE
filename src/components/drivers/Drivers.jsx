@@ -102,7 +102,7 @@ function Drivers() {
           <div className="drivers-hero-content">
             <h1>Drive With XOBO</h1>
             <p>Join our growing team of delivery partners and enjoy flexible earning opportunities</p>
-            <a href="#apply" className="cta-primary">Apply Now</a>
+            <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noreferrer" className="hero-button primary">Apply Now</a>
           </div>
         </div>
       </section>
@@ -232,10 +232,10 @@ function Drivers() {
             <h2>Ready to Join Our Team?</h2>
             <p>Apply now and start earning with Kenya's fastest growing delivery service</p>
             <div className="cta-buttons">
-              <a href="https://forms.xobo.co.ke/driver-application" target="_blank" rel="noreferrer" className="cta-primary">
+              <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noreferrer" className="hero-button primary">
                 Apply as Driver
               </a>
-              <Link to="/contact" className="cta-secondary">
+              <Link to="/contact" className="hero-button secondary">
                 Contact Us
               </Link>
             </div>

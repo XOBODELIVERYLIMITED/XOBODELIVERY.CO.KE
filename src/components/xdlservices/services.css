@@ -378,7 +378,7 @@
   background-size: cover;
 }
 
-.cta-container {
+.cta-section .container {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -386,7 +386,7 @@
   z-index: 2;
 }
 
-.cta-container h2 {
+.cta-section h2 {
   font-size: 2.5rem;
   color: #ffffff;
   margin-bottom: 1.5rem;
@@ -396,7 +396,7 @@
   line-height: 1.3;
 }
 
-.cta-container p {
+.cta-section p {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2.5rem;
@@ -408,21 +408,21 @@
   margin-right: auto;
 }
 
-.cta-container .cta-primary {
+.cta-section .cta-primary {
   background-color: var(--white);
   color: var(--primary-color);
 }
 
-.cta-container .cta-primary:hover {
+.cta-section .cta-primary:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.cta-container .cta-secondary {
+.cta-section .cta-secondary {
   border-color: var(--white);
   color: var(--white);
 }
 
-.cta-container .cta-secondary:hover {
+.cta-section .cta-secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -474,11 +474,11 @@
     padding: 5rem 0;
   }
   
-  .cta-container h2 {
+  .cta-section h2 {
     font-size: 2.2rem;
   }
   
-  .cta-container p {
+  .cta-section p {
     font-size: 1rem;
   }
 }
@@ -574,12 +574,12 @@
     padding: 4rem 0;
   }
   
-  .cta-container h2 {
+  .cta-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
   
-  .cta-container p {
+  .cta-section p {
     margin-bottom: 2rem;
   }
 }
@@ -654,11 +654,11 @@
     padding: 3.5rem 0;
   }
   
-  .cta-container h2 {
+  .cta-section h2 {
     font-size: 1.7rem;
   }
   
-  .cta-container p {
+  .cta-section p {
     font-size: 0.9rem;
   }
 }
@@ -691,7 +691,7 @@
     font-size: 1.2rem;
   }
   
-  .cta-container h2 {
+  .cta-section h2 {
     font-size: 1.5rem;
   }
 }
@@ -745,7 +745,7 @@
     font-size: 0.85rem;
   }
   
-  .cta-container h2 {
+  .cta-section h2 {
     font-size: 1.3rem;
   }
 }

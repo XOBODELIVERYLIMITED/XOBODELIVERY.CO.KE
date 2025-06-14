@@ -12,6 +12,14 @@ const navLinks = [
     link: '/services',
   },
   {
+    name: 'Drivers',
+    link: '/drivers',
+  },
+  {
+    name: 'About',
+    link: '/about',
+  },
+  {
     name: 'Contact',
     link: '/contact',
   },

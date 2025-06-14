@@ -315,7 +315,7 @@ function Home() {
                 </div>
                 <div className="benefit-content">
               <h3>Fast & flexible delivery</h3>
-                  <p>On-demand, same-day or advance orders. We're ready when you are and promise a fast service with delivery options tailored to your schedule.</p>
+                  <p>On-demand, same-day or advance orders. We are ready when you are and promise a fast service with delivery options tailored to your schedule.</p>
             </div>
           </div>
 
@@ -410,7 +410,7 @@ function Home() {
           <div className="section-intro">
             <span className="section-tag">Trusted By</span>
             <h2 className="section-title">Our Customers</h2>
-            <p className="section-subtitle">We're proud to serve businesses across Kenya with reliable delivery solutions</p>
+            <p className="section-subtitle">We are proud to serve businesses across Kenya with reliable delivery solutions</p>
           </div>
 
           <div className="customers-carousel-container">

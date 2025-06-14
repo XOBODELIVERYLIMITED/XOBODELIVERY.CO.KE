@@ -88,6 +88,8 @@
   z-index: 2;
   max-width: 800px;
   padding: 0 1rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .drivers-hero h1 {
@@ -110,21 +112,47 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.drivers-hero .cta-primary {
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
+
+
+/* Hero Button Styling (matching nav login button) */
+.hero-button {
   display: inline-block;
-  background-color: white;
-  color: #16234d;
+  padding: 0.7rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-height: auto;
+  max-width: 150px;
+  text-align: center;
 }
 
-.drivers-hero .cta-primary:hover {
-  background-color: #f8f9fa;
+.hero-button.primary {
+  background-color: #ff3a3a;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(255, 58, 58, 0.3);
+}
+
+.hero-button.primary:hover {
+  background-color: #ff5555;
   transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 58, 58, 0.4);
+}
+
+.hero-button.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.button-icon {
+  font-size: 1rem;
 }
 
 /* Driver Intro Section */
@@ -416,42 +444,13 @@
 
 .cta-buttons {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-.cta-primary,
-.cta-secondary {
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  display: inline-block;
-}
 
-.cta-primary {
-  background-color: white;
-  color: #16234d;
-}
-
-.cta-primary:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-3px);
-}
-
-.cta-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -512,8 +511,9 @@
     padding: 20px;
   }
   
-  .cta-primary,
-  .cta-secondary {
+  .hero-button {
     width: 100%;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

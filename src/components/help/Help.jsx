@@ -19,10 +19,13 @@ function Help() {
       <section className="help-guide-section">
         <div className="container">
           <div className="guide-container">
-            <div className="guide-intro">
-              <FaFileAlt className="guide-icon" />
-              <h2>Step-by-Step Guide</h2>
-              <p>Welcome to XOBO Delivery! This guide will help you understand how to use our services effectively.</p>
+            <div className="section-intro">
+              <span className="section-tag">Getting Started</span>
+              <h2 className="section-title">Step-by-Step Guide</h2>
+              <p className="section-subtitle">Welcome to XOBO Delivery! This guide will help you understand how to use our services effectively.</p>
+              <div className="guide-icon">
+                <FaFileAlt />
+              </div>
             </div>
 
             <div className="steps-container">

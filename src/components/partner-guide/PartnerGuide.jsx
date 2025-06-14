@@ -218,9 +218,37 @@ function PartnerGuide() {
             </div>
             <div className="hero-cta">
               <a href="https://forms.xobo.co.ke/driver-application" target="_blank" rel="noopener noreferrer" className="cta-primary">
-                Apply Now
+                Download Driver APP
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Process */}
+      <section className="application-process">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">Application Process</span>
+            <h2 className="section-title">How to Apply</h2>
+            <p className="section-subtitle">Simple 4-step process to become a XOBO partner</p>
+          </div>
+
+          <div className="process-steps">
+            {applicationSteps.map((step, index) => (
+              <div className="process-step" key={index}>
+                <div className="step-number">{step.step}</div>
+                <div className="step-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                  <ul>
+                    {step.details.map((detail, idx) => (
+                      <li key={idx}>{detail}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -301,34 +329,6 @@ function PartnerGuide() {
                 </div>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Application Process */}
-      <section className="application-process">
-        <div className="container">
-          <div className="section-intro">
-            <span className="section-tag">Application Process</span>
-            <h2 className="section-title">How to Apply</h2>
-            <p className="section-subtitle">Simple 4-step process to become a XOBO partner</p>
-          </div>
-
-          <div className="process-steps">
-            {applicationSteps.map((step, index) => (
-              <div className="process-step" key={index}>
-                <div className="step-number">{step.step}</div>
-                <div className="step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                  <ul>
-                    {step.details.map((detail, idx) => (
-                      <li key={idx}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -482,7 +482,7 @@ function PartnerGuide() {
             <p>Join hundreds of successful delivery partners earning with XOBO</p>
             <div className="cta-buttons">
               <a href="https://forms.xobo.co.ke/driver-application" target="_blank" rel="noopener noreferrer" className="cta-primary">
-                Apply as Partner
+                Download Driver APP
               </a>
               <Link to="/contact" className="cta-secondary">
                 Contact Us

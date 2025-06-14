@@ -439,36 +439,72 @@ p {
   margin: 0 auto;
 }
 
+/* Global Bullet Point Styling */
+ul li::marker,
+ol li::marker {
+  font-size: 0.7em;
+}
+
+ul li {
+  padding-left: 0.25rem;
+}
+
+ol li {
+  padding-left: 0.25rem;
+}
+
 /* Feature Lists */
-.feature-list {
+.feature-list,
+.features-list {
   list-style: none;
   padding: 0;
   margin: var(--space-6) 0;
 }
 
-.feature-list li {
+.feature-list li,
+.features-list li {
   display: flex;
   align-items: flex-start;
   padding: var(--space-3) 0;
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
+  position: relative;
+  padding-left: 1.5rem;
 }
 
-.feature-list li::before {
+.feature-list li::before,
+.features-list li::before {
   content: '✓';
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: var(--text-xs);
+  font-size: 0.7rem;
   font-weight: var(--font-weight-bold);
   margin-right: var(--space-3);
   flex-shrink: 0;
   margin-top: var(--space-1);
+  position: absolute;
+  left: 0;
+}
+
+/* Star Rating */
+.testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.testimonial-rating svg {
+  color: #ffd700;
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 /* Links */

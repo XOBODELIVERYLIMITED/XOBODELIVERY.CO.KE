@@ -142,17 +142,15 @@ function Services() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
-            <h2>Ready to simplify your deliveries?</h2>
-            <p>Join hundreds of businesses that trust XOBO for their delivery needs</p>
-            <div className="cta-buttons">
-              <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
-                Start Delivering
-              </a>
-              <Link to="/contact" className="cta-secondary">
-                Contact Us
-              </Link>
-            </div>
+          <h2>Ready to simplify your deliveries?</h2>
+          <p>Join hundreds of businesses that trust XOBO for their delivery needs</p>
+          <div className="cta-buttons">
+            <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
+              Start Delivering
+            </a>
+            <Link to="/contact" className="cta-secondary">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>

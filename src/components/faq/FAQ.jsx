@@ -12,7 +12,7 @@ const FAQ = () => {
     {
       "id": 1,
       "question": "How do I create an account on biz.xobo.co.ke?",
-      "answer": "Creating an account is simple! Navigate to https://biz.xobo.co.ke/login and click on 'Do not have an account'. Fill in your signup details including your name, email, phone number, and create a secure password. Once you've completed the signup form, you can proceed to login using your email and password.",
+      "answer": "Creating an account is simple! Navigate to <a href='https://biz.xobo.co.ke/login' target='_blank' rel='noopener noreferrer' style='color: #16234d; font-weight: 600; text-decoration: underline;'>https://biz.xobo.co.ke/login</a> and click on 'Do not have an account'. Fill in your signup details including your name, email, phone number, and create a secure password. Once you've completed the signup form, you can proceed to login using your email and password.",
       "category": "account"
     },
 
