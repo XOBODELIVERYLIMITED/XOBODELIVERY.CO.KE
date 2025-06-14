@@ -19,10 +19,6 @@ const navLinks = [
     name: 'FAQS',
     link: '/faq',
   },
-  {
-    name: 'Help',
-    link: '/help',
-  },
 ];
 
 function Header() {
