@@ -253,6 +253,7 @@
   list-style: none;
   padding: 0;
   margin: 1rem 0;
+  counter-reset: feature-counter;
 }
 
 .card__feature-list li {
@@ -261,17 +262,27 @@
   padding: 0.5rem 0;
   color: #374151;
   font-size: 0.95rem;
+  padding-left: 3rem;
+  position: relative;
+  counter-increment: feature-counter;
 }
 
 .card__feature-list li::before {
-  content: '→';
+  content: counter(feature-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-right: 0.75rem;
   flex-shrink: 0;
 }
 

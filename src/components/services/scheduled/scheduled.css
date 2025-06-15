@@ -260,6 +260,7 @@
   list-style: none;
   padding: 0;
   margin-top: 2rem;
+  counter-reset: feature-counter;
 }
 
 .features-list li {
@@ -271,11 +272,21 @@
 }
 
 .features-list li::before {
-  content: '✓';
-  color: var(--accent-color);
+  content: counter(feature-counter);
+  counter-increment: feature-counter;
+  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
   position: absolute;
   left: 0;
-  font-weight: bold;
+  top: 2px;
 }
 
 /* CTA Section */
