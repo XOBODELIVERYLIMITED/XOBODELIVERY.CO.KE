@@ -8,17 +8,17 @@ function About() {
     {
       icon: <FaHandshake />,
       title: "Reliability",
-      description: "We pride ourselves on being dependable and consistent in our service delivery."
+      description: "Dependable and consistent service delivery."
     },
     {
       icon: <FaBullseye />,
       title: "Efficiency",
-      description: "We optimize our processes to ensure swift and accurate deliveries."
+      description: "Optimized processes for swift, accurate deliveries."
     },
     {
       icon: <FaUsers />,
       title: "Customer Focus",
-      description: "Our customers' satisfaction is at the heart of everything we do."
+      description: "Customer satisfaction at the heart of everything we do."
     }
   ];
 
@@ -26,22 +26,22 @@ function About() {
     {
       year: "2020",
       title: "Company Founded",
-      description: "XOBO Delivery was established with a vision to revolutionize logistics in Kenya."
+      description: "XOBO established with vision to revolutionize logistics in Kenya."
     },
     {
       year: "2021",
       title: "Service Expansion",
-      description: "Expanded our services to cover all major cities across Kenya."
+      description: "Expanded services to major cities across Kenya."
     },
     {
       year: "2022",
       title: "Technology Integration",
-      description: "Launched our mobile app and business dashboard for seamless service delivery."
+      description: "Launched mobile app and business dashboard."
     },
     {
       year: "2023",
       title: "Fleet Expansion",
-      description: "Added more vehicles to our fleet to support growing demand."
+      description: "Added more vehicles to support growing demand."
     }
   ];
 
@@ -52,7 +52,7 @@ function About() {
         <div className="container">
           <div className="about-hero-content">
             <h1>Our Story</h1>
-            <p>The journey of building Kenya's most reliable delivery service</p>
+            <p>Building Kenya's most reliable delivery service</p>
             <div className="hero-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="hero-button primary">
                 <FaTrophy className="button-icon" /> Start Delivering
@@ -87,10 +87,9 @@ function About() {
               <span className="section-tag">Our Mission</span>
               <h2 className="section-title">Connecting Businesses with Customers</h2>
               <p className="section-description">
-                At XOBO Delivery, we aim to be the bridge between businesses and their customers by providing
-                reliable, efficient, and technology-driven delivery services. We understand the importance
-                of timely deliveries in today's fast-paced world and strive to exceed expectations with
-                every package we handle.
+                We aim to bridge businesses and customers through reliable, 
+                efficient, and technology-driven delivery services. We deliver on time
+                and strive to exceed expectations with every package.
               </p>
             </div>
             <div className="mission-stats">
@@ -117,7 +116,7 @@ function About() {
           <div className="section-intro">
             <span className="section-tag">Our Values</span>
             <h2 className="section-title">What Drives Us</h2>
-            <p className="section-subtitle">Our core values shape how we approach every delivery and interaction</p>
+            <p className="section-subtitle">Core values that shape our approach</p>
           </div>
           <div className="values-grid">
             {companyValues.map((value, index) => (
@@ -136,8 +135,8 @@ function About() {
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Our Journey</span>
-            <h2 className="section-title">XOBO Through the Years</h2>
-            <p className="section-subtitle">The key milestones that shaped our growth</p>
+            <h2 className="section-title">XOBO Timeline</h2>
+            <p className="section-subtitle">Key milestones in our growth</p>
           </div>
           <div className="timeline">
             {milestones.map((milestone, index) => (
@@ -163,8 +162,8 @@ function About() {
                 <span className="section-tag">Our Location</span>
                 <h2 className="section-title">Where to Find Us</h2>
                 <p className="section-description">
-                  XOBO Delivery is located at Longonot Place, Kijabe Street in the heart of Nairobi.
-                  Visit our office to learn more about our services or to discuss your delivery needs.
+                  Located at Longonot Place, Kijabe Street, Nairobi.
+                  Visit us to discuss your delivery needs.
                 </p>
                 <div className="coverage-features">
                   <div className="feature-item">
@@ -207,8 +206,8 @@ function About() {
       <section className="about-cta-section">
         <div className="container">
           <div className="cta-container">
-            <h2>Ready to experience the XOBO difference?</h2>
-            <p>Join thousands of satisfied customers who trust us with their deliveries</p>
+            <h2>Ready to experience XOBO?</h2>
+            <p>Join thousands of satisfied customers</p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noreferrer" className="cta-primary">
                 Start Delivering

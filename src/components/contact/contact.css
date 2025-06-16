@@ -49,10 +49,13 @@
 /* Common Section Styles */
 .section-tag {
   display: inline-block;
-  font-size: 0.85rem;
+  background-color: rgba(22, 35, 77, 0.1);
+  color: #16234d;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--accent-color);
-  margin-bottom: 0.75rem;
+  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -240,11 +243,14 @@
   border-radius: var(--radius-md);
   padding: 2rem;
   text-align: center;
-  transition: var(--transition);
+  transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .benefit-card::before {
@@ -261,8 +267,8 @@
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .benefit-card:hover::before {
@@ -271,24 +277,25 @@
 }
 
 .benefit-icon {
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary-color);
-  color: var(--white);
+  width: 70px;
+  height: 70px;
+  background-color: #f5f7fa;
+  color: #16234d;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   position: relative;
   z-index: 2;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .benefit-card:hover .benefit-icon {
-  background-color: var(--accent-color);
-  transform: scale(1.1);
+  background-color: #ff3a3a;
+  color: #ffffff;
+  transform: rotateY(360deg);
 }
 
 .benefit-card h3 {
@@ -709,6 +716,13 @@
   
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
   }
   
   .contact-section {
@@ -823,6 +837,13 @@
     min-height: auto;
   }
   
+  .benefit-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+  }
+  
   .contact-grid {
     gap: 2rem;
   }
@@ -921,8 +942,9 @@
   }
   
   .benefit-icon {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
     margin-bottom: 1.25rem;
   }
   

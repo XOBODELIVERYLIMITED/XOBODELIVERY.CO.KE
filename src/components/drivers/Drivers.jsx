@@ -1,29 +1,82 @@
-import React from 'react';
-import { FaCar, FaMoneyBillWave, FaClock, FaShieldAlt, FaIdCard, FaFileAlt, FaCarAlt, FaChartLine } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaCar, FaMoneyBillWave, FaClock, FaShieldAlt, FaIdCard, FaFileAlt, FaCarAlt, FaChartLine, FaTruck, FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './drivers.css';
 
 function Drivers() {
+  const [activeTab, setActiveTab] = useState('individual');
+
   const driverBenefits = [
     {
       icon: <FaMoneyBillWave />,
       title: "Competitive Earnings",
-      description: "Earn competitive rates with transparent payment structures and regular payouts."
+      description: "Earn competitive rates with transparent payments and regular payouts."
     },
     {
       icon: <FaClock />,
       title: "Flexible Schedule",
-      description: "Work on your own schedule. Choose when and how much you want to work."
+      description: "Work on your own schedule. Choose when and how much you work."
     },
     {
       icon: <FaShieldAlt />,
       title: "Safety Features",
-      description: "Our app includes features designed to keep you safe while on the road."
+      description: "App features designed to keep you safe on the road."
     },
     {
       icon: <FaChartLine />,
       title: "Growth Opportunities",
-      description: "Opportunities for advancement and increased earnings based on performance."
+      description: "Advancement opportunities and increased earnings based on performance."
+    }
+  ];
+
+  const individualRequirements = [
+    {
+      category: "Personal Details",
+      icon: <FaIdCard />,
+      items: [
+        "Full names",
+        "Profile photo",
+        "M-Pesa number",
+        "Email address",
+        "ID document",
+        "Driving license"
+      ]
+    },
+    {
+      category: "Vehicle Details",
+      icon: <FaCar />,
+      items: [
+        "Vehicle photo",
+        "Registration number",
+        "Logbook/sales agreement",
+        "Insurance",
+        "KRA Pin"
+      ]
+    }
+  ];
+
+  const fleetRequirements = [
+    {
+      category: "Company Documents",
+      icon: <FaFileAlt />,
+      items: [
+        "Certificate of incorporation",
+        "Business permit",
+        "KRA Pin",
+        "Tax compliance",
+        "Company profile"
+      ]
+    },
+    {
+      category: "Fleet Information",
+      icon: <FaTruck />,
+      items: [
+        "Vehicle fleet list",
+        "Vehicle logbooks",
+        "Insurance coverage",
+        "Driver contracts",
+        "Safety protocols"
+      ]
     }
   ];
 
@@ -31,22 +84,22 @@ function Drivers() {
     {
       icon: <FaIdCard />,
       title: "Valid ID",
-      description: "Government-issued identification card (National ID, Passport)"
+      description: "Government-issued ID (National ID, Passport)"
     },
     {
       icon: <FaFileAlt />,
       title: "Driver's License",
-      description: "Valid Kenyan driver's license appropriate for your vehicle class"
+      description: "Valid Kenyan license for your vehicle class"
     },
     {
       icon: <FaCarAlt />,
       title: "Vehicle Requirements",
-      description: "A well-maintained vehicle that meets our safety standards (if using your own)"
+      description: "Well-maintained vehicle meeting our safety standards"
     },
     {
       icon: <FaShieldAlt />,
       title: "Background Check",
-      description: "Pass our standard background check for safety and security"
+      description: "Standard background check for safety and security"
     }
   ];
 
@@ -54,7 +107,7 @@ function Drivers() {
     {
       number: "01",
       title: "Apply Online",
-      description: "Fill out our simple online application form with your details."
+      description: "Fill out our simple online application form."
     },
     {
       number: "02",
@@ -64,17 +117,17 @@ function Drivers() {
     {
       number: "03",
       title: "Background Check",
-      description: "We conduct a thorough background check for everyone's safety."
+      description: "We conduct a thorough background check."
     },
     {
       number: "04",
       title: "Training",
-      description: "Complete our brief training on using the driver app and procedures."
+      description: "Complete brief training on app and procedures."
     },
     {
       number: "05",
       title: "Start Earning",
-      description: "Begin accepting delivery requests and earning money."
+      description: "Begin accepting delivery requests."
     }
   ];
 
@@ -83,13 +136,13 @@ function Drivers() {
       name: "John Kamau",
       position: "Driver since 2021",
       image: `${process.env.PUBLIC_URL}/media/driver1.jpg`,
-      quote: "Joining XOBO as a driver has given me the flexibility to earn a good income while still having time for my family. The app is easy to use and the support team is always helpful."
+      quote: "Joining XOBO gave me flexibility to earn while having time for family. The app is easy to use with helpful support."
     },
     {
       name: "Mary Otieno",
       position: "Driver since 2022",
       image: `${process.env.PUBLIC_URL}/media/driver2.jpg`,
-      quote: "I started driving for XOBO part-time and now I'm doing it full-time. The earnings are consistent and the flexible schedule allows me to pursue my other interests."
+      quote: "Started part-time, now full-time. Consistent earnings with flexible schedule to pursue other interests."
     }
   ];
 
@@ -101,7 +154,7 @@ function Drivers() {
         <div className="container">
           <div className="drivers-hero-content">
             <h1>Drive With XOBO</h1>
-            <p>Join our growing team of delivery partners and enjoy flexible earning opportunities</p>
+            <p>Join our team and enjoy flexible earning opportunities</p>
             <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noreferrer" className="hero-button primary">Apply Now</a>
           </div>
         </div>
@@ -114,9 +167,8 @@ function Drivers() {
             <span className="section-tag">Why Drive with Us</span>
             <h2 className="section-title">Flexible Work, Reliable Income</h2>
             <p className="section-description">
-              XOBO provides drivers with a platform to earn income on their own terms. Whether you're
-              looking for full-time work or just want to earn extra income in your spare time,
-              our platform offers the flexibility and support you need to succeed.
+              Earn income on your own terms. Full-time or part-time,
+              our platform offers flexibility and support to succeed.
             </p>
           </div>
           <div className="intro-stats">
@@ -142,7 +194,7 @@ function Drivers() {
           <div className="section-intro">
             <span className="section-tag">Benefits</span>
             <h2 className="section-title">Why Choose XOBO</h2>
-            <p className="section-subtitle">Enjoy these benefits when you join our driver network</p>
+            <p className="section-subtitle">Benefits when you join our driver network</p>
           </div>
           <div className="benefits-grid">
             {driverBenefits.map((benefit, index) => (
@@ -156,13 +208,93 @@ function Drivers() {
         </div>
       </section>
 
+      {/* Driver Types */}
+      <section className="driver-types-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">Partnership Options</span>
+            <h2 className="section-title">Choose Your Driver Type</h2>
+            <p className="section-subtitle">Individual drivers and fleet companies welcome</p>
+          </div>
+
+          <div className="driver-tabs">
+            <button 
+              className={`tab ${activeTab === 'individual' ? 'active' : ''}`}
+              onClick={() => setActiveTab('individual')}
+            >
+              <FaCar className="tab-icon" />
+              Individual Driver
+            </button>
+            <button 
+              className={`tab ${activeTab === 'company' ? 'active' : ''}`}
+              onClick={() => setActiveTab('company')}
+            >
+              <FaTruck className="tab-icon" />
+              Fleet Company
+            </button>
+          </div>
+
+          <div className="tab-content">
+            {activeTab === 'individual' && (
+              <div className="requirements-section individual">
+                <h3>Individual Driver Requirements</h3>
+                <p>For individual drivers with own vehicles seeking extra income</p>
+                <div className="requirements-grid">
+                  {individualRequirements.map((req, index) => (
+                    <div className="requirement-card" key={index}>
+                      <div className="requirement-header">
+                        <div className="requirement-icon">{req.icon}</div>
+                        <h4>{req.category}</h4>
+                      </div>
+                      <ul className="requirement-list">
+                        {req.items.map((item, idx) => (
+                          <li key={idx}>
+                            <FaCheckCircle className="check-icon" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'company' && (
+              <div className="requirements-section company">
+                <h3>Fleet Company Requirements</h3>
+                <p>For companies with multiple vehicles expanding delivery services</p>
+                <div className="requirements-grid">
+                  {fleetRequirements.map((req, index) => (
+                    <div className="requirement-card" key={index}>
+                      <div className="requirement-header">
+                        <div className="requirement-icon">{req.icon}</div>
+                        <h4>{req.category}</h4>
+                      </div>
+                      <ul className="requirement-list">
+                        {req.items.map((item, idx) => (
+                          <li key={idx}>
+                            <FaCheckCircle className="check-icon" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Requirements Section */}
-      <section className="requirements-section">
+      <section className="requirements-section general">
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Requirements</span>
             <h2 className="section-title">What You'll Need</h2>
-            <p className="section-subtitle">Basic requirements to become a XOBO delivery partner</p>
+            <p className="section-subtitle">Basic requirements to become a delivery partner</p>
           </div>
           <div className="requirements-grid">
             {driverRequirements.map((requirement, index) => (
@@ -182,7 +314,7 @@ function Drivers() {
           <div className="section-intro">
             <span className="section-tag">Getting Started</span>
             <h2 className="section-title">How to Apply</h2>
-            <p className="section-subtitle">Follow these simple steps to start earning with XOBO</p>
+            <p className="section-subtitle">Simple steps to start earning with XOBO</p>
           </div>
           <div className="application-process">
             {applicationSteps.map((step, index) => (
@@ -204,7 +336,7 @@ function Drivers() {
           <div className="section-intro">
             <span className="section-tag">Driver Stories</span>
             <h2 className="section-title">Hear From Our Drivers</h2>
-            <p className="section-subtitle">What our delivery partners say about working with XOBO</p>
+            <p className="section-subtitle">What our delivery partners say</p>
           </div>
           <div className="testimonials-grid">
             {driverTestimonials.map((testimonial, index) => (

@@ -50,7 +50,7 @@
 /* Hero Section */
 .drivers-hero {
   position: relative;
-  height: 500px;
+  height: 400px;
   background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
   background-size: cover;
   background-position: center;
@@ -72,6 +72,7 @@
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
   background-size: cover;
+  z-index: 1;
 }
 
 .drivers-hero-overlay {
@@ -81,6 +82,7 @@
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: 1;
 }
 
 .drivers-hero-content {
@@ -90,42 +92,44 @@
   padding: 0 1rem;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .drivers-hero h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.3;
   color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.5px;
 }
 
 .drivers-hero p {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   max-width: 550px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
   font-weight: 400;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-
-
-/* Hero Button Styling (matching nav login button) */
+/* Hero Button Styling */
 .hero-button {
   display: inline-block;
-  padding: 0.7rem 1.25rem;
-  border-radius: 4px;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
   min-height: auto;
-  max-width: 150px;
   text-align: center;
+  min-width: 150px;
 }
 
 .hero-button.primary {
@@ -196,7 +200,7 @@
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -207,18 +211,57 @@
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   background-color: white;
+  position: relative;
+  overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
 }
 
 .benefit-icon {
-  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  background-color: #f5f7fa;
   color: #16234d;
-  margin-bottom: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: #ff3a3a;
+  color: #ffffff;
+  transform: rotateY(360deg);
 }
 
 .benefit-card h3 {
@@ -226,12 +269,16 @@
   font-weight: 600;
   margin-bottom: 15px;
   color: #1a1a1a;
+  position: relative;
+  z-index: 2;
 }
 
 .benefit-card p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
 /* Requirements Section */
@@ -242,7 +289,7 @@
 
 .requirements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -253,18 +300,57 @@
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   background-color: white;
+  position: relative;
+  overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.requirement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .requirement-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.requirement-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
 }
 
 .requirement-icon {
-  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  background-color: #f5f7fa;
   color: #16234d;
-  margin-bottom: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.requirement-card:hover .requirement-icon {
+  background-color: #ff3a3a;
+  color: #ffffff;
+  transform: rotateY(360deg);
 }
 
 .requirement-card h3 {
@@ -272,12 +358,16 @@
   font-weight: 600;
   margin-bottom: 15px;
   color: #1a1a1a;
+  position: relative;
+  z-index: 2;
 }
 
 .requirement-card p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
 /* Application Process */
@@ -450,9 +540,151 @@
   margin-top: 2rem;
 }
 
+/* Driver Types Section */
+.driver-types-section {
+  padding: 80px 0;
+  background-color: #f5f7fa;
+}
 
+.driver-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.driver-tabs .tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.driver-tabs .tab:hover {
+  border-color: #16234d;
+  color: #16234d;
+}
+
+.driver-tabs .tab.active {
+  background: #16234d;
+  border-color: #16234d;
+  color: white;
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-content {
+  margin-top: 3rem;
+}
+
+.requirements-section.individual,
+.requirements-section.company {
+  padding: 0;
+}
+
+.requirements-section.individual h3,
+.requirements-section.company h3 {
+  font-size: 2rem;
+  color: #16234d;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.requirements-section.individual p,
+.requirements-section.company p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.requirements-section.individual .requirements-grid,
+.requirements-section.company .requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.requirements-section.individual .requirement-card,
+.requirements-section.company .requirement-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #16234d;
+  height: auto;
+}
+
+.requirement-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.requirement-header .requirement-icon {
+  font-size: 2rem;
+  color: #16234d;
+  background: #f5f7fa;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.requirement-header h4 {
+  font-size: 1.3rem;
+  color: #16234d;
+  margin: 0;
+}
+
+.requirement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirement-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.check-icon {
+  color: #ff3a3a;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* General Requirements Section (Update) */
+.requirements-section.general {
+  padding: 80px 0;
+}
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .benefits-grid,
+  .requirements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
 @media (max-width: 992px) {
   .section-title {
     font-size: 2.2rem;
@@ -460,6 +692,13 @@
   
   .drivers-hero h1 {
     font-size: 3rem;
+  }
+  
+  .benefit-icon,
+  .requirement-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
   }
 }
 
@@ -491,6 +730,36 @@
   .cta-container h2 {
     font-size: 2rem;
   }
+  
+  .benefit-card,
+  .requirement-card {
+    padding: 25px;
+  }
+  
+  .benefit-icon,
+  .requirement-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+  
+  .driver-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .driver-tabs .tab {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .requirements-section.individual .requirements-grid,
+  .requirements-section.company .requirements-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 576px) {
@@ -511,9 +780,32 @@
     padding: 20px;
   }
   
+  .benefit-icon,
+  .requirement-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
   .hero-button {
     width: 100%;
     padding: 0.65rem 1.2rem;
     font-size: 0.85rem;
+  }
+  
+  .requirements-section.individual h3,
+  .requirements-section.company h3 {
+    font-size: 1.5rem;
+  }
+  
+  .requirements-section.individual p,
+  .requirements-section.company p {
+    font-size: 1rem;
+  }
+  
+  .requirement-header .requirement-icon {
+    padding: 8px;
+    font-size: 1.5rem;
   }
 }

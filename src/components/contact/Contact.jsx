@@ -136,17 +136,17 @@ const Contact = () => {
     {
       icon: <FaCheck />,
       title: "Quick Response",
-      description: "We respond to all inquiries within 24 hours"
+      description: "Response within 24 hours"
     },
     {
       icon: <FaClock />,
       title: "24/7 Support",
-      description: "Our customer service team is available around the clock"
+      description: "Available around the clock"
     },
     {
       icon: <FaShieldAlt />,
       title: "Secure Communication",
-      description: "Your information is protected with end-to-end encryption"
+      description: "End-to-end encryption"
     }
   ];
 
@@ -154,13 +154,13 @@ const Contact = () => {
     {
       name: "Jane Doe",
       position: "Business Owner",
-      quote: "The XOBO team was incredibly responsive to my inquiries. Their support team helped me set up my delivery account quickly!",
+      quote: "XOBO team was incredibly responsive. Their support helped set up my delivery account quickly!",
       rating: 5
     },
     {
       name: "John Smith",
       position: "Restaurant Manager",
-      quote: "I contacted XOBO with questions about their delivery service and received detailed information the same day.",
+      quote: "I received detailed information about their delivery service the same day I inquired.",
       rating: 5
     }
   ];
@@ -172,16 +172,16 @@ const Contact = () => {
         <div className="container">
           <div className="contact-hero-content">
             <h1>Get in Touch</h1>
-            <p>Have questions or need assistance? We're here to help!</p>
+            <p>Questions or need help? We're here for you!</p>
             <div className="contact-hero-buttons">
               <a href="tel:+254799396000" className="hero-button primary">
-                <FaPhone className="button-icon" /> Call Us Now
+                <FaPhone className="button-icon" /> Call Us
               </a>
               <button 
                 onClick={(e) => handleAnchorClick(e, 'contact-form')} 
                 className="hero-button secondary"
               >
-                <FaEnvelope className="button-icon" /> Send Message
+                <FaEnvelope className="button-icon" /> Message
               </button>
             </div>
             <div className="hero-stats">
@@ -191,11 +191,11 @@ const Contact = () => {
               </div>
               <div className="stat">
                 <strong>24/7</strong>
-                <span>Customer Support</span>
+                <span>Support</span>
               </div>
               <div className="stat">
                 <strong>99%</strong>
-                <span>Customer Satisfaction</span>
+                <span>Satisfaction</span>
               </div>
             </div>
           </div>
@@ -224,14 +224,14 @@ const Contact = () => {
             <span className="section-tag">Contact Us</span>
             <h2 className="section-title">Let's Connect</h2>
             <p className="section-subtitle">
-              We're always here to help with any questions or feedback you may have
+              Here to help with questions or feedback
             </p>
           </div>
           <div className="contact-grid">
             {/* Contact Information */}
             <div className="contact-info" id="contact-info">
               <h2>Contact Information</h2>
-              <p>Reach out to us through any of these channels for assistance or inquiries.</p>
+              <p>Reach out through any of these channels</p>
               
               <div className="contact-methods">
                 <div className="contact-method">
@@ -296,7 +296,7 @@ const Contact = () => {
             <div className="contact-form-container">
               <div className="form-header">
                 <h2>Send Us a Message</h2>
-                <p>Fill up the form below, and we'll get back to you as soon as possible.</p>
+                <p>We'll get back to you as soon as possible</p>
               </div>
               
               <form onSubmit={onSubmit}>
@@ -424,7 +424,7 @@ const Contact = () => {
           <div className="section-intro">
             <span className="section-tag">Testimonials</span>
             <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Hear from people who have contacted us and received outstanding support</p>
+            <p className="section-subtitle">Feedback from our satisfied clients</p>
           </div>
           
           <div className="testimonial-grid">
@@ -460,7 +460,7 @@ const Contact = () => {
             <span className="section-tag">LOCATION</span>
             <h2 className="section-title">Find Us</h2>
             <p className="section-subtitle">
-              XOBO Delivery is conveniently located in Nairobi, Kenya
+              Located in Nairobi, Kenya
             </p>
           </div>
           
@@ -478,7 +478,7 @@ const Contact = () => {
           </div>
           
           <div className="location-info">
-            <p>Our office is located at the marker shown on the map</p>
+            <p>Our office is at the marker shown on the map</p>
             <a 
               href="https://maps.google.com/maps?ll=-1.275245,36.816728&z=16&t=m&hl=en&gl=KE&mapclient=embed&cid=15865747215889747888" 
               target="_blank" 
@@ -491,39 +491,23 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
+      {/* CTA Section */}
+      <section className="cta-section">
         <div className="container">
-          <div className="section-intro">
-            <span className="section-tag">TESTIMONIALS</span>
-            <h2 className="section-title">What Our Clients Say</h2>
-            <p className="section-subtitle">
-              Hear from businesses and individuals who have experienced our services
-            </p>
-          </div>
-          
-          <div className="testimonials-container">
-            {testimonials.map((testimonial, index) => (
-              <div className="testimonial-card" key={index}>
-                <div className="testimonial-rating">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <div className="testimonial-text">
-                  "{testimonial.quote}"
-                </div>
-                <div className="testimonial-author">
-                  <div className="testimonial-avatar">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div className="testimonial-info">
-                    <h4>{testimonial.name}</h4>
-                    <p>{testimonial.position}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today for all your delivery needs</p>
+            <div className="cta-buttons">
+              <a href="tel:+254799396000" className="cta-primary">
+                <FaPhone className="button-icon" /> Call Now
+              </a>
+              <button 
+                onClick={(e) => handleAnchorClick(e, 'contact-form')} 
+                className="cta-secondary"
+              >
+                <FaEnvelope className="button-icon" /> Send Message
+              </button>
+            </div>
           </div>
         </div>
       </section>

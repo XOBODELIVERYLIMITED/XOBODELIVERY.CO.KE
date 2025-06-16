@@ -8,17 +8,17 @@ function Services() {
     {
       icon: <FaShippingFast />,
       title: "Express Delivery",
-      description: "Same-day delivery services across Kenya with real-time tracking and delivery confirmation.",
+      description: "Same-day delivery with real-time tracking and confirmation.",
     },
     {
       icon: <FaTruckMoving />,
       title: "Scheduled Delivery",
-      description: "Plan your deliveries ahead of time with our flexible scheduling options.",
+      description: "Plan deliveries ahead with flexible scheduling options.",
     },
     {
       icon: <FaWarehouse />,
       title: "Bulk Shipping",
-      description: "Efficient solutions for high-volume shipping needs with dedicated fleet options.",
+      description: "Efficient solutions for high-volume shipping needs.",
     }
   ];
 
@@ -26,17 +26,17 @@ function Services() {
     {
       icon: <FaUsers />,
       title: "Business Integration",
-      description: "Seamlessly integrate XOBO delivery services with your existing business systems.",
+      description: "Seamlessly integrate delivery with your existing systems.",
     },
     {
       icon: <FaChartLine />,
       title: "Analytics Dashboard",
-      description: "Comprehensive delivery analytics to optimize your logistics operations.",
+      description: "Comprehensive analytics to optimize logistics operations.",
     },
     {
       icon: <FaMobile />,
       title: "Custom API Solutions",
-      description: "Custom API integration for your website or app to provide delivery services to your customers.",
+      description: "API integration for your website or app.",
     }
   ];
 
@@ -48,7 +48,7 @@ function Services() {
         <div className="container">
           <div className="service-hero-content">
             <h1>Our Delivery Services</h1>
-            <p>Fast, reliable, and secure delivery solutions for businesses and individuals across Kenya</p>
+            <p>Fast, reliable delivery solutions across Kenya</p>
             <div className="hero-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="hero-button primary">
                 <FaShippingFast className="button-icon" /> Start Delivering
@@ -80,10 +80,10 @@ function Services() {
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Why Choose Us</span>
-            <h2 className="section-title">On-demand delivery for your business</h2>
+            <h2 className="section-title">On-demand delivery</h2>
             <p className="section-subtitle">
-              XOBO Delivery provides businesses with reliable, fast, and secure delivery services across Kenya.
-              Our technology-driven approach ensures that your deliveries reach their destination on time, every time.
+              Reliable, fast, and secure delivery services across Kenya.
+              Technology-driven approach ensures on-time deliveries.
             </p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
@@ -103,7 +103,7 @@ function Services() {
           <div className="section-intro">
             <span className="section-tag">Delivery Options</span>
             <h2 className="section-title">Delivery Services</h2>
-            <p className="section-subtitle">Choose from our range of delivery services to meet your specific needs</p>
+            <p className="section-subtitle">Choose services that meet your specific needs</p>
           </div>
 
           <div className="services-grid">
@@ -124,7 +124,7 @@ function Services() {
           <div className="section-intro">
             <span className="section-tag">For Businesses</span>
             <h2 className="section-title">Business Solutions</h2>
-            <p className="section-subtitle">Tailored logistics solutions to help your business grow</p>
+            <p className="section-subtitle">Logistics solutions to help your business grow</p>
       </div>
 
           <div className="services-grid">
@@ -142,15 +142,15 @@ function Services() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>Ready to simplify your deliveries?</h2>
-          <p>Join hundreds of businesses that trust XOBO for their delivery needs</p>
-          <div className="cta-buttons">
-            <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
-              Start Delivering
-            </a>
-            <Link to="/contact" className="cta-secondary">
-              Contact Us
-            </Link>
+            <h2>Ready to simplify deliveries?</h2>
+            <p>Join businesses that trust XOBO</p>
+            <div className="cta-buttons">
+              <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
+                Start Delivering
+              </a>
+              <Link to="/contact" className="cta-secondary">
+                Contact Us
+              </Link>
           </div>
         </div>
       </section>

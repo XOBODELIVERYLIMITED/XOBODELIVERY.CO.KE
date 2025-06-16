@@ -126,8 +126,7 @@ function Home() {
           </h2>
 
           <p className="hero-description">
-            XOBO Delivery Limited offers immediate pick and delivery services across Kenya. 
-            We connect businesses with reliable couriers for fast, secure deliveries.
+            Quick pick and delivery across Kenya. Connecting businesses with reliable couriers.
           </p>
 
           <div className="transport-button">
@@ -156,8 +155,8 @@ function Home() {
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Why Choose XOBO</span>
-            <h2 className="section-title">Redefining Delivery Excellence</h2>
-            <p className="section-subtitle">Experience seamless logistics solutions tailored to your needs</p>
+            <h2 className="section-title">Delivery Excellence</h2>
+            <p className="section-subtitle">Seamless logistics solutions tailored to your needs</p>
           </div>
           
           <div className="carousel-container">
@@ -172,10 +171,10 @@ function Home() {
                 </div>
                 <div className="card-content">
                   <h3>Same Day Delivery</h3>
-                  <p>Swift and reliable deliveries across Nairobi, ensuring your packages reach their destination within hours</p>
+                  <p>Swift deliveries across Nairobi within hours</p>
                   <ul className="feature-list">
-                    <li>Express pickup service</li>
-                    <li>Guaranteed delivery times</li>
+                    <li>Express pickup</li>
+                    <li>Guaranteed delivery</li>
                     <li>Priority handling</li>
                   </ul>
                 </div>
@@ -187,10 +186,10 @@ function Home() {
                 </div>
                 <div className="card-content">
                   <h3>Live GPS Tracking</h3>
-                  <p>Stay informed with real-time updates on your delivery status and location</p>
+                  <p>Real-time updates on delivery status</p>
                   <ul className="feature-list">
-                    <li>Real-time location updates</li>
-                    <li>Delivery status notifications</li>
+                    <li>Live location updates</li>
+                    <li>Status notifications</li>
                     <li>Accurate ETAs</li>
                   </ul>
                 </div>
@@ -202,11 +201,11 @@ function Home() {
                 </div>
                 <div className="card-content">
                   <h3>Multiple Vehicle Types</h3>
-                  <p>From small parcels to large cargo, we have the perfect vehicle for your delivery needs</p>
+                  <p>Perfect vehicle for every delivery need</p>
                   <ul className="feature-list">
-                    <li>Motorcycles for quick deliveries</li>
+                    <li>Motorcycles for speed</li>
                     <li>Vans for medium cargo</li>
-                    <li>Trucks for bulk shipments</li>
+                    <li>Trucks for bulk</li>
                   </ul>
                 </div>
               </div>
@@ -217,11 +216,11 @@ function Home() {
                 </div>
                 <div className="card-content">
                   <h3>Competitive Rates</h3>
-                  <p>Transparent pricing with no hidden fees, optimized for cost-effectiveness</p>
+                  <p>Transparent pricing with no hidden fees</p>
                   <ul className="feature-list">
-                    <li>Clear pricing structure</li>
+                    <li>Clear pricing</li>
                     <li>Volume discounts</li>
-                    <li>Flexible payment options</li>
+                    <li>Flexible payments</li>
                   </ul>
                 </div>
               </div>
@@ -231,8 +230,6 @@ function Home() {
               <FaArrowRight className="arrow-icon" />
             </button>
           </div>
-
-
         </div>
       </section>
 
@@ -267,26 +264,29 @@ function Home() {
             <div className="feature-image">
               <img 
                 loading="lazy"
-                src={process.env.PUBLIC_URL + '/media/XDL-CLIENT.png'} 
+                src={`${process.env.PUBLIC_URL}/media/XOBO-CUSTOMER.png?v=${Date.now()}`}
                 alt="XOBO Client Interface" 
+                style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.06)' }}
+                onLoad={() => console.log('XOBO-CUSTOMER.png loaded successfully')}
+                onError={(e) => console.error('Failed to load XOBO-CUSTOMER.png:', e.target.src)}
               />
             </div>
 
             <div className="feature-content">
               <span className="section-tag">Business Solutions</span>
               <h2 className="section-title">
-                Seamlessly streamline your orders
+                Streamline your orders
               </h2>
 
               <p className="section-description">
-                Wave goodbye to long customer and driver chats. Our platform automates the entire delivery process, from order placement to delivery confirmation, giving you more time to focus on growing your business.
+                Our platform automates the entire delivery process, giving you more time to focus on your business.
               </p>
               
               <ul className="feature-list">
-                <li>Automated dispatch system</li>
-                <li>Real-time delivery updates</li>
-                <li>Customer notification system</li>
-                <li>Proof of delivery confirmations</li>
+                <li>Automated dispatch</li>
+                <li>Real-time updates</li>
+                <li>Customer notifications</li>
+                <li>Delivery confirmations</li>
               </ul>
               
               <Link to="/services" className="feature-link">
@@ -303,8 +303,8 @@ function Home() {
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Our Advantages</span>
-            <h2 className="section-title">Grow your business with XOBO</h2>
-            <p className="section-subtitle">Partner with us and experience how our logistics solutions can transform your delivery operations</p>
+            <h2 className="section-title">Grow with XOBO</h2>
+            <p className="section-subtitle">See how our solutions transform your delivery operations</p>
           </div>
 
           <div className="benefits-container">
@@ -314,8 +314,8 @@ function Home() {
                   <FaShippingFast />
                 </div>
                 <div className="benefit-content">
-              <h3>Fast & flexible delivery</h3>
-                  <p>On-demand, same-day or advance orders. We are ready when you are and promise a fast service with delivery options tailored to your schedule.</p>
+              <h3>Fast & flexible</h3>
+                  <p>On-demand, same-day or advance orders. Delivery options tailored to your schedule.</p>
             </div>
           </div>
 
@@ -324,8 +324,8 @@ function Home() {
                   <FaChartLine />
             </div>
             <div className="benefit-content">
-              <h3>Reduce operational costs</h3>
-                  <p>No need to manage your own delivery fleet. Outsource and simply pay for the deliveries you need, cutting overhead costs by up to 30%.</p>
+              <h3>Reduce costs</h3>
+                  <p>No need to manage your own fleet. Pay only for deliveries you need, cutting costs by up to 30%.</p>
             </div>
           </div>
 
@@ -334,8 +334,8 @@ function Home() {
                   <FaFileAlt />
             </div>
             <div className="benefit-content">
-              <h3>Real-time tracking</h3>
-                  <p>In-app tracking allows you and the receiver to track your order in real time during the delivery, with accurate ETAs and status updates.</p>
+              <h3>Live tracking</h3>
+                  <p>Track orders in real time with accurate ETAs and status updates.</p>
             </div>
           </div>
 
@@ -344,8 +344,8 @@ function Home() {
                   <FaTruckMoving />
             </div>
             <div className="benefit-content">
-              <h3>Vast array of vehicles</h3>
-              <p>Different vehicles to suit any kind of business including trucks, vans, motorcycles and runners for deliveries of anything of any size.</p>
+              <h3>Multiple vehicles</h3>
+              <p>Options for all needs: motorcycles, cars, vans and trucks for any size delivery.</p>
             </div>
           </div>       
       </div>
@@ -366,8 +366,8 @@ function Home() {
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Our Services</span>
-            <h2 className="section-title">Comprehensive Delivery Solutions</h2>
-            <p className="section-subtitle">Choose the service that best fits your business needs</p>
+            <h2 className="section-title">Delivery Solutions</h2>
+            <p className="section-subtitle">Choose the service that fits your needs</p>
           </div>
 
           <div className="services-container">
@@ -376,7 +376,8 @@ function Home() {
                 <FaBoxOpen />
               </div>
               <h3>Express Delivery</h3>
-              <p>Same-day delivery service for urgent packages. We pick up and deliver within hours.</p>              <Link to="/services/express" className="service-link">
+              <p>Same-day service for urgent packages. Pick up and delivery within hours.</p>
+              <Link to="/services/express" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
             </div>
@@ -386,16 +387,18 @@ function Home() {
                 <FaTruckMoving />
               </div>
               <h3>Scheduled Delivery</h3>
-              <p>Plan your deliveries in advance with our scheduled service. Perfect for regular shipments.</p>
+              <p>Plan deliveries in advance. Perfect for regular shipments.</p>
               <Link to="/services/scheduled" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
-            </div>              <div className="service-card">
+            </div>
+            
+            <div className="service-card">
               <div className="service-icon">
                 <FaBuilding />
               </div>
               <h3>Business Solutions</h3>
-              <p>Customized delivery solutions for businesses with high volume shipping needs.</p>
+              <p>Custom delivery solutions for high volume shipping needs.</p>
               <Link to="/services/business" className="service-link">
                 Learn more <FaArrowRight className="arrow-icon-small" />
               </Link>
@@ -665,8 +668,8 @@ function Home() {
       <section className="cta-section">
         <div className="container">
           <div className="cta-container">
-            <h2>Ready to transform your delivery operations?</h2>
-            <p>Join hundreds of businesses that trust XOBO for their delivery needs</p>
+            <h2>Ready to transform your deliveries?</h2>
+            <p>Join hundreds of businesses trusting XOBO</p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
                 Get Started

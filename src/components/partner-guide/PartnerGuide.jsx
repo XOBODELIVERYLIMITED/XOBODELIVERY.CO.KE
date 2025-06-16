@@ -31,9 +31,9 @@ function PartnerGuide() {
       items: [
         "Full names",
         "Profile photo",
-        "Registered M-Pesa phone number",
-        "Valid email address",
-        "Identification document (ID)",
+        "M-Pesa number",
+        "Email address",
+        "ID document",
         "Driving license"
       ]
     },
@@ -41,11 +41,11 @@ function PartnerGuide() {
       category: "Vehicle Details",
       icon: <FaCar />,
       items: [
-        "Vehicle photo (full photo)",
-        "Vehicle registration number (number plate)",
-        "Logbook photo/sales agreement",
-        "Insurance photo",
-        "KRA Pin certificate"
+        "Vehicle photo",
+        "Registration number",
+        "Logbook/agreement",
+        "Insurance",
+        "KRA Pin"
       ]
     }
   ];
@@ -57,20 +57,20 @@ function PartnerGuide() {
       items: [
         "Certificate of incorporation",
         "Business permit",
-        "KRA Pin certificate",
-        "Tax compliance certificate",
-        "Company profile and overview"
+        "KRA Pin",
+        "Tax compliance",
+        "Company profile"
       ]
     },
     {
       category: "Fleet Information",
       icon: <FaTruck />,
       items: [
-        "Vehicle fleet list and photos",
-        "All vehicle logbooks/registration",
-        "Comprehensive insurance coverage",
-        "Driver employment contracts",
-        "Safety protocols documentation"
+        "Fleet list",
+        "Vehicle documentation",
+        "Insurance coverage",
+        "Driver contracts",
+        "Safety protocols"
       ]
     }
   ];
@@ -78,46 +78,46 @@ function PartnerGuide() {
   const applicationSteps = [
     {
       step: 1,
-      title: "Initial Application",
-      description: "Contact XOBO and express your interest in becoming a delivery partner",
+      title: "Application",
+      description: "Express interest in becoming a delivery partner",
       details: [
         "Call +254 799 396 000 or +254 739 396 000",
-        "Email your interest to info@xobo.co.ke",
-        "Visit our office at Longonot Place, Kijabe Street, Nairobi",
-        "Fill out the online application form"
+        "Email info@xobo.co.ke",
+        "Visit Longonot Place, Kijabe Street, Nairobi",
+        "Online application form"
       ]
     },
     {
       step: 2,
-      title: "Document Submission",
-      description: "Submit all required documents for verification",
+      title: "Documents",
+      description: "Submit required documents for verification",
       details: [
-        "Send documents via WhatsApp to +254 799 396 000",
-        "Email scanned copies to info@xobo.co.ke",
-        "Ensure all documents are clear and valid",
-        "Include both personal and vehicle documentation"
+        "Send via WhatsApp to +254 799 396 000",
+        "Email copies to info@xobo.co.ke",
+        "Ensure clear and valid documents",
+        "Include personal and vehicle documents"
       ]
     },
     {
       step: 3,
-      title: "Verification Process",
-      description: "XOBO team reviews and verifies your documents",
+      title: "Verification",
+      description: "Document review and verification",
       details: [
-        "Document authenticity verification",
-        "Background checks completion",
-        "Vehicle inspection scheduling",
-        "Reference checks (if applicable)"
+        "Document verification",
+        "Background checks",
+        "Vehicle inspection",
+        "Reference checks"
       ]
     },
     {
       step: 4,
-      title: "Onboarding & Training",
-      description: "Complete orientation and training program",
+      title: "Onboarding",
+      description: "Orientation and training program",
       details: [
-        "Attend brief orientation session",
-        "Driver app training and setup",
-        "Safety protocols briefing",
-        "Customer service standards training"
+        "Orientation session",
+        "App training",
+        "Safety protocols",
+        "Customer service standards"
       ]
     }
   ];
@@ -129,10 +129,10 @@ function PartnerGuide() {
       capacity: "Up to 10kg",
       earnings: "KES 1,500 - 3,000/day",
       requirements: [
-        "Valid motorcycle license",
-        "Motorcycle insurance",
+        "Motorcycle license",
+        "Insurance",
         "Good condition bike",
-        "Safety helmet and gear"
+        "Safety gear"
       ]
     },
     {
@@ -141,8 +141,8 @@ function PartnerGuide() {
       capacity: "10-50kg",
       earnings: "KES 2,000 - 4,000/day",
       requirements: [
-        "Valid driving license",
-        "Comprehensive insurance",
+        "Driving license",
+        "Insurance",
         "Well-maintained vehicle",
         "Clean driving record"
       ]
@@ -153,10 +153,10 @@ function PartnerGuide() {
       capacity: "50kg-1 ton",
       earnings: "KES 3,000 - 6,000/day",
       requirements: [
-        "Commercial driving license",
-        "Commercial vehicle insurance",
-        "Loading/offloading capability",
-        "Cargo securing equipment"
+        "Commercial license",
+        "Commercial insurance",
+        "Loading capability",
+        "Cargo securing gear"
       ]
     }
   ];
@@ -165,32 +165,32 @@ function PartnerGuide() {
     {
       icon: <FaMoneyBillWave />,
       title: "Competitive Earnings",
-      description: "Earn attractive daily rates with performance bonuses and incentives"
+      description: "Attractive rates with performance bonuses"
     },
     {
       icon: <FaClock />,
       title: "Flexible Hours",
-      description: "Work according to your schedule with 24/7 delivery opportunities"
+      description: "Work on your schedule with 24/7 opportunities"
     },
     {
       icon: <FaShieldAlt />,
       title: "Insurance Coverage",
-      description: "Comprehensive insurance protection for goods in transit"
+      description: "Protection for goods in transit"
     },
     {
       icon: <FaGraduationCap />,
       title: "Training & Development",
-      description: "Ongoing training programs to improve your skills and earnings"
+      description: "Programs to improve skills and earnings"
     },
     {
       icon: <FaMobile />,
       title: "Easy-to-Use App",
-      description: "User-friendly driver app for order management and tracking"
+      description: "User-friendly order management and tracking"
     },
     {
       icon: <FaHandshake />,
       title: "Reliable Partnership",
-      description: "Work with Kenya's fastest growing delivery service"
+      description: "Kenya's fastest growing delivery service"
     }
   ];
 
@@ -201,7 +201,7 @@ function PartnerGuide() {
         <div className="container">
           <div className="hero-content">
             <h1>Become a XOBO Delivery Partner</h1>
-            <p>Join Kenya's fastest growing delivery network and start earning today</p>
+            <p>Join Kenya's fastest growing delivery network and start earning</p>
             <div className="hero-stats">
               <div className="stat">
                 <strong>200+</strong>
@@ -209,11 +209,11 @@ function PartnerGuide() {
               </div>
               <div className="stat">
                 <strong>15,000+</strong>
-                <span>Deliveries Completed</span>
+                <span>Deliveries</span>
               </div>
               <div className="stat">
                 <strong>24/7</strong>
-                <span>Earning Opportunities</span>
+                <span>Opportunities</span>
               </div>
             </div>
             <div className="hero-cta">
@@ -231,7 +231,7 @@ function PartnerGuide() {
           <div className="section-intro">
             <span className="section-tag">Application Process</span>
             <h2 className="section-title">How to Apply</h2>
-            <p className="section-subtitle">Simple 4-step process to become a XOBO partner</p>
+            <p className="section-subtitle">Simple 4-step process to join XOBO</p>
           </div>
 
           <div className="process-steps">
@@ -259,7 +259,7 @@ function PartnerGuide() {
           <div className="section-intro">
             <span className="section-tag">Partnership Options</span>
             <h2 className="section-title">Choose Your Partnership Type</h2>
-            <p className="section-subtitle">We welcome both individual drivers and fleet companies</p>
+            <p className="section-subtitle">Individual drivers and fleet companies welcome</p>
           </div>
 
           <div className="partner-tabs">
@@ -283,7 +283,7 @@ function PartnerGuide() {
             {activeTab === 'individual' && (
               <div className="requirements-section">
                 <h3>Individual Driver Requirements</h3>
-                <p>Perfect for individual drivers who own their vehicles and want to earn extra income</p>
+                <p>For individual drivers with own vehicles</p>
                 <div className="requirements-grid">
                   {individualRequirements.map((req, index) => (
                     <div className="requirement-card" key={index}>
@@ -308,7 +308,7 @@ function PartnerGuide() {
             {activeTab === 'company' && (
               <div className="requirements-section">
                 <h3>Fleet Company Requirements</h3>
-                <p>Ideal for companies with multiple vehicles looking to expand their delivery services</p>
+                <p>For companies with multiple vehicles</p>
                 <div className="requirements-grid">
                   {companyRequirements.map((req, index) => (
                     <div className="requirement-card" key={index}>
@@ -337,9 +337,9 @@ function PartnerGuide() {
       <section className="vehicle-earnings">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Earning Potential</span>
-            <h2 className="section-title">Vehicle Types & Expected Earnings</h2>
-            <p className="section-subtitle">Choose the vehicle category that matches your setup</p>
+            <span className="section-tag">Earnings</span>
+            <h2 className="section-title">Vehicle Types & Earnings</h2>
+            <p className="section-subtitle">Choose the vehicle that matches your setup</p>
           </div>
 
           <div className="vehicle-grid">
@@ -354,7 +354,7 @@ function PartnerGuide() {
                 </div>
                 <div className="earnings-info">
                   <div className="earnings-amount">{vehicle.earnings}</div>
-                  <span className="earnings-note">Average daily potential</span>
+                  <span className="earnings-note">Daily potential</span>
                 </div>
                 <div className="vehicle-requirements">
                   <h4>Requirements:</h4>
@@ -379,7 +379,7 @@ function PartnerGuide() {
           <div className="section-intro">
             <span className="section-tag">Why Choose XOBO</span>
             <h2 className="section-title">Partner Benefits</h2>
-            <p className="section-subtitle">Enjoy these exclusive benefits as a XOBO delivery partner</p>
+            <p className="section-subtitle">Exclusive benefits as a XOBO partner</p>
           </div>
 
           <div className="benefits-grid">
@@ -400,7 +400,7 @@ function PartnerGuide() {
           <div className="section-intro">
             <span className="section-tag">Partner Support</span>
             <h2 className="section-title">We're Here to Help</h2>
-            <p className="section-subtitle">Get the support you need to succeed as a XOBO partner</p>
+            <p className="section-subtitle">Support to succeed as a XOBO partner</p>
           </div>
 
           <div className="support-grid">
@@ -409,7 +409,7 @@ function PartnerGuide() {
                 <FaPhoneAlt />
               </div>
               <h3>Application Support</h3>
-              <p>Need help with your application? Call us directly</p>
+              <p>Need help with your application?</p>
               <div className="support-details">
                 <a href="tel:+254799396000">+254 799 396 000</a>
                 <a href="tel:+254739396000">+254 739 396 000</a>
@@ -421,10 +421,10 @@ function PartnerGuide() {
                 <FaClock />
               </div>
               <h3>Office Hours</h3>
-              <p>Visit us for in-person consultation</p>
+              <p>Visit for in-person consultation</p>
               <div className="support-details">
-                <span>Monday - Friday: 8am - 6pm</span>
-                <span>Longonot Place, Kijabe Street</span>
+                <span>Monday-Friday: 8am-6pm</span>
+                <span>Longonot Place, Kijabe St</span>
               </div>
             </div>
 
@@ -433,7 +433,7 @@ function PartnerGuide() {
                 <FaClipboardList />
               </div>
               <h3>Online Application</h3>
-              <p>Start your application process online</p>
+              <p>Start your application online</p>
               <div className="support-details">
                 <a href="https://forms.xobo.co.ke/driver-application" target="_blank" rel="noopener noreferrer">
                   Application Form
@@ -450,25 +450,25 @@ function PartnerGuide() {
         <div className="container">
           <div className="section-intro">
             <span className="section-tag">Common Questions</span>
-            <h2 className="section-title">Frequently Asked Questions</h2>
+            <h2 className="section-title">FAQ</h2>
           </div>
 
           <div className="faq-grid">
             <div className="faq-item">
-              <h4>How long does the application process take?</h4>
-              <p>The typical application process takes 3-7 business days from document submission to approval, depending on verification requirements.</p>
+              <h4>How long does the application take?</h4>
+              <p>Typically 3-7 business days from document submission to approval.</p>
             </div>
             <div className="faq-item">
               <h4>Do I need my own vehicle?</h4>
-              <p>Yes, you need to own or have legal access to a registered vehicle with valid insurance and documentation.</p>
+              <p>Yes, you need a registered vehicle with valid insurance and documentation.</p>
             </div>
             <div className="faq-item">
               <h4>How are payments processed?</h4>
-              <p>Payments are processed directly to your registered M-Pesa account on a regular schedule based on completed deliveries.</p>
+              <p>Directly to your M-Pesa account based on completed deliveries.</p>
             </div>
             <div className="faq-item">
-              <h4>What support is available for partners?</h4>
-              <p>We provide 24/7 technical support, regular training updates, and dedicated partner support team assistance.</p>
+              <h4>What support is available?</h4>
+              <p>24/7 technical support, regular training updates, and dedicated support team.</p>
             </div>
           </div>
         </div>
@@ -479,7 +479,7 @@ function PartnerGuide() {
         <div className="container">
           <div className="cta-content">
             <h2>Ready to Start Your Journey?</h2>
-            <p>Join hundreds of successful delivery partners earning with XOBO</p>
+            <p>Join hundreds of successful partners earning with XOBO</p>
             <div className="cta-buttons">
               <a href="https://forms.xobo.co.ke/driver-application" target="_blank" rel="noopener noreferrer" className="cta-primary">
                 Download Driver APP
