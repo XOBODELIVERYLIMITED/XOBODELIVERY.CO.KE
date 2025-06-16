@@ -283,23 +283,28 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-card {
-  background-color: var(--white);
-  border-radius: var(--radius-md);
-  padding: 2.5rem 2rem;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-light);
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  min-height: 260px;
 }
 
 .service-card::before {
@@ -308,7 +313,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -317,7 +322,7 @@
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-card:hover::before {
@@ -326,17 +331,19 @@
 }
 
 .service-icon {
-  width: 70px;
-  height: 70px;
-  background-color: var(--light-bg);
+  width: 55px;
+  height: 55px;
+  background-color: #f5f7fa;
   color: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 1.75rem;
-  transition: var(--transition);
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
 }
 
 .service-card:hover .service-icon {
@@ -347,9 +354,11 @@
 
 .service-card h3 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  position: relative;
+  z-index: 2;
 }
 
 .service-card p {
@@ -537,26 +546,12 @@
   }
 
   .service-icon {
-    width: 65px;
-    height: 65px;
-    font-size: 1.5rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
     margin-bottom: 1.25rem;
   }
 
-  .service-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .service-description {
-    font-size: 0.95rem;
-  }
-  
-  .service-options,
-  .business-solutions {
-    padding: 3.5rem 0;
-  }
-  
   .section-intro {
     margin-bottom: 2.5rem;
   }
@@ -570,17 +565,9 @@
     margin-bottom: 1.5rem;
   }
   
-  .cta-section {
-    padding: 4rem 0;
-  }
-  
-  .cta-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-section p {
-    margin-bottom: 2rem;
+  .service-options,
+  .business-solutions {
+    padding: 3.5rem 0;
   }
 }
 
@@ -620,6 +607,7 @@
 
   .service-card {
     padding: 1.5rem;
+    min-height: auto;
   }
   
   .service-card h3 {
@@ -631,9 +619,9 @@
   }
   
   .service-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.4rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
   }
   
@@ -648,18 +636,6 @@
   
   .section-title {
     font-size: 1.6rem;
-  }
-  
-  .cta-section {
-    padding: 3.5rem 0;
-  }
-  
-  .cta-section h2 {
-    font-size: 1.7rem;
-  }
-  
-  .cta-section p {
-    font-size: 0.9rem;
   }
 }
 
@@ -678,13 +654,12 @@
   
   .service-card {
     padding: 1.25rem;
-    margin-bottom: 1rem;
   }
   
   .service-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 1.3rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
   
   .service-card h3 {
