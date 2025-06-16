@@ -201,9 +201,7 @@
 .benefit-icon {
   width: 70px;
   height: 70px;
-  background-color: var(--light-bg);
   color: var(--primary-color);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,8 +211,7 @@
 }
 
 .benefit-card:hover .benefit-icon {
-  background-color: var(--accent-color);
-  color: var(--white);
+  color: var(--accent-color);
   transform: rotateY(360deg);
 }
 

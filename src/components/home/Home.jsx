@@ -5,7 +5,6 @@ import {
   FaFileAlt, 
   FaChartLine, 
   FaTruckMoving, 
-  FaSearch, 
   FaBoxOpen, 
   FaShippingFast,
   FaBuilding,
@@ -15,11 +14,6 @@ import {
 import "./home.css";
   
 function Home() {
-  const [trackingNumber, setTrackingNumber] = useState('');
-  const [packageType, setPackageType] = useState('standard');
-  const [weight, setWeight] = useState(1);
-  const [distance, setDistance] = useState(5);
-  const [estimatedCost, setEstimatedCost] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [customerSlideIndex, setCustomerSlideIndex] = useState(0);
   const totalCards = 4;
@@ -74,21 +68,6 @@ function Home() {
       }
     }
   }, [customerSlideIndex, totalCustomerLogos]);
-
-  const handleTrackingSubmit = (e) => {
-    e.preventDefault();
-    // Tracking logic would go here
-    alert(`Tracking number ${trackingNumber} submitted!`);
-  };
-
-  const calculateEstimate = () => {
-    // Basic calculation example
-    const baseRate = packageType === 'standard' ? 200 : packageType === 'express' ? 350 : 500;
-    const weightCost = weight * 50;
-    const distanceCost = distance * 20;
-    const total = baseRate + weightCost + distanceCost;
-    setEstimatedCost(total);
-  };
 
   const handleSlide = (direction) => {
     if (direction === 'next') {

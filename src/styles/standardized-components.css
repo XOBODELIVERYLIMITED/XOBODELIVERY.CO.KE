@@ -1,0 +1,345 @@
+/* ===================================
+   XOBO STANDARDIZED COMPONENTS
+   Master CSS for Project Consistency
+   =================================== */
+
+/* === STANDARDIZED CTA SECTIONS === */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-content h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* === STANDARDIZED CTA BUTTONS === */
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-primary {
+  background-color: var(--white);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--primary-color);
+}
+
+.cta-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+}
+
+.button-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-primary:hover .button-icon {
+  color: var(--primary-color);
+}
+
+.cta-secondary:hover .button-icon {
+  color: var(--white);
+}
+
+/* === STANDARDIZED HERO SECTIONS === */
+.hero-section {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === STANDARDIZED SECTION TAGS === */
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
+  color: #ffffff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255, 58, 58, 0.2);
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+/* === STANDARDIZED SECTION STRUCTURE === */
+.section-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === STANDARDIZED CONTAINERS === */
+.standard-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* === STANDARDIZED RESPONSIVE BREAKPOINTS === */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .cta-section {
+    padding: 60px 0;
+  }
+  
+  .cta-content h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-content p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .cta-buttons {
+    gap: 1.5rem;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+  .cta-section {
+    padding: 50px 0;
+  }
+  
+  .cta-content h2 {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-content p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-section {
+    padding: 80px 0 50px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .standard-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .cta-section {
+    padding: 40px 0;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+} 

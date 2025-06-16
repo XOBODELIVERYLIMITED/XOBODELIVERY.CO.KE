@@ -25,7 +25,7 @@ const Contact = () => {
   
   // Exact coordinates for XOBO Delivery in Nairobi, Kenya
   // These coordinates match the location provided in the Google Maps link
-  const companyLocation = { lat: -1.275245099073922, lng: 36.81672807475073 };
+  const companyLocation = { lat: -1.2774535356180687, lng: 36.81300297571516 };
 
   // Handle smooth scrolling for anchor links
   const handleAnchorClick = (e, targetId) => {
@@ -466,7 +466,7 @@ const Contact = () => {
           
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8172470332807!2d36.81421937363526!3d-1.2752359357850815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170e44a13747%3A0xdc0b4b85b24f27b0!2sXobo%20Delivery%20Limited!5e0!3m2!1sen!2ske!4v1714158394906!5m2!1sen!2ske"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4762.7006173560185!2d36.81300297571516!3d-1.2774535356180687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17c6027f0003%3A0xe2f13d478848ccc1!2sXobo%20Delivery%20Limited!5e1!3m2!1sen!2ske!4v1750083195590!5m2!1sen!2ske"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -480,7 +480,7 @@ const Contact = () => {
           <div className="location-info">
             <p>Our office is at the marker shown on the map</p>
             <a 
-              href="https://maps.google.com/maps?ll=-1.275245,36.816728&z=16&t=m&hl=en&gl=KE&mapclient=embed&cid=15865747215889747888" 
+              href="https://www.google.com/maps/place/Xobo+Delivery+Limited/@-1.2774535,36.8130030,17z/data=!3m1!4b1!4m6!3m5!1s0x182f17c6027f0003:0xe2f13d478848ccc1!8m2!3d-1.2774535!4d36.8155779!16s%2Fg%2F11qr9w8_6x?entry=ttu&g_ep=EgoyMDI1MDEwMi4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank" 
               rel="noopener noreferrer"
               className="map-link"

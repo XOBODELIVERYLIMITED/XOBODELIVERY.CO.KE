@@ -20,16 +20,7 @@
   margin-bottom: 50px;
 }
 
-.section-tag {
-  display: inline-block;
-  background-color: rgba(22, 35, 77, 0.1);
-  color: #16234d;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
+/* Section tag styles now handled by standardized-components.css */
 
 .section-title {
   font-size: 2.5rem;
@@ -188,7 +179,6 @@
 /* Mission Section */
 .mission-section {
   padding: 80px 0;
-  background-color: #f8f9fa;
 }
 
 .mission-content {
@@ -228,6 +218,7 @@
 /* Values Section */
 .values-section {
   padding: 80px 0;
+  background-color: #f8f9fa;
 }
 
 .values-grid {
@@ -277,9 +268,7 @@
 .value-icon {
   width: 70px;
   height: 70px;
-  background-color: #f5f7fa;
   color: #16234d;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,8 +280,7 @@
 }
 
 .value-card:hover .value-icon {
-  background-color: #ff3a3a;
-  color: #ffffff;
+  color: #ff3a3a;
   transform: rotateY(360deg);
 }
 
@@ -313,10 +301,138 @@
   z-index: 2;
 }
 
+/* XOBO Name Story Section - Integrated Design */
+.name-story-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.xobo-letters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.letter-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 280px;
+}
+
+.letter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.letter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.letter-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+}
+
+.letter-display {
+  width: 60px;
+  height: 60px;
+  color: #16234d;
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.letter-card:hover .letter-display {
+  color: #ff3a3a;
+  transform: rotateY(360deg);
+}
+
+.letter-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.letter-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+  line-height: 1.3;
+}
+
+.letter-content p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.name-story-narrative {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.story-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-content h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #16234d;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* Timeline Section */
 .history-section {
   padding: 80px 0;
-  background-color: #f8f9fa;
 }
 
 .timeline {
@@ -405,6 +521,7 @@
 /* Coverage Section */
 .coverage-section {
   padding: 80px 0;
+  background-color: #f8f9fa;
 }
 
 .coverage-content {
@@ -463,79 +580,34 @@
   border: none;
 }
 
-/* CTA Section */
-.about-cta-section {
-  padding: 80px 0;
-  background-color: #f8f9fa;
-}
-
-.cta-container {
-  background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
-  border-radius: 15px;
-  padding: 60px 40px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 10px 30px rgba(22, 35, 77, 0.2);
-}
-
-.cta-container h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: -0.5px;
-}
-
-.cta-container p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cta-primary,
-.cta-secondary {
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  display: inline-block;
-}
-
-.cta-primary {
-  background-color: white;
-  color: #16234d;
-}
-
-.cta-primary:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-3px);
-}
-
-.cta-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-}
+/* CTA styles now handled by standardized-components.css */
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .xobo-letters {
+    gap: 15px;
+  }
+  
+  .letter-card {
+    padding: 20px 15px;
+    min-height: 260px;
+  }
+  
+  .letter-display {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+
+  .letter-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .letter-content p {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 992px) {
   .section-title {
     font-size: 2.2rem;
@@ -576,6 +648,38 @@
     width: 65px;
     height: 65px;
     font-size: 1.6rem;
+  }
+  
+  .xobo-letters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .letter-card {
+    padding: 25px 20px;
+    min-height: 260px;
+  }
+  
+  .letter-display {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+
+  .letter-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .letter-content p {
+    font-size: 0.85rem;
+  }
+  
+  .name-story-narrative {
+    padding: 25px;
+  }
+  
+  .story-content h3 {
+    font-size: 2rem;
   }
 }
 
@@ -629,12 +733,44 @@
     font-size: 2.5rem;
   }
   
-  .cta-container {
-    padding: 40px 20px;
+  /* CTA responsive styles handled by standardized-components.css */
+  
+  .xobo-letters {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
   
-  .cta-container h2 {
-    font-size: 2rem;
+  .letter-card {
+    padding: 20px;
+    min-height: 200px;
+  }
+  
+  .letter-display {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .letter-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .letter-content p {
+    font-size: 0.9rem;
+  }
+  
+  .name-story-narrative {
+    padding: 25px;
+  }
+  
+  .story-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .story-text p {
+    font-size: 1rem;
   }
   
   .feature-item {
@@ -650,6 +786,50 @@
     height: 65px;
     font-size: 1.6rem;
     margin-bottom: 18px;
+  }
+  
+  /* Mobile responsive styles for XOBO section */
+  .name-story-section {
+    padding: 60px 0;
+  }
+  
+  .xobo-letters {
+    gap: 15px;
+  }
+  
+  .letter-card {
+    padding: 18px;
+    min-height: 180px;
+  }
+  
+  .letter-display {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .letter-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .letter-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .name-story-narrative {
+    padding: 20px;
+  }
+  
+  .story-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .story-text p {
+    font-size: 0.95rem;
   }
 }
 
@@ -681,8 +861,5 @@
     margin-bottom: 15px;
   }
   
-  .cta-primary,
-  .cta-secondary {
-    width: 100%;
-  }
+  /* CTA responsive styles handled by standardized-components.css */
 }

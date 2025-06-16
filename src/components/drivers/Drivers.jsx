@@ -105,27 +105,27 @@ function Drivers() {
 
   const applicationSteps = [
     {
-      number: "01",
+      step: "Step 1",
       title: "Apply Online",
       description: "Fill out our simple online application form."
     },
     {
-      number: "02",
+      step: "Step 2",
       title: "Document Verification",
       description: "Submit required documents for verification."
     },
     {
-      number: "03",
+      step: "Step 3",
       title: "Background Check",
       description: "We conduct a thorough background check."
     },
     {
-      number: "04",
+      step: "Step 4",
       title: "Training",
       description: "Complete brief training on app and procedures."
     },
     {
-      number: "05",
+      step: "Step 5",
       title: "Start Earning",
       description: "Begin accepting delivery requests."
     }
@@ -171,18 +171,33 @@ function Drivers() {
               our platform offers flexibility and support to succeed.
             </p>
           </div>
-          <div className="intro-stats">
-            <div className="stat-item">
-              <div className="stat-number">600+</div>
-              <div className="stat-label">Active Drivers</div>
+          <div className="intro-cards">
+            <div className="intro-card">
+              <div className="intro-card-icon">
+                <FaClock />
+              </div>
+              <div className="intro-card-content">
+                <h3>Flexible Schedule</h3>
+                <p>Work when you want, where you want. Set your own schedule and work at your own pace.</p>
+              </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number">47</div>
-              <div className="stat-label">Counties Covered</div>
+            <div className="intro-card">
+              <div className="intro-card-icon">
+                <FaShieldAlt />
+              </div>
+              <div className="intro-card-content">
+                <h3>24/7 Driver Support</h3>
+                <p>Get help whenever you need it with our round-the-clock driver support team.</p>
+              </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Driver Support</div>
+            <div className="intro-card">
+              <div className="intro-card-icon">
+                <FaChartLine />
+              </div>
+              <div className="intro-card-content">
+                <h3>Growth Opportunities</h3>
+                <p>Expand your earning potential with performance-based incentives and bonuses.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -316,11 +331,12 @@ function Drivers() {
             <h2 className="section-title">How to Apply</h2>
             <p className="section-subtitle">Simple steps to start earning with XOBO</p>
           </div>
-          <div className="application-process">
+          <div className="timeline">
             {applicationSteps.map((step, index) => (
-              <div className="process-step" key={index}>
-                <div className="step-number">{step.number}</div>
-                <div className="step-content">
+              <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} key={index}>
+                <div className="timeline-content">
+                  <div className="timeline-marker"></div>
+                  <div className="timeline-year">{step.step}</div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
@@ -358,17 +374,17 @@ function Drivers() {
       </section>
 
       {/* CTA Section */}
-      <section className="drivers-cta-section" id="apply">
+      <section className="cta-section" id="apply">
         <div className="container">
-          <div className="cta-container">
+          <div className="cta-content">
             <h2>Ready to Join Our Team?</h2>
             <p>Apply now and start earning with Kenya's fastest growing delivery service</p>
             <div className="cta-buttons">
-              <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noreferrer" className="hero-button primary">
-                Apply as Driver
+              <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noreferrer" className="cta-primary">
+                <FaCar className="button-icon" /> Apply as Driver
               </a>
-              <Link to="/contact" className="hero-button secondary">
-                Contact Us
+              <Link to="/contact" className="cta-secondary">
+                <FaIdCard className="button-icon" /> Contact Us
               </Link>
             </div>
           </div>

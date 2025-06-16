@@ -106,13 +106,12 @@
 
 .section-tag {
   display: inline-block;
-  background-color: rgba(22, 35, 77, 0.1);
-  color: #16234d;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .section-title {

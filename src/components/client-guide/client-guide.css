@@ -329,9 +329,7 @@
 .account-icon {
   font-size: 2rem;
   color: #16234d;
-  background: #f5f7fa;
   padding: 16px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -441,9 +439,7 @@
 .vehicle-icon {
   width: 55px;
   height: 55px;
-  background-color: #f5f7fa;
   color: #16234d;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -454,8 +450,7 @@
 }
 
 .vehicle-card:hover .vehicle-icon {
-  background-color: #ff3a3a;
-  color: #ffffff;
+  color: #ff3a3a;
   transform: rotateY(360deg);
 }
 

@@ -306,9 +306,7 @@ html {
 .principle-icon {
   width: 70px;
   height: 70px;
-  background-color: #f5f7fa;
   color: #16234d;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -320,8 +318,7 @@ html {
 }
 
 .principle-card:hover .principle-icon {
-  background-color: #ff3a3a;
-  color: #ffffff;
+  color: #ff3a3a;
   transform: rotateY(360deg);
 }
 

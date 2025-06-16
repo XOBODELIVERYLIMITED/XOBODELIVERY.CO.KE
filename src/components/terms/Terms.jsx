@@ -191,17 +191,17 @@ function Terms() {
       </section>
 
       {/* CTA Section */}
-      <section className="terms-cta-section">
+      <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
+          <div className="cta-content">
             <h2>Questions About Our Terms?</h2>
             <p>Our team can clarify any points or concerns</p>
             <div className="cta-buttons">
               <Link to="/contact" className="cta-primary">
-                Contact Us
+                <FaEnvelope className="button-icon" /> Contact Us
               </Link>
               <Link to="/faq" className="cta-secondary">
-                View FAQ
+                <FaFileAlt className="button-icon" /> View FAQ
               </Link>
             </div>
           </div>

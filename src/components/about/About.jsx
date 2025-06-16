@@ -24,7 +24,7 @@ function About() {
 
   const milestones = [
     {
-      year: "2020",
+      year: "2021",
       title: "Company Founded",
       description: "XOBO established with vision to revolutionize logistics in Kenya."
     },
@@ -63,7 +63,7 @@ function About() {
             </div>
             <div className="hero-stats">
               <div className="stat">
-                <strong>2020</strong>
+                <strong>2021</strong>
                 <span>Founded</span>
               </div>
               <div className="stat">
@@ -73,6 +73,65 @@ function About() {
               <div className="stat">
                 <strong>98%</strong>
                 <span>On-Time Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* XOBO Name Story */}
+      <section className="name-story-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-tag">Our Identity</span>
+            <h2 className="section-title">The Story Behind XOBO</h2>
+            <p className="section-subtitle">Every letter in our name represents our commitment to excellence</p>
+          </div>
+          
+          <div className="xobo-letters">
+            <div className="letter-card">
+              <div className="letter-display">X</div>
+              <div className="letter-content">
+                <h3>eXceeding Expectations</h3>
+                <p>We don't just meet expectations—we aim to beat them. The "X" is a reminder that every delivery is a chance to surprise our customers with service that goes the extra mile.</p>
+              </div>
+            </div>
+            
+            <div className="letter-card">
+              <div className="letter-display">O</div>
+              <div className="letter-content">
+                <h3>Optimized Logistics</h3>
+                <p>Logistics doesn't have to be complicated. We simplify it with smart systems and a thoughtful approach—so everything gets where it needs to go, without the hassle.</p>
+              </div>
+            </div>
+            
+            <div className="letter-card">
+              <div className="letter-display">B</div>
+              <div className="letter-content">
+                <h3>Bridging Distances</h3>
+                <p>Behind every package is a person. Whether it's across town or across borders, we help close the distance between businesses and communities, loved ones and goods.</p>
+              </div>
+            </div>
+            
+            <div className="letter-card">
+              <div className="letter-display">O</div>
+              <div className="letter-content">
+                <h3>On-Time Delivery</h3>
+                <p>Timing is everything—and we treat it that way. That last "O" reflects our promise to be on time, every time, because your trust depends on it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="name-story-narrative">
+            <div className="story-content">
+              <h3>The Story Behind the Name</h3>
+              <div className="story-text">
+                <p>
+                  At XOBO, we're more than just logistics—we're connectors. The "X" in our name stands for the intersection of innovation and reliability. It's where smart technology meets human dedication.
+                </p>
+                <p>
+                  "OBO" speaks to how we do it—with optimized logistics, seamless operations, and a mindset that sees every delivery as an opportunity. Together, XOBO is our promise to deliver more than packages—we deliver peace of mind, right on time.
+                </p>
               </div>
             </div>
           </div>
@@ -185,7 +244,7 @@ function About() {
               {/* Google Map showing our location */}
               <div className="map-container">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8179928428985!2d36.82238841526897!3d-1.2836062359877305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d258b9f4c5%3A0x82c5d5e7c9d5ef0c!2sLongonot%20Pl%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1713939474633!5m2!1sen!2ske" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4762.7006173560185!2d36.81300297571516!3d-1.2774535356180687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17c6027f0003%3A0xe2f13d478848ccc1!2sXobo%20Delivery%20Limited!5e1!3m2!1sen!2ske!4v1750083195590!5m2!1sen!2ske" 
                   width="100%" 
                   height="400" 
                   frameBorder="0"
@@ -203,17 +262,17 @@ function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="about-cta-section">
+      <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
+          <div className="cta-content">
             <h2>Ready to experience XOBO?</h2>
-            <p>Join thousands of satisfied customers</p>
+            <p>Join thousands of satisfied customers who trust us with their deliveries</p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noreferrer" className="cta-primary">
-                Start Delivering
+                <FaTrophy className="button-icon" /> Start Delivering
               </a>
               <Link to="/contact" className="cta-secondary">
-                Contact Us
+                <FaEnvelope className="button-icon" /> Contact Us
               </Link>
             </div>
           </div>

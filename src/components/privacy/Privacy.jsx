@@ -274,17 +274,17 @@ function Privacy() {
       </section>
 
       {/* CTA Section */}
-      <section className="privacy-cta-section">
+      <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
+          <div className="cta-content">
             <h2>Ready to Start?</h2>
             <p>Use XOBO with confidence in your privacy</p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
-                Start Delivery
+                <FaShieldAlt className="button-icon" /> Start Delivery
               </a>
               <Link to="/contact" className="cta-secondary">
-                Contact Us
+                <FaEnvelope className="button-icon" /> Contact Us
               </Link>
             </div>
           </div>

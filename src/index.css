@@ -2,6 +2,7 @@
 
 /* Import design system */
 @import './styles/globals.css';
+@import './styles/standardized-components.css';
 @import './components/ui/Button.css';
 @import './components/ui/Card.css';
 

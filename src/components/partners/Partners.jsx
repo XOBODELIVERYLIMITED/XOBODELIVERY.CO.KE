@@ -171,17 +171,17 @@ function Partners() {
       </section>
 
       {/* CTA Section */}
-      <section className="partners-cta-section">
+      <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
+          <div className="cta-content">
             <h2>Ready to Start Your Partnership?</h2>
             <p>Join hundreds of successful partners who are growing their business with XOBO</p>
             <div className="cta-buttons">
               <Link to="/contact" className="cta-primary">
-                <FaPhoneAlt /> Contact Us Today
+                <FaPhoneAlt className="button-icon" /> Contact Us Today
               </Link>
               <Link to="/partner-guide" className="cta-secondary">
-                View Partner Guide
+                <FaHandshake className="button-icon" /> View Partner Guide
               </Link>
             </div>
           </div>

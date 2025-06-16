@@ -43,16 +43,7 @@
   padding: 0 1.5rem;
 }
 
-/* Common Section Styles */
-.section-tag {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-color);
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+/* Common Section Styles - now handled by standardized-components.css */
 
 .section-title {
   font-size: 2.2rem;
@@ -450,8 +441,22 @@ a.login-btn:focus {
 
 /* Stats Section */
 .stats-section {
-  padding: 4rem 0;
-  background-color: var(--primary-color);
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #293f78 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+  z-index: 1;
 }
 
 .stats-container {
@@ -459,6 +464,8 @@ a.login-btn:focus {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .stat-item {
@@ -638,9 +645,7 @@ a.login-btn:focus {
 .benefit-icon {
   width: 70px;
   height: 70px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: 50%;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -650,10 +655,9 @@ a.login-btn:focus {
 }
 
 .benefit-card:hover .benefit-icon {
-  background-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
   transform: rotateY(360deg) !important;
-  /* Temporary debugging - make animation slower and more visible */
-  transition: all 0.8s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .benefit-title {
@@ -734,8 +738,7 @@ a.login-btn:focus {
 }
 
 .benefits-section .benefit-card:hover .benefit-icon {
-  color: var(--white) !important;
-  background-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
   transform: rotateY(360deg) !important;
   transition: all 0.3s ease !important;
 }
@@ -787,6 +790,21 @@ a.login-btn:focus {
   transition: var(--transition);
   text-align: center;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .service-card:hover {
@@ -794,17 +812,32 @@ a.login-btn:focus {
   box-shadow: var(--shadow-md);
 }
 
+.service-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+}
+
 .service-icon {
   font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.service-card:hover .service-icon {
+  color: var(--accent-color);
+  transform: rotateY(360deg);
 }
 
 .service-card h3 {
   font-size: 1.2rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .service-card p {
@@ -812,6 +845,8 @@ a.login-btn:focus {
   line-height: 1.5;
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .service-link {
@@ -823,6 +858,8 @@ a.login-btn:focus {
   align-items: center;
   gap: 0.5rem;
   transition: var(--transition);
+  position: relative;
+  z-index: 2;
 }
 
 .service-link:hover {
@@ -1090,7 +1127,7 @@ a.login-btn:focus {
 
   /* Improve stats layout on mobile */
   .stats-section {
-    padding: 2rem 0;
+    padding: 60px 0;
   }
 
   .stats-container {
@@ -1358,26 +1395,55 @@ a.login-btn:focus {
 
 /* CTA Section */
 .cta-section {
-  padding: 5rem 0;
-  background-color: var(--primary-color);
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #293f78 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+  z-index: 1;
 }
 
 .cta-container {
-  text-align: center;
+  position: relative;
+  z-index: 2;
   max-width: 800px;
+  padding: 0 1rem;
+  text-align: center;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-container h2 {
-  font-size: 2rem;
-  color: var(--white);
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
 }
 
 .cta-container p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cta-buttons {
@@ -1418,8 +1484,11 @@ a.login-btn:focus {
 }
 
 .cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
 }
 
 /* Service Highlights Section */
@@ -1772,7 +1841,7 @@ a.login-btn:focus {
 
   /* Improve stats layout on mobile */
   .stats-section {
-    padding: 2rem 0;
+    padding: 60px 0;
   }
 
   .stats-container {
@@ -1868,9 +1937,7 @@ a.login-btn:focus {
     font-size: 0.95rem;
   }
 
-  .section-tag {
-    font-size: 0.75rem;
-  }
+  /* section-tag styles handled by standardized-components.css */
 
   .section-title {
     font-size: 1.4rem;
@@ -1890,11 +1957,21 @@ a.login-btn:focus {
   }
 
   .cta-section {
-    padding: 2rem 0;
+    padding: 50px 0;
   }
 
   .cta-container {
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
+  }
+
+  .cta-container h2 {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-container p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -2207,4 +2284,47 @@ a.login-btn:focus {
   color: #16234d !important;
   text-shadow: none !important;
   font-weight: 700;
+}
+
+/* Add responsive CTA styles for consistency */
+@media screen and (max-width: 768px) {
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-container h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-container p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cta-section {
+    padding: 50px 0;
+  }
+
+  .cta-container h2 {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-container p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .stats-section {
+    padding: 50px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .stats-section {
+    padding: 40px 0;
+  }
 }
