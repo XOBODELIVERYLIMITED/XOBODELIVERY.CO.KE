@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { scrollToTop } from '../common/ScrollToTop';
@@ -6,6 +6,21 @@ import './footer.css';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 576);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // Handle navigation with scroll to top
   const handleNavClick = () => {
@@ -15,11 +30,11 @@ function Footer() {
   };
 
   return (
-    <footer>
+    <footer className={isMobile ? "mobile-footer mobile-view" : ""}>
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-links">
-            <div className="footer-column">
+            <div className="footer-column services-column">
               <h4>Services</h4>
               <Link to="/services" onClick={handleNavClick}>All Services</Link>
               <Link to="/services/express" onClick={handleNavClick}>Express Delivery</Link>
@@ -28,25 +43,24 @@ function Footer() {
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer">Transport Platform</a>
             </div>
 
-            <div className="footer-column">
+            <div className="footer-column company-column">
               <h4>Company</h4>
               <Link to="/about" onClick={handleNavClick}>About Us</Link>
               <Link to="/client-guide" onClick={handleNavClick}>Customer Guide</Link>
-              <Link to="/partner-guide" onClick={handleNavClick}>Partner Guide</Link>
               <Link to="/company-info" onClick={handleNavClick}>Company Info</Link>
               <Link to="/faq" onClick={handleNavClick}>FAQ</Link>
               <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
             </div>
 
-            <div className="footer-column">
+            <div className="footer-column policies-column">
               <h4>Policies</h4>
               <Link to="/terms" onClick={handleNavClick}>Terms of Service</Link>
               <Link to="/privacy-policy" onClick={handleNavClick}>Privacy Policy</Link>
               <Link to="/driver-privacy" onClick={handleNavClick}>Driver Privacy</Link>
             </div>
 
-            <div className="footer-column">
-              <h4>Follow</h4>
+            <div className="footer-column connect-column">
+              <h4>Connect With Us</h4>
               <div className="social-icons">
                 <a href="https://twitter.com/XoboDelivery_" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                   <FaTwitter />

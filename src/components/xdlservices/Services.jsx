@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaShippingFast, FaTruckMoving, FaWarehouse, FaUsers, FaChartLine, FaMobile, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './services.css';
 
 function Services() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
   const deliveryServices = [
     {
       icon: <FaShippingFast />,
@@ -57,7 +72,7 @@ function Services() {
                 <FaEnvelope className="button-icon" /> Get Quote
               </Link>
             </div>
-            <div className="hero-stats">
+            <div className={`hero-stats ${isMobile ? 'mobile-stats' : ''}`}>
               <div className="stat">
                 <strong>3</strong>
                 <span>Service Types</span>
@@ -79,15 +94,16 @@ function Services() {
       <section className="service-intro">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Why Choose Us</span>
-            <h2 className="section-title">On-demand delivery</h2>
+            <div className="section-tag-container">
+              <div className="section-tag">BENEFITS</div>
+            </div>
+            <h2 className="section-title">Why Choose XOBO</h2>
             <p className="section-subtitle">
-              Reliable, fast, and secure delivery services across Kenya.
-              Technology-driven approach ensures on-time deliveries.
+              Benefits when you join our driver network
             </p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
-              Deliver Now
+                Deliver Now
               </a>
               <Link to="/contact" className="cta-secondary">
                 Get a Quote
@@ -101,7 +117,9 @@ function Services() {
       <section className="service-options">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Delivery Options</span>
+            <div className="section-tag-container">
+              <div className="section-tag">DELIVERY OPTIONS</div>
+            </div>
             <h2 className="section-title">Delivery Services</h2>
             <p className="section-subtitle">Choose services that meet your specific needs</p>
           </div>
@@ -122,10 +140,12 @@ function Services() {
       <section className="business-solutions">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">For Businesses</span>
+            <div className="section-tag-container">
+              <div className="section-tag">FOR BUSINESSES</div>
+            </div>
             <h2 className="section-title">Business Solutions</h2>
             <p className="section-subtitle">Logistics solutions to help your business grow</p>
-      </div>
+          </div>
 
           <div className="services-grid">
             {businessSolutions.map((solution, index) => (
@@ -142,15 +162,15 @@ function Services() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-            <h2>Ready to simplify deliveries?</h2>
-            <p>Join businesses that trust XOBO</p>
-            <div className="cta-buttons">
-              <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
-                Start Delivering
-              </a>
-              <Link to="/contact" className="cta-secondary">
-                Contact Us
-              </Link>
+          <h2>Ready to simplify deliveries?</h2>
+          <p>Join businesses that trust XOBO</p>
+          <div className="cta-buttons">
+            <a href="https://biz.xobo.co.ke/" target='_blank' rel="noreferrer" className="cta-primary">
+              Start Delivering
+            </a>
+            <Link to="/contact" className="cta-secondary">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>

@@ -170,8 +170,6 @@ footer {
   font-size: 0.9rem;
 }
 
-
-
 /* Enhanced Footer Responsiveness for Large Screens */
 @media screen and (min-width: 1024px) {
   .footer-top {
@@ -215,103 +213,38 @@ footer {
   .footer-column {
     min-width: 150px;
     padding: 0 0.5rem;
+    flex-basis: calc(50% - 2.5rem);
   }
 }
 
+/* Mobile styles for footer */
 @media screen and (max-width: 576px) {
+  footer, .mobile-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
+  .mobile-footer .footer-container,
+  .mobile-footer .footer-top,
+  .mobile-footer .footer-links,
+  .mobile-footer .footer-column,
+  .mobile-footer .footer-bottom {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .menu-open footer.mobile-footer {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
   footer {
     padding-top: 2rem;
     padding-bottom: 1rem;
-  }
-  
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-column {
-    width: 100%;
-    max-width: 280px;
-    padding: 0 1rem;
-  }
-  
-  .footer-column h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-column a:hover {
-    transform: none;
-  }
-  
-  /* Improved touch targets for mobile */
-  .footer-column a {
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.3rem;
-    border-radius: 6px;
-    background-color: rgba(22, 35, 77, 0.02);
-    border: 1px solid transparent;
-  }
-  
-  .footer-column a:hover {
-    background-color: rgba(22, 35, 77, 0.05);
-    border-color: rgba(22, 35, 77, 0.1);
-  }
-  
-  .social-icons {
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .social-icons a {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-  
-  .contact-info {
-    gap: 0.6rem;
-    margin-top: 1.2rem;
-  }
-  
-  .contact-info a {
-    min-height: 40px;
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    background-color: rgba(22, 35, 77, 0.02);
-    border: 1px solid rgba(22, 35, 77, 0.1);
-    text-align: center;
-    font-weight: 600;
-  }
-  
-  .contact-info a:hover {
-    background-color: rgba(22, 35, 77, 0.05);
-  }
-  
-  .footer-bottom {
-    padding: 1.5rem 0 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .footer-bottom p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Handle very small devices */
-@media screen and (max-width: 375px) {
-  footer {
-    padding-top: 1.5rem;
   }
   
   .footer-container {
@@ -319,37 +252,128 @@ footer {
   }
   
   .footer-links {
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .footer-column {
-    max-width: 260px;
-    padding: 0 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0;
+    background-color: rgba(245, 247, 250, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
   
   .footer-column h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    text-align: left;
+  }
+  
+  .footer-column h4:after {
+    left: 0;
+    transform: none;
+    width: 40px;
+    height: 2px;
   }
   
   .footer-column a {
+    text-align: left;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
     font-size: 0.9rem;
-    min-height: 44px;
-    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-column a:last-child {
+    border-bottom: none;
+  }
+  
+  .footer-column a:hover {
+    transform: none;
   }
   
   .social-icons {
-    gap: 1rem;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    gap: 0.75rem;
   }
   
   .social-icons a {
     width: 40px;
     height: 40px;
+  }
+  
+  .contact-info {
+    align-items: flex-start;
+    margin-top: 0.5rem;
+  }
+  
+  .contact-info a {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .contact-info a:last-child {
+    margin-bottom: 0;
+  }
+  
+  .footer-bottom {
+    margin-top: 0.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  footer {
+    padding-top: 1.5rem;
+  }
+  
+  .footer-container {
+    padding: 0 0.75rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+  }
+  
+  .footer-column {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .footer-column h4 {
     font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .footer-column a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+  
+  .social-icons {
+    gap: 0.6rem;
+  }
+  
+  .social-icons a {
+    width: 36px;
+    height: 36px;
   }
   
   .contact-info a {
     font-size: 0.85rem;
-    min-height: 38px;
+    padding: 0.35rem 0;
   }
   
   .footer-bottom p {
@@ -357,8 +381,221 @@ footer {
   }
 }
 
+/* Mobile menu footer styles removed */
+
 @media screen and (min-height: 1000px) {
   footer {
     margin-top: auto;
   }
 }
+
+/* Mobile-specific footer styles */
+.mobile-footer {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  display: block !important; /* Ensure footer is visible */
+}
+
+.mobile-footer .footer-container {
+  padding: 0 1rem;
+  display: block;
+  width: 100%;
+}
+
+.mobile-footer .footer-top {
+  width: 100%;
+  display: block;
+}
+
+.mobile-footer .footer-links {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+}
+
+.mobile-footer .footer-column {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(245, 247, 250, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: block;
+}
+
+.mobile-footer .footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  text-align: left;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.mobile-footer .footer-column h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transform: none;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.mobile-footer .footer-column a {
+  text-align: left;
+  padding: 0.5rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.mobile-footer .footer-column a:last-child {
+  border-bottom: none;
+}
+
+.mobile-footer .social-icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mobile-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.mobile-footer .contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+  gap: 0.4rem;
+}
+
+.mobile-footer .contact-info a {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.mobile-footer .footer-bottom {
+  margin-top: 0.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.mobile-footer .footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Mobile menu footer styles removed */
+
+/* Mobile view specific styles */
+.mobile-view {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.mobile-view .footer-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.mobile-view .footer-top {
+  width: 100%;
+  display: block;
+}
+
+.mobile-view .footer-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.mobile-view .footer-column {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgba(245, 247, 250, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-view .services-column,
+.mobile-view .company-column,
+.mobile-view .policies-column,
+.mobile-view .connect-column {
+  display: block !important;
+}
+
+.mobile-view .footer-column h4 {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: left;
+}
+
+.mobile-view .footer-column a {
+  display: block;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-decoration: none;
+  text-align: left;
+}
+
+.mobile-view .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.mobile-view .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mobile-view .footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Override any conflicting styles */

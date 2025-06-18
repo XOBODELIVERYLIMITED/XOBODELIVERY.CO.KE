@@ -180,9 +180,6 @@ function Partners() {
               <Link to="/contact" className="cta-primary">
                 <FaPhoneAlt className="button-icon" /> Contact Us Today
               </Link>
-              <Link to="/partner-guide" className="cta-secondary">
-                <FaHandshake className="button-icon" /> View Partner Guide
-              </Link>
             </div>
           </div>
         </div>

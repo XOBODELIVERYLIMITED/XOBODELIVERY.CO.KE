@@ -344,7 +344,9 @@ const FAQ = () => {
       <section className="faq-features-section">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Why Our FAQ</span>
+            <div className="section-tag-container">
+              <div className="section-tag">WHY OUR FAQ</div>
+            </div>
             <h2 className="section-title">Answers You Can Trust</h2>
             <p className="section-subtitle">Accurate and helpful information at your fingertips</p>
           </div>
@@ -364,7 +366,9 @@ const FAQ = () => {
       <section className="faq-content-section">
         <div className="container">
           <div className="section-intro">
-            <span className="section-tag">Knowledge Base</span>
+            <div className="section-tag-container">
+              <div className="section-tag">Knowledge Base</div>
+            </div>
             <h2 className="section-title">Find Your Answers</h2>
             <p className="section-subtitle">Browse questions by category</p>
           </div>
@@ -377,7 +381,7 @@ const FAQ = () => {
       {/* Help Section with Illustration */}
       <section className="help-section">
         <div className="container">
-          <div className="help-grid">
+          <div className="help-card">
             <div className="help-content">
               <div className="help-icon">
                 <FaRegLightbulb />
@@ -385,36 +389,15 @@ const FAQ = () => {
               <h2>Still have questions?</h2>
               <p>Our support team is ready to help with any questions about our services.</p>
               <div className="cta-buttons">
-                <Link 
-                  to="/contact#email-contact" 
-                  className="cta-primary"
-                  onClick={() => {
-                    setTimeout(() => {
-                      scrollToTop();
-                      // Additional scroll to email section after page loads
-                      setTimeout(() => {
-                        const emailSection = document.getElementById('email-contact');
-                        if (emailSection) {
-                          emailSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'center'
-                          });
-                        }
-                      }, 300);
-                    }, 100);
-                  }}
-                >
+                <Link to="/contact" className="cta-primary">
                   Contact Us
                 </Link>
               </div>
             </div>
             <div className="help-illustration">
               <img 
-                src={`${process.env.PUBLIC_URL}/media/help-illustration.svg`} 
+                src={`${process.env.PUBLIC_URL}/media/customer-support.svg`} 
                 alt="Customer Support"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
               />
             </div>
           </div>

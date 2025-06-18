@@ -1,8 +1,12 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './App.css';
 import './styles/standardized-components.css';
+import './styles/mobile-fixes.css';
+import setupViewportHeightFix from './utils/viewportFix';
+import setupResponsiveHelper from './utils/responsiveHelper';
+import initializeMobileOptimizations from './utils/mobileOptimization';
 
 // Critical components loaded immediately
 import Header from "./components/header/Header";
@@ -24,7 +28,6 @@ const FAQ = lazy(() => import("./components/faq/FAQ"));
 const Privacy = lazy(() => import("./components/privacy/Privacy"));
 const Terms = lazy(() => import("./components/terms/Terms"));
 const ClientGuide = lazy(() => import("./components/client-guide/ClientGuide"));
-const PartnerGuide = lazy(() => import("./components/partner-guide/PartnerGuide"));
 const CompanyInfo = lazy(() => import("./components/company-info/CompanyInfo"));
 const Account = lazy(() => import("./components/account/Account"));
 const TrackingDemo = lazy(() => import("./components/tracking/TrackingDemo"));
@@ -43,6 +46,17 @@ const MainLayout = ({ children }) => (
 );
 
 function App() {
+  useEffect(() => {
+    // Fix for 100vh issue on mobile browsers
+    setupViewportHeightFix();
+    
+    // Setup responsive helper
+    setupResponsiveHelper();
+    
+    // Initialize comprehensive mobile optimizations
+    initializeMobileOptimizations();
+  }, []);
+
   return (
     <Router>
       <ErrorBoundary>
@@ -179,14 +193,6 @@ function App() {
             element={
               <MainLayout>
                 <ClientGuide />
-              </MainLayout>
-            }
-          />
-          <Route
-            path="/partner-guide"
-            element={
-              <MainLayout>
-                <PartnerGuide />
               </MainLayout>
             }
           />

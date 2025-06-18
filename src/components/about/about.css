@@ -591,21 +591,21 @@
   .letter-card {
     padding: 20px 15px;
     min-height: 260px;
-  }
-  
+}
+
   .letter-display {
     width: 55px;
     height: 55px;
     font-size: 1.6rem;
-  }
+}
 
   .letter-content h3 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
   }
 
   .letter-content p {
     font-size: 0.85rem;
-  }
+}
 }
 
 @media (max-width: 992px) {
@@ -684,182 +684,296 @@
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .about-hero {
-    padding: 4rem 0;
-  }
-  
-  .about-hero h1 {
-    font-size: 2rem;
-  }
-  
-  .about-hero p {
-    font-size: 1rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 1.5rem;
-  }
-  
-  .hero-stats .stat strong {
-    font-size: 1.8rem;
-  }
-  
-  .hero-stats .stat span {
-    font-size: 0.75rem;
-  }
-  
-  .hero-button {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .mission-stats {
-    gap: 20px;
-  }
-  
-  .stat-number {
-    font-size: 2.5rem;
-  }
-  
-  /* CTA responsive styles handled by standardized-components.css */
-  
-  .xobo-letters {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .letter-card {
-    padding: 20px;
-    min-height: 200px;
-  }
-  
-  .letter-display {
-    width: 55px;
-    height: 55px;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-  
-  .letter-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .letter-content p {
-    font-size: 0.9rem;
-  }
-  
-  .name-story-narrative {
-    padding: 25px;
-  }
-  
-  .story-content h3 {
-    font-size: 1.8rem;
-  }
-  
-  .story-text p {
-    font-size: 1rem;
-  }
-  
-  .feature-item {
-    justify-content: center;
-  }
-  
-  .value-card {
-    padding: 25px;
-  }
-  
-  .value-icon {
-    width: 65px;
-    height: 65px;
-    font-size: 1.6rem;
-    margin-bottom: 18px;
-  }
-  
-  /* Mobile responsive styles for XOBO section */
-  .name-story-section {
-    padding: 60px 0;
-  }
-  
-  .xobo-letters {
-    gap: 15px;
-  }
-  
-  .letter-card {
-    padding: 18px;
-    min-height: 180px;
-  }
-  
-  .letter-display {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-  
-  .letter-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-  
-  .letter-content p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-  
-  .name-story-narrative {
-    padding: 20px;
-  }
-  
-  .story-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-  }
-  
-  .story-text p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .section-title {
-    font-size: 1.8rem;
+  .about-page {
+    margin-top: 65px;
   }
   
   .about-hero {
     padding: 3rem 0;
   }
   
-  .about-hero h1 {
-    font-size: 1.8rem;
+  .about-hero-content h1 {
+    font-size: 2.5rem;
   }
   
-  .about-hero p {
+  .about-hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .hero-button {
+    width: 100%;
+    max-width: 280px;
+    min-height: 44px;
+  }
+  
+  .timeline {
+    padding: 0 1rem;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-item.left,
+  .timeline-item.right {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+  
+  .timeline-content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .timeline-marker {
+    left: -0.5rem;
+  }
+  
+  .xobo-letters {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .coverage-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero {
+    padding: 2.5rem 0;
+  }
+  
+  .about-hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-button {
+    max-width: 250px;
+    padding: 0.8rem 1.25rem;
     font-size: 0.95rem;
   }
   
+  .xobo-letters {
+    gap: 1.25rem;
+  }
+  
+  .letter-card {
+    padding: 1.5rem;
+  }
+  
+  .letter-display {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .letter-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .letter-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .timeline-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1.25rem;
+  }
+  
+  .timeline-year {
+    font-size: 1rem;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
   .value-card {
-    padding: 20px;
+    padding: 1.5rem;
   }
   
   .value-icon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
-    margin-bottom: 15px;
   }
   
-  /* CTA responsive styles handled by standardized-components.css */
+  .value-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .coverage-features {
+    gap: 1rem;
+  }
+  
+  .feature-item {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .feature-icon {
+    font-size: 1rem;
+  }
+  
+  .map-container {
+    height: 250px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 2rem 0;
+  }
+  
+  .about-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-hero-content p {
+    font-size: 0.95rem;
+  }
+  
+  .hero-button {
+    max-width: 220px;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.9rem;
+  }
+  
+  .letter-card {
+    padding: 1.25rem;
+  }
+  
+  .letter-display {
+    width: 50px;
+    height: 50px;
+    font-size: 1.75rem;
+  }
+  
+  .letter-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .letter-content p {
+    font-size: 0.85rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .value-card {
+    padding: 1.25rem;
+  }
+  
+  .value-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .map-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-hero-content h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-button {
+    max-width: 200px;
+    font-size: 0.85rem;
+  }
+  
+  .letter-display {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+  
+  .letter-content h3 {
+    font-size: 1rem;
+  }
+  
+  .letter-content p {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-content {
+    padding: 0.875rem;
+  }
+  
+  .timeline-year {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
+  
+  .value-card {
+    padding: 1rem;
+  }
+  
+  .value-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .value-card p {
+    font-size: 0.85rem;
+  }
+  
+  .map-container {
+    height: 200px;
+  }
 }

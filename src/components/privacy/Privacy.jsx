@@ -195,32 +195,21 @@ function Privacy() {
         </div>
       </section>
 
-      {/* Table of Contents */}
-      <section className="privacy-toc">
-        <div className="container">
-          <div className="toc-container">
-            <h2>Policy Contents</h2>
-            <p className="toc-description">Jump to any section:</p>
-            <ul className="toc-list">
-              {privacySections.map((section) => (
-                <li key={section.id}>
-                  <a href={`#${section.id}`}>{section.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Privacy Content */}
       <section className="privacy-content">
         <div className="container">
-          <div className="privacy-container">
+          <div className="section-intro">
+            <span className="section-tag">Privacy Policy</span>
+            <h2 className="section-title">Information We Handle</h2>
+            <p className="section-subtitle">Key data privacy information</p>
+          </div>
+          <div className="timeline">
             {privacySections.map((section, index) => (
-              <div className="privacy-section" key={section.id} id={section.id}>
-                <div className="section-number">{String(index + 1).padStart(2, '0')}</div>
-                <div className="section-content">
-                  <h2>{section.title}</h2>
+              <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} key={section.id} id={section.id}>
+                <div className="timeline-content">
+                  <div className="timeline-marker"></div>
+                  <div className="timeline-number">{String(index + 1).padStart(2, '0')}</div>
+                  <h3>{section.title}</h3>
                   <div className="privacy-text">
                     {section.content.split('\n\n').map((paragraph, idx) => (
                       <div key={idx}>
@@ -243,36 +232,6 @@ function Privacy() {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="privacy-contact-section">
-        <div className="container">
-          <div className="contact-container">
-            <div className="contact-info">
-              <h2>Questions?</h2>
-              <p>
-                Contact our Privacy Team with any questions about this policy.
-              </p>
-              <div className="contact-methods">
-                <div className="contact-method">
-                  <FaClock className="contact-icon" />
-                  <div>
-                    <h4>Office Hours</h4>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  </div>
-                </div>
-                <div className="contact-method">
-                  <FaFileContract className="contact-icon" />
-                  <div>
-                    <h4>Privacy Officer</h4>
-                    <p>Email: privacy@xobo.co.ke</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
@@ -281,10 +240,10 @@ function Privacy() {
             <p>Use XOBO with confidence in your privacy</p>
             <div className="cta-buttons">
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
-                <FaShieldAlt className="button-icon" /> Start Delivery
+                <FaShieldAlt className="button-icon" /><span>Start Delivery</span>
               </a>
               <Link to="/contact" className="cta-secondary">
-                <FaEnvelope className="button-icon" /> Contact Us
+                <FaEnvelope className="button-icon" /><span>Contact Us</span>
               </Link>
             </div>
           </div>

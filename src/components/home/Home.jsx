@@ -354,33 +354,39 @@ function Home() {
               <div className="service-icon">
                 <FaBoxOpen />
               </div>
-              <h3>Express Delivery</h3>
-              <p>Same-day service for urgent packages. Pick up and delivery within hours.</p>
-              <Link to="/services/express" className="service-link">
-                Learn more <FaArrowRight className="arrow-icon-small" />
-              </Link>
+              <div className="service-card-content">
+                <h3>Express Delivery</h3>
+                <p>Same-day service for urgent packages. Pick up and delivery within hours.</p>
+                <Link to="/services/express" className="service-link">
+                  Learn more <FaArrowRight className="arrow-icon-small" />
+                </Link>
+              </div>
             </div>
             
             <div className="service-card">
               <div className="service-icon">
                 <FaTruckMoving />
               </div>
-              <h3>Scheduled Delivery</h3>
-              <p>Plan deliveries in advance. Perfect for regular shipments.</p>
-              <Link to="/services/scheduled" className="service-link">
-                Learn more <FaArrowRight className="arrow-icon-small" />
-              </Link>
+              <div className="service-card-content">
+                <h3>Scheduled Delivery</h3>
+                <p>Plan deliveries in advance. Perfect for regular shipments.</p>
+                <Link to="/services/scheduled" className="service-link">
+                  Learn more <FaArrowRight className="arrow-icon-small" />
+                </Link>
+              </div>
             </div>
             
             <div className="service-card">
               <div className="service-icon">
                 <FaBuilding />
               </div>
-              <h3>Business Solutions</h3>
-              <p>Custom delivery solutions for high volume shipping needs.</p>
-              <Link to="/services/business" className="service-link">
-                Learn more <FaArrowRight className="arrow-icon-small" />
-              </Link>
+              <div className="service-card-content">
+                <h3>Business Solutions</h3>
+                <p>Custom delivery solutions for high volume shipping needs.</p>
+                <Link to="/services/business" className="service-link">
+                  Learn more <FaArrowRight className="arrow-icon-small" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

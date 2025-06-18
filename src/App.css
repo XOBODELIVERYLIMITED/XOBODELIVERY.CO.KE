@@ -35,6 +35,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 320px; /* Prevent layout from breaking on very small screens */
 }
 
 .App {
@@ -257,18 +259,52 @@ html {
   
   h1 {
     font-size: 1.75rem !important;
+    line-height: 1.3 !important;
   }
   
   h2 {
     font-size: 1.4rem !important;
+    line-height: 1.3 !important;
   }
   
   h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
   }
   
   p {
     font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  button, 
+  .btn, 
+  .button {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  input, 
+  select, 
+  textarea {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+  
+  label {
+    font-size: 0.85rem !important;
+  }
+  
+  .section {
+    padding: 2.5rem 0 !important;
+  }
+  
+  .card, .box, .panel {
+    padding: 1rem !important;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
   }
 }
 
@@ -278,19 +314,28 @@ html {
   }
   
   h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
   
   h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.35rem !important;
   }
-
+  
   h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  h4 {
     font-size: 1rem !important;
   }
-
-  h4 {
-    font-size: 0.9rem !important;
+  
+  body {
+    font-size: 14px;
+  }
+  
+  p {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 }
 
@@ -300,182 +345,94 @@ html {
   }
   
   h1 {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
   }
-
+  
   h2 {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
   }
-
+  
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
-
+  
   p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }
 
 /* Improved touch targets for mobile */
 @media screen and (max-width: 576px) {
   button, 
-  a.btn, 
-  input[type="button"], 
-  input[type="submit"],
-  .clickable {
+  .btn, 
+  .button,
+  a.btn,
+  a.button {
     min-height: 44px;
-    min-width: 44px;
-    padding: 0.75rem 1rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
   }
   
   input, 
   select, 
-  textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
-    height: 44px;
+  textarea,
+  .input-group,
+  .form-control {
+    min-height: 44px;
   }
-
+  
   label {
-    margin-bottom: 0.4rem;
-    display: inline-block;
+    margin-bottom: 0.5rem;
+    display: block;
   }
-
-  /* Fix spacing for mobile */
+  
   .section {
     padding: 2.5rem 0;
   }
-
+  
   .card, .box, .panel {
     padding: 1rem;
+    border-radius: var(--radius-sm);
   }
-
-  /* Improve mobile table scrolling */
+  
   .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
 
-@media screen and (min-width: 1920px) {
-  body {
-    font-size: 18px;
-  }
-  
-  .container {
-    max-width: 1400px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .container {
-    max-width: 1500px;
-  }
-  
-  html {
-    font-size: 18px;
-  }
-}
-
-/* Fix for mobile overscrolling */
-html, body {
-  overscroll-behavior: none;
-}
-
-/* Improve form elements on mobile */
-@media (hover: none) {
-  input,
-  select,
-  textarea,
-  button {
-    font-size: 16px !important; /* Prevents zoom on iOS */
-  }
-  
-  select {
-    -webkit-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 0.7em top 50%;
-    background-size: 0.8em auto;
-    padding-right: 2rem;
-  }
-
-  /* Improve tap target sizes */
-  a {
-    padding: 0.25rem 0;
-  }
-}
-
-/* Better handling of fixed elements on mobile */
-@supports (-webkit-touch-callout: none) {
-  /* iOS specific styles */
-  .fixed-element {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-
-  /* Add safe area padding for iPhone X and newer */
-  .with-safe-area-top {
-    padding-top: var(--safe-area-inset-top);
-  }
-
-  .with-safe-area-bottom {
-    padding-bottom: var(--safe-area-inset-bottom);
-  }
-}
-
-/* Fix for 100vh issue on mobile browsers */
-.full-height {
-  height: 100vh;
-  height: -webkit-fill-available;
-}
-
-/* Improved grid for mobile */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-@media screen and (max-width: 576px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Fixed position elements adjustment for mobile */
+/* Fix for fixed position elements */
 @media screen and (max-width: 480px) {
   .fixed-bottom,
-  .fixed-top {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+  .fixed-top,
+  .sticky-top,
+  .sticky-bottom {
+    position: fixed;
+    width: 100%;
+    left: 0;
   }
-
+  
   .fixed-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
+    bottom: 0;
+    padding-bottom: var(--safe-area-inset-bottom);
   }
-
+  
   .fixed-top {
-    padding-top: env(safe-area-inset-top);
+    top: 0;
+    padding-top: var(--safe-area-inset-top);
   }
 }
 
-/* Better image handling on mobile */
+/* Ensure images don't break layout */
 .img-fluid {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-/* Improved mobile flex layout */
+/* Improved flex containers */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -486,16 +443,127 @@ html, body {
   .flex-container {
     flex-direction: column;
   }
-
+  
   .flex-container > * {
     width: 100%;
   }
 }
 
+/* Main content area */
 main {
-  flex: 1 0 auto;
+  flex: 1;
   width: 100%;
-  min-height: 100px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Better touch handling for mobile */
+@media (hover: none) {
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem !important;
+  }
+  
+  a {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Safe area insets for notched phones */
+  .fixed-element {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .with-safe-area-top {
+    padding-top: calc(1rem + var(--safe-area-inset-top));
+  }
+  
+  .with-safe-area-bottom {
+    padding-bottom: calc(1rem + var(--safe-area-inset-bottom));
+  }
+}
+
+/* Full height sections */
+.full-height {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
 }
+
+/* Grid container for responsive layouts */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Fix for iOS fixed position elements */
+@media screen and (max-width: 480px) {
+  .fixed-bottom,
+  .fixed-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+  
+  .fixed-bottom {
+    bottom: 0;
+  }
+  
+  .fixed-top {
+    top: 0;
+  }
+}
+
+/* Ensure images don't break layout */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Improved flex containers */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  
+  .flex-container > * {
+    width: 100%;
+  }
+}
+

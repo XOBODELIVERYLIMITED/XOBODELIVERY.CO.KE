@@ -1,6 +1,6 @@
 // Header.jsx
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
 import { scrollToTop } from '../common/ScrollToTop';
@@ -32,6 +32,7 @@ const navLinks = [
 function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navBtnRef = useRef(null);
 
   const toggleNavbar = () => {
     setIsNavVisible(!isNavVisible);
@@ -50,8 +51,10 @@ function Header() {
     const body = document.body;
     if (isNavVisible) {
       body.classList.add("no-scroll");
+      body.classList.add("menu-open");
     } else {
       body.classList.remove("no-scroll");
+      body.classList.remove("menu-open");
     }
 
     const handleScroll = () => {
@@ -66,6 +69,27 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isNavVisible, scrolled]);
+
+  // Ensure the nav button is always clickable
+  useEffect(() => {
+    if (navBtnRef.current) {
+      navBtnRef.current.style.pointerEvents = 'auto';
+      navBtnRef.current.style.cursor = 'pointer';
+      
+      // Force the nav button to be clickable
+      const forceClickable = () => {
+        if (navBtnRef.current) {
+          navBtnRef.current.style.pointerEvents = 'auto';
+          navBtnRef.current.style.cursor = 'pointer';
+        }
+      };
+      
+      // Run this periodically to ensure the button remains clickable
+      const interval = setInterval(forceClickable, 1000);
+      
+      return () => clearInterval(interval);
+    }
+  }, []);
 
   return (
     <header className={scrolled ? 'scrolled' : ''}>
@@ -107,9 +131,11 @@ function Header() {
         </nav>
 
         <button
+          ref={navBtnRef}
           className={`nav-btn ${isNavVisible ? "nav-close-btn" : ""}`}
           onClick={toggleNavbar}
           aria-label="Toggle navigation"
+          style={{ pointerEvents: 'auto', cursor: 'pointer' }}
         >
           {isNavVisible ? <FaTimes /> : <FaBars />}
         </button>

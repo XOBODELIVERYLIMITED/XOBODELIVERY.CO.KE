@@ -41,7 +41,6 @@ export const API_CONFIG = {
 export const NAV_LINKS = [
   { name: 'Services', path: '/services', internal: true },
   { name: 'Client Guide', path: '/client-guide', internal: true },
-  { name: 'Partner Guide', path: '/partner-guide', internal: true },
   { name: 'Company Info', path: '/company-info', internal: true },
   { name: 'Contact', path: '/contact', internal: true },
   { name: 'FAQs', path: '/faq', internal: true },

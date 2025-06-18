@@ -1,0 +1,61 @@
+/* Mobile Optimization - Disable animations and hover effects on mobile devices */
+
+@media (max-width: 768px) {
+  /* Disable all animations and transitions */
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Reset hover states */
+  a:hover,
+  button:hover,
+  .btn:hover,
+  .button:hover,
+  .card:hover,
+  .nav-link:hover,
+  .dropdown-item:hover,
+  .icon:hover,
+  [class*="hover"],
+  [class*="Hover"] {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  
+  /* Specifically target common hover elements */
+  .card:hover,
+  .card:hover img,
+  .card:hover .card-img,
+  .card:hover .card-body,
+  .card:hover .card-title,
+  .card:hover .card-text,
+  .card:hover .card-footer,
+  .card:hover .card-header,
+  .card:hover .card-img-overlay,
+  .card:hover .card-img-top,
+  .card:hover .card-img-bottom {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  
+  /* Disable scale/translate transforms */
+  [class*="scale"],
+  [class*="translate"],
+  [class*="rotate"],
+  [class*="skew"] {
+    transform: none !important;
+  }
+  
+  /* Disable fixed positioning that might cause issues on mobile */
+  .fixed-top,
+  .fixed-bottom,
+  .sticky-top {
+    position: relative;
+  }
+} 

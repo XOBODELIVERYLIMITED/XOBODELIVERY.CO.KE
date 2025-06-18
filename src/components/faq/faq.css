@@ -45,14 +45,35 @@
 }
 
 /* Common Section Styles */
+.section-tag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .section-tag {
-  display: inline-block;
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff3a3a;
+  color: #ffffff !important;
+  padding: 0 1.5rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent-color);
-  margin-bottom: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255, 58, 58, 0.2);
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 160px;
+  height: 36px; /* Fixed height to ensure proper centering */
 }
 
 .section-title {
@@ -518,36 +539,24 @@
 
 /* Help Section */
 .help-section {
-  padding: 5rem 0;
-  background-color: var(--lighter-bg);
-  text-align: center;
+  padding: 4rem 0;
+  background-color: #f5f7fa;
   position: relative;
-  overflow: hidden;
 }
 
-.help-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(22, 35, 77, 0.03) 25%, transparent 25%) -50px 0,
-              linear-gradient(225deg, rgba(22, 35, 77, 0.03) 25%, transparent 25%) -50px 0,
-              linear-gradient(315deg, rgba(22, 35, 77, 0.03) 25%, transparent 25%),
-              linear-gradient(45deg, rgba(22, 35, 77, 0.03) 25%, transparent 25%);
-  background-size: 100px 100px;
-  background-color: var(--lighter-bg);
-  z-index: 1;
-}
-
-.help-grid {
+.help-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f2f5' fill-opacity='0.6' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
 
 .help-content {
@@ -558,70 +567,65 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary-color);
+  width: 48px;
+  height: 48px;
+  background-color: #16234d;
   border-radius: 50%;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  font-size: 1.5rem;
-  box-shadow: 0 10px 20px rgba(22, 35, 77, 0.2);
+  margin-bottom: 1.25rem;
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 .help-content h2 {
-  font-size: 2.2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #16234d;
+  margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
 .help-content p {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.help-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .help-illustration img {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   height: auto;
-  animation: floatImage 4s ease-in-out infinite;
-}
-
-@keyframes floatImage {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
 }
 
 .help-section .cta-buttons {
-  display: flex;
-  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.help-section .cta-primary,
-.help-section .cta-secondary {
-  background-color: #fff !important;
-  color: var(--primary-color) !important;
+.help-section .cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff3a3a;
+  color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: 2vw;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
   border: none;
-  transition: all 0.2s ease-in-out !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  min-height: 44px;
 }
 
-.help-section .cta-primary:hover,
-.help-section .cta-secondary:hover {
-  background-color: #fff !important;
-  color: var(--primary-color) !important;
-  transform: scale(1.05) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.help-section .cta-primary:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 58, 58, 0.25);
 }
 
 /* Media Queries */
@@ -688,6 +692,17 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .faq-page {
+    margin-top: 70px;
+  }
+
+  .section-tag {
+    padding: 0 1.25rem;
+    font-size: 0.8rem;
+    min-width: 140px;
+    height: 32px;
+  }
+
   .faq-hero {
     padding: 3rem 0;
   }
@@ -786,9 +801,56 @@
     font-size: 0.85rem;
     line-height: 1.5;
   }
+  
+  .help-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .help-content {
+    text-align: center;
+    order: 2;
+  }
+  
+  .help-illustration {
+    order: 1;
+  }
+  
+  .help-illustration img {
+    max-width: 180px;
+  }
+  
+  .help-icon {
+    margin: 0 auto 1rem;
+  }
+  
+  .help-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .help-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .help-section .cta-buttons {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 576px) {
+  .faq-page {
+    margin-top: 65px;
+  }
+
+  .section-tag {
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    min-width: 130px;
+    height: 30px;
+  }
+
   .faq-hero {
     padding: 2.5rem 0;
   }
@@ -840,62 +902,26 @@
     gap: 0.125rem;
   }
   
-  .help-section {
-    text-align: center;
+  .help-card {
+    padding: 1.5rem;
   }
   
-  .help-buttons {
-    flex-direction: column;
-    gap: 1rem;
+  .help-illustration img {
+    max-width: 150px;
   }
   
-  .help-button {
+  .help-content h2 {
+    font-size: 1.35rem;
+  }
+  
+  .help-content p {
+    font-size: 0.9rem;
+  }
+  
+  .help-section .cta-primary {
     width: 100%;
-  }
-  
-  .faq-features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    max-width: 350px;
-    margin: 1.5rem auto 0;
-  }
-  
-  .faq-feature-card {
-    padding: 1.75rem;
-  }
-  
-  .feature-icon {
-    width: 65px;
-    height: 65px;
-    margin-bottom: 1.25rem;
-  }
-  
-  .faq-feature-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .faq-feature-card p {
+    padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-  
-  .faq-features-section {
-    padding: 2.5rem 0;
-  }
-  
-  .section-intro {
-    margin-bottom: 1.5rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .section-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
   }
 }
 
@@ -922,6 +948,13 @@
 }
 
 @media only screen and (max-width: 375px) {
+  .section-tag {
+    padding: 0 0.9rem;
+    font-size: 0.7rem;
+    min-width: 120px;
+    height: 28px;
+  }
+
   .faq-features-grid {
     max-width: 300px;
   }

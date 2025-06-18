@@ -135,10 +135,10 @@ function DriverPrivacy() {
             <p>Information for XOBO delivery partners</p>
             <div className="hero-buttons">
               <Link to="/contact" className="hero-button primary">
-                <FaEnvelope className="button-icon" /> Contact Privacy
+                <FaEnvelope className="button-icon" /><span>Contact Privacy</span>
               </Link>
-              <a href="mailto:privacy@xobo.co.ke" className="hero-button secondary">
-                <FaShieldAlt className="button-icon" /> Driver Support
+              <a href="mailto:drivers@xobo.co.ke" className="hero-button secondary">
+                <FaShieldAlt className="button-icon" /><span>Driver Support</span>
               </a>
             </div>
             <div className="hero-stats">
@@ -155,7 +155,7 @@ function DriverPrivacy() {
                 <span>Practices</span>
               </div>
             </div>
-            <p className="last-updated">Last updated: June 15, 2023</p>
+            <p className="last-updated">Last updated: December 20, 2024</p>
           </div>
         </div>
       </section>
@@ -196,32 +196,21 @@ function DriverPrivacy() {
         </div>
       </section>
 
-      {/* Table of Contents */}
-      <section className="driver-toc">
-        <div className="container">
-          <div className="toc-container">
-            <h2>Policy Contents</h2>
-            <p className="toc-description">Jump to any section:</p>
-            <ul className="toc-list">
-              {privacySections.map((section) => (
-                <li key={section.id}>
-                  <a href={`#${section.id}`}>{section.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Privacy Content */}
       <section className="driver-privacy-content">
         <div className="container">
-          <div className="privacy-container">
+          <div className="section-intro">
+            <span className="section-tag">Driver Policy</span>
+            <h2 className="section-title">Driver Information We Handle</h2>
+            <p className="section-subtitle">Key data privacy information for drivers</p>
+          </div>
+          <div className="timeline">
             {privacySections.map((section, index) => (
-              <div className="privacy-section" key={section.id} id={section.id}>
-                <div className="section-number">{String(index + 1).padStart(2, '0')}</div>
-                <div className="section-content">
-                  <h2>{section.title}</h2>
+              <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} key={section.id} id={section.id}>
+                <div className="timeline-content">
+                  <div className="timeline-marker"></div>
+                  <div className="timeline-number">{String(index + 1).padStart(2, '0')}</div>
+                  <h3>{section.title}</h3>
                   <div className="privacy-text">
                     {section.content.split('\n\n').map((paragraph, idx) => (
                       <div key={idx}>
@@ -244,53 +233,18 @@ function DriverPrivacy() {
         </div>
       </section>
 
-      {/* Driver Support */}
-      <section className="driver-support">
-        <div className="container">
-          <div className="support-container">
-            <div className="support-content">
-              <h2>Driver Support</h2>
-              <p>For privacy questions or concerns, contact our driver support team:</p>
-              <div className="support-methods">
-                <div className="support-method">
-                  <FaMapMarkerAlt className="support-icon" />
-                  <div>
-                    <h4>Office</h4>
-                    <p>Nairobi, Kenya</p>
-                  </div>
-                </div>
-                <div className="support-method">
-                  <FaClock className="support-icon" />
-                  <div>
-                    <h4>Hours</h4>
-                    <p>Mon-Fri: 8am-6pm</p>
-                  </div>
-                </div>
-                <div className="support-method">
-                  <FaFileContract className="support-icon" />
-                  <div>
-                    <h4>Contact</h4>
-                    <p>drivers@xobo.co.ke</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="driver-cta">
+      <section className="cta-section">
         <div className="container">
-          <div className="cta-container">
-            <h2>Questions?</h2>
-            <p>We're here to help with any privacy concerns</p>
+          <div className="cta-content">
+            <h2>Ready to Start?</h2>
+            <p>Drive with confidence in your privacy</p>
             <div className="cta-buttons">
-              <Link to="/contact" className="cta-primary">
-                Contact Us
-              </Link>
-              <Link to="/drivers" className="cta-secondary">
-                Driver Portal
+              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
+                <FaTruck className="button-icon" /><span>Join As Driver</span>
+              </a>
+              <Link to="/contact" className="cta-secondary">
+                <FaEnvelope className="button-icon" /><span>Contact Us</span>
               </Link>
             </div>
           </div>

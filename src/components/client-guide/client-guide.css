@@ -140,6 +140,11 @@
   color: white;
 }
 
+.step-nav.active .step-nav-content h4,
+.step-nav.active .step-nav-content p {
+  color: white;
+}
+
 .step-nav-icon {
   font-size: 1.5rem;
   color: #16234d;
@@ -437,13 +442,13 @@
 }
 
 .vehicle-icon {
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   color: #16234d;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
@@ -488,6 +493,8 @@
 .support-info {
   padding: 6rem 0;
   background: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .support-grid {
@@ -498,50 +505,105 @@
 }
 
 .support-card {
-  text-align: center;
+  background: white;
+  border-radius: 12px;
   padding: 2rem;
-  background: #f8fafc;
-  border-radius: 16px;
-  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 240px;
+}
+
+.support-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .support-card:hover {
-  background: white;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.support-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
 }
 
 .support-icon {
-  font-size: 2rem;
+  width: 40px;
+  height: 40px;
   color: #16234d;
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.support-card:hover .support-icon {
+  color: #ff3a3a;
+  transform: rotateY(360deg);
 }
 
 .support-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #16234d;
-  margin-bottom: 0.75rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .support-card p {
   color: #666;
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.support-card:hover p {
+  color: #333;
 }
 
 .support-details {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: auto;
 }
 
 .support-details a {
   color: #16234d;
   text-decoration: none;
   font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .support-details a:hover {
-  text-decoration: underline;
+  color: #ff3a3a;
+  transform: translateX(3px);
 }
 
 /* CTA Section */
@@ -631,13 +693,27 @@
   }
   
   .vehicle-card {
-    padding: 1.75rem;
+    padding: 1.5rem;
   }
   
   .vehicle-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+  
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .support-card {
+    padding: 1.5rem;
+  }
+  
+  .support-icon {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -681,22 +757,20 @@
     grid-template-columns: 1fr;
   }
   
+  .support-icon {
+    font-size: 1.4rem;
+  }
+  
   .cta-buttons {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .cta-primary,
-  .cta-secondary {
-    min-width: 200px;
-    text-align: center;
   }
 }
 
 @media (max-width: 576px) {
   .vehicle-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
   
   .vehicle-card {
@@ -704,13 +778,27 @@
   }
   
   .vehicle-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 0.75rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
   }
   
   .vehicle-header h3 {
     font-size: 1.3rem;
+  }
+  
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .support-card {
+    padding: 1.5rem;
+  }
+  
+  .support-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -732,12 +820,18 @@
   }
   
   .vehicle-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 0.7rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.6rem;
   }
   
   .vehicle-header h3 {
     font-size: 1.2rem;
+  }
+  
+  .support-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
   }
 } 

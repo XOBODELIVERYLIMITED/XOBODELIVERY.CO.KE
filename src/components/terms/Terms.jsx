@@ -135,23 +135,6 @@ function Terms() {
         </div>
       </section>
 
-      {/* Table of Contents */}
-      <section className="terms-toc">
-        <div className="container">
-          <div className="toc-container">
-            <h2>Contents</h2>
-            <p className="toc-description">Jump to any section below:</p>
-            <ul className="toc-list">
-              {sections.map((section) => (
-                <li key={section.id}>
-                  <a href={`#${section.id}`}>{section.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Key Principles */}
       <section className="principles-section">
         <div className="container">

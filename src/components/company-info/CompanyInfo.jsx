@@ -88,6 +88,29 @@ function CompanyInfo() {
     }
   ];
 
+  const xoboLetters = [
+    {
+      letter: "X",
+      title: "eXcellence in service delivery",
+      description: "We strive for excellence in every aspect of our delivery service, ensuring that each package is handled with care and delivered on time."
+    },
+    {
+      letter: "O",
+      title: "Outstanding customer experience",
+      description: "We are committed to providing an exceptional customer experience, with easy-to-use technology and responsive customer support."
+    },
+    {
+      letter: "B",
+      title: "Building lasting partnerships",
+      description: "We focus on building strong, lasting relationships with our clients, drivers, and partners to create a sustainable ecosystem."
+    },
+    {
+      letter: "O",
+      title: "Optimized logistics solutions",
+      description: "We continuously optimize our logistics operations to ensure efficiency, reliability, and cost-effectiveness for all stakeholders."
+    }
+  ];
+
   return (
     <div className="company-info">
       {/* Hero Section */}
@@ -138,33 +161,28 @@ function CompanyInfo() {
           {activeSection === 'overview' && (
             <div className="content-section">
               <div className="section-intro">
+                <span className="section-tag">About Us</span>
                 <h2>About XOBO Delivery Limited</h2>
                 <p>Established in 2020, XOBO Delivery Limited has emerged as Kenya's fastest-growing logistics platform, connecting businesses with reliable delivery solutions across 47 counties.</p>
-                
-                <div className="name-origin-section">
+              </div>
+
+              {/* XOBO Name Story */}
+              <section className="name-story-section">
+                <div className="section-intro">
                   <h3>The Story Behind Our Name</h3>
                   <p>The name XOBO carries a special meaning that reflects our core values and mission:</p>
-                  <div className="name-breakdown">
-                    <div className="letter-meaning">
-                      <strong>X</strong>
-                      <span>eXcellence in service delivery</span>
-                    </div>
-                    <div className="letter-meaning">
-                      <strong>O</strong>
-                      <span>Outstanding customer experience</span>
-                    </div>
-                    <div className="letter-meaning">
-                      <strong>B</strong>
-                      <span>Building lasting partnerships</span>
-                    </div>
-                    <div className="letter-meaning">
-                      <strong>O</strong>
-                      <span>Optimized logistics solutions</span>
-                    </div>
-                  </div>
-                  <p>Each letter represents our commitment to providing exceptional delivery services that connect businesses and customers across Kenya.</p>
                 </div>
-              </div>
+                
+                <div className="name-breakdown">
+                  {xoboLetters.map((item, index) => (
+                    <div className="letter-meaning" key={index}>
+                      <strong>{item.letter}</strong>
+                      <span>{item.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <p>Each letter represents our commitment to providing exceptional delivery services that connect businesses and customers across Kenya.</p>
+              </section>
 
               <div className="company-values-grid">
                 {companyValues.map((value, index) => (
@@ -215,6 +233,7 @@ function CompanyInfo() {
           {activeSection === 'legal' && (
             <div className="content-section">
               <div className="section-intro">
+                <span className="section-tag">Compliance</span>
                 <h2>Legal Documentation & Compliance</h2>
                 <p>XOBO Delivery Limited operates with full legal compliance and maintains all required certifications and licenses for delivery services in Kenya.</p>
               </div>
@@ -224,7 +243,7 @@ function CompanyInfo() {
                   <div className="legal-card" key={index}>
                     <div className="legal-header">
                       <div className="legal-icon">{category.icon}</div>
-                      <div>
+                      <div className="legal-header-content">
                         <h3>{category.category}</h3>
                         <span className="status-badge">{category.status}</span>
                       </div>
@@ -247,19 +266,27 @@ function CompanyInfo() {
                 
                 <div className="compliance-highlights">
                   <div className="highlight-item">
-                    <FaUniversity className="highlight-icon" />
+                    <div className="highlight-icon-wrapper">
+                      <FaUniversity className="highlight-icon" />
+                    </div>
                     <span>Registered with Registrar of Companies</span>
                   </div>
                   <div className="highlight-item">
-                    <FaShieldAlt className="highlight-icon" />
+                    <div className="highlight-icon-wrapper">
+                      <FaShieldAlt className="highlight-icon" />
+                    </div>
                     <span>Comprehensive Insurance Coverage</span>
                   </div>
                   <div className="highlight-item">
-                    <FaCertificate className="highlight-icon" />
+                    <div className="highlight-icon-wrapper">
+                      <FaCertificate className="highlight-icon" />
+                    </div>
                     <span>All Operating Licenses Valid</span>
                   </div>
                   <div className="highlight-item">
-                    <FaFileContract className="highlight-icon" />
+                    <div className="highlight-icon-wrapper">
+                      <FaFileContract className="highlight-icon" />
+                    </div>
                     <span>Tax Compliant & Up-to-date</span>
                   </div>
                 </div>
