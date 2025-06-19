@@ -1,7 +1,11 @@
-/* Mobile Optimization - Disable animations and hover effects on mobile devices */
+/* Mobile Optimization - DISABLED
+   This file has been replaced by the new responsive system
+   The aggressive disabling of animations and transitions was breaking mobile functionality
+   New system is in: src/styles/responsive-system.css and src/utils/mobileEnhanced.js
+*/
 
-@media (max-width: 768px) {
-  /* Disable all animations and transitions */
+/* @media (max-width: 768px) {
+  Disabled - was breaking mobile functionality
   * {
     animation: none !important;
     transition: none !important;

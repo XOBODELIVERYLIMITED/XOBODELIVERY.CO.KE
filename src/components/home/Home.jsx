@@ -95,36 +95,38 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Simple <span className="accent-dot">·</span> Fast <span className="accent-dot">·</span> Reliable
-          </h1>
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Simple <span className="accent-dot">·</span> Fast <span className="accent-dot">·</span> Reliable
+            </h1>
 
-          <h2 className="hero-subtitle">
-            On-demand delivery platform
-          </h2>
+            <h2 className="hero-subtitle">
+              On-demand delivery platform
+            </h2>
 
-          <p className="hero-description">
-            Quick pick and delivery across Kenya. Connecting businesses with reliable couriers.
-          </p>
+            <p className="hero-description">
+              Quick pick and delivery across Kenya. Connecting businesses with reliable couriers.
+            </p>
 
-          <div className="transport-button">
-            <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="login-btn">
-              Transport Now
-            </a>
+            <div className="transport-button">
+              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="login-btn">
+                Transport Now
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="hero-media">
-          <div className="video-container">
-            <iframe
-              loading="lazy"
-              src="https://www.youtube.com/embed/Oe0Tme-yRBU?si=1Y6TpTYw71Lano8J"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+          <div className="hero-media">
+            <div className="video-container">
+              <iframe
+                loading="lazy"
+                src="https://www.youtube.com/embed/Oe0Tme-yRBU?si=1Y6TpTYw71Lano8J"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

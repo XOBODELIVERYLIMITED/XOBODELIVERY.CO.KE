@@ -181,4 +181,47 @@ export const ERROR_MESSAGES = {
 export const SUCCESS_MESSAGES = {
   formSubmitted: 'Message sent successfully!',
   subscribed: 'Successfully subscribed to our newsletter!'
+};
+
+// XOBO Delivery - Responsive Design Constants
+// Standardized breakpoints for consistent responsive design
+
+export const BREAKPOINTS = {
+  // Screen size categories
+  MOBILE_XS: 320,   // Extra small mobile devices
+  MOBILE_SM: 375,   // Small mobile devices (iPhone SE, etc.)
+  MOBILE_MD: 480,   // Medium mobile devices
+  MOBILE_LG: 576,   // Large mobile devices
+  TABLET_SM: 768,   // Small tablets and large mobile landscape
+  TABLET_LG: 992,   // Large tablets
+  DESKTOP_SM: 1200, // Small desktop screens
+  DESKTOP_MD: 1440, // Medium desktop screens
+  DESKTOP_LG: 1920, // Large desktop screens
+};
+
+// Media query breakpoints (max-width)
+export const MEDIA_QUERIES = {
+  MOBILE_XS: `(max-width: ${BREAKPOINTS.MOBILE_XS}px)`,
+  MOBILE_SM: `(max-width: ${BREAKPOINTS.MOBILE_SM}px)`,
+  MOBILE_MD: `(max-width: ${BREAKPOINTS.MOBILE_MD}px)`,
+  MOBILE_LG: `(max-width: ${BREAKPOINTS.MOBILE_LG}px)`,
+  TABLET_SM: `(max-width: ${BREAKPOINTS.TABLET_SM}px)`,
+  TABLET_LG: `(max-width: ${BREAKPOINTS.TABLET_LG}px)`,
+  DESKTOP_SM: `(max-width: ${BREAKPOINTS.DESKTOP_SM}px)`,
+  DESKTOP_MD: `(max-width: ${BREAKPOINTS.DESKTOP_MD}px)`,
+  DESKTOP_LG: `(max-width: ${BREAKPOINTS.DESKTOP_LG}px)`,
+};
+
+// Touch device detection
+export const TOUCH_QUERIES = {
+  TOUCH_DEVICE: '(hover: none) and (pointer: coarse)',
+  MOUSE_DEVICE: '(hover: hover) and (pointer: fine)',
+};
+
+// Safe area constants for notched devices
+export const SAFE_AREAS = {
+  TOP: 'env(safe-area-inset-top, 0px)',
+  BOTTOM: 'env(safe-area-inset-bottom, 0px)',
+  LEFT: 'env(safe-area-inset-left, 0px)',
+  RIGHT: 'env(safe-area-inset-right, 0px)',
 }; 

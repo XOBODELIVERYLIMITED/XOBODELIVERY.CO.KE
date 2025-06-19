@@ -4,9 +4,11 @@ import { Helmet } from 'react-helmet';
 import './App.css';
 import './styles/standardized-components.css';
 import './styles/mobile-fixes.css';
+import './styles/responsive-system.css';
 import setupViewportHeightFix from './utils/viewportFix';
 import setupResponsiveHelper from './utils/responsiveHelper';
 import initializeMobileOptimizations from './utils/mobileOptimization';
+import mobileEnhanced from './utils/mobileEnhanced';
 
 // Critical components loaded immediately
 import Header from "./components/header/Header";

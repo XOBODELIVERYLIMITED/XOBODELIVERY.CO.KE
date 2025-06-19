@@ -1,0 +1,379 @@
+/* ===================================
+   XOBO UNIFIED RESPONSIVE SYSTEM
+   Standardized responsive design system
+   =================================== */
+
+:root {
+  /* Responsive Breakpoints */
+  --mobile-xs: 320px;
+  --mobile-sm: 375px;
+  --mobile-md: 480px;
+  --mobile-lg: 576px;
+  --tablet-sm: 768px;
+  --tablet-lg: 992px;
+  --desktop-sm: 1200px;
+  --desktop-md: 1440px;
+  --desktop-lg: 1920px;
+  
+  /* Container Sizes */
+  --container-xs: 100%;
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-xxl: 1320px;
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+}
+
+/* =================
+   UTILITY CLASSES
+   ================= */
+
+/* Container System */
+.responsive-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 1200px) {
+  .responsive-container {
+    max-width: var(--container-xxl);
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* Medium Screens (Tablet/Small Desktop) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .responsive-container {
+    max-width: var(--container-lg);
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+  .responsive-container {
+    max-width: 100%;
+    padding: 0 var(--space-sm);
+  }
+}
+
+/* Typography Responsive Scale */
+.responsive-heading-1 {
+  font-size: var(--text-4xl);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.responsive-heading-2 {
+  font-size: var(--text-3xl);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.responsive-heading-3 {
+  font-size: var(--text-2xl);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.responsive-body {
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+/* Large Screens Typography */
+@media (min-width: 1200px) {
+  .responsive-heading-1 { font-size: var(--text-5xl); }
+  .responsive-heading-2 { font-size: var(--text-4xl); }
+  .responsive-heading-3 { font-size: var(--text-3xl); }
+  .responsive-body { font-size: var(--text-lg); }
+}
+
+/* Medium Screens Typography */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .responsive-heading-1 { font-size: var(--text-4xl); }
+  .responsive-heading-2 { font-size: var(--text-3xl); }
+  .responsive-heading-3 { font-size: var(--text-xl); }
+  .responsive-body { font-size: var(--text-base); }
+}
+
+/* Small Screens Typography */
+@media (max-width: 767px) {
+  .responsive-heading-1 { 
+    font-size: var(--text-3xl);
+    line-height: 1.3;
+  }
+  .responsive-heading-2 { 
+    font-size: var(--text-2xl);
+    line-height: 1.3;
+  }
+  .responsive-heading-3 { 
+    font-size: var(--text-xl);
+    line-height: 1.4;
+  }
+  .responsive-body { 
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+}
+
+/* Grid System */
+.responsive-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.responsive-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.responsive-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.responsive-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Large Screens Grid */
+@media (min-width: 1200px) {
+  .responsive-grid { gap: var(--space-xl); }
+  .responsive-grid-auto-lg { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}
+
+/* Medium Screens Grid */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .responsive-grid { gap: var(--space-lg); }
+  .responsive-grid-3,
+  .responsive-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .responsive-grid-auto-md { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+}
+
+/* Small Screens Grid */
+@media (max-width: 767px) {
+  .responsive-grid { gap: var(--space-md); }
+  .responsive-grid-2,
+  .responsive-grid-3,
+  .responsive-grid-4 { grid-template-columns: 1fr; }
+  .responsive-grid-auto-sm { grid-template-columns: 1fr; }
+}
+
+/* Flex System */
+.responsive-flex {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.responsive-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.responsive-flex-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Small Screens Flex */
+@media (max-width: 767px) {
+  .responsive-flex {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .responsive-flex-mobile-row {
+    flex-direction: row !important;
+  }
+}
+
+/* Spacing System */
+.responsive-section {
+  padding: var(--space-xxl) 0;
+}
+
+.responsive-section-lg {
+  padding: calc(var(--space-xxl) * 1.5) 0;
+}
+
+.responsive-section-sm {
+  padding: var(--space-xl) 0;
+}
+
+/* Small Screens Spacing */
+@media (max-width: 767px) {
+  .responsive-section { padding: var(--space-xl) 0; }
+  .responsive-section-lg { padding: calc(var(--space-xl) * 1.2) 0; }
+  .responsive-section-sm { padding: var(--space-lg) 0; }
+}
+
+/* Button System */
+.responsive-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-base);
+  min-height: 44px;
+  gap: var(--space-sm);
+}
+
+.responsive-button-lg {
+  padding: var(--space-lg) calc(var(--space-lg) * 1.5);
+  font-size: var(--text-lg);
+  min-height: 52px;
+}
+
+/* Small Screens Buttons */
+@media (max-width: 767px) {
+  .responsive-button {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-sm);
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .responsive-button-lg {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: var(--text-base);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .responsive-button,
+  .responsive-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .responsive-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .responsive-no-print {
+    display: none !important;
+  }
+  
+  .responsive-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .responsive-animation {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .responsive-auto-dark {
+    background-color: #1a202c;
+    color: #f7fafc;
+  }
+}
+
+/* ===========================
+   SCREEN SIZE DEFINITIONS
+   =========================== */
+
+/* LARGE SCREENS: 1200px and above */
+.large-screen-only {
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .large-screen-only {
+    display: none !important;
+  }
+}
+
+/* SMALL SCREENS: 767px and below */
+.small-screen-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .small-screen-only {
+    display: block !important;
+  }
+}
+
+/* MEDIUM SCREENS: 768px to 1199px */
+.medium-screen-only {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .medium-screen-only {
+    display: block !important;
+  }
+}
+
+/* Hide on specific screen sizes */
+.hide-on-large {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .hide-on-large {
+    display: none !important;
+  }
+}
+
+.hide-on-small {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hide-on-small {
+    display: none !important;
+  }
+} 
