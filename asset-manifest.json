@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/XOBODELIVERY.CO.KE/static/css/main.6babfcb0.css",
-    "main.js": "/XOBODELIVERY.CO.KE/static/js/main.9b59c143.js",
+    "main.css": "/XOBODELIVERY.CO.KE/static/css/main.915d6c83.css",
+    "main.js": "/XOBODELIVERY.CO.KE/static/js/main.9a615aa9.js",
     "static/css/810.d8fc5894.chunk.css": "/XOBODELIVERY.CO.KE/static/css/810.d8fc5894.chunk.css",
     "static/js/810.914259c5.chunk.js": "/XOBODELIVERY.CO.KE/static/js/810.914259c5.chunk.js",
     "static/css/830.7d3561d2.chunk.css": "/XOBODELIVERY.CO.KE/static/css/830.7d3561d2.chunk.css",
@@ -12,8 +12,8 @@
     "static/js/622.3b2609bf.chunk.js": "/XOBODELIVERY.CO.KE/static/js/622.3b2609bf.chunk.js",
     "static/css/968.fa144475.chunk.css": "/XOBODELIVERY.CO.KE/static/css/968.fa144475.chunk.css",
     "static/js/968.4ffaec37.chunk.js": "/XOBODELIVERY.CO.KE/static/js/968.4ffaec37.chunk.js",
-    "static/css/219.4b32bc27.chunk.css": "/XOBODELIVERY.CO.KE/static/css/219.4b32bc27.chunk.css",
-    "static/js/219.c08b31c5.chunk.js": "/XOBODELIVERY.CO.KE/static/js/219.c08b31c5.chunk.js",
+    "static/css/219.d952514b.chunk.css": "/XOBODELIVERY.CO.KE/static/css/219.d952514b.chunk.css",
+    "static/js/219.1d3db5e5.chunk.js": "/XOBODELIVERY.CO.KE/static/js/219.1d3db5e5.chunk.js",
     "static/css/423.176ed208.chunk.css": "/XOBODELIVERY.CO.KE/static/css/423.176ed208.chunk.css",
     "static/js/423.13af1635.chunk.js": "/XOBODELIVERY.CO.KE/static/js/423.13af1635.chunk.js",
     "static/css/388.aaa6313f.chunk.css": "/XOBODELIVERY.CO.KE/static/css/388.aaa6313f.chunk.css",
@@ -45,8 +45,8 @@
     "static/js/773.91150092.chunk.js": "/XOBODELIVERY.CO.KE/static/js/773.91150092.chunk.js",
     "service-worker.js": "/XOBODELIVERY.CO.KE/service-worker.js",
     "index.html": "/XOBODELIVERY.CO.KE/index.html",
-    "main.6babfcb0.css.map": "/XOBODELIVERY.CO.KE/static/css/main.6babfcb0.css.map",
-    "main.9b59c143.js.map": "/XOBODELIVERY.CO.KE/static/js/main.9b59c143.js.map",
+    "main.915d6c83.css.map": "/XOBODELIVERY.CO.KE/static/css/main.915d6c83.css.map",
+    "main.9a615aa9.js.map": "/XOBODELIVERY.CO.KE/static/js/main.9a615aa9.js.map",
     "810.d8fc5894.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/810.d8fc5894.chunk.css.map",
     "810.914259c5.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/810.914259c5.chunk.js.map",
     "830.7d3561d2.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/830.7d3561d2.chunk.css.map",
@@ -57,8 +57,8 @@
     "622.3b2609bf.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/622.3b2609bf.chunk.js.map",
     "968.fa144475.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/968.fa144475.chunk.css.map",
     "968.4ffaec37.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/968.4ffaec37.chunk.js.map",
-    "219.4b32bc27.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/219.4b32bc27.chunk.css.map",
-    "219.c08b31c5.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/219.c08b31c5.chunk.js.map",
+    "219.d952514b.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/219.d952514b.chunk.css.map",
+    "219.1d3db5e5.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/219.1d3db5e5.chunk.js.map",
     "423.176ed208.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/423.176ed208.chunk.css.map",
     "423.13af1635.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/423.13af1635.chunk.js.map",
     "388.aaa6313f.chunk.css.map": "/XOBODELIVERY.CO.KE/static/css/388.aaa6313f.chunk.css.map",
@@ -90,7 +90,7 @@
     "773.91150092.chunk.js.map": "/XOBODELIVERY.CO.KE/static/js/773.91150092.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6babfcb0.css",
-    "static/js/main.9b59c143.js"
+    "static/css/main.915d6c83.css",
+    "static/js/main.9a615aa9.js"
   ]
 }
