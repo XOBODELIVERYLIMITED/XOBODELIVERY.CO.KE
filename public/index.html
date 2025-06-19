@@ -63,6 +63,80 @@
     
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>XOBO Delivery - Simple · Fast · Reliable</title>
+    
+    <!-- Early Error Filtering Script -->
+    <script>
+      // Initialize error filtering immediately to catch external service errors
+      (function() {
+        // External error patterns to suppress
+        const EXTERNAL_PATTERNS = [
+          'youtube.com/generate_204',
+          'www.youtube.com/youtubei/v1/log_event',
+          'play.google.com/log',
+          'ERR_BLOCKED_BY_CLIENT',
+          'youtube.com',
+          'googlevideo.com',
+          'www-embed-player-pc.js',
+          'base.js',
+          'embed-player',
+          'generate_204',
+          'log_event',
+          'hasfast=true'
+        ];
+        
+        // Check if error message contains external patterns
+        function isExternalError(message) {
+          const msg = String(message).toLowerCase();
+          return EXTERNAL_PATTERNS.some(pattern => msg.includes(pattern.toLowerCase()));
+        }
+        
+        // Override console methods before any scripts load
+        const originalConsoleError = console.error;
+        const originalConsoleWarn = console.warn;
+        const originalConsoleLog = console.log;
+        
+        console.error = function(...args) {
+          const message = args.join(' ');
+          if (isExternalError(message)) {
+            return; // Suppress external errors
+          }
+          originalConsoleError.apply(console, args);
+        };
+        
+        console.warn = function(...args) {
+          const message = args.join(' ');
+          if (isExternalError(message)) {
+            return; // Suppress external warnings
+          }
+          originalConsoleWarn.apply(console, args);
+        };
+        
+        // Also filter console.log that might contain errors
+        console.log = function(...args) {
+          const message = args.join(' ');
+          if (isExternalError(message)) {
+            return; // Suppress external logs that look like errors
+          }
+          originalConsoleLog.apply(console, args);
+        };
+        
+        // Global error handler
+        window.addEventListener('error', function(event) {
+          if (isExternalError(event.filename || event.message || '')) {
+            event.preventDefault();
+            return false;
+          }
+        });
+        
+        // Unhandled promise rejection handler
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isExternalError(String(event.reason || ''))) {
+            event.preventDefault();
+            return false;
+          }
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

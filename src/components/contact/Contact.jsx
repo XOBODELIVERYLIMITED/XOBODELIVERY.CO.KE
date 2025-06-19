@@ -16,6 +16,7 @@ import {
 import { scrollToTop } from '../common/ScrollToTop';
 import SecurityUtils from '../../utils/security';
 import { API_CONFIG } from '../../config/constants';
+import logger from '../../utils/logger';
 import "./contact.css";
 
 const Contact = () => {
@@ -112,7 +113,7 @@ const Contact = () => {
         }).then((res) => res.json());
 
         if (res.success) {
-          console.log("Success", res);
+          logger.success("Message sent successfully", res);
           setResult("Message Sent Successfully!");
 
           // Scroll to top to show success message
@@ -129,11 +130,11 @@ const Contact = () => {
             document.getElementById("form-selection").value = "";
           }, 3000);
         } else {
-          console.log("Error", res);
+          logger.error("Message sending failed", res);
           setResult(res.message || "An error occurred");
         }
       } catch (error) {
-        console.error("Submission error:", error);
+        logger.error("Submission error:", error);
         setResult("Failed to send message. Please try again.");
         SecurityUtils.logSecurityEvent('Form submission error', { error: error.message });
       }

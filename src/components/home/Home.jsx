@@ -11,6 +11,7 @@ import {
   FaBuilding,
   FaStar
 } from 'react-icons/fa';
+import logger from '../../utils/logger';
 
 import "./home.css";
   
@@ -249,8 +250,8 @@ function Home() {
                 src={`${process.env.PUBLIC_URL}/media/XOBO-CUSTOMER.png?v=${Date.now()}`}
                 alt="XOBO Client Interface" 
                 style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.06)' }}
-                onLoad={() => console.log('XOBO-CUSTOMER.png loaded successfully')}
-                onError={(e) => console.error('Failed to load XOBO-CUSTOMER.png:', e.target.src)}
+                onLoad={() => logger.success('XOBO-CUSTOMER.png loaded successfully')}
+                onError={(e) => logger.error('Failed to load XOBO-CUSTOMER.png:', e.target.src)}
               />
             </div>
 
