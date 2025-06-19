@@ -7,7 +7,6 @@ Allow: /about
 Allow: /contact
 Allow: /faq
 Allow: /client-guide
-Allow: /partner-guide
 
 # Block admin or sensitive areas (if any)
 Disallow: /admin
