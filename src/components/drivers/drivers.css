@@ -685,6 +685,14 @@
   transition: all 0.3s ease;
   font-weight: 600;
   color: #64748b;
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2);
+  -webkit-user-select: none;
+  user-select: none;
+  /* Ensure proper z-index for mobile clicks */
+  position: relative;
+  z-index: 10;
 }
 
 .driver-tabs .tab:hover {
@@ -696,6 +704,10 @@
   background: #16234d;
   border-color: #16234d;
   color: white;
+}
+
+.driver-tabs .tab:active {
+  transform: scale(0.98);
 }
 
 .tab-icon {
@@ -950,16 +962,56 @@
     margin-bottom: 18px;
   }
   
+  /* Enhanced mobile driver tabs */
   .driver-tabs {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    padding: 0 1rem;
   }
   
   .driver-tabs .tab {
     width: 100%;
     max-width: 300px;
     justify-content: center;
+    min-height: 48px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    /* Critical mobile touch settings */
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    /* Ensure button is above other elements */
+    position: relative !important;
+    z-index: 100 !important;
+    /* Prevent text selection */
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    /* Ensure proper display */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Mobile active state for better feedback */
+  .driver-tabs .tab:active {
+    transform: scale(0.96) !important;
+    background-color: rgba(22, 35, 77, 0.1) !important;
+  }
+  
+  .driver-tabs .tab.active:active {
+    background-color: #16234d !important;
+    transform: scale(0.96) !important;
+  }
+  
+  /* Ensure tab content doesn't overlap */
+  .tab-content {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
   }
   
   .requirements-section.individual .requirements-grid,

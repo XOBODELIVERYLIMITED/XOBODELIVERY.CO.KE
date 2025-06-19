@@ -23,22 +23,22 @@ export const disableAnimationsAndHoverEffects = () => {
     // Add CSS rules to disable animations and hover effects
     styleElement.textContent = `
       @media (max-width: 768px) {
-        *:not(.nav-btn):not(.nav-btn *) {
+        *:not(.nav-btn):not(.nav-btn *):not(.driver-tabs .tab):not(.driver-tabs .tab *) {
           animation: none !important;
           transition: none !important;
           transform: none !important;
         }
         
-        a:hover:not(.nav-btn),
-        button:hover:not(.nav-btn),
-        .btn:hover:not(.nav-btn),
-        .button:hover:not(.nav-btn),
+        a:hover:not(.nav-btn):not(.driver-tabs .tab),
+        button:hover:not(.nav-btn):not(.driver-tabs .tab),
+        .btn:hover:not(.nav-btn):not(.driver-tabs .tab),
+        .button:hover:not(.nav-btn):not(.driver-tabs .tab),
         .card:hover,
         .nav-link:hover,
         .dropdown-item:hover,
-        .icon:hover:not(.nav-btn *),
-        [class*="hover"]:not(.nav-btn),
-        [class*="Hover"]:not(.nav-btn) {
+        .icon:hover:not(.nav-btn *):not(.driver-tabs .tab *),
+        [class*="hover"]:not(.nav-btn):not(.driver-tabs .tab),
+        [class*="Hover"]:not(.nav-btn):not(.driver-tabs .tab) {
           transform: none !important;
           box-shadow: inherit !important;
           background-color: inherit !important;
@@ -56,6 +56,29 @@ export const disableAnimationsAndHoverEffects = () => {
         
         .nav-btn:hover {
           transform: scale(1.05) !important;
+        }
+        
+        /* Preserve driver tabs functionality */
+        .driver-tabs .tab {
+          transition: all 0.3s ease !important;
+          cursor: pointer !important;
+          pointer-events: auto !important;
+          touch-action: manipulation !important;
+        }
+        
+        .driver-tabs .tab:hover {
+          border-color: #16234d !important;
+          color: #16234d !important;
+        }
+        
+        .driver-tabs .tab.active {
+          background: #16234d !important;
+          border-color: #16234d !important;
+          color: white !important;
+        }
+        
+        .driver-tabs .tab:active {
+          transform: scale(0.96) !important;
         }
       }
     `;
@@ -90,6 +113,19 @@ export const optimizeTouchTargets = () => {
     touchElements.forEach(element => {
       const rect = element.getBoundingClientRect();
       const computedStyle = window.getComputedStyle(element);
+      
+      // Special handling for driver tabs
+      if (element.classList.contains('tab') && element.closest('.driver-tabs')) {
+        element.style.minHeight = `48px`;
+        element.style.minWidth = `48px`;
+        element.style.touchAction = 'manipulation';
+        element.style.webkitTapHighlightColor = 'rgba(22, 35, 77, 0.2)';
+        element.style.cursor = 'pointer';
+        element.style.pointerEvents = 'auto';
+        element.style.position = 'relative';
+        element.style.zIndex = '100';
+        return; // Skip normal processing for driver tabs
+      }
       
       // Ensure minimum touch target size
       if (rect.height < MIN_TOUCH_TARGET) {

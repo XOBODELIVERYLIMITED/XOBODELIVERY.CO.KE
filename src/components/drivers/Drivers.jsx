@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaCar, FaMoneyBillWave, FaClock, FaShieldAlt, FaIdCard, FaFileAlt, FaCarAlt, FaChartLine, FaTruck, FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { optimizeTouchTargets } from '../../utils/mobileOptimization';
 import './drivers.css';
 
 function Drivers() {
   const [activeTab, setActiveTab] = useState('individual');
+  
+  // Handle mobile optimization for driver tabs
+  useEffect(() => {
+    // Optimize touch targets specifically for driver tabs on mobile
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        optimizeTouchTargets();
+        // Ensure driver tabs are properly interactive on mobile
+        const driverTabs = document.querySelectorAll('.driver-tabs .tab');
+        driverTabs.forEach(tab => {
+          tab.style.touchAction = 'manipulation';
+          tab.style.webkitTapHighlightColor = 'rgba(22, 35, 77, 0.2)';
+          tab.style.cursor = 'pointer';
+          tab.style.pointerEvents = 'auto';
+          tab.style.zIndex = '100';
+          tab.style.position = 'relative';
+        });
+      }, 100);
+    }
+  }, [activeTab]); // Re-run when active tab changes
 
   const driverBenefits = [
     {
@@ -236,6 +257,13 @@ function Drivers() {
             <button 
               className={`tab ${activeTab === 'individual' ? 'active' : ''}`}
               onClick={() => setActiveTab('individual')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setActiveTab('individual');
+              }}
+              type="button"
+              aria-pressed={activeTab === 'individual'}
+              role="tab"
             >
               <FaCar className="tab-icon" />
               Individual Driver
@@ -243,6 +271,13 @@ function Drivers() {
             <button 
               className={`tab ${activeTab === 'company' ? 'active' : ''}`}
               onClick={() => setActiveTab('company')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setActiveTab('company');
+              }}
+              type="button"
+              aria-pressed={activeTab === 'company'}
+              role="tab"
             >
               <FaTruck className="tab-icon" />
               Fleet Company
