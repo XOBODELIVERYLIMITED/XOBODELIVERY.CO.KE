@@ -278,15 +278,16 @@
   background-color: var(--white);
   border-radius: var(--radius-md);
   padding: 2rem;
-  text-align: center;
+  text-align: center !important;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
 }
 
 .faq-feature-card::before {
@@ -318,20 +319,33 @@
   background-color: var(--light-bg);
   color: var(--primary-color);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1.5rem !important;
   font-size: 1.75rem;
   position: relative;
   z-index: 2;
   transition: var(--transition);
+  text-align: center !important;
+  flex-shrink: 0 !important;
 }
 
 .faq-feature-card:hover .feature-icon {
   background-color: var(--accent-color);
   color: var(--white);
   transform: rotateY(360deg);
+}
+
+/* Ensure React icons inside feature-icon are perfectly centered */
+.feature-icon svg,
+.feature-icon i {
+  display: block !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  width: 1.75rem !important;
+  height: 1.75rem !important;
 }
 
 .faq-feature-card h3 {
@@ -657,7 +671,10 @@
     width: 65px;
     height: 65px;
     font-size: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin: 0 auto 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .faq-feature-card h3 {
@@ -764,7 +781,10 @@
     width: 60px;
     height: 60px;
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .faq-feature-card h3 {
@@ -903,7 +923,10 @@
     width: 60px;
     height: 60px;
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .faq-feature-card h3 {
@@ -927,6 +950,10 @@
     width: 55px;
     height: 55px;
     font-size: 1.2rem;
+    margin: 0 auto 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .faq-feature-card h3 {
