@@ -531,4 +531,317 @@ iframe {
     background-color: rgba(255, 58, 58, 0.2) !important;
     color: var(--accent-color) !important;
   }
+}
+
+/* Mobile Fixes and Optimizations */
+
+/* Global mobile icon styling - Blue to Red pattern */
+@media screen and (max-width: 768px) {
+  .standard-icon,
+  .value-icon,
+  .benefit-icon,
+  .service-icon,
+  .feature-icon,
+  .contact-icon,
+  .requirement-icon,
+  .solution-icon,
+  .highlight-icon-container,
+  .intro-card-icon {
+    color: #16234d !important; /* Blue initial color */
+    transition: all 0.3s ease !important;
+  }
+  
+  .standard-card:hover .standard-icon,
+  .value-card:hover .value-icon,
+  .benefit-card:hover .benefit-icon,
+  .service-card:hover .service-icon,
+  .feature-card:hover .feature-icon,
+  .contact-card:hover .contact-icon,
+  .requirement-card:hover .requirement-icon,
+  .solution-card:hover .solution-icon,
+  .highlight-card:hover .highlight-icon-container,
+  .intro-card:hover .intro-card-icon {
+    color: #ff3a3a !important; /* Red hover color */
+    transform: rotateY(360deg) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Mobile button styles - Blue to Red */
+  .mobile-button,
+  .cta-primary,
+  .hero-button.primary {
+    background-color: #16234d !important;
+    color: white !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-button:hover,
+  .cta-primary:hover,
+  .hero-button.primary:hover {
+    background-color: #ff3a3a !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Mobile link styles - Blue to Red */
+  .mobile-link,
+  .service-link,
+  .contact-link {
+    color: #16234d !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-link:hover,
+  .service-link:hover,
+  .contact-link:hover {
+    color: #ff3a3a !important;
+  }
+  
+  /* Mobile section titles */
+  .section-title,
+  .mobile-title {
+    color: #16234d !important;
+      }
+    
+    /* Mobile section tags - FOR BUSINESSES fix - Override standardized-components.css */
+    .section-tag,
+    .mobile-tag,
+    .section-tag-container .section-tag,
+    .section-intro .section-tag {
+      display: inline-block !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: #ff3a3a !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      margin-bottom: 15px !important;
+      background: rgba(255, 58, 58, 0.1) !important;
+      background-color: rgba(255, 58, 58, 0.1) !important;
+      background-image: none !important;
+      padding: 8px 20px !important;
+      border-radius: 20px !important;
+      width: auto !important;
+      max-width: none !important;
+      height: auto !important;
+      min-width: auto !important;
+      min-height: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative !important;
+      z-index: 2 !important;
+      box-shadow: none !important;
+      border: none !important;
+      text-decoration: none !important;
+      line-height: 1.2 !important;
+    }
+  }
+
+/* Small mobile devices */
+@media screen and (max-width: 576px) {
+  .standard-icon,
+  .value-icon,
+  .benefit-icon,
+  .service-icon,
+  .feature-icon,
+  .contact-icon,
+  .requirement-icon,
+  .solution-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.3rem !important;
+    color: #16234d !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Ensure all cards maintain blue-to-red pattern on small screens */
+  .standard-card:hover .standard-icon,
+  .value-card:hover .value-icon,
+  .benefit-card:hover .benefit-icon,
+  .service-card:hover .service-icon,
+  .feature-card:hover .feature-icon,
+  .contact-card:hover .contact-icon,
+  .requirement-card:hover .requirement-icon,
+  .solution-card:hover .solution-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .mobile-optimized {
+    padding: 0 1rem !important;
+  }
+  
+  .mobile-card {
+    margin-bottom: 1rem !important;
+    padding: 20px 15px !important;
+  }
+  
+  .mobile-icon {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.2rem !important;
+    color: #16234d !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .mobile-card:hover .mobile-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+  }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices, use tap/active instead */
+  .standard-card:active .standard-icon,
+  .value-card:active .value-icon,
+  .benefit-card:active .benefit-icon,
+  .service-card:active .service-icon,
+  .feature-card:active .feature-icon,
+  .contact-card:active .contact-icon,
+  .requirement-card:active .requirement-icon,
+  .solution-card:active .solution-icon {
+    color: #ff3a3a !important;
+    transform: scale(1.1) !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .mobile-button:active,
+  .cta-primary:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.98) !important;
+  }
+}
+
+/* Landscape mobile orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .mobile-landscape-adjust {
+    padding: 40px 0 !important;
+  }
+  
+  .mobile-hero-landscape {
+    padding: 4rem 0 !important;
+  }
+  
+  .mobile-icon-landscape {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 1.4rem !important;
+    color: #16234d !important;
+  }
+  
+  .mobile-card:hover .mobile-icon-landscape {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+  }
+}
+
+/* Ensure consistent spacing and typography on mobile */
+@media screen and (max-width: 768px) {
+  .mobile-typography {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .mobile-heading {
+    font-size: 1.5rem !important;
+    color: #16234d !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .mobile-subheading {
+    font-size: 1.2rem !important;
+    color: #16234d !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .mobile-text {
+    color: #555 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Mobile form improvements with blue-to-red pattern */
+@media screen and (max-width: 768px) {
+  .mobile-form-input {
+    border: 1px solid #ddd !important;
+    transition: border-color 0.3s ease !important;
+  }
+  
+  .mobile-form-input:focus {
+    border-color: #ff3a3a !important;
+    outline: none !important;
+  }
+  
+  .mobile-form-button {
+    background-color: #16234d !important;
+    color: white !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-form-button:active {
+    background-color: #ff3a3a !important;
+    transform: translateY(-1px) !important;
+  }
+}
+
+/* Mobile navigation improvements */
+@media screen and (max-width: 768px) {
+  .mobile-nav-link {
+    color: #16234d !important;
+    transition: color 0.3s ease !important;
+  }
+  
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active {
+    color: #ff3a3a !important;
+  }
+  
+  .mobile-nav-button {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-nav-button:active {
+    background-color: #ff3a3a !important;
+  }
+}
+
+/* Mobile accessibility improvements */
+@media screen and (max-width: 768px) {
+  .mobile-accessible-button {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-accessible-icon {
+    width: 44px !important;
+    height: 44px !important;
+    color: #16234d !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .mobile-accessible-card:active .mobile-accessible-icon {
+    color: #ff3a3a !important;
+    transform: scale(1.05) !important;
+  }
+}
+
+/* Fix for iOS Safari viewport issues */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 768px) {
+    .mobile-ios-fix {
+      -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .mobile-safe-area {
+      padding-bottom: env(safe-area-inset-bottom) !important;
+    }
+  }
 } 

@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FAQPage from './FAQPage';
 import { FaQuestionCircle, FaShippingFast, FaTruck, FaHeadset, FaRegLightbulb } from 'react-icons/fa';
-import { scrollToTop } from '../common/ScrollToTop';
 import './faq.css'; 
 
 const FAQ = () => {
@@ -26,7 +25,7 @@ const FAQ = () => {
     {
       "id": 3,
       "question": "Is there a guide for the platform?",
-      "answer": "Yes! We have a visual training guide at: https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w with screenshots and instructions to help you get started.",
+      "answer": "Yes! We have a visual training guide at: <a href='https://scribehow.com/viewer/Creating_An_Account_And_Managing_Your_Profile__bnodEkxRRriykctCzB8j7w' target='_blank' rel='noopener noreferrer' style='color: #16234d; font-weight: 600; text-decoration: underline;'>Visual Training Guide</a> with screenshots and instructions to help you get started.",
       "category": "account"
     },
 
@@ -76,7 +75,7 @@ const FAQ = () => {
     {
       "id": 10,
       "question": "How can I become a delivery partner?",
-      "answer": "Apply as individual driver or company/fleet. Contact us at 0799 396000 or 0739 396000 with required documents. We'll verify documents and guide you through onboarding.",
+      "answer": "Apply as individual driver or company/fleet. Contact us at <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a> with required documents. We'll verify documents and guide you through onboarding.",
       "category": "partners"
     },
 
@@ -111,7 +110,7 @@ const FAQ = () => {
     {
       "id": 15,
       "question": "How do I submit partner application documents?",
-      "answer": "Send documents via WhatsApp or call 0799 396000 or 0739 396000. Our team will review and guide you through the next steps.",
+      "answer": "Send documents via WhatsApp or call <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a>. Our team will review and guide you through the next steps.",
       "category": "partners"
     },
 
@@ -245,7 +244,7 @@ const FAQ = () => {
     {
       "id": 34,
       "question": "How do I set up a corporate account?",
-      "answer": "Contact our team at 0799/0739 396000, provide company documents and financial information, sign service agreement with agreed terms.",
+      "answer": "Contact our team at <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a>, provide company documents and financial information, sign service agreement with agreed terms.",
       "category": "payments"
     },
 
@@ -259,7 +258,7 @@ const FAQ = () => {
     {
       "id": 36,
       "question": "Can I get a custom quote?",
-      "answer": "Yes! Contact our team at 0799/0739 396000 for personalized pricing based on your specific delivery needs.",
+      "answer": "Yes! Contact our team at <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a> for personalized pricing based on your specific delivery needs.",
       "category": "payments"
     },
   ];

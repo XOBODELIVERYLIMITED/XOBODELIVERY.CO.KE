@@ -73,18 +73,7 @@
   margin-bottom: 3rem;
 }
 
-.section-tag {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.75rem;
-  background-color: rgba(255, 58, 58, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-}
+/* section-tag styles handled by standardized-components.css */
 
 /* Hero Section */
 .home .hero-section {
@@ -395,9 +384,15 @@ a.login-btn:focus {
   }
   
   .home .hero-title {
-    font-size: 2.5rem !important;
-    white-space: normal !important;
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
     text-align: center !important;
+    word-spacing: 0.02em !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.6rem !important;
+    margin-bottom: 1rem !important;
+    padding: 0 0.1rem !important;
   }
   
   .home .hero-subtitle {
@@ -435,9 +430,14 @@ a.login-btn:focus {
   }
   
   .home .hero-title {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.9rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.02em !important;
   }
   
   .home .hero-subtitle {
@@ -473,8 +473,14 @@ a.login-btn:focus {
   }
   
   .home .hero-title {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.3 !important;
+    white-space: nowrap !important;
+    margin-left: 0.15rem !important;
+    margin-right: 0.4rem !important;
+    margin-bottom: 0.8rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.01em !important;
   }
   
   .home .hero-subtitle {
@@ -507,7 +513,27 @@ a.login-btn:focus {
   }
   
   .home .hero-title {
-    font-size: 1.6rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    margin-left: 0.1rem !important;
+    margin-right: 0.35rem !important;
+    margin-bottom: 0.7rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.01em !important;
+  }
+}
+
+/* Extra small devices - ensure text fits perfectly */
+@media screen and (max-width: 320px) {
+  .home .hero-title {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    margin-left: 0.05rem !important;
+    margin-right: 0.25rem !important;
+    padding: 0 0.05rem !important;
+    word-spacing: 0rem !important;
   }
   
   .home .hero-subtitle {
@@ -525,10 +551,10 @@ a.login-btn:focus {
   }
 }
 
-/* Service Highlights Section */
+/* Service Highlights Section - Enhanced */
 .service-highlights {
-  padding: 6rem 0;
-  background: linear-gradient(to bottom, var(--light-bg) 0%, #fff 100%);
+  padding: 80px 0;
+  background-color: #f8f9fa;
   position: relative;
   overflow: hidden;
 }
@@ -550,25 +576,45 @@ a.login-btn:focus {
 .highlight-card {
   min-width: 100%;
   width: 100%;
-  padding: 4rem;
-  background: #fff;
-  border-radius: 30px;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
   border: 1px solid rgba(22, 35, 77, 0.1);
   margin: 0;
   display: flex;
   align-items: flex-start;
   gap: 3rem;
   box-shadow: 0 10px 30px rgba(22, 35, 77, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.highlight-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
 }
 
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: rgba(22, 35, 77, 0.8);
   border: none;
   color: white;
   cursor: pointer;
@@ -577,42 +623,52 @@ a.login-btn:focus {
   justify-content: center;
   transition: all 0.3s ease;
   z-index: 2;
+  font-size: 0.75rem;
 }
 
 .nav-button:hover {
-  background: var(--primary-light);
+  background: rgba(255, 58, 58, 0.9);
   transform: translateY(-50%) scale(1.1);
 }
 
 .nav-button.prev {
-  left: 20px;
+  left: 10px;
 }
 
 .nav-button.next {
-  right: 20px;
+  right: 10px;
 }
 
-.arrow-icon-left {
-  transform: rotate(180deg);
-}
 
-/* Enhance card content styles */
+
 .card-icon-wrapper {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
-  background: var(--light-bg);
-  border-radius: 30px;
+  background: rgba(22, 35, 77, 0.05);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .highlight-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   transition: all 0.3s ease;
+  color: #16234d;
+}
+
+.highlight-card:hover .card-icon-wrapper {
+  background: rgba(255, 58, 58, 0.1);
+}
+
+.highlight-card:hover .highlight-icon {
+  color: #ff3a3a;
+  transform: rotateY(360deg);
 }
 
 .card-content {
@@ -703,19 +759,19 @@ a.login-btn:focus {
 
 .stat-item h3 {
   font-size: 2.5rem;
-  color: var(--white);
+  color: #ffffff !important;
   margin-bottom: 0.5rem;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .stat-item p {
   font-size: 0.95rem;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
 /* Features Section */
@@ -780,10 +836,10 @@ a.login-btn:focus {
   transform: translateX(3px);
 }
 
-/* Benefits Section - Modern Cards Style */
+/* Benefits Section - Using Standardized Components */
 .benefits-section {
-  padding: 5rem 0;
-  background-color: var(--light-bg);
+  padding: 80px 0;
+  background-color: #f8f9fa;
 }
 
 .benefits-container {
@@ -795,20 +851,23 @@ a.login-btn:focus {
 .benefits-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 30px;
   flex: 1;
 }
 
 .benefit-card {
-  background-color: var(--white);
-  border-radius: var(--radius-md);
-  padding: 2rem;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .benefit-card::before {
@@ -818,46 +877,61 @@ a.login-btn:focus {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 0;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.benefits-section .benefit-icon {
-  font-size: 2.5rem !important;
-  color: var(--primary-color) !important;
-  margin: 1.5rem auto 1.5rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+.benefit-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  color: #16234d !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 2;
   transition: all 0.3s ease !important;
-  width: 80px !important;
-  height: 80px !important;
+  background: none !important;
+  border-radius: 0 !important;
   background-color: transparent !important;
-  border-radius: 50% !important;
 }
 
-.benefits-section .benefit-card:hover .benefit-icon {
-  color: var(--accent-color) !important;
+.benefit-card:hover .benefit-icon {
+  color: #ff3a3a !important;
   transform: rotateY(360deg) !important;
   transition: all 0.3s ease !important;
 }
 
 .benefit-content h3 {
-  color: var(--primary-color);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 2;
 }
 
 .benefit-content p {
-  color: var(--text-light);
   font-size: 0.95rem;
+  color: #555;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  margin: 0;
 }
 
 .benefits-image {
@@ -870,28 +944,28 @@ a.login-btn:focus {
 .benefits-image img {
   max-width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Services Section */
+/* Services Section - Using Standardized Components */
 .services-section {
-  padding: 5rem 0;
+  padding: 80px 0;
   background-color: var(--white);
 }
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .service-card {
-  background-color: var(--lighter-bg);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
   text-align: center;
   height: 100%;
   position: relative;
@@ -915,8 +989,8 @@ a.login-btn:focus {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-card:hover::before {
@@ -925,13 +999,26 @@ a.login-btn:focus {
 }
 
 .service-icon {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  transition: all 0.3s ease;
+  width: 70px;
+  height: 70px;
+  color: #16234d !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.75rem;
   position: relative;
   z-index: 2;
+  transition: all 0.3s ease !important;
+  background: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.service-card:hover .service-icon {
+  color: #ff3a3a !important;
+  transform: rotateY(360deg) !important;
+  transition: all 0.3s ease !important;
 }
 
 .service-card-content {
@@ -942,30 +1029,26 @@ a.login-btn:focus {
   width: 100%;
 }
 
-.service-card:hover .service-icon {
-  color: var(--accent-color);
-  transform: rotateY(360deg);
-}
-
 .service-card h3 {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1a1a1a;
   position: relative;
   z-index: 2;
 }
 
 .service-card p {
-  color: var(--text-light);
-  line-height: 1.5;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
 }
 
 .service-link {
-  color: var(--primary-color);
+  color: #16234d;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -978,7 +1061,7 @@ a.login-btn:focus {
 }
 
 .service-link:hover {
-  color: var(--accent-color);
+  color: #ff3a3a;
 }
 
 /* Our Customers Section */
@@ -1049,10 +1132,10 @@ a.login-btn:focus {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: rgba(22, 35, 77, 0.7);
   border: none;
   color: white;
   cursor: pointer;
@@ -1061,20 +1144,20 @@ a.login-btn:focus {
   justify-content: center;
   transition: all 0.3s ease;
   z-index: 2;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 
 .customer-nav-button:hover {
-  background: var(--primary-light);
+  background: rgba(255, 58, 58, 0.85);
   transform: translateY(-50%) scale(1.1);
 }
 
 .customer-nav-button.prev {
-  left: 20px;
+  left: 8px;
 }
 
 .customer-nav-button.next {
-  right: 20px;
+  right: 8px;
 }
 
 /* Testimonials Section - Improved */
@@ -1280,4 +1363,1322 @@ a.login-btn:focus {
   color: #16234d !important;
   text-shadow: none !important;
   font-weight: 700;
+}
+
+/* ===============================================
+   COMPREHENSIVE HOMEPAGE LAYOUT FIXES
+   =============================================== */
+
+/* ISSUE 1: Fix hero title font size to prevent squeezing */
+@media screen and (max-width: 768px) {
+  .home .hero-title {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    word-spacing: 0.02em !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.6rem !important;
+    margin-bottom: 1rem !important;
+    padding: 0 0.1rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home .hero-title {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.9rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.02em !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home .hero-title {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    margin-left: 0.15rem !important;
+    margin-right: 0.4rem !important;
+    margin-bottom: 0.8rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.01em !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .home .hero-title {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    margin-left: 0.1rem !important;
+    margin-right: 0.35rem !important;
+    margin-bottom: 0.7rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.01em !important;
+  }
+}
+
+/* ISSUE 2: Fix carousel functionality and card layout */
+@media screen and (max-width: 768px) {
+  
+  /* Service Highlights Section Mobile Fix */
+  .service-highlights {
+    padding: 3rem 0;
+  }
+  
+  .carousel-container {
+    padding: 0 1rem;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  /* Show navigation buttons on mobile and make them work */
+  .nav-button {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(22, 35, 77, 0.8);
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-size: 0.65rem;
+  }
+  
+  .nav-button:hover,
+  .nav-button:active {
+    background: rgba(255, 58, 58, 0.9);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .nav-button.prev {
+    left: 6px;
+  }
+  
+  .nav-button.next {
+    right: 6px;
+  }
+  
+  .highlight-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    overflow: visible;
+  }
+  
+  .highlight-card {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    margin: 0;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: rgba(22, 35, 77, 0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .highlight-icon {
+    width: 40px;
+    height: 40px;
+    color: #16234d;
+  }
+  
+  .card-content {
+    width: 100%;
+  }
+  
+  .card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #16234d;
+  }
+  
+  .card-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .feature-list {
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto 1.5rem auto;
+    padding: 0;
+  }
+  
+  .feature-list li {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    line-height: 1.5;
+    position: relative;
+  }
+  
+  .feature-list li::before {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ISSUE 3: Fix stats section text visibility - ensure white text */
+@media screen and (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .stat-item {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.5rem;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+    font-weight: 700 !important;
+  }
+  
+  .stat-item p {
+    font-size: 0.85rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+/* ISSUE 4: Fix Business Solutions content layout */
+@media screen and (max-width: 768px) {
+  .features-section {
+    padding: 3rem 0;
+  }
+  
+  .feature-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .feature-image {
+    order: 1;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .feature-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .feature-content {
+    order: 2;
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .feature-content .section-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem;
+    color: #16234d !important;
+  }
+  
+  .feature-content .section-description {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #555 !important;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .feature-content .feature-list {
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto 2rem auto;
+    padding: 0;
+  }
+  
+  .feature-content .feature-list li {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 2.5rem;
+    position: relative;
+  }
+  
+  .feature-link {
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    background: #16234d;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-link:hover {
+    background: #ff3a3a;
+    color: white !important;
+  }
+}
+
+/* ISSUE 5: Fix customers carousel functionality and layout */
+@media screen and (max-width: 768px) {
+  .customers-section {
+    padding: 3rem 0;
+  }
+  
+  .customers-carousel-container {
+    padding: 0 1rem;
+    position: relative;
+  }
+  
+  /* Show customer navigation buttons and make them work */
+  .customer-nav-button {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(22, 35, 77, 0.7);
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-size: 0.65rem;
+  }
+  
+  .customer-nav-button:hover,
+  .customer-nav-button:active {
+    background: rgba(255, 58, 58, 0.85);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .customer-nav-button.prev {
+    left: 6px;
+  }
+  
+  .customer-nav-button.next {
+    right: 6px;
+  }
+  
+  .customers-carousel-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 0 50px;
+  }
+  
+  .customers-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .customer-logo {
+    min-width: 140px;
+    max-width: 140px;
+    min-height: 90px;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .customer-logo img {
+    max-width: 100px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(0%);
+    opacity: 0.8;
+  }
+  
+  .customer-logo:hover img {
+    opacity: 1;
+  }
+}
+
+/* ISSUE 6: Fix CTA section text visibility - ensure white text */
+@media screen and (max-width: 768px) {
+  .cta-section {
+    padding: 3rem 0;
+  }
+  
+  .cta-container {
+    padding: 0 1rem;
+  }
+  
+  .cta-container h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+  
+  .cta-container p {
+    font-size: 1rem !important;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    text-align: center !important;
+    font-weight: 400 !important;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    min-height: 44px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cta-primary {
+    background-color: #ffffff !important;
+    color: #16234d !important;
+  }
+  
+  .cta-secondary {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+/* Benefits Section Mobile Fix */
+@media screen and (max-width: 768px) {
+  .benefits-section {
+    padding: 3rem 0;
+  }
+  
+  .benefits-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .benefits-list {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    order: 2;
+  }
+  
+  .benefits-image {
+    order: 1;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .benefits-image img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/* Services Section Mobile Fix */
+@media screen and (max-width: 768px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 350px;
+  }
+}
+
+/* Testimonials Section Mobile Fix */
+@media screen and (max-width: 768px) {
+  .testimonials-section {
+    padding: 3rem 0;
+  }
+  
+  .testimonials-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 350px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 576px) {
+  
+  /* Further reduce spacing and sizing */
+  .service-highlights,
+  .stats-section,
+  .features-section,
+  .benefits-section,
+  .services-section,
+  .customers-section,
+  .testimonials-section {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Stats grid to single column on very small screens */
+  .stats-container {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.6rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+    font-weight: 700 !important;
+  }
+  
+  .stat-item p {
+    font-size: 0.8rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+  }
+  
+  /* Adjust highlight cards for small screens */
+  .highlight-card {
+    padding: 1.25rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .card-content p {
+    font-size: 0.85rem;
+  }
+  
+  /* Testimonials and service cards adjustments */
+  .testimonial-card,
+  .service-card,
+  .benefit-card {
+    max-width: 320px;
+    padding: 1.25rem;
+  }
+  
+  /* Better spacing for feature lists on small screens */
+  .feature-content .feature-list {
+    max-width: 280px;
+    margin: 0 auto 1.8rem auto;
+  }
+  
+  .feature-content .feature-list li {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    line-height: 1.5;
+  }
+  
+  /* Add extra breathing room for the feature list on smallest screens */
+  .feature-content .feature-list {
+    max-width: 270px;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem 0;
+  }
+  
+  .feature-content .feature-list li::before {
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 0.7rem;
+    left: 0;
+    top: 0.05rem;
+  }
+  
+  /* Customer logos smaller */
+  .customer-logo {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 80px;
+    padding: 0.75rem;
+  }
+  
+  .customer-logo img {
+    max-width: 90px;
+    max-height: 45px;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  
+  /* Ultra compact spacing */
+  .service-highlights,
+  .stats-section,
+  .features-section,
+  .benefits-section,
+  .services-section,
+  .customers-section,
+  .testimonials-section {
+    padding: 1.5rem 0;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Highlight cards for extra small screens */
+  .highlight-card {
+    padding: 1rem;
+  }
+  
+  .highlight-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .card-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .card-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature-list li {
+    font-size: 0.9rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .feature-content .feature-list li {
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+    padding-left: 2.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Ensure numbered bullets for feature lists are properly sized on smaller screens */
+  .feature-content .feature-list li::before {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 0.75rem;
+    left: 0;
+    top: 0.1rem;
+  }
+  
+  /* Icons smaller */
+  .benefit-icon,
+  .service-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Content adjustments */
+  .benefit-content h3,
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .benefit-content p,
+  .service-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape Orientation Fixes */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  
+  .home .hero-section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  .hero-section .container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .home .hero-content {
+    max-width: 50%;
+    order: 1;
+  }
+  
+  .hero-media {
+    order: 2;
+    max-width: 50%;
+  }
+  
+  .video-container {
+    max-width: 100%;
+    aspect-ratio: 16/9;
+  }
+  
+  .home .hero-title {
+    font-size: 1rem !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.5rem !important;
+    padding: 0 0.1rem !important;
+    word-spacing: 0.02em !important;
+  }
+  
+  .home .hero-subtitle,
+  .home .hero-description {
+    text-align: left !important;
+  }
+  
+  .transport-button {
+    text-align: left !important;
+  }
+  
+  .transport-button .login-btn {
+    width: auto;
+    max-width: 200px;
+  }
+}
+
+/* Ensure proper spacing and alignment */
+@media screen and (max-width: 768px) {
+  
+  /* Section spacing consistency */
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+  
+  /* Ensure all cards have consistent spacing */
+  .highlight-card,
+  .benefit-card,
+  .service-card,
+  .testimonial-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  /* Ensure proper text alignment */
+  .section-header,
+  .section-intro {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  /* Fix any overflow issues */
+  .home {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ===============================================
+   FINAL HOMEPAGE LAYOUT OVERRIDES
+   =============================================== */
+
+/* Override any global mobile fixes that might interfere */
+@media screen and (max-width: 768px) {
+  
+  /* Ensure homepage maintains proper animations and interactions */
+  .home * {
+    box-sizing: border-box;
+  }
+  
+  .home .highlight-card:hover,
+  .home .benefit-card:hover,
+  .home .service-card:hover,
+  .home .testimonial-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .home .highlight-card:hover .highlight-icon,
+  .home .benefit-card:hover .benefit-icon,
+  .home .service-card:hover .service-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Ensure carousel works properly on mobile */
+  .home .highlight-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .home .highlight-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .home .customers-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .home .customers-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Ensure proper spacing between all sections */
+  .home section {
+    margin-bottom: 0;
+    border: none;
+  }
+  
+  .home section + section {
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  /* Ensure text readability */
+  .home .section-title,
+  .home .section-subtitle,
+  .home h1, .home h2, .home h3, .home h4 {
+    color: #16234d !important;
+    text-shadow: none !important;
+  }
+  
+  .home p, .home li {
+    color: #555 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* OVERRIDE: Force stats section text to be white */
+  .home .stats-section .stat-item h3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  .home .stats-section .stat-item p {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  /* OVERRIDE: Force CTA section text to be white */
+  .home .cta-section h2,
+  .home .cta-container h2 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  .home .cta-section p,
+  .home .cta-container p {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  /* Ensure buttons work properly */
+  .home .cta-primary,
+  .home .cta-secondary,
+  .home .transport-button .login-btn,
+  .home .feature-link,
+  .home .service-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    min-height: 44px !important;
+    cursor: pointer !important;
+  }
+  
+  /* Ensure proper grid layouts */
+  .home .stats-container,
+  .home .services-container,
+  .home .benefits-list,
+  .home .testimonials-container {
+    display: grid !important;
+    width: 100% !important;
+  }
+  
+  /* Fix any potential width/overflow issues */
+  .home,
+  .home * {
+    max-width: 100% !important;
+    overflow-x: visible !important;
+  }
+  
+  .home .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  
+  .home .highlight-card:active,
+  .home .benefit-card:active,
+  .home .service-card:active,
+  .home .testimonial-card:active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+  }
+  
+  .home .cta-primary:active,
+  .home .cta-secondary:active,
+  .home .transport-button .login-btn:active {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease !important;
+  }
+}
+
+/* Ensure proper loading and rendering */
+@media screen and (max-width: 768px) {
+  
+  .home img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  
+  .home iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Ensure proper video container aspect ratio */
+  .home .video-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 56.25% !important; /* 16:9 aspect ratio */
+    overflow: hidden !important;
+  }
+  
+  .home .video-container iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+  }
+  
+  /* Performance optimizations for mobile */
+  .home * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .home .highlight-carousel,
+  .home .customers-carousel {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* ISSUE 7: Fix footer alignment and layout for mobile */
+@media screen and (max-width: 768px) {
+  
+  /* Ensure footer is properly displayed and aligned */
+  footer,
+  .mobile-footer {
+    display: block !important;
+    width: 100% !important;
+    padding: 2rem 0 1rem 0 !important;
+    background-color: #f9fafb !important;
+    border-top: 1px solid #e5e7eb !important;
+    margin-top: 2rem !important;
+  }
+  
+  .footer-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+    margin: 0 auto !important;
+  }
+  
+  .footer-top {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .footer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .footer-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    margin-bottom: 0 !important;
+    background-color: white !important;
+    border-radius: 8px !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    text-align: left !important;
+  }
+  
+  .footer-column h4 {
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    color: #16234d !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    position: relative !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 2px solid #ff3a3a !important;
+    display: block !important;
+  }
+  
+  .footer-column h4:after {
+    display: none !important;
+  }
+  
+  .footer-column a {
+    display: block !important;
+    text-align: left !important;
+    padding: 0.75rem 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    font-size: 0.9rem !important;
+    color: #666 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    line-height: 1.5 !important;
+  }
+  
+  .footer-column a:last-child {
+    border-bottom: none !important;
+  }
+  
+  .footer-column a:hover {
+    color: #16234d !important;
+    background-color: #f8f9fa !important;
+    padding-left: 0.5rem !important;
+    transform: none !important;
+  }
+  
+  /* Social Icons Section */
+  .social-icons {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .social-icons a {
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background-color: #f5f7fa !important;
+    color: #16234d !important;
+    font-size: 1.1rem !important;
+    border: 1px solid #e5e7eb !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+  }
+  
+  .social-icons a:hover {
+    background-color: #16234d !important;
+    color: white !important;
+    transform: scale(1.05) !important;
+    border-color: #16234d !important;
+  }
+  
+  /* Contact Info Section */
+  .contact-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .contact-info a {
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    font-size: 0.9rem !important;
+    color: #666 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .contact-info a:last-child {
+    border-bottom: none !important;
+  }
+  
+  .contact-info a:hover {
+    color: #16234d !important;
+    background-color: #f8f9fa !important;
+    padding-left: 0.5rem !important;
+  }
+  
+  .phone-link,
+  .email-link {
+    font-weight: 500 !important;
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    width: 100% !important;
+    padding: 1.5rem 0 1rem 0 !important;
+    text-align: center !important;
+    border-top: 1px solid #e5e7eb !important;
+    margin-top: 1rem !important;
+    background-color: #f5f7fa !important;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Small Mobile Footer Adjustments */
+@media screen and (max-width: 576px) {
+  
+  footer,
+  .mobile-footer {
+    padding: 1.5rem 0 1rem 0 !important;
+  }
+  
+  .footer-container {
+    padding: 0 0.75rem !important;
+  }
+  
+  .footer-links {
+    gap: 1rem !important;
+  }
+  
+  .footer-column {
+    padding: 0.75rem !important;
+  }
+  
+  .footer-column h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .footer-column a {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 0 !important;
+  }
+  
+  .social-icons {
+    gap: 0.75rem !important;
+  }
+  
+  .social-icons a {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1rem !important;
+  }
+  
+  .contact-info a {
+    font-size: 0.85rem !important;
+    padding: 0.4rem 0 !important;
+  }
+  
+  .footer-bottom {
+    padding: 1.25rem 0 0.75rem 0 !important;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Extra Small Footer Adjustments */
+@media screen and (max-width: 480px) {
+  
+  .footer-container {
+    padding: 0 0.5rem !important;
+  }
+  
+  .footer-column {
+    padding: 0.5rem !important;
+  }
+  
+  .footer-column h4 {
+    font-size: 0.95rem !important;
+  }
+  
+  .footer-column a,
+  .contact-info a {
+    font-size: 0.8rem !important;
+  }
+  
+  .social-icons a {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Ensure proper spacing and alignment */
+@media screen and (max-width: 768px) {
+  
+  /* Section spacing consistency */
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+  
+  /* Ensure all cards have consistent spacing */
+  .highlight-card,
+  .benefit-card,
+  .service-card,
+  .testimonial-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  /* Ensure proper text alignment */
+  .section-header,
+  .section-intro {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  /* Fix any overflow issues */
+  .home {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

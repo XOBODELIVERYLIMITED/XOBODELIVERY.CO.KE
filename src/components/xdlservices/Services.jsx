@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaShippingFast, FaTruckMoving, FaWarehouse, FaUsers, FaChartLine, FaMobile, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaShippingFast, FaTruckMoving, FaWarehouse, FaUsers, FaChartLine, FaMobile, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './services.css';
 

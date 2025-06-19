@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFileAlt, FaCheckCircle, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
+import { FaFileAlt, FaCheckCircle, FaInfoCircle } from 'react-icons/fa';
 import './help.css';
 
 function Help() {

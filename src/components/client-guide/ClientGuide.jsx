@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   FaUser, 
-  FaMapMarkerAlt, 
   FaTruck, 
-  FaCreditCard, 
   FaEye, 
   FaCheckCircle,
-  FaMobile,
   FaDesktop,
   FaClipboardList,
   FaHandshake,
-  FaShieldAlt,
   FaClock,
   FaPhoneAlt
 } from 'react-icons/fa';

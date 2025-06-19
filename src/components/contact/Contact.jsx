@@ -11,11 +11,11 @@ import {
   FaCheck, 
   FaClock, 
   FaShieldAlt, 
-  FaStar 
+  FaStar
 } from 'react-icons/fa';
 import { scrollToTop } from '../common/ScrollToTop';
 import SecurityUtils from '../../utils/security';
-import { API_CONFIG, CONTACT_INFO } from '../../config/constants';
+import { API_CONFIG } from '../../config/constants';
 import "./contact.css";
 
 const Contact = () => {
@@ -25,7 +25,7 @@ const Contact = () => {
   
   // Exact coordinates for XOBO Delivery in Nairobi, Kenya
   // These coordinates match the location provided in the Google Maps link
-  const companyLocation = { lat: -1.2774535356180687, lng: 36.81300297571516 };
+  // const companyLocation = { lat: -1.2774535356180687, lng: 36.81300297571516 };
 
   // Handle smooth scrolling for anchor links
   const handleAnchorClick = (e, targetId) => {
@@ -80,6 +80,14 @@ const Contact = () => {
 
     const formData = new FormData(event.target);
     const selectedOption = document.getElementById("form-selection").value;
+    
+    // Check if user has selected an option
+    if (!selectedOption || selectedOption === "") {
+      setErrors({ ...errors, selection: "Please select how we can help you" });
+      setResult("Please correct the errors below");
+      return;
+    }
+    
     formData.append("Form-Selection", selectedOption);
 
     if (validateForm(formData)) {
@@ -117,6 +125,8 @@ const Contact = () => {
             setPhone("");
             setResult("Send Message");
             setErrors({});
+            // Reset the dropdown to default
+            document.getElementById("form-selection").value = "";
           }, 3000);
         } else {
           console.log("Error", res);
@@ -310,11 +320,25 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="form-selection">How can we help?</label>
-                  <select name="Form-Selection" id="form-selection">
+                  <select 
+                    name="Form-Selection" 
+                    id="form-selection" 
+                    defaultValue=""
+                    style={{ borderColor: errors.selection ? "var(--accent-color)" : "" }}
+                    onChange={() => {
+                      if (errors.selection) {
+                        setErrors({ ...errors, selection: null });
+                      }
+                    }}
+                  >
+                    <option value="" disabled>-Select-</option>
                     <option value="Customer Care">Customer Care</option>
                     <option value="Delivery Partner">Delivery Partner</option>
                     <option value="Get a Quote">Get a Quote</option>
                   </select>
+                  {errors.selection && (
+                    <p className="error-message">{errors.selection}</p>
+                  )}
                 </div>
 
                 <div className="form-row">

@@ -52,10 +52,43 @@ header.scrolled {
   height: 100%;
 }
 
+.logo {
+  cursor: pointer !important;
+  z-index: 20 !important;
+  position: relative;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  pointer-events: auto !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo:hover {
+  background-color: rgba(22, 35, 77, 0.05);
+}
+
+.logo:active {
+  transform: scale(0.98);
+  background-color: rgba(22, 35, 77, 0.1);
+}
+
+.logo:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 .logo img {
   width: 140px;
   height: auto;
   transition: all 0.3s ease;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .logo img:hover {
@@ -143,14 +176,53 @@ header .nav-btn {
 
 /* Mobile Menu Styles - Container removed */
 
-/* Enhanced mobile responsiveness */
+/* Enhanced mobile responsiveness and touch feedback */
 @media only screen and (max-width: 1024px) {
+  
+  /* Enhanced logo touch feedback for all mobile devices */
+  .logo {
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    z-index: 30 !important;
+    min-height: 48px !important;
+    min-width: 48px !important;
+    padding: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .logo:active {
+    transform: scale(0.94) !important;
+    background-color: rgba(22, 35, 77, 0.2) !important;
+  }
+  
+  .logo:focus {
+    outline: 2px solid var(--accent-color) !important;
+    outline-offset: 2px !important;
+  }
   header {
     height: 70px;
   }
   
   .header-container {
     padding: 0 1.25rem;
+  }
+
+  /* Mobile logo styles are handled by the main .logo rule above */
+
+  .logo img {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
 
   header .nav-btn {
@@ -283,6 +355,9 @@ header .nav-btn {
 
   .logo img {
     width: 120px;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
 
   .nav-links a {
@@ -316,6 +391,9 @@ header .nav-btn {
 
   .logo img {
     width: 110px;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    touch-action: manipulation;
   }
 
   .nav-links a {

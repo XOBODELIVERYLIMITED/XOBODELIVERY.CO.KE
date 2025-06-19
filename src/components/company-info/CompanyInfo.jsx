@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  FaCertificate, 
   FaShieldAlt, 
-  FaFileContract, 
-  FaUniversity,
-  FaAward,
-  FaBuilding,
+  FaClock, 
+  FaEnvelope, 
   FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaClock,
-  FaUsers,
-  FaTruck,
-  FaChartLine,
-  FaHandshake,
+  FaCheckCircle,
+  FaBuilding,
+  FaCertificate,
   FaEye,
   FaHeart,
   FaBullseye,
-  FaCheckCircle
+  FaPhone,
+  FaFileContract,
+  FaUniversity
 } from 'react-icons/fa';
 import './company-info.css';
 

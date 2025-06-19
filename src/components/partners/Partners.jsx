@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHandshake, FaTruck, FaChartLine, FaShieldAlt, FaUsers, FaClock, FaGift, FaPhoneAlt } from 'react-icons/fa';
+import { FaHandshake, FaTruck, FaChartLine, FaShieldAlt, FaUsers, FaClock, FaPhoneAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './partners.css';
 

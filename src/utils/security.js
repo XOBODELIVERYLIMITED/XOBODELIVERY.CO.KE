@@ -186,7 +186,7 @@ export const containsSecurityThreats = (input) => {
   return threats.some(threat => threat.test(input));
 };
 
-export default {
+const SecurityUtils = {
   sanitizeInput,
   validateEmail,
   validatePhone,
@@ -198,4 +198,6 @@ export default {
   isSecureConnection,
   logSecurityEvent,
   containsSecurityThreats
-}; 
+};
+
+export default SecurityUtils; 

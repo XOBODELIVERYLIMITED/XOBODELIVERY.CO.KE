@@ -53,28 +53,7 @@
   margin-bottom: 1rem;
 }
 
-.section-tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ff3a3a;
-  color: #ffffff !important;
-  padding: 0 1.5rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  box-shadow: 0 2px 8px rgba(255, 58, 58, 0.2);
-  position: relative;
-  z-index: 1;
-  text-decoration: none;
-  white-space: nowrap;
-  text-align: center;
-  min-width: 160px;
-  height: 36px; /* Fixed height to ensure proper centering */
-}
+/* section-tag styles handled by standardized-components.css */
 
 .section-title {
   font-size: 2.2rem;
@@ -696,12 +675,7 @@
     margin-top: 70px;
   }
 
-  .section-tag {
-    padding: 0 1.25rem;
-    font-size: 0.8rem;
-    min-width: 140px;
-    height: 32px;
-  }
+  /* section-tag mobile styles handled by standardized-components.css */
 
   .faq-hero {
     padding: 3rem 0;
@@ -844,12 +818,7 @@
     margin-top: 65px;
   }
 
-  .section-tag {
-    padding: 0 1rem;
-    font-size: 0.75rem;
-    min-width: 130px;
-    height: 30px;
-  }
+  /* section-tag mobile styles handled by standardized-components.css */
 
   .faq-hero {
     padding: 2.5rem 0;
@@ -948,12 +917,7 @@
 }
 
 @media only screen and (max-width: 375px) {
-  .section-tag {
-    padding: 0 0.9rem;
-    font-size: 0.7rem;
-    min-width: 120px;
-    height: 28px;
-  }
+  /* section-tag mobile styles handled by standardized-components.css */
 
   .faq-features-grid {
     max-width: 300px;

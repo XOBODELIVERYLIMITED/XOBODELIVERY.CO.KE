@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTruck, FaShieldAlt, FaUserCheck, FaFileContract, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa';
+import { FaTruck, FaShieldAlt, FaUserCheck, FaFileContract, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './driver-privacy.css';
 

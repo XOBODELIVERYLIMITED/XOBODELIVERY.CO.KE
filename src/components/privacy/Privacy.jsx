@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShieldAlt, FaUserShield, FaLock, FaEye, FaFileContract, FaClock, FaEnvelope } from 'react-icons/fa';
+import { FaShieldAlt, FaUserShield, FaLock, FaEye, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './privacy.css';
 

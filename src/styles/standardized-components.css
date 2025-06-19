@@ -159,17 +159,17 @@
 /* === STANDARDIZED SECTION TAGS === */
 .section-tag {
   display: inline-block;
-  background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
-  color: #ffffff !important;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.875rem;
+  background-color: rgba(255, 58, 58, 0.1);
+  color: #ff3a3a !important;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
   border: none;
-  box-shadow: 0 2px 8px rgba(255, 58, 58, 0.2);
+  box-shadow: none;
   position: relative;
   z-index: 1;
   text-decoration: none;
@@ -207,7 +207,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 /* === STANDARDIZED RESPONSIVE BREAKPOINTS === */
@@ -241,7 +241,7 @@
   }
   
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .cta-buttons {
@@ -252,6 +252,38 @@
   .cta-secondary {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
+  }
+  
+  .standard-container {
+    padding: 0 1rem;
+  }
+  
+  .standard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .standard-section {
+    padding: 60px 0;
+  }
+  
+  .standard-card,
+  .value-card,
+  .benefit-card,
+  .service-card,
+  .feature-card {
+    padding: 25px 20px;
+  }
+  
+  .standard-icon,
+  .value-icon,
+  .benefit-icon,
+  .service-icon,
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 }
 
@@ -319,6 +351,29 @@
   
   .section-intro {
     margin-bottom: 2.5rem;
+  }
+  
+  .standard-section {
+    padding: 50px 0;
+  }
+  
+  .standard-card,
+  .value-card,
+  .benefit-card,
+  .service-card,
+  .feature-card {
+    padding: 20px 15px;
+  }
+  
+  .standard-icon,
+  .value-icon,
+  .benefit-icon,
+  .service-icon,
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
   }
 }
 
@@ -434,4 +489,160 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+/* Standardized Icon Components */
+.standard-icon,
+.value-icon,
+.benefit-icon,
+.service-icon,
+.feature-icon,
+.highlight-icon-container {
+  width: 70px;
+  height: 70px;
+  color: #16234d !important; /* Blue initial color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease !important;
+  background: none !important; /* No background */
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Hover animation for all icons */
+.standard-card:hover .standard-icon,
+.value-card:hover .value-icon,
+.benefit-card:hover .benefit-icon,
+.service-card:hover .service-icon,
+.feature-card:hover .feature-icon,
+.highlight-card:hover .highlight-icon-container {
+  color: #ff3a3a !important; /* Red hover color */
+  transform: rotateY(360deg) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Standardized Card Components */
+.standard-card,
+.value-card,
+.benefit-card,
+.service-card,
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.standard-card::before,
+.value-card::before,
+.benefit-card::before,
+.service-card::before,
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #16234d, #293f78);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.standard-card:hover,
+.value-card:hover,
+.benefit-card:hover,
+.service-card:hover,
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.standard-card:hover::before,
+.value-card:hover::before,
+.benefit-card:hover::before,
+.service-card:hover::before,
+.feature-card:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+}
+
+.standard-card h3,
+.value-card h3,
+.benefit-card h3,
+.service-card h3,
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 2;
+}
+
+.standard-card p,
+.value-card p,
+.benefit-card p,
+.service-card p,
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Container improvements */
+.standard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Section styling improvements */
+.standard-section {
+  padding: 80px 0;
+}
+
+.standard-section.bg-light {
+  background-color: #f8f9fa;
+}
+
+.standard-section-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* section-tag styling is consolidated above - no duplicate needed */
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #16234d;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.section-subtitle,
+.section-description {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 } 

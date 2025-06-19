@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   FaArrowRight, 
+  FaArrowLeft,
   FaFileAlt, 
   FaChartLine, 
   FaTruckMoving, 
@@ -141,8 +142,8 @@ function Home() {
           </div>
           
           <div className="carousel-container">
-            <button className="nav-button prev" onClick={() => handleSlide('prev')}>
-              <FaArrowRight className="arrow-icon-left" />
+                    <button className="nav-button prev" onClick={() => handleSlide('prev')}>
+          <FaArrowLeft className="arrow-icon" />
             </button>
 
             <div className="highlight-carousel">
@@ -404,8 +405,8 @@ function Home() {
           </div>
 
           <div className="customers-carousel-container">
-            <button className="customer-nav-button prev" onClick={() => handleCustomerSlide('prev')}>
-              <FaArrowRight className="arrow-icon-left" />
+                    <button className="customer-nav-button prev" onClick={() => handleCustomerSlide('prev')}>
+          <FaArrowLeft className="arrow-icon" />
             </button>
 
             <div className="customers-carousel-wrapper">

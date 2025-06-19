@@ -8,14 +8,14 @@ import './styles/responsive-system.css';
 import setupViewportHeightFix from './utils/viewportFix';
 import setupResponsiveHelper from './utils/responsiveHelper';
 import initializeMobileOptimizations from './utils/mobileOptimization';
-import mobileEnhanced from './utils/mobileEnhanced';
-
-// Critical components loaded immediately
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./components/common/ScrollToTop";
 import LoadingSpinner from "./components/common/LoadingSpinner";
 import ErrorBoundary from "./components/common/ErrorBoundary";
+// Theme components available for future use
+// import { ThemeProvider } from './context/ThemeContext';
+// import ThemeToggle from './components/common/ThemeToggle';
 
 // Lazy-loaded components for better performance
 const Home = lazy(() => import("./components/home/Home"));

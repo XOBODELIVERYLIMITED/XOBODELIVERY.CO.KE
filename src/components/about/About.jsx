@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHistory, FaTrophy, FaUsers, FaHandshake, FaMapMarkerAlt, FaBullseye, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaHistory, FaTrophy, FaUsers, FaHandshake, FaMapMarkerAlt, FaBullseye, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './about.css';
 

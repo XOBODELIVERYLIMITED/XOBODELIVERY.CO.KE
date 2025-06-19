@@ -1,7 +1,7 @@
 // Header.jsx
 
 import { useState, useEffect, useRef } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
 import { scrollToTop } from '../common/ScrollToTop';
 import "./header.css";
@@ -33,6 +33,7 @@ function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navBtnRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setIsNavVisible(!isNavVisible);
@@ -45,6 +46,25 @@ function Header() {
     setTimeout(() => {
       scrollToTop();
     }, 100);
+  };
+
+  // Handle logo click to redirect to landing page, close mobile nav, and scroll to top
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsNavVisible(false); // Close mobile menu if open
+    navigate('/'); // Navigate to landing page
+    setTimeout(() => {
+      scrollToTop(); // Scroll to top after navigation
+    }, 50);
+  };
+
+  // Handle keyboard navigation for logo
+  const handleLogoKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleLogoClick(e);
+    }
   };
 
   useEffect(() => {
@@ -94,13 +114,18 @@ function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="header-container">
-        <div className="logo">
-          <Link to="/">
-            <img 
-              loading='lazy'
-              src={process.env.PUBLIC_URL + '/media/Header-Logo2.jpeg'} alt="XOBO Logo" 
-            />
-          </Link>
+        <div 
+          className="logo" 
+          onClick={handleLogoClick} 
+          onKeyDown={handleLogoKeyDown}
+          role="button" 
+          tabIndex="0" 
+          aria-label="Go to homepage"
+        >
+          <img 
+            loading='lazy'
+            src={process.env.PUBLIC_URL + '/media/Header-Logo2.jpeg'} alt="XOBO Logo" 
+          />
         </div>
 
         <nav className={isNavVisible ? "responsive_nav" : ""}>
