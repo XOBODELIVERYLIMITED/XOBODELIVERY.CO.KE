@@ -192,9 +192,16 @@ function ClientGuide() {
             <div className="steps-navigation">
               {systemSteps.map((step, index) => (
                 <button
-                  key={step.id}
-                  className={`step-nav ${activeStep === index ? 'active' : ''}`}
+                  key={index}
+                  className={`step-indicator ${index === activeStep ? 'active' : ''}`}
                   onClick={() => setActiveStep(index)}
+                  onTouchEnd={(e) => {
+                    e.preventDefault();
+                    setActiveStep(index);
+                  }}
+                  type="button"
+                  aria-pressed={index === activeStep}
+                  aria-label={`Go to step ${index + 1}: ${step.title}`}
                 >
                   <div className="step-nav-icon">{step.icon}</div>
                   <div className="step-nav-content">

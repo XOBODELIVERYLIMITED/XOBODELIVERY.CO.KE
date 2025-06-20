@@ -41,10 +41,28 @@ class ErrorBoundary extends React.Component {
             <p>We're sorry, but something unexpected happened. Please try refreshing the page.</p>
             
             <div className="error-actions">
-              <button onClick={this.handleRetry} className="retry-button">
+              <button 
+                onClick={this.handleRetry} 
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  this.handleRetry();
+                }}
+                className="retry-button"
+                type="button"
+                aria-label="Retry last action"
+              >
                 Try Again
               </button>
-              <button onClick={() => window.location.reload()} className="refresh-button">
+              <button 
+                onClick={() => window.location.reload()} 
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  window.location.reload();
+                }}
+                className="refresh-button"
+                type="button"
+                aria-label="Refresh entire page"
+              >
                 Refresh Page
               </button>
             </div>

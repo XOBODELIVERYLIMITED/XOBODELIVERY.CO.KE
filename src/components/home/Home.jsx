@@ -143,8 +143,17 @@ function Home() {
           </div>
           
           <div className="carousel-container">
-                    <button className="nav-button prev" onClick={() => handleSlide('prev')}>
-          <FaArrowLeft className="arrow-icon" />
+            <button 
+              className="nav-button prev" 
+              onClick={() => handleSlide('prev')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleSlide('prev');
+              }}
+              type="button"
+              aria-label="Previous service"
+            >
+              <FaArrowLeft className="arrow-icon" />
             </button>
 
             <div className="highlight-carousel">
@@ -209,7 +218,16 @@ function Home() {
               </div>
             </div>
 
-            <button className="nav-button next" onClick={() => handleSlide('next')}>
+            <button 
+              className="nav-button next" 
+              onClick={() => handleSlide('next')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleSlide('next');
+              }}
+              type="button"
+              aria-label="Next service"
+            >
               <FaArrowRight className="arrow-icon" />
             </button>
           </div>
@@ -406,8 +424,17 @@ function Home() {
           </div>
 
           <div className="customers-carousel-container">
-                    <button className="customer-nav-button prev" onClick={() => handleCustomerSlide('prev')}>
-          <FaArrowLeft className="arrow-icon" />
+            <button 
+              className="customer-nav-button prev" 
+              onClick={() => handleCustomerSlide('prev')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleCustomerSlide('prev');
+              }}
+              type="button"
+              aria-label="Previous customers"
+            >
+              <FaArrowLeft className="arrow-icon" />
             </button>
 
             <div className="customers-carousel-wrapper">
@@ -586,7 +613,16 @@ function Home() {
               </div>
             </div>
 
-            <button className="customer-nav-button next" onClick={() => handleCustomerSlide('next')}>
+            <button 
+              className="customer-nav-button next" 
+              onClick={() => handleCustomerSlide('next')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleCustomerSlide('next');
+              }}
+              type="button"
+              aria-label="Next customers"
+            >
               <FaArrowRight className="arrow-icon" />
             </button>
           </div>

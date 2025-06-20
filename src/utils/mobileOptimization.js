@@ -1,12 +1,35 @@
 /**
- * Mobile Optimization Utilities
- * Ensures proper mobile experience across all devices
+ * Mobile Optimization Utilities - REVISED
+ * Ensures proper mobile experience while preserving essential touch feedback
  */
 
 // Minimum touch target size (44px for iOS, 48px for Android)
 const MIN_TOUCH_TARGET = 44;
 
-// Disable animations and hover effects on mobile
+// List of interactive elements that should preserve touch feedback
+const INTERACTIVE_SELECTORS = [
+  '.nav-btn',
+  '.nav-button',
+  '.customer-nav-button', 
+  '.hero-button',
+  '.cta-primary',
+  '.cta-secondary',
+  '.submit-button',
+  '.edit-btn',
+  '.retry-button',
+  '.help-button',
+  '.action-btn',
+  '.mobile-button',
+  '.faq-question',
+  '.nav-tab',
+  '.category-tab',
+  '.step-indicator',
+  'button[type="submit"]',
+  'button[type="button"]',
+  '.driver-tabs .tab'
+].join(', ');
+
+// Disable problematic animations while preserving essential touch feedback
 export const disableAnimationsAndHoverEffects = () => {
   if (window.innerWidth <= 768) {
     // Add a class to the body to target in CSS
@@ -20,87 +43,83 @@ export const disableAnimationsAndHoverEffects = () => {
       document.head.appendChild(styleElement);
     }
     
-    // Add CSS rules to disable animations and hover effects
+    // Add CSS rules to disable problematic animations while preserving touch feedback
     styleElement.textContent = `
       @media (max-width: 768px) {
-        *:not(.nav-btn):not(.nav-btn *):not(.driver-tabs .tab):not(.driver-tabs .tab *) {
-          animation: none !important;
+        /* Disable complex animations but preserve essential touch feedback */
+        .card:not(.faq-item),
+        .service-card:not(:active),
+        .feature-card:not(:active),
+        .benefit-card:not(:active) {
           transition: none !important;
-          transform: none !important;
+          animation: none !important;
         }
         
-        a:hover:not(.nav-btn):not(.driver-tabs .tab),
-        button:hover:not(.nav-btn):not(.driver-tabs .tab),
-        .btn:hover:not(.nav-btn):not(.driver-tabs .tab),
-        .button:hover:not(.nav-btn):not(.driver-tabs .tab),
-        .card:hover,
-        .nav-link:hover,
-        .dropdown-item:hover,
-        .icon:hover:not(.nav-btn *):not(.driver-tabs .tab *),
-        [class*="hover"]:not(.nav-btn):not(.driver-tabs .tab),
-        [class*="Hover"]:not(.nav-btn):not(.driver-tabs .tab) {
-          transform: none !important;
-          box-shadow: inherit !important;
-          background-color: inherit !important;
-          color: inherit !important;
-          border-color: inherit !important;
-          opacity: 1 !important;
-          filter: none !important;
-        }
-        
-        /* Preserve nav button functionality */
-        .nav-btn {
-          transition: all 0.3s ease !important;
-          cursor: pointer !important;
-        }
-        
-        .nav-btn:hover {
-          transform: scale(1.05) !important;
-        }
-        
-        /* Preserve driver tabs functionality */
-        .driver-tabs .tab {
-          transition: all 0.3s ease !important;
+        /* Preserve essential interactive element transitions */
+        ${INTERACTIVE_SELECTORS} {
+          transition: all 0.2s ease !important;
           cursor: pointer !important;
           pointer-events: auto !important;
           touch-action: manipulation !important;
         }
         
-        .driver-tabs .tab:hover {
-          border-color: #16234d !important;
-          color: #16234d !important;
+        /* Add proper mobile touch states */
+        ${INTERACTIVE_SELECTORS}:active {
+          transform: scale(0.95) !important;
+          transition: transform 0.1s ease !important;
         }
         
-        .driver-tabs .tab.active {
-          background: #16234d !important;
-          border-color: #16234d !important;
-          color: white !important;
+        /* Disable hover effects but preserve focus and active states */
+        ${INTERACTIVE_SELECTORS}:hover {
+          transition: none;
         }
         
-        .driver-tabs .tab:active {
-          transform: scale(0.96) !important;
+        /* Ensure FAQ items work properly */
+        .faq-question {
+          transition: background-color 0.2s ease !important;
+          cursor: pointer !important;
+          pointer-events: auto !important;
+        }
+        
+        .faq-question:active {
+          background-color: rgba(22, 35, 77, 0.05) !important;
+        }
+        
+        .faq-answer {
+          transition: max-height 0.3s ease-out !important;
+        }
+        
+        .faq-icon {
+          transition: transform 0.3s ease !important;
+        }
+        
+        /* Preserve carousel functionality */
+        .nav-button:active,
+        .customer-nav-button:active {
+          background-color: rgba(22, 35, 77, 0.1) !important;
+        }
+        
+        /* Preserve form button functionality */
+        .submit-button:active,
+        .hero-button:active,
+        .cta-primary:active,
+        .cta-secondary:active {
+          opacity: 0.8 !important;
         }
       }
     `;
     
-    // Disable hover by adding a data attribute
-    document.documentElement.setAttribute('data-no-hover', 'true');
-    
-    // Make sure the nav button is still interactive
-    const navButton = document.querySelector('.nav-btn');
-    if (navButton) {
-      navButton.style.transition = 'all 0.3s ease';
-      navButton.style.cursor = 'pointer';
-    }
+    // Add data attribute for CSS targeting
+    document.documentElement.setAttribute('data-mobile-optimized', 'true');
   } else {
     // Remove the class if not on mobile
     document.body.classList.remove('mobile-no-animations');
-    document.documentElement.removeAttribute('data-no-hover');
+    document.documentElement.removeAttribute('data-mobile-optimized');
     
     // Remove the style element if it exists
     const styleElement = document.getElementById('mobile-optimization-styles');
     if (styleElement) {
-      styleElement.textContent = '';
+      styleElement.remove();
     }
   }
 };
@@ -108,24 +127,10 @@ export const disableAnimationsAndHoverEffects = () => {
 // Optimize touch targets for mobile devices
 export const optimizeTouchTargets = () => {
   if (window.innerWidth <= 768) {
-    const touchElements = document.querySelectorAll('button, a, input, select, textarea, [role="button"]');
+    const touchElements = document.querySelectorAll(INTERACTIVE_SELECTORS);
     
     touchElements.forEach(element => {
       const rect = element.getBoundingClientRect();
-      const computedStyle = window.getComputedStyle(element);
-      
-      // Special handling for driver tabs
-      if (element.classList.contains('tab') && element.closest('.driver-tabs')) {
-        element.style.minHeight = `48px`;
-        element.style.minWidth = `48px`;
-        element.style.touchAction = 'manipulation';
-        element.style.webkitTapHighlightColor = 'rgba(22, 35, 77, 0.2)';
-        element.style.cursor = 'pointer';
-        element.style.pointerEvents = 'auto';
-        element.style.position = 'relative';
-        element.style.zIndex = '100';
-        return; // Skip normal processing for driver tabs
-      }
       
       // Ensure minimum touch target size
       if (rect.height < MIN_TOUCH_TARGET) {
@@ -135,14 +140,15 @@ export const optimizeTouchTargets = () => {
         element.style.justifyContent = 'center';
       }
       
-      // Ensure proper padding for touch
-      const paddingTop = parseInt(computedStyle.paddingTop) || 0;
-      const paddingBottom = parseInt(computedStyle.paddingBottom) || 0;
-      const totalVerticalPadding = paddingTop + paddingBottom;
-      
-      if (totalVerticalPadding < 12) {
-        element.style.padding = `${Math.max(8, (MIN_TOUCH_TARGET - rect.height) / 2)}px ${computedStyle.paddingLeft || '12px'}`;
+      if (rect.width < MIN_TOUCH_TARGET) {
+        element.style.minWidth = `${MIN_TOUCH_TARGET}px`;
       }
+      
+      // Ensure proper touch properties
+      element.style.touchAction = 'manipulation';
+      element.style.webkitTapHighlightColor = 'rgba(22, 35, 77, 0.2)';
+      element.style.cursor = 'pointer';
+      element.style.pointerEvents = 'auto';
     });
   }
 };
@@ -168,10 +174,9 @@ export const preventInputZoom = () => {
     
     inputs.forEach(input => {
       // Set font-size to 16px to prevent zoom
-      if (window.getComputedStyle(input).fontSize === '16px') {
-        return;
+      if (parseFloat(window.getComputedStyle(input).fontSize) < 16) {
+        input.style.fontSize = '16px';
       }
-      input.style.fontSize = '16px';
     });
   }
 };
@@ -190,11 +195,6 @@ export const optimizeImagesForMobile = () => {
     if (!img.style.maxWidth) {
       img.style.maxWidth = '100%';
       img.style.height = 'auto';
-    }
-    
-    // Add proper alt text if missing
-    if (!img.hasAttribute('alt')) {
-      img.setAttribute('alt', '');
     }
   });
 };
@@ -239,9 +239,6 @@ export const handleOrientationChange = () => {
       optimizeTouchTargets();
       fixViewportHeight();
       disableAnimationsAndHoverEffects();
-      
-      // Trigger resize event for components that need it
-      window.dispatchEvent(new Event('resize'));
     }, 200);
   };
   
@@ -251,57 +248,58 @@ export const handleOrientationChange = () => {
   }
 };
 
-// Main mobile optimization function
+// Main mobile optimization function - STREAMLINED
 export const initializeMobileOptimizations = () => {
   // Run initial optimizations
   fixViewportHeight();
   handleSafeAreaInsets();
   optimizeScrolling();
   handleOrientationChange();
-  disableAnimationsAndHoverEffects();
   
-  // Run after DOM is fully loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      optimizeTouchTargets();
-      preventInputZoom();
-      optimizeImagesForMobile();
-      disableAnimationsAndHoverEffects();
-    });
-  } else {
+  // Apply mobile optimizations
+  const applyOptimizations = () => {
+    disableAnimationsAndHoverEffects();
     optimizeTouchTargets();
     preventInputZoom();
     optimizeImagesForMobile();
-    disableAnimationsAndHoverEffects();
+  };
+  
+  // Run after DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyOptimizations);
+  } else {
+    applyOptimizations();
   }
   
-  // Re-optimize when new content is added
+  // Single resize handler to avoid conflicts
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      disableAnimationsAndHoverEffects();
+      optimizeTouchTargets();
+    }, 100);
+  });
+  
+  // Simplified mutation observer for dynamic content
   const observer = new MutationObserver((mutations) => {
-    let shouldOptimize = false;
+    const hasNewInteractiveElements = mutations.some(mutation => 
+      Array.from(mutation.addedNodes).some(node => 
+        node.nodeType === 1 && (
+          (node.matches && node.matches(INTERACTIVE_SELECTORS)) ||
+          (node.querySelector && node.querySelector(INTERACTIVE_SELECTORS))
+        )
+      )
+    );
     
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-        shouldOptimize = true;
-      }
-    });
-    
-    if (shouldOptimize) {
-      setTimeout(() => {
-        optimizeTouchTargets();
-        optimizeImagesForMobile();
-        disableAnimationsAndHoverEffects();
-      }, 100);
+    if (hasNewInteractiveElements) {
+      setTimeout(optimizeTouchTargets, 50);
     }
   });
   
   observer.observe(document.body, {
     childList: true,
     subtree: true
-  });
-  
-  // Handle window resize for responsive breakpoints
-  window.addEventListener('resize', () => {
-    disableAnimationsAndHoverEffects();
   });
 };
 

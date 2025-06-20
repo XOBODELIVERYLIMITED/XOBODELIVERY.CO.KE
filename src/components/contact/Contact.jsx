@@ -190,7 +190,12 @@ const Contact = () => {
               </a>
               <button 
                 onClick={(e) => handleAnchorClick(e, 'contact-form')} 
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  handleAnchorClick(e, 'contact-form');
+                }}
                 className="hero-button secondary"
+                type="button"
               >
                 <FaEnvelope className="button-icon" /> Message
               </button>

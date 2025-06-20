@@ -133,18 +133,30 @@ function CompanyInfo() {
       {/* Navigation Tabs */}
       <section className="info-navigation">
         <div className="container">
-          <div className="nav-tabs">
-            <button 
+          <div className="company-nav">
+            <button
               className={`nav-tab ${activeSection === 'overview' ? 'active' : ''}`}
               onClick={() => setActiveSection('overview')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setActiveSection('overview');
+              }}
+              type="button"
+              aria-pressed={activeSection === 'overview'}
             >
               Company Overview
             </button>
-            <button 
+            <button
               className={`nav-tab ${activeSection === 'legal' ? 'active' : ''}`}
               onClick={() => setActiveSection('legal')}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setActiveSection('legal');
+              }}
+              type="button"
+              aria-pressed={activeSection === 'legal'}
             >
-              Legal & Compliance
+              Legal Information
             </button>
           </div>
         </div>

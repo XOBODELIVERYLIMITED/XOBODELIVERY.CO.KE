@@ -27,6 +27,13 @@ const FAQPage = ({ faqs }) => {
             key={category.id}
             className={`category-tab ${selectedCategory === category.id ? 'active' : ''}`}
             onClick={() => handleCategoryChange(category.id)}
+            onTouchEnd={(e) => {
+              e.preventDefault();
+              handleCategoryChange(category.id);
+            }}
+            type="button"
+            aria-pressed={selectedCategory === category.id}
+            aria-label={`Filter by ${category.label}`}
           >
             {category.icon && <span className="category-icon">{category.icon}</span>}
             {category.label}

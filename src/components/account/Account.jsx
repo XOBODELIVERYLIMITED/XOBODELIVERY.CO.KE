@@ -62,15 +62,42 @@ function Account() {
               <div className="card-header">
                 <h3>Profile Information</h3>
                 {!isEditing ? (
-                  <button className="edit-btn" onClick={handleEdit}>
+                  <button 
+                    className="edit-btn" 
+                    onClick={handleEdit}
+                    onTouchEnd={(e) => {
+                      e.preventDefault();
+                      handleEdit();
+                    }}
+                    type="button"
+                    aria-label="Edit profile information"
+                  >
                     <FaEdit /> Edit
                   </button>
                 ) : (
                   <div className="edit-actions">
-                    <button className="save-btn" onClick={handleSave}>
+                    <button 
+                      className="save-btn" 
+                      onClick={handleSave}
+                      onTouchEnd={(e) => {
+                        e.preventDefault();
+                        handleSave();
+                      }}
+                      type="button"
+                      aria-label="Save changes"
+                    >
                       <FaSave /> Save
                     </button>
-                    <button className="cancel-btn" onClick={handleCancel}>
+                    <button 
+                      className="cancel-btn" 
+                      onClick={handleCancel}
+                      onTouchEnd={(e) => {
+                        e.preventDefault();
+                        handleCancel();
+                      }}
+                      type="button"
+                      aria-label="Cancel editing"
+                    >
                       <FaTimes /> Cancel
                     </button>
                   </div>

@@ -425,113 +425,9 @@ iframe {
   }
 }
 
-/* Disable animations and hover effects on mobile */
-@media (max-width: 768px) {
-  /* Global animation disabling */
-  .mobile-no-animations *:not(.nav-btn):not(.nav-btn *),
-  body[data-mobile="true"] *:not(.nav-btn):not(.nav-btn *),
-  html[data-no-hover="true"] *:not(.nav-btn):not(.nav-btn *) {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
+/* OLD GLOBAL ANIMATION DISABLING REMOVED - REPLACED WITH TARGETED SYSTEM */
   
-  /* Reset hover states but exclude nav button */
-  .mobile-no-animations a:hover:not(.nav-btn),
-  .mobile-no-animations button:hover:not(.nav-btn),
-  .mobile-no-animations .btn:hover:not(.nav-btn),
-  .mobile-no-animations .button:hover:not(.nav-btn),
-  .mobile-no-animations .card:hover,
-  .mobile-no-animations .nav-link:hover,
-  .mobile-no-animations .dropdown-item:hover,
-  .mobile-no-animations .icon:hover:not(.nav-btn *),
-  html[data-no-hover="true"] a:hover:not(.nav-btn),
-  html[data-no-hover="true"] button:hover:not(.nav-btn),
-  html[data-no-hover="true"] .btn:hover:not(.nav-btn),
-  html[data-no-hover="true"] .button:hover:not(.nav-btn),
-  html[data-no-hover="true"] .card:hover,
-  html[data-no-hover="true"] .nav-link:hover,
-  html[data-no-hover="true"] .dropdown-item:hover,
-  html[data-no-hover="true"] .icon:hover:not(.nav-btn *),
-  html[data-no-hover="true"] [class*="hover"]:hover:not(.nav-btn),
-  html[data-no-hover="true"] [class*="Hover"]:hover:not(.nav-btn) {
-    transform: none !important;
-    box-shadow: inherit !important;
-    background-color: inherit !important;
-    color: inherit !important;
-    border-color: inherit !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  
-  /* Fix for specific components */
-  .mobile-no-animations .service-card:hover,
-  .mobile-no-animations .service-card:hover::before,
-  .mobile-no-animations .service-card:hover .service-icon,
-  .mobile-no-animations .hero-button.primary:hover,
-  .mobile-no-animations .hero-button.secondary:hover,
-  .mobile-no-animations .cta-primary:hover,
-  .mobile-no-animations .cta-secondary:hover {
-    transform: none !important;
-    background-color: inherit;
-    color: inherit;
-    box-shadow: inherit;
-    border-color: inherit;
-    opacity: 1;
-  }
-  
-  /* Ensure primary buttons maintain their color */
-  .mobile-no-animations .hero-button.primary,
-  .mobile-no-animations .cta-primary,
-  html[data-no-hover="true"] .hero-button.primary,
-  html[data-no-hover="true"] .cta-primary {
-    background-color: #ff3a3a !important;
-    color: #ffffff !important;
-  }
-  
-  /* Ensure secondary buttons maintain their color */
-  .mobile-no-animations .hero-button.secondary,
-  .mobile-no-animations .cta-secondary,
-  html[data-no-hover="true"] .hero-button.secondary,
-  html[data-no-hover="true"] .cta-secondary {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  }
-  
-  /* Service intro secondary button */
-  .mobile-no-animations .service-intro .cta-secondary,
-  html[data-no-hover="true"] .service-intro .cta-secondary {
-    background-color: transparent !important;
-    color: var(--primary-color) !important;
-    border: 2px solid var(--primary-color) !important;
-  }
-  
-  /* Explicitly preserve nav button functionality */
-  .nav-btn,
-  .nav-btn:hover,
-  .nav-btn:active,
-  .nav-btn.nav-close-btn,
-  .nav-btn.nav-close-btn:hover {
-    transition: all 0.3s ease !important;
-    transform: scale(1.05) !important;
-    cursor: pointer !important;
-  }
-  
-  .nav-btn:hover {
-    background-color: rgba(22, 35, 77, 0.1) !important;
-    color: var(--primary-color) !important;
-  }
-  
-  .nav-btn.nav-close-btn:hover {
-    background-color: rgba(255, 58, 58, 0.2) !important;
-    color: var(--accent-color) !important;
-  }
-}
+/* OLD HOVER DISABLING RULES REMOVED - REPLACED WITH NEW TOUCH FEEDBACK SYSTEM */
 
 /* Mobile Fixes and Optimizations */
 
@@ -842,6 +738,709 @@ iframe {
     
     .mobile-safe-area {
       padding-bottom: env(safe-area-inset-bottom) !important;
+    }
+  }
+}
+
+/* ===================================
+   CRITICAL MOBILE FUNCTIONALITY FIXES
+   Override global restrictions for interactive components
+   =================================== */
+
+/* Override global mobile animation disabling for ALL interactive components */
+@media screen and (max-width: 768px) {
+  /* Carousel and Navigation Buttons */
+  .nav-button,
+  .customer-nav-button,
+  .carousel-button,
+  .nav-btn,
+  .nav-toggle,
+  .mobile-menu-toggle {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .nav-button:hover,
+  .customer-nav-button:hover,
+  .nav-btn:hover {
+    transform: scale(1.05) !important;
+    background-color: rgba(22, 35, 77, 0.1) !important;
+  }
+  
+  .nav-button:active,
+  .customer-nav-button:active,
+  .nav-btn:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Company Info and FAQ Navigation Tabs */
+  .company-nav .nav-tab,
+  .nav-tab,
+  .category-tab,
+  .step-indicator,
+  .step-nav {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .company-nav .nav-tab:hover,
+  .nav-tab:hover,
+  .category-tab:hover,
+  .step-indicator:hover {
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    border-color: var(--primary-color, #16234d) !important;
+  }
+  
+  .company-nav .nav-tab.active,
+  .nav-tab.active,
+  .category-tab.active,
+  .step-indicator.active {
+    background-color: var(--primary-color, #16234d) !important;
+    color: white !important;
+    border-color: var(--primary-color, #16234d) !important;
+  }
+  
+  .company-nav .nav-tab:active,
+  .nav-tab:active,
+  .category-tab:active,
+  .step-indicator:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* Account Management Buttons */
+  .edit-btn,
+  .save-btn,
+  .cancel-btn,
+  .submit-button,
+  .form-button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .edit-btn:hover,
+  .save-btn:hover,
+  .cancel-btn:hover,
+  .submit-button:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .edit-btn:active,
+  .save-btn:active,
+  .cancel-btn:active,
+  .submit-button:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Contact Form and Hero Buttons */
+  .hero-button,
+  .contact-button,
+  .cta-primary,
+  .cta-secondary,
+  .cta-button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .hero-button.primary,
+  .cta-primary {
+    background-color: var(--primary-color, #16234d) !important;
+    color: white !important;
+  }
+  
+  .hero-button.primary:hover,
+  .cta-primary:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .hero-button.secondary,
+  .cta-secondary {
+    background-color: transparent !important;
+    color: var(--primary-color, #16234d) !important;
+    border: 2px solid var(--primary-color, #16234d) !important;
+  }
+  
+  .hero-button.secondary:hover,
+  .cta-secondary:hover {
+    background-color: var(--primary-color, #16234d) !important;
+    color: white !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .hero-button:active,
+  .cta-primary:active,
+  .cta-secondary:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Footer Navigation Links */
+  .footer-column a,
+  .footer-nav-link {
+    transition: color 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.25rem 0 !important;
+  }
+  
+  .footer-column a:hover,
+  .footer-nav-link:hover {
+    color: var(--primary-color, #16234d) !important;
+    text-decoration: underline !important;
+  }
+  
+  .footer-column a:active,
+  .footer-nav-link:active {
+    opacity: 0.8 !important;
+  }
+
+  /* Logo and Brand Elements */
+  .logo {
+    transition: transform 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+  }
+  
+  .logo:hover {
+    transform: scale(1.02) !important;
+  }
+  
+  .logo:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* General Interactive Element Overrides */
+  button:not(.disabled),
+  [role="button"]:not(.disabled),
+  .clickable:not(.disabled),
+  .interactive:not(.disabled) {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Ensure forms work properly */
+  form,
+  .form-container,
+  .contact-form-container {
+    pointer-events: auto !important;
+    touch-action: auto !important;
+  }
+  
+  form button,
+  .form-container button,
+  .contact-form-container button {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    min-height: 44px !important;
+  }
+  
+  /* Form inputs and selects */
+  input,
+  select,
+  textarea {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    min-height: 44px !important;
+  }
+}
+
+/* Additional mobile-specific interaction improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device specific improvements */
+  .nav-button:active,
+  .customer-nav-button:active,
+  .nav-btn:active,
+  .category-tab:active,
+  .nav-tab:active,
+  .step-indicator:active,
+  .hero-button:active,
+  .cta-primary:active,
+  .cta-secondary:active,
+  .edit-btn:active,
+  .save-btn:active,
+  .cancel-btn:active {
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    transform: scale(0.95) !important;
+  }
+}
+
+/* ===================================
+   END CRITICAL MOBILE FUNCTIONALITY FIXES
+   =================================== */
+
+/* Additional Component-Specific Mobile Fixes */
+@media screen and (max-width: 768px) {
+  /* Tracking Form Buttons */
+  .tracking-form button,
+  .tracking-form input[type="submit"],
+  .input-group button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .tracking-form button:hover,
+  .input-group button:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .tracking-form button:active,
+  .input-group button:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Error Boundary Buttons */
+  .retry-button,
+  .refresh-button,
+  .error-actions button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .retry-button:hover,
+  .refresh-button:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .retry-button:active,
+  .refresh-button:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Service Page CTA Buttons */
+  .service-cta button,
+  .service-cta a,
+  .cta-buttons button,
+  .cta-buttons a {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .service-cta button:hover,
+  .service-cta a:hover,
+  .cta-buttons button:hover,
+  .cta-buttons a:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .service-cta button:active,
+  .service-cta a:active,
+  .cta-buttons button:active,
+  .cta-buttons a:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Help Page Buttons */
+  .help-button,
+  .help-buttons a,
+  .help-buttons button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .help-button:hover,
+  .help-buttons a:hover,
+  .help-buttons button:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .help-button:active,
+  .help-buttons a:active,
+  .help-buttons button:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Action Buttons in Account Page */
+  .action-btn,
+  .action-buttons a,
+  .action-buttons button {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .action-btn:hover,
+  .action-buttons a:hover,
+  .action-buttons button:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .action-btn:active,
+  .action-buttons a:active,
+  .action-buttons button:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Transport and Login Buttons */
+  .transport-button a,
+  .login-btn,
+  .login-btn-container button,
+  .login-btn-container a {
+    transition: all 0.3s ease !important;
+    animation: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  .transport-button a:hover,
+  .login-btn:hover,
+  .login-btn-container button:hover,
+  .login-btn-container a:hover {
+    background-color: rgba(22, 35, 77, 0.9) !important;
+    transform: scale(1.02) !important;
+  }
+  
+  .transport-button a:active,
+  .login-btn:active,
+  .login-btn-container button:active,
+  .login-btn-container a:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* ===================================
+   ENHANCED MOBILE TOUCH FEEDBACK
+   Ensures all interactive elements provide proper visual feedback
+   =================================== */
+
+@media screen and (max-width: 768px) {
+  /* Enhanced Touch Feedback for All Interactive Elements */
+  .nav-btn,
+  .nav-button,
+  .customer-nav-button,
+  .hero-button,
+  .cta-primary,
+  .cta-secondary,
+  .submit-button,
+  .edit-btn,
+  .retry-button,
+  .help-button,
+  .action-btn,
+  .mobile-button,
+  .faq-question,
+  .nav-tab,
+  .category-tab,
+  .step-indicator,
+  button[type="submit"],
+  button[type="button"],
+  .driver-tabs .tab {
+    /* Ensure all interactive elements are touchable */
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    
+    /* Minimum touch target size */
+    min-height: 44px !important;
+    min-width: 44px !important;
+    
+    /* Proper touch feedback */
+    transition: all 0.2s ease !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+    
+    /* Ensure proper layout */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Active states for immediate touch feedback */
+  .nav-btn:active,
+  .nav-button:active,
+  .customer-nav-button:active {
+    transform: scale(0.95) !important;
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  .hero-button:active,
+  .cta-primary:active,
+  .cta-secondary:active,
+  .submit-button:active {
+    transform: scale(0.95) !important;
+    opacity: 0.8 !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  .faq-question:active {
+    background-color: rgba(22, 35, 77, 0.05) !important;
+    transition: background-color 0.1s ease !important;
+  }
+  
+  .nav-tab:active,
+  .category-tab:active,
+  .step-indicator:active {
+    transform: scale(0.98) !important;
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Ensure FAQ functionality is preserved */
+  .faq-item {
+    pointer-events: auto !important;
+  }
+  
+  .faq-answer {
+    transition: max-height 0.3s ease-out !important;
+    overflow: hidden !important;
+  }
+  
+  .faq-icon {
+    transition: transform 0.3s ease !important;
+    pointer-events: none !important; /* Prevent icon from blocking touch */
+  }
+  
+  .faq-icon.open {
+    transform: rotate(180deg) !important;
+  }
+  
+  /* Carousel navigation enhanced touch feedback */
+  .carousel-container .nav-button,
+  .customers-carousel-container .customer-nav-button {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(22, 35, 77, 0.1) !important;
+    border-radius: 50% !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .carousel-container .nav-button:active,
+  .customers-carousel-container .customer-nav-button:active {
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    transform: scale(0.9) !important;
+  }
+  
+  /* Form elements enhanced touch feedback */
+  form button,
+  .contact-form button,
+  .tracking-form button {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  form button:active,
+  .contact-form button:active,
+  .tracking-form button:active {
+    transform: scale(0.98) !important;
+    opacity: 0.9 !important;
+  }
+  
+  /* Service cards and interactive cards */
+  .service-card,
+  .feature-card,
+  .benefit-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  
+  .service-card:active,
+  .feature-card:active,
+  .benefit-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Links with proper touch feedback */
+  a:not(.nav-btn):not(.hero-button):not(.cta-primary):not(.cta-secondary) {
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.2) !important;
+  }
+  
+  a:active:not(.nav-btn):not(.hero-button):not(.cta-primary):not(.cta-secondary) {
+    opacity: 0.7 !important;
+    transition: opacity 0.1s ease !important;
+  }
+  
+  /* Special handling for logo */
+  .logo {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+  
+  .logo:active {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease !important;
+  }
+  
+  /* Transport button special styling */
+  .transport-button a,
+  .login-btn {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    touch-action: manipulation !important;
+  }
+  
+  .transport-button a:active,
+  .login-btn:active {
+    transform: scale(0.95) !important;
+    opacity: 0.9 !important;
+  }
+}
+
+/* Touch device specific enhancements */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove all hover effects on touch devices */
+  *:hover {
+    /* Reset hover states that might interfere with touch */
+  }
+  
+  /* Enhanced active states for better touch feedback */
+  button:active,
+  a:active,
+  [role="button"]:active {
+    opacity: 0.8 !important;
+  }
+  
+  /* Ensure touch targets are properly sized */
+  button,
+  a,
+  [role="button"],
+  .faq-question,
+  .nav-tab,
+  .category-tab {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media screen and (max-width: 768px) {
+  /* Focus indicators for keyboard navigation */
+  button:focus,
+  a:focus,
+  [role="button"]:focus,
+  .faq-question:focus {
+    outline: 3px solid rgba(22, 35, 77, 0.5) !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* Screen reader improvements */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+/* Performance optimizations for mobile interactions */
+@media screen and (max-width: 768px) {
+  /* Use hardware acceleration for smooth interactions */
+  .nav-btn,
+  .nav-button,
+  .customer-nav-button,
+  .hero-button,
+  .faq-question,
+  .service-card {
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+    transform: translateZ(0) !important;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 } 

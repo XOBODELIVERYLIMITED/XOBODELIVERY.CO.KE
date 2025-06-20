@@ -45,7 +45,14 @@ function TrackingDemo() {
                   placeholder="Enter your tracking number (e.g., XOB123456789)"
                   required
                 />
-                <button type="submit">
+                <button 
+                  type="submit"
+                  onTouchEnd={(e) => {
+                    // Don't prevent default here since it's a form submit
+                    // The form submission will handle the event
+                  }}
+                  aria-label="Track package with entered tracking number"
+                >
                   <FaSearch /> Track Package
                 </button>
               </div>

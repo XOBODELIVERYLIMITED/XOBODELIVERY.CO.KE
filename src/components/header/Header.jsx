@@ -117,6 +117,10 @@ function Header() {
         <div 
           className="logo" 
           onClick={handleLogoClick} 
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleLogoClick(e);
+          }}
           onKeyDown={handleLogoKeyDown}
           role="button" 
           tabIndex="0" 
@@ -159,6 +163,11 @@ function Header() {
           ref={navBtnRef}
           className={`nav-btn ${isNavVisible ? "nav-close-btn" : ""}`}
           onClick={toggleNavbar}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            toggleNavbar();
+          }}
+          type="button"
           aria-label="Toggle navigation"
           style={{ pointerEvents: 'auto', cursor: 'pointer' }}
         >
