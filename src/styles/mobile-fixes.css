@@ -2616,3 +2616,48 @@ iframe {
 /* ===================================
    END ENHANCED MOBILE FOOTER VERTICAL LISTS
    =================================== */
+
+/* Privacy Policy mobile fixes - Timeline numbers visibility */
+@media screen and (max-width: 768px) {
+  .privacy-page .timeline-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 100 !important;
+    position: relative !important;
+    background: linear-gradient(135deg, #16234d 0%, #293f78 100%) !important;
+    color: white !important;
+    border: 2px solid white !important;
+  }
+  
+  .privacy-page .timeline-content {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .privacy-page .timeline-item {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .privacy-page .timeline-number {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .privacy-page .timeline-number {
+    min-width: 35px !important;
+    min-height: 35px !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+}

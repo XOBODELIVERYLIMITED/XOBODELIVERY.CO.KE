@@ -204,12 +204,13 @@ function DriverPrivacy() {
             <h2 className="section-title">Driver Information We Handle</h2>
             <p className="section-subtitle">Key data privacy information for drivers</p>
           </div>
-          <div className="timeline">
+          <div className="privacy-sections">
             {privacySections.map((section, index) => (
-              <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} key={section.id} id={section.id}>
-                <div className="timeline-content">
-                  <div className="timeline-marker"></div>
-                  <div className="timeline-number">{String(index + 1).padStart(2, '0')}</div>
+              <div className="privacy-section-card" key={section.id} id={section.id}>
+                <div className="section-number">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <div className="section-content">
                   <h3>{section.title}</h3>
                   <div className="privacy-text">
                     {section.content.split('\n\n').map((paragraph, idx) => (
