@@ -755,14 +755,30 @@
   transform-origin: left;
 }
 
-.letter-meaning:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .letter-meaning:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .letter-meaning:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
-.letter-meaning:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .letter-meaning:active {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .letter-meaning:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
 .letter-meaning strong {

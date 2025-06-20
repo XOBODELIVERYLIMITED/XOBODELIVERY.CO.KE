@@ -1015,10 +1015,22 @@ a.login-btn:focus {
   background-color: transparent !important;
 }
 
-.service-card:hover .service-icon {
-  color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
-  transition: all 0.3s ease !important;
+/* Desktop rotation animation - only on large screens */
+@media screen and (min-width: 769px) {
+  .service-card:hover .service-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+/* Mobile - no rotation, just color change */
+@media screen and (max-width: 768px) {
+  .service-card:active .service-icon {
+    color: #ff3a3a !important;
+    transform: none !important;
+    transition: all 0.3s ease !important;
+  }
 }
 
 .service-card-content {

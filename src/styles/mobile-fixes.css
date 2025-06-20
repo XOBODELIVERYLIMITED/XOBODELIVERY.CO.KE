@@ -458,7 +458,7 @@ iframe {
   .solution-card:active .solution-icon,
   .highlight-card:active .highlight-icon-container,
   .intro-card:active .intro-card-icon {
-    color: #ff3a3a !important; /* Red touch color */
+    color: #ff3a3a !important; /* Official red touch color */
     transform: scale(1.05) !important;
     transition: all 0.2s ease !important;
   }

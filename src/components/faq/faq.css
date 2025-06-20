@@ -172,20 +172,7 @@
   /* Pulse animation removed for better mobile performance */
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 5px 15px rgba(41, 63, 120, 0.3);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(41, 63, 120, 0.4);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 5px 15px rgba(41, 63, 120, 0.3);
-  }
-}
+
 
 .faq-icon {
   font-size: 2.5rem;
@@ -336,7 +323,6 @@
   padding: 2rem;
   text-align: center !important;
   box-shadow: var(--shadow-sm);
-  /* Transition removed for better mobile performance */
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -488,7 +474,6 @@
   font-weight: 600;
   color: var(--text-color);
   cursor: pointer;
-  /* Transition removed for better mobile performance */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -530,7 +515,6 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
-  /* Transition removed for better mobile performance */
   background-color: var(--white);
   box-shadow: var(--shadow-sm);
   margin-bottom: 1rem;
@@ -710,7 +694,6 @@
   padding: 0.75rem 2rem;
   border-radius: 8px;
   border: none;
-  /* Transition removed for better mobile performance */
   text-decoration: none;
   min-height: 44px;
 }
@@ -1209,4 +1192,90 @@
     line-height: 1.4;
     color: var(--text-light);
   }
+}
+
+/* ===================================
+   DESKTOP ANIMATIONS - LARGE SCREENS ONLY
+   Applied only on screens 769px and above
+   =================================== */
+
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  
+  /* Hero Icon Pulse Animation */
+  .faq-icon-wrapper {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 10px 20px rgba(41, 63, 120, 0.3);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(41, 63, 120, 0.4);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 10px 20px rgba(41, 63, 120, 0.3);
+    }
+  }
+  
+  /* Feature Cards Hover Effects */
+  .faq-feature-card {
+    transition: all 0.3s ease;
+  }
+  
+  .faq-feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .faq-feature-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+  }
+  
+  .faq-feature-card:hover .feature-icon {
+    color: var(--accent-color);
+  }
+  
+
+  
+
+  
+  /* Stat Cards Hover Effects */
+  .faq-stat-card {
+    transition: all 0.3s ease;
+  }
+  
+  .faq-stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--white);
+  }
+  
+
+  
+  /* Additional Icon Transitions */
+  .feature-icon {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Mobile - ensure no complex animations on small screens */
+@media screen and (max-width: 768px) {
+  .faq-feature-card:active {
+    background-color: var(--lighter-bg);
+  }
+  
+  .faq-feature-card:active .feature-icon {
+    color: var(--accent-color);
+    transform: none;
+  }
+  
+
+  
+
 }

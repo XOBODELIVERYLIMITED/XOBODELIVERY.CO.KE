@@ -422,15 +422,7 @@
   transform-origin: left;
 }
 
-.vehicle-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
 
-.vehicle-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
-}
 
 .vehicle-header {
   display: flex;
@@ -452,11 +444,6 @@
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
-}
-
-.vehicle-card:hover .vehicle-icon {
-  color: #ff3a3a;
-  transform: scale(1.05);
 }
 
 .vehicle-header h3 {
@@ -533,15 +520,7 @@
   transform-origin: left;
 }
 
-.support-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
 
-.support-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
-}
 
 .support-icon {
   width: 40px;
@@ -554,11 +533,6 @@
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
-}
-
-.support-card:hover .support-icon {
-  color: #ff3a3a;
-  transform: scale(1.05);
 }
 
 .support-card h3 {
@@ -577,10 +551,6 @@
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
-}
-
-.support-card:hover p {
-  color: #333;
 }
 
 .support-details {
@@ -833,5 +803,109 @@
     width: 30px;
     height: 30px;
     font-size: 1.3rem;
+  }
+}
+
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .vehicle-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .vehicle-card:hover .vehicle-icon {
+    color: #ff3a3a;
+    transform: scale(1.05);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .vehicle-card:active {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .vehicle-card:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .vehicle-card:active .vehicle-icon {
+    color: #ff3a3a;
+    transform: none;
+  }
+}
+
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .support-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .support-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .support-card:hover .support-icon {
+    color: #ff3a3a;
+    transform: scale(1.05);
+  }
+
+  .support-card:hover p {
+    color: #333;
+  }
+
+  .support-details a {
+  color: #16234d;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .support-card:active {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .support-card:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .support-card:active .support-icon {
+    color: #ff3a3a;
+    transform: none;
+  }
+
+  .support-card:active p {
+    color: #333;
+  }
+
+  .support-details a:active {
+    color: #ff3a3a;
+    transform: none;
+  }
+
+  .cta-primary:active {
+    background: #ffed4a;
+    transform: none;
+  }
+
+  .cta-secondary:active {
+    background: white;
+    color: #16234d;
+    transform: none;
   }
 } 

@@ -136,9 +136,32 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.feature-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .feature-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .feature-card:hover .feature-icon {
+    color: #ff3a3a !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .feature-card:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .feature-card:active .feature-icon {
+    color: #ff3a3a !important;
+    transform: none !important;
+    transition: all 0.3s ease !important;
+  }
 }
 
 .feature-icon {
@@ -156,12 +179,6 @@
   background: none !important;
   border-radius: 0 !important;
   background-color: transparent !important;
-}
-
-.feature-card:hover .feature-icon {
-  color: #ff3a3a !important;
-  transform: scale(1.05) !important;
-  transition: all 0.3s ease !important;
 }
 
 .feature-card h3 {
@@ -228,9 +245,32 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.benefit-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .benefit-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .benefit-card:hover .benefit-icon {
+    color: #ff3a3a !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .benefit-card:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
+
+  .benefit-card:active .benefit-icon {
+    color: #ff3a3a !important;
+    transform: none !important;
+    transition: all 0.3s ease !important;
+  }
 }
 
 .benefit-icon {
@@ -248,12 +288,6 @@
   background: none !important;
   border-radius: 0 !important;
   background-color: transparent !important;
-}
-
-.benefit-card:hover .benefit-icon {
-  color: #ff3a3a !important;
-  transform: scale(1.05) !important;
-  transition: all 0.3s ease !important;
 }
 
 .benefit-card h3 {
@@ -309,9 +343,20 @@
   z-index: 2;
 }
 
-.step:hover .step-number {
-  background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
-  transform: scale(1.05);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .step:hover .step-number {
+    background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
+    transform: scale(1.05);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .step:active .step-number {
+    background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
+    transform: none;
+  }
 }
 
 .step h3 {
@@ -388,12 +433,6 @@
   box-shadow: 0 5px 15px rgba(255, 58, 58, 0.3);
 }
 
-.cta-primary:hover {
-  background-color: #ff6b6b;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 58, 58, 0.4);
-}
-
 .cta-secondary {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -406,10 +445,34 @@
   transition: all 0.3s ease;
 }
 
-.cta-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  transform: translateY(-3px);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .cta-primary:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 58, 58, 0.4);
+  }
+
+  .cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: translateY(-3px);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .cta-primary:active {
+    background-color: #ff6b6b;
+    transform: none;
+    box-shadow: 0 5px 15px rgba(255, 58, 58, 0.3);
+  }
+
+  .cta-secondary:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: none;
+  }
 }
 
 /* Mobile Responsive */

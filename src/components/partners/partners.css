@@ -161,7 +161,7 @@
 }
 
 .service-card:hover .service-icon {
-  color: #ff3a3a !important;
+      color: #ff3a3a !important;
   transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
@@ -225,14 +225,30 @@
   transform-origin: left;
 }
 
-.benefit-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .benefit-card:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
-.benefit-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .benefit-card:active {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .benefit-card:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
 .benefit-icon {
@@ -252,10 +268,22 @@
   background-color: transparent !important;
 }
 
-.benefit-card:hover .benefit-icon {
-  color: #ff3a3a !important;
-  transform: scale(1.05) !important;
-  transition: all 0.3s ease !important;
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .benefit-card:hover .benefit-icon {
+    color: #ff3a3a !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+/* Mobile - touch effects without rotation */
+@media screen and (max-width: 768px) {
+  .benefit-card:active .benefit-icon {
+    color: #ff3a3a !important;
+    transform: none !important;
+    transition: all 0.3s ease !important;
+  }
 }
 
 .benefit-card h3 {
@@ -322,14 +350,30 @@
   transform-origin: left;
 }
 
-.logo-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .logo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .logo-item:hover::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
-.logo-item:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .logo-item:active {
+    transform: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo-item:active::before {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, #ff3a3a, #ff6b6b);
+  }
 }
 
 .logo-item img {
@@ -399,7 +443,7 @@
 }
 
 .cta-primary {
-  background-color: #ff3a3a;
+      background-color: #ff3a3a;
   color: #ffffff;
   font-weight: 600;
   font-size: 1rem;
@@ -411,7 +455,7 @@
 }
 
 .cta-primary:hover {
-  background-color: #ff6b6b;
+  background-color: #ff8ba7;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(255, 58, 58, 0.4);
 }

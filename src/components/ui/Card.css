@@ -51,9 +51,20 @@
   border: 1px solid #f3f4f6;
 }
 
-.card--testimonial:hover {
-  border-color: #ff3a3a;
-  box-shadow: 0 20px 25px -5px rgba(255, 58, 58, 0.1), 0 10px 10px -5px rgba(255, 58, 58, 0.04);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .card--testimonial:hover {
+    border-color: #ff3a3a;
+    box-shadow: 0 20px 25px -5px rgba(255, 58, 58, 0.1), 0 10px 10px -5px rgba(255, 58, 58, 0.04);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .card--testimonial:active {
+    border-color: #ff3a3a;
+    box-shadow: 0 4px 6px -1px rgba(255, 58, 58, 0.1), 0 2px 4px -1px rgba(255, 58, 58, 0.06);
+  }
 }
 
 .card--glass {
@@ -159,9 +170,20 @@
   transition: all 0.3s ease;
 }
 
-.card:hover .card__icon {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px 0 rgba(22, 35, 77, 0.35);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .card:hover .card__icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px 0 rgba(22, 35, 77, 0.35);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .card:active .card__icon {
+    transform: none;
+    box-shadow: 0 4px 14px 0 rgba(22, 35, 77, 0.25);
+  }
 }
 
 .card__icon svg,
@@ -176,8 +198,18 @@
   background: linear-gradient(135deg, #16234d 0%, #293f78 100%);
 }
 
-.card--service:hover .card__icon {
-  background: linear-gradient(135deg, #ff3a3a 0%, #ff6b6b 100%);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .card--service:hover .card__icon {
+    background: linear-gradient(135deg, #ff3a3a 0%, #ff6b6b 100%);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .card--service:active .card__icon {
+    background: linear-gradient(135deg, #ff3a3a 0%, #ff6b6b 100%);
+  }
 }
 
 /* Testimonial Card Specific Styles */
@@ -232,11 +264,6 @@
   margin-top: 0.75rem;
 }
 
-.card__link:hover {
-  color: #ff3a3a;
-  transform: translateX(4px);
-}
-
 .card__link svg {
   width: 1rem;
   height: 1rem;
@@ -244,8 +271,28 @@
   transition: transform 0.2s ease;
 }
 
-.card__link:hover svg {
-  transform: translateX(2px);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .card__link:hover {
+    color: #ff3a3a;
+    transform: translateX(4px);
+  }
+
+  .card__link:hover svg {
+    transform: translateX(2px);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .card__link:active {
+    color: #ff3a3a;
+    transform: none;
+  }
+
+  .card__link:active svg {
+    transform: none;
+  }
 }
 
 /* Feature Lists in Cards */

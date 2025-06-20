@@ -68,10 +68,22 @@
   box-shadow: 0 4px 14px 0 rgba(255, 58, 58, 0.25);
 }
 
-.btn--accent:hover:not(:disabled) {
-  background: linear-gradient(135deg, #ed1515 0%, #ff3a3a 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px 0 rgba(255, 58, 58, 0.35);
+/* Desktop hover effects - only on large screens */
+@media screen and (min-width: 769px) {
+  .btn--accent:hover:not(:disabled) {
+    background: linear-gradient(135deg, #ed1515 0%, #ff3a3a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px 0 rgba(255, 58, 58, 0.35);
+  }
+}
+
+/* Mobile - touch effects without complex transforms */
+@media screen and (max-width: 768px) {
+  .btn--accent:active:not(:disabled) {
+    background: linear-gradient(135deg, #ed1515 0%, #ff3a3a 100%);
+    transform: none;
+    box-shadow: 0 4px 14px 0 rgba(255, 58, 58, 0.25);
+  }
 }
 
 .btn--outline {
@@ -165,9 +177,28 @@
   animation: spin 0.8s linear infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+/* Desktop rotation animation - only on large screens */
+@media screen and (min-width: 769px) {
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Mobile - static spinner */
+@media screen and (max-width: 768px) {
+  @keyframes spin {
+    to {
+      transform: none;
+    }
+  }
+  
+  .spinner {
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: none !important;
   }
 }
 
