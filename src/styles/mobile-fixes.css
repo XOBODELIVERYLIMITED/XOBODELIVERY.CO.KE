@@ -447,19 +447,20 @@ iframe {
     transition: all 0.3s ease !important;
   }
   
-  .standard-card:hover .standard-icon,
-  .value-card:hover .value-icon,
-  .benefit-card:hover .benefit-icon,
-  .service-card:hover .service-icon,
-  .feature-card:hover .feature-icon,
-  .contact-card:hover .contact-icon,
-  .requirement-card:hover .requirement-icon,
-  .solution-card:hover .solution-icon,
-  .highlight-card:hover .highlight-icon-container,
-  .intro-card:hover .intro-card-icon {
-    color: #ff3a3a !important; /* Red hover color */
+  /* Touch interactions for mobile - convert hover to active */
+  .standard-card:active .standard-icon,
+  .value-card:active .value-icon,
+  .benefit-card:active .benefit-icon,
+  .service-card:active .service-icon,
+  .feature-card:active .feature-icon,
+  .contact-card:active .contact-icon,
+  .requirement-card:active .requirement-icon,
+  .solution-card:active .solution-icon,
+  .highlight-card:active .highlight-icon-container,
+  .intro-card:active .intro-card-icon {
+    color: #ff3a3a !important; /* Red touch color */
     transform: rotateY(360deg) !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.2s ease !important;
   }
   
   /* Mobile button styles - Blue to Red */
@@ -471,12 +472,14 @@ iframe {
     transition: all 0.3s ease !important;
   }
   
-  .mobile-button:hover,
-  .cta-primary:hover,
-  .hero-button.primary:hover {
+  /* Touch interactions for mobile buttons */
+  .mobile-button:active,
+  .cta-primary:active,
+  .hero-button.primary:active {
     background-color: #ff3a3a !important;
     color: white !important;
-    transform: translateY(-2px) !important;
+    transform: scale(0.95) !important;
+    transition: all 0.1s ease !important;
   }
   
   /* Mobile link styles - Blue to Red */
@@ -487,10 +490,13 @@ iframe {
     transition: all 0.3s ease !important;
   }
   
-  .mobile-link:hover,
-  .service-link:hover,
-  .contact-link:hover {
+  /* Touch interactions for mobile links */
+  .mobile-link:active,
+  .service-link:active,
+  .contact-link:active {
     color: #ff3a3a !important;
+    opacity: 0.8 !important;
+    transition: all 0.1s ease !important;
   }
   
   /* Mobile section titles */
@@ -549,17 +555,18 @@ iframe {
     margin-bottom: 12px !important;
   }
   
-  /* Ensure all cards maintain blue-to-red pattern on small screens */
-  .standard-card:hover .standard-icon,
-  .value-card:hover .value-icon,
-  .benefit-card:hover .benefit-icon,
-  .service-card:hover .service-icon,
-  .feature-card:hover .feature-icon,
-  .contact-card:hover .contact-icon,
-  .requirement-card:hover .requirement-icon,
-  .solution-card:hover .solution-icon {
+  /* Ensure all cards maintain blue-to-red pattern on small screens with touch */
+  .standard-card:active .standard-icon,
+  .value-card:active .value-icon,
+  .benefit-card:active .benefit-icon,
+  .service-card:active .service-icon,
+  .feature-card:active .feature-icon,
+  .contact-card:active .contact-icon,
+  .requirement-card:active .requirement-icon,
+  .solution-card:active .solution-icon {
     color: #ff3a3a !important;
-    transform: rotateY(360deg) !important;
+    transform: rotateY(360deg) scale(1.1) !important;
+    transition: all 0.2s ease !important;
   }
 }
 
@@ -582,9 +589,10 @@ iframe {
     margin-bottom: 10px !important;
   }
   
-  .mobile-card:hover .mobile-icon {
+  .mobile-card:active .mobile-icon {
     color: #ff3a3a !important;
-    transform: rotateY(360deg) !important;
+    transform: rotateY(360deg) scale(1.1) !important;
+    transition: all 0.2s ease !important;
   }
 }
 
@@ -628,9 +636,10 @@ iframe {
     color: #16234d !important;
   }
   
-  .mobile-card:hover .mobile-icon-landscape {
+  .mobile-card:active .mobile-icon-landscape {
     color: #ff3a3a !important;
-    transform: rotateY(360deg) !important;
+    transform: rotateY(360deg) scale(1.1) !important;
+    transition: all 0.2s ease !important;
   }
 }
 
@@ -691,9 +700,12 @@ iframe {
     transition: color 0.3s ease !important;
   }
   
-  .mobile-nav-link:hover,
+  .mobile-nav-link:active,
   .mobile-nav-link.active {
     color: #ff3a3a !important;
+    font-weight: 600 !important;
+    transform: scale(0.98) !important;
+    transition: all 0.1s ease !important;
   }
   
   .mobile-nav-button {
@@ -1442,5 +1454,696 @@ iframe {
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+/* ===================================
+   RESTORED DESIGN ELEMENTS
+   Visual design restored without conflicting with mobile fixes
+   =================================== */
+
+/* Primary and Secondary Button Colors - Restored */
+@media screen and (max-width: 768px) {
+  /* Ensure primary buttons maintain their design colors */
+  .hero-button.primary,
+  .cta-primary,
+  .mobile-button.primary {
+    background-color: #ff3a3a !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
+  
+  /* Ensure secondary buttons maintain their design colors */
+  .hero-button.secondary,
+  .cta-secondary,
+  .mobile-button.secondary {
+    background-color: transparent !important;
+    color: #16234d !important;
+    border: 2px solid #16234d !important;
+  }
+  
+  /* Service intro secondary button special styling */
+  .service-intro .cta-secondary {
+    background-color: transparent !important;
+    color: #16234d !important;
+    border: 2px solid #16234d !important;
+  }
+  
+  /* Hero section secondary buttons on dark backgrounds */
+  .hero-section .hero-button.secondary,
+  .dark-section .cta-secondary {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+/* Desktop Hover Effects - Restored (non-conflicting) */
+@media screen and (min-width: 769px) {
+  /* Service cards hover effects for desktop */
+  .service-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .service-card:hover .service-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Feature and benefit cards hover effects for desktop */
+  .feature-card:hover,
+  .benefit-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Button hover effects for desktop */
+  .hero-button.primary:hover,
+  .cta-primary:hover {
+    background-color: #e63333 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(255, 58, 58, 0.3) !important;
+  }
+  
+  .hero-button.secondary:hover,
+  .cta-secondary:hover {
+    background-color: #16234d !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(22, 35, 77, 0.3) !important;
+  }
+}
+
+/* Blue to Red Design Pattern - Enhanced and Restored */
+@media screen and (max-width: 768px) {
+  /* Icons and elements start blue, turn red on interaction */
+  .standard-icon,
+  .value-icon,
+  .benefit-icon,
+  .service-icon,
+  .feature-icon,
+  .contact-icon,
+  .requirement-icon,
+  .solution-icon,
+  .highlight-icon {
+    color: #16234d !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* On active/touch for mobile devices */
+  .standard-card:active .standard-icon,
+  .value-card:active .value-icon,
+  .benefit-card:active .benefit-icon,
+  .service-card:active .service-icon,
+  .feature-card:active .feature-icon,
+  .contact-card:active .contact-icon,
+  .requirement-card:active .requirement-icon,
+  .solution-card:active .solution-icon,
+  .highlight-card:active .highlight-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) scale(1.1) !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  /* Links and navigation color pattern */
+  .mobile-link,
+  .service-link,
+  .contact-link,
+  .footer-link {
+    color: #16234d !important;
+    transition: color 0.3s ease !important;
+  }
+  
+  .mobile-link:active,
+  .service-link:active,
+  .contact-link:active,
+  .footer-link:active {
+    color: #ff3a3a !important;
+  }
+}
+
+/* Section Tags and Typography - Restored Design */
+@media screen and (max-width: 768px) {
+  /* Section tags with proper red accent styling */
+  .section-tag,
+  .mobile-tag {
+    display: inline-block !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #ff3a3a !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 15px !important;
+    background: rgba(255, 58, 58, 0.1) !important;
+    padding: 8px 20px !important;
+    border-radius: 20px !important;
+    border: none !important;
+    text-decoration: none !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Section titles with blue color */
+  .section-title,
+  .mobile-title {
+    color: #16234d !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Headings and text hierarchy */
+  .mobile-heading {
+    color: #16234d !important;
+    font-weight: 600 !important;
+  }
+  
+  .mobile-subheading {
+    color: #16234d !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* Form Elements Design - Restored */
+@media screen and (max-width: 768px) {
+  /* Form inputs with blue to red focus */
+  .mobile-form-input,
+  .form-input,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    border: 2px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    transition: all 0.2s ease !important;
+    background-color: white !important;
+  }
+  
+  .mobile-form-input:focus,
+  .form-input:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #ff3a3a !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(255, 58, 58, 0.1) !important;
+    transform: scale(1.01) !important;
+  }
+  
+  /* Form buttons follow button pattern */
+  .mobile-form-button,
+  form button[type="submit"],
+  .contact-submit {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    min-height: 48px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-form-button:active,
+  form button[type="submit"]:active,
+  .contact-submit:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.98) !important;
+    box-shadow: 0 3px 10px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Navigation Design Pattern - Enhanced */
+@media screen and (max-width: 768px) {
+  /* Navigation buttons with proper touch feedback */
+  .mobile-nav-button,
+  .nav-btn,
+  .menu-toggle {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-weight: 600 !important;
+    min-height: 48px !important;
+    min-width: 48px !important;
+    transition: all 0.2s ease !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-nav-button:active,
+  .nav-btn:active,
+  .menu-toggle:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 8px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Navigation links */
+  .mobile-nav-link {
+    color: #16234d !important;
+    font-weight: 500 !important;
+    padding: 12px 16px !important;
+    display: block !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    margin: 4px 0 !important;
+    transition: all 0.2s ease !important;
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-nav-link:active,
+  .mobile-nav-link.active {
+    background-color: rgba(255, 58, 58, 0.1) !important;
+    color: #ff3a3a !important;
+    font-weight: 600 !important;
+    transform: scale(0.98) !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Typography and Content - Original Design Colors */
+@media screen and (max-width: 768px) {
+  /* Section tags - red accent pattern */
+  .section-tag,
+  .mobile-tag {
+    display: inline-block !important;
+    background: rgba(255, 58, 58, 0.1) !important;
+    color: #ff3a3a !important;
+    padding: 8px 20px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 16px !important;
+    border: none !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Headings - blue color pattern */
+  .section-title,
+  .mobile-title,
+  .mobile-heading {
+    color: #16234d !important;
+    font-weight: 700 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .mobile-subheading {
+    color: #16234d !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Text content */
+  .mobile-text,
+  .section-description {
+    color: #555 !important;
+    line-height: 1.6 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* Container and Layout - Original Mobile Design */
+@media screen and (max-width: 768px) {
+  /* Mobile containers */
+  .mobile-container,
+  .section-container {
+    padding: 2rem 1rem !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Mobile sections */
+  .mobile-section {
+    padding: 3rem 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Grid layouts for mobile */
+  .mobile-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Card containers */
+  .cards-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+}
+
+/* ===================================
+   ORIGINAL MOBILE DESIGN TOUCH PATTERNS
+   Complete blue-to-red touch interactions for all mobile design elements
+   =================================== */
+
+/* Mobile Card Touch Interactions - Original Design Pattern */
+@media screen and (max-width: 768px) {
+  /* Cards get proper touch feedback */
+  .standard-card,
+  .value-card,
+  .benefit-card,
+  .service-card,
+  .feature-card,
+  .contact-card,
+  .requirement-card,
+  .solution-card,
+  .highlight-card,
+  .intro-card {
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.1) !important;
+  }
+  
+  /* Card touch feedback */
+  .standard-card:active,
+  .value-card:active,
+  .benefit-card:active,
+  .service-card:active,
+  .feature-card:active,
+  .contact-card:active,
+  .requirement-card:active,
+  .solution-card:active,
+  .highlight-card:active,
+  .intro-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 4px 12px rgba(22, 35, 77, 0.15) !important;
+    background-color: rgba(22, 35, 77, 0.02) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Enhanced icon pattern for all card types */
+  .standard-card:active .standard-icon,
+  .value-card:active .value-icon,
+  .benefit-card:active .benefit-icon,
+  .service-card:active .service-icon,
+  .feature-card:active .feature-icon,
+  .contact-card:active .contact-icon,
+  .requirement-card:active .requirement-icon,
+  .solution-card:active .solution-icon,
+  .highlight-card:active .highlight-icon,
+  .intro-card:active .intro-card-icon,
+  .mobile-card:active .mobile-icon {
+    color: #ff3a3a !important;
+    transform: rotateY(360deg) scale(1.2) !important;
+    transition: all 0.25s ease !important;
+  }
+}
+
+/* Button Original Design Patterns - Enhanced */
+@media screen and (max-width: 768px) {
+  /* Primary buttons - blue to red pattern */
+  .mobile-button,
+  .cta-primary,
+  .hero-button.primary,
+  .submit-button,
+  .action-button {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 12px 24px !important;
+    transition: all 0.2s ease !important;
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-button:active,
+  .cta-primary:active,
+  .hero-button.primary:active,
+  .submit-button:active,
+  .action-button:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 8px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Secondary buttons - blue border to red fill pattern */
+  .cta-secondary,
+  .hero-button.secondary,
+  .outline-button {
+    background-color: transparent !important;
+    color: #16234d !important;
+    border: 2px solid #16234d !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 10px 22px !important;
+    transition: all 0.2s ease !important;
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .cta-secondary:active,
+  .hero-button.secondary:active,
+  .outline-button:active {
+    background-color: #ff3a3a !important;
+    color: white !important;
+    border-color: #ff3a3a !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 8px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Link Design Patterns - Blue to Red */
+@media screen and (max-width: 768px) {
+  .mobile-link,
+  .service-link,
+  .contact-link,
+  .footer-link,
+  .nav-link {
+    color: #16234d !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    padding: 8px 0 !important;
+    display: inline-block !important;
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-link:active,
+  .service-link:active,
+  .contact-link:active,
+  .footer-link:active,
+  .nav-link:active {
+    color: #ff3a3a !important;
+    transform: scale(0.98) !important;
+    opacity: 0.9 !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Form Elements - Original Design Pattern */
+@media screen and (max-width: 768px) {
+  /* Form inputs with blue to red focus */
+  .mobile-form-input,
+  .form-input,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    border: 2px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    transition: all 0.2s ease !important;
+    background-color: white !important;
+  }
+  
+  .mobile-form-input:focus,
+  .form-input:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #ff3a3a !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(255, 58, 58, 0.1) !important;
+    transform: scale(1.01) !important;
+  }
+  
+  /* Form buttons follow button pattern */
+  .mobile-form-button,
+  form button[type="submit"],
+  .contact-submit {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    min-height: 48px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-form-button:active,
+  form button[type="submit"]:active,
+  .contact-submit:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.98) !important;
+    box-shadow: 0 3px 10px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Navigation Design Pattern - Enhanced */
+@media screen and (max-width: 768px) {
+  /* Navigation buttons with proper touch feedback */
+  .mobile-nav-button,
+  .nav-btn,
+  .menu-toggle {
+    background-color: #16234d !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-weight: 600 !important;
+    min-height: 48px !important;
+    min-width: 48px !important;
+    transition: all 0.2s ease !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-nav-button:active,
+  .nav-btn:active,
+  .menu-toggle:active {
+    background-color: #ff3a3a !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 8px rgba(255, 58, 58, 0.3) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Navigation links */
+  .mobile-nav-link {
+    color: #16234d !important;
+    font-weight: 500 !important;
+    padding: 12px 16px !important;
+    display: block !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    margin: 4px 0 !important;
+    transition: all 0.2s ease !important;
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-nav-link:active,
+  .mobile-nav-link.active {
+    background-color: rgba(255, 58, 58, 0.1) !important;
+    color: #ff3a3a !important;
+    font-weight: 600 !important;
+    transform: scale(0.98) !important;
+    transition: all 0.1s ease !important;
+  }
+}
+
+/* Typography and Content - Original Design Colors */
+@media screen and (max-width: 768px) {
+  /* Section tags - red accent pattern */
+  .section-tag,
+  .mobile-tag {
+    display: inline-block !important;
+    background: rgba(255, 58, 58, 0.1) !important;
+    color: #ff3a3a !important;
+    padding: 8px 20px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 16px !important;
+    border: none !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Headings - blue color pattern */
+  .section-title,
+  .mobile-title,
+  .mobile-heading {
+    color: #16234d !important;
+    font-weight: 700 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .mobile-subheading {
+    color: #16234d !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Text content */
+  .mobile-text,
+  .section-description {
+    color: #555 !important;
+    line-height: 1.6 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* Container and Layout - Original Mobile Design */
+@media screen and (max-width: 768px) {
+  /* Mobile containers */
+  .mobile-container,
+  .section-container {
+    padding: 2rem 1rem !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Mobile sections */
+  .mobile-section {
+    padding: 3rem 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Grid layouts for mobile */
+  .mobile-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Card containers */
+  .cards-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
   }
 } 
