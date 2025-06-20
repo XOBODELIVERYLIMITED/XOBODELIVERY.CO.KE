@@ -241,8 +241,8 @@ function DriverPrivacy() {
             <h2>Ready to Start?</h2>
             <p>Drive with confidence in your privacy</p>
             <div className="cta-buttons">
-              <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer" className="cta-primary">
-                <FaTruck className="button-icon" /><span>Join As Driver</span>
+              <a href="https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="cta-primary">
+                <FaTruck className="button-icon" /><span>Apply as Driver</span>
               </a>
               <Link to="/contact" className="cta-secondary">
                 <FaEnvelope className="button-icon" /><span>Contact Us</span>

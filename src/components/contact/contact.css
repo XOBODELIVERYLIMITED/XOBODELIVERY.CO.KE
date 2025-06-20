@@ -415,16 +415,17 @@
   margin-top: 2rem;
 }
 
-.operating-hours h3 {
-  font-size: 1.25rem;
-  color: var(--primary-color);
-  margin-bottom: 1.25rem;
-  font-weight: 600;
-}
+  .operating-hours h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+  }
 
-.operating-hours ul {
-  list-style: none;
-}
+  .operating-hours ul {
+    list-style: none;
+  }
 
 .operating-hours li {
   display: flex;
@@ -796,18 +797,135 @@
     font-size: 0.95rem;
   }
 
+  /* Enhanced mobile contact info styling */
+  .contact-info {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .contact-info p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+
+  .contact-methods {
+    margin: 0 -1.5rem;
+    padding: 0;
+    width: calc(100% + 3rem);
+  }
+
+  .operating-hours {
+    margin: 1.5rem -1.5rem 0 -1.5rem;
+    width: calc(100% + 3rem);
+    border-radius: 0;
+    padding: 1.5rem 2rem;
+  }
+
+  .contact-methods {
+    gap: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    width: 100%;
+  }
+
   .contact-method {
-    padding: 0.85rem;
+    padding: 1.25rem 2rem;
+    border-radius: 0;
+    background-color: var(--white);
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 80px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    margin: 0;
+  }
+
+  .contact-method:first-child {
+    border-top: 1px solid var(--border-light);
+  }
+
+  .contact-method:last-child {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .contact-method:hover {
+    transform: none;
+    background-color: rgba(255, 58, 58, 0.02);
+    border-left: 4px solid var(--accent-color);
+    padding-left: calc(2rem - 4px);
+  }
+
+  /* Touch interaction for mobile contact methods */
+  @media (hover: none) and (pointer: coarse) {
+    .contact-method:hover {
+      transform: none;
+      background-color: transparent;
+      border-left: none;
+      padding-left: 2rem;
+    }
+    
+    .contact-method:active {
+      background-color: rgba(255, 58, 58, 0.05);
+      border-left: 4px solid var(--accent-color);
+      padding-left: calc(2rem - 4px);
+    }
+
+    .contact-method:active .contact-icon {
+      background: rgba(255, 58, 58, 0.15);
+      color: var(--accent-color);
+    }
   }
 
   .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    background: rgba(22, 35, 77, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .contact-method:hover .contact-icon {
+    background: rgba(255, 58, 58, 0.1);
+    color: var(--accent-color);
+    transform: scale(1.05);
   }
 
   .contact-details {
-    font-size: 0.9rem;
+    flex: 1;
+  }
+
+  .contact-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .contact-details a:hover {
+    color: var(--accent-color);
   }
 
   .form-group input,
@@ -883,21 +1001,61 @@
     margin-bottom: 1.5rem;
   }
   
-  .contact-info h2,
-  .form-header h2 {
-    font-size: 1.6rem;
-  }
-  
-  .contact-details h3 {
-    font-size: 1.1rem;
-  }
-  
+  /* Enhanced operating hours mobile styling */
   .operating-hours {
-    padding: 1.25rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
   
   .operating-hours h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.75rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .operating-hours h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+    border-radius: 1px;
+  }
+
+  .operating-hours li {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .operating-hours li:last-child {
+    border-bottom: none;
+  }
+
+  .operating-hours li span {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .form-header h2 {
+    font-size: 1.6rem;
   }
   
   .section-title {
@@ -910,13 +1068,96 @@
     margin-top: 60px;
   }
 
-  .contact-info,
+  .contact-info {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    background-color: var(--light-bg);
+  }
+
   .contact-form-container {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
     border-radius: var(--radius-md);
   }
 
-  .contact-info h2,
+  .contact-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-methods {
+    gap: 0;
+    margin: 0 -1.25rem 1.5rem -1.25rem;
+    padding: 0;
+    width: calc(100% + 2.5rem);
+  }
+
+  .operating-hours {
+    margin: 1.25rem -1.25rem 0 -1.25rem;
+    width: calc(100% + 2.5rem);
+    border-radius: 0;
+    padding: 1.25rem 2rem;
+  }
+
+  .contact-method {
+    padding: 1rem 2rem;
+    min-height: 70px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    width: 100%;
+    margin: 0;
+  }
+
+  .contact-method:first-child {
+    border-top: 1px solid var(--border-light);
+  }
+
+  .contact-method:hover {
+    background-color: rgba(255, 58, 58, 0.02);
+    border-left: 4px solid var(--accent-color);
+    padding-left: calc(2rem - 4px);
+  }
+
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .contact-details h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 0.9rem;
+  }
+
+
+
+  .operating-hours h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .operating-hours ul {
+    list-style: none;
+  }
+
+  .operating-hours li {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+
   .form-header h2 {
     font-size: 1.4rem;
   }
@@ -1064,6 +1305,100 @@
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
   }
+
+  /* Enhanced contact info for very small screens */
+  .contact-info {
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.25rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius-md);
+  }
+
+  .contact-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .contact-methods {
+    gap: 0;
+    margin: 0 -1rem 1.25rem -1rem;
+    padding: 0;
+    width: calc(100% + 2rem);
+  }
+
+  .operating-hours {
+    margin: 1rem -1rem 0 -1rem;
+    width: calc(100% + 2rem);
+    border-radius: 0;
+    padding: 1rem 2rem;
+  }
+
+  .contact-method {
+    padding: 0.85rem 2rem;
+    min-height: 65px;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    width: 100%;
+    margin: 0;
+  }
+
+  .contact-method:first-child {
+    border-top: 1px solid var(--border-light);
+  }
+
+  .contact-method:hover {
+    background-color: rgba(255, 58, 58, 0.02);
+    border-left: 4px solid var(--accent-color);
+    padding-left: calc(2rem - 4px);
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .contact-details h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+
+
+  .operating-hours h3 {
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .operating-hours ul {
+    list-style: none;
+  }
+
+  .operating-hours h3::after {
+    width: 30px;
+  }
+
+  .operating-hours li {
+    padding: 0.65rem 0;
+    font-size: 0.85rem;
+  }
   
   /* Mobile-specific phone input styling - very small screens */
   .phone-input .react-tel-input .form-control {
@@ -1151,12 +1486,108 @@
     width: 45px !important;
   }
   
-  .contact-info, 
+  /* Optimized contact info for extra small screens */
+  .contact-info {
+    padding: 1rem 0.75rem;
+    margin-bottom: 1rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius-md);
+  }
+
   .contact-form-container {
-    padding: 1.25rem;
+    padding: 1.25rem 0.75rem;
   }
   
-  .contact-info h2,
+  .contact-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .contact-methods {
+    gap: 0;
+    margin: 0 -0.75rem 1rem -0.75rem;
+    padding: 0;
+    width: calc(100% + 1.5rem);
+  }
+
+  .operating-hours {
+    margin: 0.85rem -0.75rem 0 -0.75rem;
+    width: calc(100% + 1.5rem);
+    border-radius: 0;
+    padding: 0.85rem 2rem;
+  }
+
+  .contact-method {
+    padding: 0.75rem 2rem;
+    min-height: 60px;
+    gap: 0.75rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    width: 100%;
+    margin: 0;
+  }
+
+  .contact-method:first-child {
+    border-top: 1px solid var(--border-light);
+  }
+
+  .contact-method:hover {
+    background-color: rgba(255, 58, 58, 0.02);
+    border-left: 4px solid var(--accent-color);
+    padding-left: calc(2rem - 4px);
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .contact-details h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+
+  
+  .operating-hours h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .operating-hours ul {
+    list-style: none;
+  }
+
+  .operating-hours h3::after {
+    width: 25px;
+    height: 1.5px;
+  }
+
+  .operating-hours li {
+    padding: 0.55rem 0;
+    font-size: 0.8rem;
+  }
+
+  .operating-hours li span {
+    font-size: 0.8rem;
+  }
+  
   .form-header h2 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
@@ -1172,19 +1603,6 @@
   
   .form-group label {
     margin-bottom: 0.4rem;
-  }
-  
-  .contact-details h3 {
-    font-size: 0.95rem;
-  }
-  
-  .operating-hours {
-    padding: 1rem;
-  }
-  
-  .operating-hours h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
   }
   
   .benefit-card {

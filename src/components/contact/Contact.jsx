@@ -288,8 +288,7 @@ const Contact = () => {
                 <h3>Operating Hours</h3>
                 <ul>
                   <li><span>Monday - Friday:</span> 8:00 AM - 8:00 PM</li>
-                  <li><span>Saturday:</span> 9:00 AM - 6:00 PM</li>
-                  <li><span>Sunday:</span> 10:00 AM - 4:00 PM</li>
+                  <li><span>Saturday:</span> 9:00 AM - 1:00 PM</li>
                 </ul>
               </div>
             </div>

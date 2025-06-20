@@ -75,7 +75,7 @@ const FAQ = () => {
     {
       "id": 10,
       "question": "How can I become a delivery partner?",
-      "answer": "Apply as individual driver or company/fleet. Contact us at <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a> with required documents. We'll verify documents and guide you through onboarding.",
+      "answer": "Download our driver app from <a href='https://play.google.com/store/apps/details?id=com.xobbo.driver&pcampaignid=web_share' target='_blank' rel='noopener noreferrer' style='color: #16234d; font-weight: 600; text-decoration: underline;'>Google Play Store</a> to apply as individual driver or company/fleet. You can also contact us at <a href='tel:+254799396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0799 396000</a> or <a href='tel:+254739396000' style='color: #16234d; font-weight: 600; text-decoration: underline;'>0739 396000</a> with required documents. We'll verify documents and guide you through onboarding.",
       "category": "partners"
     },
 
