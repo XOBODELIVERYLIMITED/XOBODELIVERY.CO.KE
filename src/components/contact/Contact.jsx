@@ -10,8 +10,7 @@ import {
   FaComments, 
   FaCheck, 
   FaClock, 
-  FaShieldAlt, 
-  FaStar
+  FaShieldAlt
 } from 'react-icons/fa';
 import { scrollToTop } from '../common/ScrollToTop';
 import SecurityUtils from '../../utils/security';
@@ -161,20 +160,7 @@ const Contact = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Jane Doe",
-      position: "Business Owner",
-      quote: "XOBO team was incredibly responsive. Their support helped set up my delivery account quickly!",
-      rating: 5
-    },
-    {
-      name: "John Smith",
-      position: "Restaurant Manager",
-      quote: "I received detailed information about their delivery service the same day I inquired.",
-      rating: 5
-    }
-  ];
+
 
   return (
     <div className="contact-page">
@@ -448,40 +434,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="testimonial-section">
-        <div className="container">
-          <div className="section-intro">
-            <span className="section-tag">Testimonials</span>
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Feedback from our satisfied clients</p>
-          </div>
-          
-          <div className="testimonial-grid">
-            {testimonials.map((testimonial, index) => (
-              <div className="testimonial-card" key={index}>
-                <div className="testimonial-content">
-                  <div className="testimonial-rating">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                  </div>
-                  <p className="testimonial-quote">"{testimonial.quote}"</p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                    <div className="author-info">
-                      <h4>{testimonial.name}</h4>
-                      <p>{testimonial.position}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Location Section */}
       <section className="location-section">

@@ -278,7 +278,7 @@
 
 .benefit-card:hover .benefit-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .benefit-card h3 {

@@ -668,7 +668,7 @@ a.login-btn:focus {
 
 .highlight-card:hover .highlight-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .card-content {
@@ -707,7 +707,7 @@ a.login-btn:focus {
   content: counter(feature-counter, decimal-leading-zero);
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0.1rem;
   width: 2rem;
   height: 2rem;
   background: var(--primary-color);
@@ -912,7 +912,7 @@ a.login-btn:focus {
 
 .benefit-card:hover .benefit-icon {
   color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -1540,15 +1540,17 @@ a.login-btn:focus {
   .feature-list li {
     font-size: 0.95rem;
     margin-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 2.2rem;
     line-height: 1.5;
     position: relative;
   }
   
   .feature-list li::before {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     font-size: 0.7rem;
+    top: 0.05rem;
+    left: 0;
   }
 }
 
@@ -1645,8 +1647,16 @@ a.login-btn:focus {
     margin-bottom: 1.25rem;
     color: #555;
     line-height: 1.6;
-    padding-left: 2.5rem;
+    padding-left: 2.8rem;
     position: relative;
+  }
+  
+  .feature-content .feature-list li::before {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.75rem;
+    top: 0.1rem;
+    left: 0;
   }
   
   .feature-link {
@@ -1975,7 +1985,7 @@ a.login-btn:focus {
   .feature-content .feature-list li {
     font-size: 0.9rem;
     margin-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 2.3rem;
     line-height: 1.5;
   }
   
@@ -1987,11 +1997,11 @@ a.login-btn:focus {
   }
   
   .feature-content .feature-list li::before {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
     font-size: 0.7rem;
     left: 0;
-    top: 0.05rem;
+    top: 0.1rem;
   }
   
   /* Customer logos smaller */
@@ -2063,9 +2073,17 @@ a.login-btn:focus {
   
   .feature-list li {
     font-size: 0.9rem;
-    padding-left: 2rem;
+    padding-left: 2.3rem;
     margin-bottom: 1rem;
     line-height: 1.5;
+  }
+  
+  .feature-list li::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    top: 0.1rem;
+    left: 0;
   }
   
   .feature-content .feature-list li {
@@ -2220,7 +2238,7 @@ a.login-btn:focus {
   .home .benefit-card:hover .benefit-icon,
   .home .service-card:hover .service-icon {
     color: #ff3a3a !important;
-    transform: rotateY(360deg) !important;
+    transform: scale(1.05) !important;
     transition: all 0.3s ease !important;
   }
   
@@ -2497,19 +2515,34 @@ a.login-btn:focus {
     align-items: center !important;
     justify-content: center !important;
     border-radius: 50% !important;
-    background-color: #f5f7fa !important;
-    color: #16234d !important;
-    font-size: 1.1rem !important;
-    border: 1px solid #e5e7eb !important;
-    transition: all 0.3s ease !important;
+    background-color: transparent !important;
+    border: 2px solid #e5e7eb !important;
+    font-size: 1.2rem !important;
     text-decoration: none !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Individual social media brand colors */
+  .social-icons a[href*="twitter"] {
+    color: #1DA1F2 !important;
+  }
+  
+  .social-icons a[href*="facebook"] {
+    color: #1877F2 !important;
+  }
+  
+  .social-icons a[href*="instagram"] {
+    color: #E4405F !important;
+  }
+  
+  .social-icons a[href*="youtube"] {
+    color: #FF0000 !important;
   }
   
   .social-icons a:hover {
-    background-color: #16234d !important;
-    color: white !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: currentColor !important;
     transform: scale(1.05) !important;
-    border-color: #16234d !important;
   }
   
   /* Contact Info Section */

@@ -194,7 +194,7 @@
 
 .feature-card:hover .feature-icon {
   color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -253,7 +253,7 @@
 
 .step:hover .step-number {
   background: linear-gradient(135deg, #ff3a3a, #ff6b6b);
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .step h3 {

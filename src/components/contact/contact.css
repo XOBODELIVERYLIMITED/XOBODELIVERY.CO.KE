@@ -279,7 +279,7 @@
 
 .benefit-card:hover .benefit-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .benefit-card h3 {
@@ -626,6 +626,41 @@
   font-size: 0.95rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md) !important;
+  padding-left: 70px !important;
+}
+
+/* Flag container spacing */
+.phone-input .react-tel-input .flag-dropdown {
+  background: #f8f9fa !important;
+  border: 1px solid var(--border-color) !important;
+  border-right: 2px solid #ddd !important;
+  border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+  padding: 0 10px !important;
+  width: 65px !important;
+  height: 50px !important;
+}
+
+.phone-input .react-tel-input .selected-flag {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+}
+
+.phone-input .react-tel-input .selected-flag .flag {
+  margin: 0 !important;
+  width: 20px !important;
+  height: 15px !important;
+}
+
+.phone-input .react-tel-input .selected-flag .dial-code {
+  font-weight: 600 !important;
+  color: #333 !important;
+  font-size: 0.9rem !important;
 }
 
 .submit-button {
@@ -784,6 +819,17 @@
     font-weight: 600;
     font-size: 0.95rem;
   }
+  
+  /* Mobile-specific phone input styling */
+  .phone-input .react-tel-input .form-control {
+    height: 45px !important;
+    padding-left: 65px !important;
+  }
+  
+  .phone-input .react-tel-input .flag-dropdown {
+    height: 45px !important;
+    width: 60px !important;
+  }
 
   .form-group select {
     padding-right: 2.5rem;
@@ -882,6 +928,15 @@
   .submit-button {
     padding: 0.85rem 1.5rem;
     font-size: 0.95rem;
+  }
+  
+  /* Mobile-specific phone input styling - smaller screens */
+  .phone-input .react-tel-input .form-control {
+    padding-left: 60px !important;
+  }
+  
+  .phone-input .react-tel-input .flag-dropdown {
+    width: 55px !important;
   }
   
   .contact-hero-content h1 {
@@ -1010,6 +1065,15 @@
     margin-bottom: 0.75rem;
   }
   
+  /* Mobile-specific phone input styling - very small screens */
+  .phone-input .react-tel-input .form-control {
+    padding-left: 55px !important;
+  }
+  
+  .phone-input .react-tel-input .flag-dropdown {
+    width: 50px !important;
+  }
+  
   .benefits-section {
     padding: 2rem 0;
   }
@@ -1076,6 +1140,15 @@
   .hero-button {
     padding: 0.65rem 1.2rem;
     font-size: 0.85rem;
+  }
+  
+  /* Mobile-specific phone input styling - extra small screens */
+  .phone-input .react-tel-input .form-control {
+    padding-left: 50px !important;
+  }
+  
+  .phone-input .react-tel-input .flag-dropdown {
+    width: 45px !important;
   }
   
   .contact-info, 

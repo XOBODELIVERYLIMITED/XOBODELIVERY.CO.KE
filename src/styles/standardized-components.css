@@ -522,7 +522,7 @@
 .feature-card:hover .feature-icon,
 .highlight-card:hover .highlight-icon-container {
   color: #ff3a3a !important; /* Red hover color */
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 

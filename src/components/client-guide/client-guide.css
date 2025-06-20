@@ -456,7 +456,7 @@
 
 .vehicle-card:hover .vehicle-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .vehicle-header h3 {
@@ -558,7 +558,7 @@
 
 .support-card:hover .support-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .support-card h3 {

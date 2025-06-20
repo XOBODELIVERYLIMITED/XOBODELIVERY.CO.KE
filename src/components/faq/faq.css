@@ -169,7 +169,7 @@
   border-radius: 50%;
   margin-bottom: 1.5rem;
   box-shadow: 0 10px 20px rgba(41, 63, 120, 0.3);
-  animation: pulse 2s infinite;
+  /* Pulse animation removed for better mobile performance */
 }
 
 @keyframes pulse {
@@ -336,7 +336,7 @@
   padding: 2rem;
   text-align: center !important;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  /* Transition removed for better mobile performance */
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -359,15 +359,7 @@
   transform-origin: left;
 }
 
-.faq-feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-md);
-}
-
-.faq-feature-card:hover::before {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
-}
+/* Hover effects removed for better mobile experience */
 
 .feature-icon {
   width: 70px;
@@ -387,11 +379,7 @@
   flex-shrink: 0 !important;
 }
 
-.faq-feature-card:hover .feature-icon {
-  background-color: var(--accent-color);
-  color: var(--white);
-  transform: rotateY(360deg);
-}
+/* Feature icon hover effect removed for better mobile experience */
 
 /* Ensure React icons inside feature-icon are perfectly centered */
 .feature-icon svg,
@@ -453,6 +441,29 @@
   border: 1px solid var(--border-light);
 }
 
+/* Move all arrows to the right edge - simple and direct */
+.faq-container .faq-icon,
+.faq-item .faq-icon,
+.faq-question .faq-icon {
+  position: absolute !important;
+  right: 0.25rem !important; /* Just slightly inset from the very edge */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 100 !important;
+}
+
+.faq-container .faq-icon.open,
+.faq-item .faq-icon.open,
+.faq-question .faq-icon.open {
+  transform: translateY(-50%) rotate(180deg) !important;
+  right: 0.25rem !important;
+}
+
 /* FAQ Categories */
 .faq-categories {
   display: flex;
@@ -477,7 +488,7 @@
   font-weight: 600;
   color: var(--text-color);
   cursor: pointer;
-  transition: var(--transition);
+  /* Transition removed for better mobile performance */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -491,10 +502,7 @@
   min-height: 44px;
 }
 
-.category-tab:hover {
-  background-color: rgba(22, 35, 77, 0.1);
-  transform: translateY(-2px);
-}
+/* Category tab hover effect removed for better mobile experience */
 
 .category-tab.active {
   color: var(--primary-color);
@@ -522,16 +530,13 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: var(--transition);
+  /* Transition removed for better mobile performance */
   background-color: var(--white);
   box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
 }
 
-.faq-item:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-}
+/* FAQ item hover effect removed for better mobile experience */
 
 .faq-item.open {
   box-shadow: var(--shadow-md);
@@ -540,12 +545,12 @@
 
 .faq-question {
   padding: 2rem;
+  padding-right: 3rem; /* Extra space for absolutely positioned arrow */
   background-color: var(--white);
   cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   min-height: 60px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -568,18 +573,19 @@
   color: var(--primary-color);
   margin: 0;
   flex: 1;
-  padding-right: 2rem;
   line-height: 1.4;
+  width: 100%;
 }
 
 .faq-icon {
   color: var(--text-light);
-  transition: var(--transition);
+  font-size: 1.2rem;
+  /* Positioning handled by global override below */
 }
 
 .faq-icon.open {
-  transform: rotate(180deg);
   color: var(--primary-color);
+  /* Positioning handled by global override below */
 }
 
 .faq-answer {
@@ -617,7 +623,7 @@
   padding: 0.25rem 0;
 }
 
-.faq-answer a:hover,
+/* FAQ answer link hover effect removed for better mobile experience */
 .faq-answer a:focus {
   color: var(--primary-light);
   outline: 2px solid var(--primary-color);
@@ -704,16 +710,12 @@
   padding: 0.75rem 2rem;
   border-radius: 8px;
   border: none;
-  transition: all 0.2s ease-in-out;
+  /* Transition removed for better mobile performance */
   text-decoration: none;
   min-height: 44px;
 }
 
-.help-section .cta-primary:hover {
-  background-color: #ff5252;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 58, 58, 0.25);
-}
+/* CTA primary button hover effect removed for better mobile experience */
 
 /* Media Queries */
 @media only screen and (max-width: 992px) {
@@ -740,7 +742,10 @@
   
   .faq-question {
     padding: 1.75rem;
+    padding-right: 2.25rem; /* Consistent space for perfectly aligned arrows */
   }
+  
+  /* FAQ icon positioning handled by global rule with !important */
   
   .faq-answer-content {
     padding: 0 1.75rem 1.75rem;
@@ -787,6 +792,26 @@
   }
 
   /* section-tag mobile styles handled by standardized-components.css */
+  
+  .section-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 90%;
+  }
+  
+  .section-intro {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
 
   .faq-hero {
     padding: 3rem 0;
@@ -834,46 +859,59 @@
   
   .faq-question {
     padding: 1.5rem;
+    padding-right: 2.25rem; /* Consistent space for perfectly aligned arrows */
     min-height: 70px;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
   }
   
   .faq-question h3 {
     font-size: 1.1rem;
     line-height: 1.5;
+    flex: 1;
+    margin: 0;
+    width: 100%;
   }
   
-  .faq-icon {
-    font-size: 1.2rem;
-    min-width: 20px;
-    min-height: 20px;
-  }
+  /* FAQ icon positioning handled by global rule with !important */
   
   .faq-answer-content {
     padding: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
-  /* Remove hover effects on touch devices */
-  @media (hover: none) and (pointer: coarse) {
-    .faq-item:hover {
-      transform: none;
-      box-shadow: var(--shadow-sm);
-    }
-    
-    .category-tab:hover {
-      background-color: transparent;
-      transform: none;
-    }
+  .faq-answer-content p {
+    margin-bottom: 0.75rem;
   }
+  
+  .faq-answer-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Hover effects completely removed for better mobile experience */
   
   .category-tab {
     min-width: 110px;
-    padding: 1rem 1rem;
+    padding: 1rem 0.75rem;
     font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .faq-categories {
     padding: 0 0.5rem;
     gap: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   
   .question-header h3 {
@@ -886,9 +924,9 @@
   }
   
   .faq-features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-    max-width: 600px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 400px;
     margin: 2rem auto 0;
   }
   
@@ -992,21 +1030,22 @@
   
   .faq-question {
     padding: 1.25rem;
+    padding-right: 2.25rem; /* Consistent space for perfectly aligned arrows */
     min-height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
   
   .faq-question h3 {
     font-size: 1.05rem;
     line-height: 1.4;
-    padding-right: 1rem;
+    flex: 1;
+    margin: 0;
+    width: 100%;
   }
   
-  .faq-icon {
-    font-size: 1.1rem;
-    min-width: 24px;
-    min-height: 24px;
-    padding: 2px;
-  }
+  /* FAQ icon positioning handled by global rule with !important */
   
   .faq-answer-content {
     padding: 0 1.25rem 1.25rem;
@@ -1027,6 +1066,39 @@
   .faq-categories {
     padding: 0 0.25rem;
     gap: 0.125rem;
+  }
+
+  /* FAQ Features Grid - Single column for better mobile experience */
+  .faq-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 320px;
+    margin: 1.5rem auto 0;
+  }
+  
+  .faq-feature-card {
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    min-height: auto;
+  }
+  
+  .feature-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+    margin: 0 auto 1rem !important;
+  }
+  
+  .faq-feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+  }
+  
+  .faq-feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-light);
   }
   
   .help-card {
@@ -1053,27 +1125,45 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .faq-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 1.25rem auto 0;
+  }
+  
   .faq-feature-card {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
   }
   
   .feature-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.3rem;
-    margin: 0 auto 1rem !important;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin: 0 auto 0.75rem !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    border-radius: 50%;
   }
   
   .faq-feature-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
   }
   
   .faq-feature-card p {
     font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-light);
   }
 }
 
@@ -1081,25 +1171,42 @@
   /* section-tag mobile styles handled by standardized-components.css */
 
   .faq-features-grid {
-    max-width: 300px;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    max-width: 280px;
+    margin: 1rem auto 0;
+  }
+  
+  .faq-feature-card {
+    padding: 1rem 0.75rem;
+    text-align: center;
+    min-height: auto;
   }
   
   .feature-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 1.2rem;
-    margin: 0 auto 0.75rem !important;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    margin: 0 auto 0.5rem !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    border-radius: 50%;
   }
   
   .faq-feature-card h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    line-height: 1.2;
   }
   
   .faq-feature-card p {
     font-size: 0.8rem;
     line-height: 1.4;
+    color: var(--text-light);
   }
 }

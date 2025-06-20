@@ -288,7 +288,7 @@
 
 .value-card:hover .value-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .value-card h3 {
@@ -373,7 +373,7 @@
 
 .contact-item:hover .contact-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .contact-content {
@@ -460,7 +460,7 @@
 
 .legal-card:hover .legal-icon {
   color: var(--accent-color);
-  transform: rotateY(180deg);
+  transform: scale(1.05);
 }
 
 .legal-header-content {
@@ -582,7 +582,7 @@
 
 .highlight-item:hover .highlight-icon {
   color: var(--accent-color);
-  transform: rotateY(180deg);
+  transform: scale(1.05);
 }
 
 .highlight-item span {
@@ -782,7 +782,7 @@
 
 .letter-meaning:hover strong {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .letter-meaning span {

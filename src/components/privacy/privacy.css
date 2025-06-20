@@ -280,7 +280,7 @@
 .principle-card:hover .principle-icon {
   background: #ff3a3a;
   color: white;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .principle-card h3 {

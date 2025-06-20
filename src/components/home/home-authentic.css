@@ -649,7 +649,7 @@ a.login-btn:hover {
 
 .benefits-section .benefit-card:hover .benefit-icon {
   color: var(--accent-color) !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -750,7 +750,7 @@ a.login-btn:hover {
 
 .service-card:hover .service-icon {
   color: var(--accent-color);
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .service-card h3 {

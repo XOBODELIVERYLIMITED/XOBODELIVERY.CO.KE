@@ -272,7 +272,7 @@ html {
 
 .principle-card:hover .principle-icon {
   color: #ff3a3a;
-  transform: rotateY(360deg);
+  transform: scale(1.05);
 }
 
 .principle-card h3 {

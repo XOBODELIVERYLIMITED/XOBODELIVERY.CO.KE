@@ -160,7 +160,7 @@
 
 .solution-card:hover .solution-icon {
   color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -252,7 +252,7 @@
 
 .feature-card:hover .feature-icon {
   color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 
@@ -343,7 +343,7 @@
 
 .benefit-card:hover .benefit-icon {
   color: #ff3a3a !important;
-  transform: rotateY(360deg) !important;
+  transform: scale(1.05) !important;
   transition: all 0.3s ease !important;
 }
 

@@ -231,37 +231,62 @@ header .nav-btn {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    background-color: rgba(22, 35, 77, 0.05) !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 6px !important;
+    background-color: transparent !important;
+    color: #16234d !important;
+    font-size: 1.3rem !important;
+    border: 1px solid rgba(22, 35, 77, 0.2) !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
     z-index: 101 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.1) !important;
   }
 
   header .nav-btn:hover,
-  header .nav-btn:active,
   header .nav-btn:focus {
-    transform: scale(1.05) !important;
-    color: var(--primary-color) !important;
+    background-color: rgba(22, 35, 77, 0.05) !important;
+    border-color: rgba(22, 35, 77, 0.3) !important;
+    color: #16234d !important;
+  }
+  
+  header .nav-btn:active {
     background-color: rgba(22, 35, 77, 0.1) !important;
+    border-color: rgba(22, 35, 77, 0.4) !important;
+    color: #16234d !important;
+    transform: scale(0.98) !important;
   }
 
   header .nav-btn.nav-close-btn {
     position: absolute !important;
     top: 1.5rem !important;
     right: 1.5rem !important;
-    background-color: rgba(255, 58, 58, 0.1) !important;
-    color: var(--accent-color) !important;
+    background-color: #ff3a3a !important;
+    color: white !important;
+    border-color: #ff3a3a !important;
     z-index: 101 !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.4rem !important;
   }
   
   header .nav-btn.nav-close-btn:hover,
-  header .nav-btn.nav-close-btn:active,
   header .nav-btn.nav-close-btn:focus {
-    background-color: rgba(255, 58, 58, 0.2) !important;
+    background-color: #e63333 !important;
+    border-color: #e63333 !important;
     transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(255, 58, 58, 0.4) !important;
+  }
+  
+  header .nav-btn.nav-close-btn:active {
+    background-color: #d62d2d !important;
+    border-color: #d62d2d !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 1px 4px rgba(255, 58, 58, 0.5) !important;
   }
 
   header nav {
@@ -436,3 +461,125 @@ header .nav-btn {
 }
 
 /* Mobile menu styles removed */
+
+/* ===================================
+   ENHANCED MOBILE MENU BUTTON VISIBILITY
+   Ensures hamburger menu is always visible and properly styled
+   =================================== */
+
+/* Force mobile menu button visibility on all mobile devices */
+@media only screen and (max-width: 1024px) {
+  /* Ensure nav button is always visible and styled properly */
+  header .nav-btn {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 6px !important;
+    background-color: transparent !important;
+    color: #16234d !important;
+    font-size: 1.3rem !important;
+    border: 1px solid rgba(22, 35, 77, 0.2) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    z-index: 101 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(22, 35, 77, 0.1) !important;
+    margin-left: auto !important;
+  }
+  
+  /* Enhanced touch feedback */
+  header .nav-btn:active {
+    background-color: rgba(22, 35, 77, 0.1) !important;
+    border-color: rgba(22, 35, 77, 0.4) !important;
+    color: #16234d !important;
+    transform: scale(0.98) !important;
+    transition: all 0.1s ease !important;
+  }
+  
+  /* Override any conflicting mobile-fixes styles */
+  .nav-btn,
+  button.nav-btn,
+  .header-container .nav-btn {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    background-color: transparent !important;
+    color: #16234d !important;
+    border: 1px solid rgba(22, 35, 77, 0.2) !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    z-index: 101 !important;
+  }
+}
+
+/* Specific styles for smaller mobile devices */
+@media only screen and (max-width: 768px) {
+  header .nav-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    font-size: 1.3rem !important;
+  }
+  
+  header .nav-btn.nav-close-btn {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.3rem !important;
+    top: 1.25rem !important;
+    right: 1.25rem !important;
+  }
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 480px) {
+  header .nav-btn {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    font-size: 1.2rem !important;
+  }
+  
+  header .nav-btn.nav-close-btn {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.2rem !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+/* Ensure button is visible even if other CSS tries to hide it */
+.nav-btn[style*="display: none"],
+header .nav-btn[style*="visibility: hidden"],
+header .nav-btn[style*="opacity: 0"] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force override any external CSS that might affect the nav button */
+@media screen and (max-width: 1024px) {
+  *:not(.nav-btn) .nav-btn,
+  .mobile-no-animations .nav-btn,
+  body[data-mobile="true"] .nav-btn,
+  html[data-no-hover="true"] .nav-btn {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    pointer-events: auto !important;
+    background-color: transparent !important;
+    color: #16234d !important;
+    border: 1px solid rgba(22, 35, 77, 0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+}

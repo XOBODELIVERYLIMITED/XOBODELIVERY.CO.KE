@@ -36,27 +36,27 @@ function Footer() {
           <div className="footer-links">
             <div className="footer-column services-column">
               <h4>Services</h4>
-              <Link to="/services" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>All Services</Link>
-              <Link to="/services/express" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Express Delivery</Link>
-              <Link to="/services/scheduled" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Scheduled Delivery</Link>
-              <Link to="/services/business" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Business Solutions</Link>
+              <Link to="/services" onClick={handleNavClick}>All Services</Link>
+              <Link to="/services/express" onClick={handleNavClick}>Express Delivery</Link>
+              <Link to="/services/scheduled" onClick={handleNavClick}>Scheduled Delivery</Link>
+              <Link to="/services/business" onClick={handleNavClick}>Business Solutions</Link>
               <a href="https://biz.xobo.co.ke/" target="_blank" rel="noopener noreferrer">Transport Platform</a>
             </div>
 
             <div className="footer-column company-column">
               <h4>Company</h4>
-              <Link to="/about" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>About Us</Link>
-              <Link to="/client-guide" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Customer Guide</Link>
-              <Link to="/company-info" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Company Info</Link>
-              <Link to="/faq" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>FAQ</Link>
-              <Link to="/contact" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Contact Us</Link>
+              <Link to="/about" onClick={handleNavClick}>About Us</Link>
+              <Link to="/client-guide" onClick={handleNavClick}>Customer Guide</Link>
+              <Link to="/company-info" onClick={handleNavClick}>Company Info</Link>
+              <Link to="/faq" onClick={handleNavClick}>FAQ</Link>
+              <Link to="/contact" onClick={handleNavClick}>Contact Us</Link>
             </div>
 
             <div className="footer-column policies-column">
               <h4>Policies</h4>
-              <Link to="/terms" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Terms of Service</Link>
-              <Link to="/privacy-policy" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Privacy Policy</Link>
-              <Link to="/driver-privacy" onClick={handleNavClick} onTouchEnd={(e) => { e.preventDefault(); handleNavClick(); }}>Driver Privacy</Link>
+              <Link to="/terms" onClick={handleNavClick}>Terms of Service</Link>
+              <Link to="/privacy-policy" onClick={handleNavClick}>Privacy Policy</Link>
+              <Link to="/driver-privacy" onClick={handleNavClick}>Driver Privacy</Link>
             </div>
 
             <div className="footer-column connect-column">

@@ -152,20 +152,7 @@ function Drivers() {
     }
   ];
 
-  const driverTestimonials = [
-    {
-      name: "John Kamau",
-      position: "Driver since 2021",
-      image: `${process.env.PUBLIC_URL}/media/driver1.jpg`,
-      quote: "Joining XOBO gave me flexibility to earn while having time for family. The app is easy to use with helpful support."
-    },
-    {
-      name: "Mary Otieno",
-      position: "Driver since 2022",
-      image: `${process.env.PUBLIC_URL}/media/driver2.jpg`,
-      quote: "Started part-time, now full-time. Consistent earnings with flexible schedule to pursue other interests."
-    }
-  ];
+
 
   return (
     <div className="drivers-page">
@@ -381,32 +368,7 @@ function Drivers() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="driver-testimonials">
-        <div className="container">
-          <div className="section-intro">
-            <span className="section-tag">Driver Stories</span>
-            <h2 className="section-title">Hear From Our Drivers</h2>
-            <p className="section-subtitle">What our delivery partners say</p>
-          </div>
-          <div className="testimonials-grid">
-            {driverTestimonials.map((testimonial, index) => (
-              <div className="testimonial-card" key={index}>
-                <div className="testimonial-image">
-                  <div className="image-fallback" style={{display: 'flex'}}>
-                    <FaCar />
-                  </div>
-                </div>
-                <div className="testimonial-content">
-                  <p className="testimonial-quote">"{testimonial.quote}"</p>
-                  <h4>{testimonial.name}</h4>
-                  <p className="testimonial-position">{testimonial.position}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section */}
       <section className="cta-section" id="apply">

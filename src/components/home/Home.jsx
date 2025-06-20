@@ -629,7 +629,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section - COMMENTED OUT */}
+      {/* 
       <section className="testimonials-section">
         <div className="container">
           <div className="section-intro">
@@ -688,7 +689,8 @@ function Home() {
           </div>
         </div>
       </section>
-      
+      */}
+
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">

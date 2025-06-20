@@ -170,18 +170,32 @@
 }
 
 .hero-button.secondary {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(10px);
 }
 
 .hero-button.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
   transform: translateY(-3px);
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
 }
 
 .button-icon {
   font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Use same button icon styling as desktop */
+@media only screen and (max-width: 768px) {
+  .hero-button.secondary .button-icon {
+    color: #ffffff;
+  }
 }
 
 .hero-stats {
@@ -228,13 +242,16 @@
   font-weight: 800;
   color: #ff3a3a;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   letter-spacing: -1px;
 }
 
 .hero-stats.mobile-stats .stat strong {
   font-size: 2rem;
   margin-bottom: 0.25rem;
+  color: #ff3a3a;
+  font-weight: 800;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero-stats .stat span {
@@ -244,12 +261,15 @@
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   line-height: 1.3;
 }
 
 .hero-stats.mobile-stats .stat span {
   font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Service Intro Section - Completely revised */
@@ -534,10 +554,33 @@
   .service-hero-content h1 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .service-hero-content p {
     font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Use exact same styling as desktop */
+  .hero-stats {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-stats .stat strong {
+    color: #ff3a3a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+
+  .hero-stats .stat span {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   .hero-buttons {
@@ -552,6 +595,24 @@
     width: 100%;
     max-width: 300px;
     padding: 0.75rem 1.5rem;
+  }
+
+  /* Use exact same button styling as desktop */
+  .hero-button.secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-button.secondary:hover,
+  .hero-button.secondary:active {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   }
 
   /* section-tag mobile styles handled by standardized-components.css */
@@ -602,6 +663,28 @@
 
   .service-hero-content h1 {
     font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .service-hero-content p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Use exact same styling as desktop */
+  .hero-stats .stat strong {
+    font-size: 1.8rem;
+    color: #ff3a3a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+
+  .hero-stats .stat span {
+    font-size: 0.7rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   /* section-tag mobile styles handled by standardized-components.css */
@@ -626,6 +709,16 @@
     font-size: 0.9rem;
     max-width: 250px;
   }
+
+  /* Use exact same button styling as desktop */
+  .hero-button.secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -635,10 +728,29 @@
 
   .service-hero-content h1 {
     font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .service-hero-content p {
     font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Use exact same styling as desktop */
+  .hero-stats .stat strong {
+    font-size: 1.7rem;
+    color: #ff3a3a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+
+  .hero-stats .stat span {
+    font-size: 0.65rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   .service-card {
@@ -661,6 +773,16 @@
   .cta-section h2 {
     font-size: 1.5rem;
   }
+
+  /* Use exact same button styling as desktop */
+  .hero-button.secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -674,10 +796,29 @@
 
   .service-hero-content h1 {
     font-size: 1.6rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .service-hero-content p {
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Use exact same styling as desktop */
+  .hero-stats .stat strong {
+    font-size: 1.6rem;
+    color: #ff3a3a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+
+  .hero-stats .stat span {
+    font-size: 0.6rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
   }
 
   /* section-tag mobile styles handled by standardized-components.css */
@@ -716,5 +857,15 @@
 
   .container {
     padding: 0 0.75rem;
+  }
+
+  /* Use exact same button styling as desktop */
+  .hero-button.secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
   }
 }

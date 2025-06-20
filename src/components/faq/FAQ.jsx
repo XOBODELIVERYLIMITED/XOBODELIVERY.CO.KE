@@ -395,7 +395,7 @@ const FAQ = () => {
             </div>
             <div className="help-illustration">
               <img 
-                src={`${process.env.PUBLIC_URL}/media/customer-support.svg`} 
+                src={`${process.env.PUBLIC_URL}/media/help-illustration.svg`} 
                 alt="Customer Support"
               />
             </div>
