@@ -21,7 +21,7 @@ function CompanyInfo() {
   const [activeSection, setActiveSection] = useState('overview');
 
   const companyStats = [
-    { number: "2020", label: "Founded" },
+    { number: "2021", label: "Founded" },
     { number: "47", label: "Counties Covered" },
     { number: "200+", label: "Active Partners" },
     { number: "15,000+", label: "Deliveries Completed" },
@@ -170,7 +170,7 @@ function CompanyInfo() {
               <div className="section-intro">
                 <span className="section-tag">About Us</span>
                 <h2>About XOBO Delivery Limited</h2>
-                <p>Established in 2020, XOBO Delivery Limited has emerged as Kenya's fastest-growing logistics platform, connecting businesses with reliable delivery solutions across 47 counties.</p>
+                <p>Established in 2021, XOBO Delivery Limited has emerged as Kenya's fastest-growing logistics platform, connecting businesses with reliable delivery solutions across 47 counties.</p>
               </div>
 
               {/* XOBO Name Story */}
